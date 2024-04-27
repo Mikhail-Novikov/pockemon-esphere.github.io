@@ -1,0 +1,17 @@
+node_modules
+
+dist
+
+coverage
+
+eslint-report.json
+
+reports
+
+test-report.xml
+
+.cache
+
+.idea
+
+.DS_Store

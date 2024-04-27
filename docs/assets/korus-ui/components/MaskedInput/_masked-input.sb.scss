@@ -1,0 +1,27 @@
+.masked-input {
+  &-element {
+    @extend %input;
+
+    &:not(.disabled):not(.danger):hover {
+      @extend %input-hovered;
+    }
+
+    &:not(:focus):not(.disabled).danger {
+      border-color: $brand-danger;
+    }
+
+    &:focus {
+      @extend %input-focused;
+    }
+
+    &:disabled {
+      @extend %input-disabled;
+    }
+  }
+}
+
+.masked-wrapper.large {
+  .masked-input-element {
+    @extend %input-large;
+  }
+}

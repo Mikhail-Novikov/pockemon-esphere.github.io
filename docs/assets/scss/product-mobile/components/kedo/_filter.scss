@@ -1,0 +1,31 @@
+@media (max-width: 1023.98px) {
+
+  .filter {
+    box-shadow: none;
+    border-radius: 0;
+  }
+      
+  .filter-doc {
+    margin-left: -2.4rem;
+    margin-right: -2.4rem;
+      
+    .w-25 {
+      
+      dt {
+        width: 29%;
+      }
+      
+      dd {
+        padding-left: 30%;
+      }
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+
+  .filter-doc {
+    margin-left: -1.6rem;
+    margin-right: -1.6rem;
+  }
+}

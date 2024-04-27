@@ -1,0 +1,29 @@
+@mixin v-stepper($default) {
+  .v-stepper-wrapper {
+
+    .v-stepper-step {
+          
+      &.progress {
+          
+        .v-stepper-icon {
+          border-color: $default;
+          
+          &::after {
+            color: $default;
+          }
+        }
+      }
+          
+      &.success {
+          
+        .v-stepper-icon {
+          background-color: $default;
+        }
+          
+        .v-stepper-line {
+          border-left-color: $default;
+        }
+      }
+    }
+  }
+}

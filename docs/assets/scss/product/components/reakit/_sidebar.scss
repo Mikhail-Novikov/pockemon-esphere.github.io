@@ -1,0 +1,51 @@
+.sidebar {
+  height: calc(100% - 6rem);
+  margin-top: 6rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  ul {
+
+    > li {
+      transition: none;
+
+      &::after {
+        background: $brand-color;
+      }
+
+      > a {
+        padding-right: 1.2rem;
+      }
+    }
+  }
+
+  &-b {
+    left: auto;
+    right: 0;
+    background: inherit;
+  }
+
+  .tabs {
+
+    &-container {
+      padding: 0 1.2rem 1.2rem;
+    }
+
+    &-wrapper:not(.mobile-tabs) {
+
+      .tabs-item {
+        padding: 1.2rem 1.6rem;
+
+        &::after {
+          top: 4.4rem;
+          width: 100%;
+          background-color: $brand-color;
+        }
+      }
+    }
+
+    &-item:not(:last-of-type) {
+      margin-right: 1.2rem;
+    }
+  }
+}

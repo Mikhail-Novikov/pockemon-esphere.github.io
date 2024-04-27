@@ -1,0 +1,579 @@
+@import '../variables/themes/_nova.scss';
+
+// VARIABLES
+$header-height: 6rem;
+$toolbar-height: 8rem;
+
+$success-color: #d8e7e2;
+$warning-color: #fae0d4;
+$danger-color: #fbd6d5;
+// END VARIABLES
+
+// PROJECT HELPERS
+
+.panel-color {
+  background-color: $black-07;
+}
+
+.toolbar-padding {
+  padding-bottom: $toolbar-height;
+}
+
+.txt-light-gray {
+  color: $black-04;
+}
+
+.white-space-break-spaces {
+  white-space: break-spaces !important;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.right-0 {
+  right: 0;
+}
+
+.width-auto {
+  width: auto !important;
+}
+// END PROJECT HELPERS
+
+// CUSTOM
+
+header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: $white;
+
+  .personal-box {
+
+    .user-name {
+      display: inline-block;
+      padding: .8rem 1.6rem;
+      text-align: left;
+      max-width: 29.2rem;
+    }
+
+    .menu-h {
+
+      li.level-1 {
+        border-radius: 1.6rem;
+
+        &:not(.active):hover {
+          background-color: $black-07;
+        }
+
+        &.active {
+          background-color: $black-06;
+        }
+
+        a:hover:not(.button):not(.active) {
+          background-color: inherit;
+        }
+      }
+    }
+  }
+}
+
+.list {
+
+  & > dt {
+    padding-top: .6rem;
+    word-break: break-all;
+
+    &:first-of-type {
+      padding-top: 0;
+    }
+  }
+
+  & > dd,
+  & > div {
+    padding-top: .6rem;
+    padding-bottom: .6rem;
+
+    &:first-of-type {
+      padding-top: 0;
+    }
+  }
+}
+
+.update-to-actual-spec-modal {
+
+  &.modal-wrapper {
+
+    > .modal-window {
+      width: 100rem;
+    }
+  }
+
+  .lined-table-body.table {
+    font-size: 1.2rem;
+  }
+}
+
+.table {
+
+  word-wrap: break-word;
+
+  thead {
+
+    th {
+      line-height: 1.6rem;
+
+      &.two-line-cell {
+        padding: .8rem 1.2rem;
+      }
+    }
+  }
+
+  tbody {
+
+    tr {
+
+      &.selected-row {
+        background-color: $black-06;
+      }
+
+      &.spec-update-empty-row {
+        background-color: $black-07;
+
+        td {
+
+          &:first-child,
+          &:last-child {
+            border-radius: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+td.spec-row-menu-actions button.more.small {
+  padding: .2rem;
+  min-width: 1px;
+}
+
+.single-checkbox.checkbox-wrapper {
+  position: relative;
+  top: -.5rem;
+  width: 1.6rem;
+}
+
+.single-radio {
+
+  &.radio-button-label {
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      top: .5rem;
+    }
+  }
+}
+
+.table .search-table {
+
+  td {
+    padding: 0 1.2rem;
+  }
+
+  .type-elem, .type-elem-value {
+    width: 8rem;
+  }
+
+  .format {
+    width: 23rem;
+  }
+
+  .spec-status {
+    width: 12rem;
+  }
+
+  .spec-type {
+    width: 10rem;
+  }
+
+  tr {
+
+    &.last-spec-entity-row td {
+      padding-bottom: 1.2rem;
+    } 
+  }
+}
+
+.sticky-table-wrapper {
+  position: relative;
+  overflow-x: auto;
+  border-top-right-radius: .8rem;
+  max-height: calc( 100vh - 15rem);
+
+  table {
+
+    .type-elem, .type-elem-value {
+      width: 8rem;
+      max-width: 8rem;
+      min-width: 8rem;
+    }
+
+    .format {
+      width: 23rem;
+      max-width: 23rem;
+      min-width: 23rem;
+    }
+    
+    .describe{
+      width: 30rem;
+      max-width: 30rem;
+      min-width: 30rem;
+    }
+
+    .xpath {
+      width: 26rem;
+      max-width: 26rem;
+      min-width: 26rem;
+    }
+    
+    .comment {
+      width: 42rem;
+      max-width: 42rem;
+      min-width: 42rem;
+    }
+  }
+
+  .fixed-column {
+    position: sticky;
+  }
+  
+  td.fixed-column {
+    background-color: $white;
+    transition: .2s;
+  }
+
+  .sticky-checkbox {
+    left: 0px;
+    width: 4rem;
+    max-width: 4rem;
+    min-width: 4rem;
+  }
+
+  .sticky-move-icon {
+    left: 4rem;
+    width: 4.4rem;
+    max-width: 4.4rem;
+    min-width: 4.4rem;
+  }
+
+  .sticky-num {
+    left: 8.4rem;
+    width: 5.7rem;
+    max-width: 5.7rem;
+    min-width: 5.7rem;
+    
+    &.sticky-first {
+      left: 0;
+    }
+  }
+
+  .sticky-name {
+    left: 14.1rem;
+    width: 50rem;
+    min-width: 50rem;
+
+    &.sticky-first {
+      left: 5.7rem;
+    }
+  }
+
+  @media screen and (min-width: 1939.5px) {
+
+    table {
+
+      .sticky-name {
+        width: 41%;
+      }
+
+      .comment {
+        width: 30%;
+      }
+    }
+  }
+
+  .sticky-menu-actions {
+    right: 0;
+    width: 5.2rem;
+    max-width: 5.2rem;
+    min-width: 5.2rem;
+    z-index: 1;
+
+    .dropdown-wrapper > ul {
+      left: auto !important;
+      right: auto !important;
+      margin-left: -23.8rem;
+      margin-top: -3.1rem;
+      width: 22.5rem;
+    }
+
+    .dropdown-wrapper.ref > ul {
+      margin-bottom: -2.9rem;
+    }
+  }
+}
+
+.sticky-table-head {
+  background-color: $white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  &.table thead {
+
+    &::after {
+      height: 0;
+    }
+  }
+}
+
+.lined-table-body {
+
+  &.short-table {
+    min-height: 23.5rem;
+  }
+
+  &.table table {
+    border-collapse: separate;
+
+    tbody {
+
+      tr {
+
+        td {
+          border-width: 1px;
+          border-color: $black-06;
+
+          &:first-child {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+          }
+
+          &:last-child {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+          }
+
+          &.pre-line-cell {
+            white-space: pre-line
+          }
+        }
+
+        &.new-line {
+          background-color: $success-color;
+        }
+
+        &.changed-line {
+          background-color: $warning-color;
+        }
+
+        &.deleted-line {
+          background-color: $danger-color;
+        }
+
+        &.selected {
+          background-color: $black-07;
+
+          td.fixed-column {
+            background-color: $black-07;
+          }
+        }
+      }
+    }
+  }
+}
+
+.highlight-for-drop {
+  background: $white !important;
+
+  .collapse-panel-wrapper.form {
+    background-color: $black-05;
+  }
+}
+
+.toolbar-wrapper {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  transition: bottom .3s;
+  background-color: $white;
+  z-index: 10;
+
+  &.hidden {
+    bottom: -5rem;
+    transition: .3s;
+  }
+
+  &.active {
+    background-color: $black-06;
+  }
+}
+
+.list-h > li {
+  margin-right: 1.6rem;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.button-filedrop.filedrop-wrapper {
+  padding: 0;
+  border-width: 0;
+}
+
+.dropdown-z-index {
+
+  .suggestion-wrapper {
+    z-index: 20;
+  }
+}
+
+.multi-select {
+
+  .suggestion-wrapper.pos-top.visible {
+    z-index: 100;
+  }
+
+  .multiselect-checkbox-list {
+    height: 14.5rem;
+  }
+}
+// END CUSTOM
+
+// Переопределение стилей плагина
+
+.draggable-line {
+  border-bottom: .3rem solid $primary-02 !important;
+}
+
+// Для имитации DOM-дерева в таблице
+@for $i from 1 through 10 {
+  .margin-left-#{$i*20} {
+    margin-left: $i*2rem;
+  }
+}
+
+// Цвета для имитированного DOM-дерева
+
+.lined-table-body {
+
+  &.table table tbody tr td {
+    padding: .3rem 1.2rem;
+  }
+
+  tr:hover {
+
+    .fixed-column {
+      background-color: $black-07;
+    }
+  }
+
+  .selected, .selected td {
+    transition: .2s;
+  }
+
+  .element-status {
+
+    &-1,
+    &-1:hover,
+    &-1:not(.selected) td.fixed-column {
+      background-color: #ef9a9a;
+
+      &.selected,
+      &.selected td {
+        background-color: #e57373 !important;
+      }
+    }
+
+    &-2,
+    &-2:hover,
+    &-2:not(.selected) td.fixed-column {
+      background-color: #fff59d;
+
+      &.selected,
+      &.selected td {
+        background-color: #fff176 !important;
+      }
+    }
+
+    &-3,
+    &-3:hover,
+    &-3:not(.selected) td.fixed-column {
+      background-color: #a5d6a7;
+
+      &.selected,
+      &.selected td {
+        background-color: #81c784 !important;
+      }
+    }
+
+    &-4,
+    &-4:hover,
+    &-4:not(.selected) td.fixed-column {
+      background-color: #90caf9;
+
+      &.selected,
+      &.selected td {
+        background-color: #64b5f6 !important;
+      }
+    }
+  }
+     
+}
+
+// Вернул кастом для колапса. Удалим после выхода новой версии korus-ui
+
+.collapse-panel-wrapper {
+  border: 1px solid $black-05;
+  border-radius: 1.6rem;
+
+  &.form {
+    background-color: $black-07;
+  }
+
+  .collapse-heading-wrapper {
+    border: none;
+    align-items: center;
+    padding: 2rem 3.2rem;
+
+    &:hover {
+      border-color: $black-05;
+    }
+
+    & .collapse-heading-icon {
+
+      &::before {
+        content: "\e998";
+        font-family: "prodicon";
+        font-size: 1.6rem;
+        background: none;
+        width: inherit;
+        height: inherit;
+        position: unset;
+        top: 0;
+        left: 0;
+        transform: unset;
+      }
+    }
+
+    & + div[aria-expanded="true"] {
+      border-top-width: 1px;
+      border-top-style: solid;
+      border-top-color: $black-05;
+      transition: height 250ms cubic-bezier(.4, 0, .2, 1) 0s, border-top-width 0s 50ms !important;
+    }
+  }
+}

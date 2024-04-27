@@ -1,0 +1,68 @@
+@import "../variables/_base.scss";
+@import "../variables/themes/_sb.scss";
+
+$dms-sidebar-width: 9.6rem;
+$dms-sidebar-full: 25rem;
+
+// xs devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+
+}
+
+// sm devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+
+}
+
+// md devices (tablets, 768px and up)
+@media (min-width: 768px){
+  .sidebar.sidebar-full +.content-box{
+    padding-left: 0;
+  }
+  .wrapper {
+    &.flex-row {
+      justify-content: space-between;
+    }
+    .product-item {
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+}
+
+// lg devices (desktops, 1024px and up)
+@media (min-width: 1024px){
+  .sidebar.sidebar-full +.content-box{
+    padding-left: 0;
+  }
+  .wrapper {
+    width: 100%;
+    &.flex-row {
+      justify-content: flex-start;
+    }
+    .product-item {
+      margin-left: 0;
+    }
+  }
+}
+
+// xl devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .wrapper {
+    .product-item {
+      margin-right: 2.2rem;
+    }
+  }
+}
+
+@media (max-width: 1199.98px) {
+  tr td.tools *, tr:hover td.tools * {
+    visibility: visible;
+  }
+}
+
+@media (max-width: 991.98px) {
+  %sorted {
+    right: .5rem;
+  }
+}

@@ -1,0 +1,29 @@
+.textarea {
+  &-wrapper {
+    @extend %input-wrapper;
+
+    height: 120px;
+
+    &:not(.disabled):not(.danger):hover {
+      @extend %input-hovered;
+    }
+
+    &:not(.focused):not(.disabled).danger {
+      border-color: $brand-danger;
+    }
+
+    &.focused {
+      border: 1px solid $base-15;
+      box-shadow: 0 2px 2px 1px rgba($black-01, 0.06);
+    }
+  }
+
+  &-input {
+    @extend %input;
+
+    border: none;
+    width: 100%;
+    resize: none;
+    height: 100%;
+  }
+}

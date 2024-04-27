@@ -1,0 +1,152 @@
+.autocomplete {
+
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &.wide-list {
+
+      .suggestion-wrapper {
+        width: 200px;
+      }
+    }
+
+    &.large {
+
+      .autocomplete-input-wrapper {
+        @extend %input-large;
+      }
+    }
+
+    &.danger {
+
+      .autocomplete-input-wrapper {
+        border-color: $brand-danger;
+      }
+    }
+  }
+
+  &-input-wrapper {
+    @extend %input-wrapper;
+    padding: 0;
+    align-items: center;
+
+    &:not(.focused):not(.danger):not(.disabled):hover {
+      @extend %input-hovered;
+    }
+
+    &:not(.focused):not(.disabled).danger {
+      border-color: $brand-danger;
+    }
+
+    &.focused {
+      @extend %input-focused;
+    }
+
+    &.disabled {
+      @extend %input-disabled;
+
+      & .dropdownselect-select-icon {
+        cursor: default;
+      }
+    }
+  }
+
+  &-input {
+    border: none;
+    width: 100%;
+    padding: 5px 4px 7px 12px;
+    text-overflow: ellipsis;
+    background-color: transparent;
+    text-overflow: ellipsis;
+
+    &::-ms-clear {
+      display: none;
+    }
+
+    &::placeholder {
+      color: $black-03;
+    }
+
+    &:disabled {
+      -webkit-text-fill-color: $black-03;
+    }
+  }
+
+  &-clear-icon {
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    right: 0;
+    font-family: "prodicon";
+    color: $black-03;
+
+    &::before {
+      content: "\e995";
+      position: absolute;
+      top: 50%;
+      right: 5px;
+      transform: translateY(-50%);
+      font-style: normal;
+    }
+  }
+
+  &-suggestions-container {
+    @extend %suggestions-container;
+
+    &.opened {
+      @extend %suggestions-container-opened;
+    }
+  }
+
+  &-suggestions-list {
+    @extend %suggestions-container-list;
+  }
+
+  &-suggestion {
+    @extend %suggestion;
+
+    &.highlighted {
+      @extend %suggestion-highlighted;
+    }
+  }
+}
+
+// loading .autocomplete
+
+.loading-input {
+  position: relative;
+
+  .autocomplete-input-wrapper {
+
+    &::before {
+      content: " ";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 50%;
+      right: -2px;
+      transform: translateY(-50%) rotate(0);
+      background-image: $loader-element-item;
+      background-size: contain;
+      animation: rotate-clockwise 1s linear infinite;
+    }
+  }
+
+  .autocomplete-clear-icon {
+    display: none;
+  }
+}
+
+@keyframes rotate-clockwise {
+
+  from {
+    transform: translateY(-50%) rotate(0);
+ }
+
+  to {
+    transform: translateY(-50%) rotate(1turn);
+ }
+}

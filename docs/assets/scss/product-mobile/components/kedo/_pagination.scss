@@ -1,0 +1,36 @@
+@media (max-width: 1023.98px) {
+
+  .pagination-wrapper {
+    justify-content: center;
+    width: 100%;
+    padding: 1.2rem;
+      
+    .pagination-label-options,
+    .pagination-label-info {
+      display: none;
+    }
+  }
+      
+  .pagination-documents-card {
+      
+    .pagination-wrapper {
+      justify-content: start;
+      width: auto;
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+
+  .pagination-documents-card {
+    height: auto;
+      
+    .pagination-wrapper {
+      justify-content: center;
+    }
+      
+    button {
+      position: relative !important;
+    }
+  }
+}

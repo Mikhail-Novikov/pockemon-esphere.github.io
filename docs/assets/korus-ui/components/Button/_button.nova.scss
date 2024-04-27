@@ -1,0 +1,252 @@
+@mixin button-default($type) {
+  background-color: $type;
+  color: $text-reverse;
+  border-color: $type;
+  font-weight: 500;
+}
+
+@mixin button-disabled($type) {
+  background-color: $type !important;
+  color: $text-reverse !important;
+  border-color: transparent;
+}
+
+@mixin button-hover($type) {
+  background-color: $type;
+  border-color: transparent;
+}
+
+.button-wrapper {
+  background-color: $body-bg;
+  border: 1px solid $black-05;
+  border-radius: 16px;
+  color: inherit;
+  line-height: 16px;
+  min-width: 96px;
+  outline: none !important;
+  padding: $btn-padding-y $btn-padding-x;
+
+  &.small {
+    min-width: 80px;
+    padding: $btn-padding-y-sm $btn-padding-x-sm;
+  }
+
+  &.large {
+    border-radius: 24px;
+    padding: $btn-padding-y-lg $btn-padding-x-lg;
+  }
+
+  &.blank {
+
+    &:hover {
+      color: $link-hover;
+    }
+
+    &:active {
+      color: $link-active;
+    }
+  }
+
+  &:hover {
+    background-image: none;
+    border-color: $btn-border-hover;
+  }
+
+  &:active,
+  &.active {
+    background-color: $black-05;
+    border-color: $black-05;
+  }
+
+  &:not(.blank):focus {
+    border-color: $focus-border;
+  }
+
+  &.success,
+  &.primary {
+    @include button-default(var(--brand-color));
+
+    &:hover {
+      @include button-hover(var(--brand-hover-color));
+    }
+
+    &:active {
+      background-color: var(--brand-active-color);
+    }
+
+    &:focus {
+      border-color: $focus-border;
+    }
+  }
+
+  &.danger {
+    @include button-default($error-02);
+
+    &:hover {
+      @include button-hover($error-03);
+    }
+
+    &:active {
+      background-color: $error-01;
+    }
+
+    &:focus {
+      border-color: $focus-border;
+    }
+  }
+
+  &.warning {
+    @include button-default($accent-02);
+
+    &:hover {
+      @include button-hover($accent-03);
+    }
+
+    &:active {
+      background-color: $accent-01;
+    }
+
+    &:focus {
+      border-color: $focus-border;
+    }
+  }
+
+  &.blank {
+    color: $link-color;
+    background: transparent;
+    border-color: transparent;
+    border-radius: 0;
+  }
+
+  &.button-dropdown {
+    padding: 7px 40px 7px 24px;
+    position: relative;
+
+    &::after {
+      content: "\e998";
+      font-family: "prodicon";
+      font-size: 16px;
+      position: absolute;
+      right: 19px;
+      top: calc(50% - 8px);
+      transition: transform .3s;
+    }
+
+    &.small {
+      padding: 5px 31px 5px 16px;
+
+      &::after {
+        right: 13px;
+      }
+    }
+  }
+
+  &.disabled {
+    color: $black-05 !important;
+    background-color: $body-bg !important;
+    border-color: $black-05;
+
+    > * {
+      color: $black-05 !important;
+    }
+
+    &.success,
+    &.primary {
+
+      &:hover, & {
+        @include button-disabled(var(--brand-disabled-color));
+      }
+    }
+
+    &.warning {
+
+      &:hover, & {
+        @include button-disabled($accent-04);
+      }
+    }
+
+    &.danger {
+
+      &:hover, & {
+        @include button-disabled($error-04);
+      }
+    }
+
+    &.blank {
+      border-color: transparent;
+    }
+
+    &:focus {
+      border-width: 1px !important;
+    }
+
+    &:not(.success):not(.primary):not(.warning):not(.danger):not(.blank):focus {
+      border-color: $black-05;
+    }
+
+    &:not(.blank):focus {
+      padding: $btn-padding-y $btn-padding-x;
+    }
+
+    &.more:focus {
+      padding: .5rem;
+    }
+
+    &.small {
+
+      &:not(.blank):focus {
+        padding: $btn-padding-y-sm $btn-padding-x-sm;
+      }
+    }
+
+    &.large {
+
+      &:not(.blank):focus {
+        padding: $btn-padding-y-lg $btn-padding-x-lg;
+      }
+    }
+  }
+
+  &.loading {
+    position: relative;
+    color: transparent !important;
+    opacity: 1;
+
+    &::before {
+      content: " ";
+      display: block;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(0);
+      background-size: auto;
+      background-image: $loader-small-element-item;
+      background-position: center;
+      background-repeat: no-repeat;
+      animation: rotate-clockwise 1s linear infinite;
+      @keyframes rotate-clockwise {
+
+        from {
+          transform: translate(-50%, -50%) rotate(0);
+        }
+
+        to {
+          transform: translate(-50%, -50%) rotate(360deg);
+        }
+      }
+    }
+
+    &.success,
+    &.danger,
+    &.warning,
+    &.primary,
+    &.secondary {
+
+      &::before {
+        background-image: url(https://cdn.esphere.ru/images/loading-spinner-small-white.svg);
+      }
+    }
+  }
+}

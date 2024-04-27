@@ -1,0 +1,116 @@
+.datepicker {
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &.wide-list {
+      .suggestion-wrapper {
+        width: 200px;
+      }
+    }
+
+    &.large {
+      @extend %datepicker-large;
+
+      .datepicker-icons-wrapper {
+        width: 39px;
+      }
+    }
+  }
+
+  &-input {
+    text-overflow: ellipsis;
+
+    &:disabled {
+      -webkit-text-fill-color: $black-03;
+    }
+  }
+
+  &-input-wrapper {
+    @extend %input-wrapper;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover:not(.disabled-state) {
+      @extend %input-hovered;
+    }
+
+    &.focused {
+      @extend %input-focused;
+      .datepicker-icons-wrapper > .datepicker-calendar-icon::before {
+        color: $black-03;
+      }
+    }
+
+    &.danger:not(.disabled-state):not(.focused) {
+      border-color: $brand-danger;
+
+      &:hover {
+        border-color: $brand-danger;
+      }
+    }
+
+    &.disabled-state {
+      @extend %input-disabled;
+
+      & > .datepicker-input {
+        background-color: inherit;
+        color: $black-03;
+      }
+
+      .datepicker-calendar-icon {
+        cursor: default;
+
+        &::before {
+          color: $black-05;
+        }
+      }
+    }
+
+    input[class*="input"] {
+      padding-right: 0;
+    }
+  }
+
+  &-icons-wrapper {
+    display: inline-flex;
+    height: 30px;
+    width: 36px;
+    align-items: center;
+
+    & > .datepicker-calendar-icon {
+      width: 38px;
+      height: 29px;
+      padding: 4px 12px 4px 4px;
+      cursor: pointer;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+
+      &::before {
+        content: "\e975";
+        font-family: 'prodicon';
+        font-size: 20px;
+        color: $black-04;
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    & > span {
+      &:last-child {
+        border-top-right-radius:  6px;
+        border-bottom-right-radius: 6px;
+      }
+
+      &:first-child {
+        border-top-left-radius:  6px;
+        border-bottom-left-radius: 6px;
+      }
+    }
+  }
+}

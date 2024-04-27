@@ -1,0 +1,100 @@
+.filedrop {
+  &-wrapper {
+    background-color: transparent;
+    border: 1px dashed $black-06;
+    padding: 16px 0;
+    border-radius: 8px;
+  }
+
+  &-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-button {
+    margin: 12px 8px;
+  }
+
+  &-cloud-icon {
+    background-image: url("https://cdn.esphere.ru/images/nova/filedrop/filedrop-upload.svg");
+    width: 64px;
+    height: 64px;
+    margin-bottom: 12px;
+  }
+
+  &-retry-icon {
+    margin-right: 12px;
+    display: inline-block;
+    height: 16px;
+    vertical-align: top;
+    &::before {
+      content: "\e97f";
+      width: 20px;
+      height: 20px;
+      color: $black-04;
+      font-family: "prodicon";
+      font-size: 20px;
+    }
+  }
+
+  &-retry-button {
+    display: flex;
+    align-items: center;
+  }
+
+  &-ok-icon {
+    background-image: url("https://cdn.esphere.ru/images/nova/filedrop/filedrop-success.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 12px;
+  }
+
+  &-not-ok-icon {
+    background-image: url("https://cdn.esphere.ru/images/nova/filedrop/filedrop-error.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 64px;
+    margin-bottom: 12px;
+  }
+
+  &-description {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: start;
+    font-size: 14px;
+    color: $black-01;
+    text-overflow: ellipsis;
+    font-style: normal;
+    margin: 4px 16px 8px;
+  }
+
+  &-status {
+    display: flex;
+    align-items: center;
+    flex: none;
+    margin-right: 24px;
+    font-weight: 500;
+
+    & > [class*="icon"] {
+      margin-right: 5px;
+    }
+  }
+
+  &-delete-icon {
+    font-size: 14px;
+    cursor: pointer;
+    font-family: "prodicon";
+    &::before {
+      content: "\e97c";
+      font-style: normal;
+    }
+  }
+}

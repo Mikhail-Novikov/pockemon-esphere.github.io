@@ -1,0 +1,18 @@
+@import '../../../variables/themes/nova';
+
+$success: $secondary-02;
+$success-hover: $secondary-03;
+$success-active: $secondary-01;
+$success-disabled: $secondary-04;
+$success-bg: $secondary-05;
+$success-darkest: #00347a;
+
+$warning: $accent-02;
+$warning-bg: $accent-05;
+
+$danger: $error-02;
+$danger-bg: $error-05;
+
+$light-gray: #fcfcfc;
+
+$header-height: 6rem;

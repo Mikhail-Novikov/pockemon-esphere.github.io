@@ -1,0 +1,97 @@
+.dropdown-wrapper {
+
+  &.large > ul {
+    max-height: 28.5rem;
+  }
+
+  &.opened {
+
+    .button-dropdown.success {
+      background-color: $success-active;
+    }
+  }
+
+  & > ul.dropdown-pos-right {
+    left: auto;
+    right: 0;
+  }
+}
+
+.light-box-body {
+
+  .dropdown-wrapper.opened {
+    z-index: 39;
+  }
+}
+
+.change-account-dropdown {
+
+  .button-dropdown {
+    padding: 0 3.2rem 0 1.2rem !important;
+
+    &:focus::after {
+      right: 1rem;
+  }
+
+    &::after {
+      color: $black-04;
+      right: 1rem !important;
+    }
+  }
+
+  ul {
+    width: 14.8rem;
+  }
+
+  a {
+    min-width: 0 !important;
+    width: 14rem;
+  }
+
+  .button-dropdown:hover {
+
+    i {
+      color: $black-04 !important;
+    }
+  }
+
+  &.opened {
+
+    .button-dropdown {
+      background-color: $black-06;
+      border: 1px solid transparent;
+
+      i {
+        color: $success;
+      }
+    }
+  }
+}
+
+.attachment-item {
+
+  .dropdown-wrapper {
+
+    &.opened > .button-wrapper {
+      background-color: transparent;
+    }
+
+    > ul {
+
+      & {
+        left: auto;
+        right: 0;
+        min-width: auto;
+      }
+
+      > li > {
+
+        a:not(.button),
+        div,
+        span {
+          min-width: auto;
+        }
+      }
+    }
+  }
+}

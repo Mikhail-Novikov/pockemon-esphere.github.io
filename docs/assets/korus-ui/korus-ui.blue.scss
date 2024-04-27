@@ -1,0 +1,60 @@
+/* sourceMappingURL=korus-ui.blue.scss.map */
+
+@import "../../common/variables/themes/blue";
+@import "../../common/mixins/root";
+@include root($theme-blue-color);
+
+@import "../../common/utils/breakpoints";
+
+/* здесь продублированы компоненты, но для проекта эти импорты могут быть не в таком списке, больше или меньше */
+@import "commonStyles/border-box";
+@import "commonStyles/DropDownList/dropdown-list.nova";
+@import "commonStyles/Input/input.nova";
+
+@import "components/A/anchor.nova";
+@import "components/AutoComplete/autocomplete.nova";
+@import "components/Button/button.nova";
+@import "components/ButtonGroup/button-group.nova";
+@import "components/Calendar/calendar.nova";
+@import "components/CheckBox/checkbox.nova";
+@import "components/CheckBoxTree/checkboxtree.nova";
+@import "components/Collapse/collapse.nova";
+@import "components/DateTimePicker/datetimepicker.nova";
+@import "components/DateTimeRange/datetime-range.nova";
+@import "components/Draggable/draggable.nova";
+@import "components/Drawer/drawer.nova";
+@import "components/DropDown/dropdown.nova";
+@import "components/DropDownSelect/dropdown-select.nova";
+@import "components/DropZone/dropzone.nova";
+@import "components/FileDrop/file-drop.nova";
+@import "components/Input/input.nova";
+@import "components/LightBox/lightbox.nova";
+@import "components/Loader/loader.nova";
+@import "components/LoaderComponent/loader-component.nova";
+@import "components/MaskedInput/masked-input.nova";
+@import "components/Modal/modal.nova";
+@import "components/MultiSelect/multiselect.nova";
+@import "components/Notifications/notifications.nova";
+@import "components/NumericRange/numeric-range.nova";
+@import "components/NumericTextBox/numeric.nova";
+@import "components/Password/password.nova";
+@import "components/Pagination/pagination.nova";
+@import "components/ProgressBar/progress-bar.nova";
+@import "components/RadioGroup/radio.nova";
+@import "components/Rating/rating.nova";
+@import "components/Slider/slider.nova";
+@import "components/StatusBar/statusbar.nova";
+@import "components/StickyPanel/sticky-panel.nova";
+@import "components/SuggestionList/suggestion-list.nova";
+@import "components/Switcher/switcher.nova";
+@import "components/Table/table.nova";
+@import "components/Tabs/tabs.nova";
+@import "components/Tags/tags.nova";
+@import "components/Textarea/textarea.nova";
+@import "components/Tooltip/tooltip.nova";
+@import "components/Tour/tour.nova";
+@import "components/Validation/invalid-message.nova";
+@import "components/VStepper/v-stepper.nova";
+@import "components/Countdown/countdown.nova";
+@import "components/LinkTree/link-tree.nova";
+@import "components/FileList/file-list.nova";

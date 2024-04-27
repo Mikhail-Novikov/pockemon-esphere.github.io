@@ -1,0 +1,20 @@
+.highlight-for-drop {
+  div[aria-expanded='false'] {
+    display: none;
+  }
+}
+
+.draggable-item {
+  cursor: pointer;
+}
+
+.highlight-for-drop {
+  position: relative;
+  z-index: $zindex-draggable;
+
+  td {
+    background-color: $black-07;
+    position: relative;
+  }
+}
+

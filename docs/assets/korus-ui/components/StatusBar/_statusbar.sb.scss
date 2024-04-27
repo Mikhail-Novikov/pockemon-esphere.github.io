@@ -1,0 +1,125 @@
+.statusbar {
+  &-wrapper {
+    padding: 5px 10px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    counter-reset: step;
+  }
+
+  &-status-item {
+    color: $gray-dark;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 2px;
+    position: relative;
+
+    .statusbar-icon:before {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 12px;
+      color: $black-01;
+      text-transform: none;
+      background-size: contain;
+      counter-increment: step;
+      content: " ";
+      width: 16px;
+      height: 16px;
+      box-shadow: inset 0 0 0 0.2rem $gray;
+      border-radius: 50%;
+      line-height: 1;
+      background-color: $white;
+      font-family: "uicons", sans-serif;
+      z-index: 1;
+    }
+
+    &.first {
+      align-items: flex-start;
+    }
+
+    &.last {
+      align-items: flex-end;
+
+      & + .statusbar-line {
+        display: none;
+      }
+
+      & > .statusbar-label {
+        right: 0;
+      }
+    }
+
+    &:not(.first):not(.last) > .statusbar-label {
+      -ms-transform: translateX(-50%);
+    }
+
+    .success {
+      & + .statusbar-label {
+        color: $brand-primary;
+      }
+
+      &:before {
+        box-shadow: none;
+        background-color: $brand-primary;
+        background-image: url("https://cdn.esphere.ru/images/checked.svg");
+        color: $white;
+      }
+
+    }
+
+    .danger {
+      & + .statusbar-label {
+        color: $brand-danger;
+      }
+
+      &:before {
+        box-shadow: none;
+        content: "\e96b";
+        font-family: "uicons", sans-serif !important;
+        font-size: 16px;
+        color: $white;
+        background-color: $brand-danger;
+      }
+    }
+
+    .progress {
+      & + .statusbar-label {
+        color: $black-01;
+        font-weight: 500;
+      }
+
+      &:before {
+        box-shadow: none;
+        background-image: url("https://cdn.esphere.ru/images/spinner.png");
+      }
+    }
+  }
+
+  &-line {
+    display: flex;
+    flex-grow: 1;
+    align-self: flex-start;
+    height: 2px;
+    background-color: $gray;
+    margin: 8px 5px 5px 5px;
+  }
+
+  &-label {
+    position: absolute;
+    top: 50%;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 8px;
+
+    a {
+      color: inherit;
+    }
+  }
+}

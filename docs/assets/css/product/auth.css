@@ -1,0 +1,3 @@
+.radio-button-label::before,.radio-button-label::after{top:50%;transform:translateY(-50%)}.radio-button-input:checked+.radio-button-label::after{transform:translateY(-50%) scale(1)}.token-stroke{stroke:#107f8c}.token-fill{fill:#107f8c}
+
+/*# sourceMappingURL=auth.css.map */

@@ -1,0 +1,168 @@
+@import 'variables';
+
+.wrapper {
+  padding: 0 1.2rem;
+}
+
+.content-box {
+  margin-top: 0;
+  padding-top: 6rem;
+
+  &.inner-content-less-6 {
+    min-height: calc(100vh - 6rem);
+  }
+
+  &.inner-content-less-8 {
+    min-height: calc(100vh - 8.3rem);
+  }
+
+  &.inner-content-less-9 {
+    min-height: calc(100vh - 9rem);
+  }
+}
+
+.status-block {
+  margin-top: 10.4rem;
+}
+
+.index-2 {
+  z-index: 2;
+}
+
+.el-hover-black {
+
+  &:hover {
+    color: $black-03 !important;
+    transition: .2s;
+
+    * {
+      color: $black-03 !important;
+    }
+  }
+}
+
+.scroll-panel-margin-top {
+  margin-top: 8.4rem;
+}
+
+.margin-x-n16 {
+  margin-left: -1.6rem;
+  margin-right: -1.6rem;
+}
+
+.margin-bottom-64 {
+  margin-bottom: 6.4rem;
+}
+
+.margin-top-64 {
+  margin-top: 6.4rem;
+}
+
+.bg-transparent {
+  background-color: transparent !important;
+}
+
+.bg-gray-06 {
+  background-color: $black-06;
+}
+
+.bg-gray-07 {
+  background-color: $black-07;
+}
+
+.bg-gray-08 {
+  background-color: $gray-lighter;
+}
+
+.txt-largest {
+  font-size: 2.1rem;
+  line-height: 3.2rem;
+}
+
+.report-page-anchor {
+  position: relative;
+
+  .anchor {
+    position: absolute;
+    top: -6rem;
+  }
+}
+
+.box-16 {
+  background-color: $white;
+  border-radius: 1.6rem;
+  border: .2rem solid transparent;
+  margin-bottom: 2.4rem;
+  padding: 1.6rem;
+
+  &.box-shadow {
+    box-shadow: 0 .2rem .7rem rgba(#191919, .25);
+  }
+
+  &.box-default {
+    border-width: .1rem;
+    border-color: $black-05;
+  }
+
+  &.box-success {
+    border-color: $primary-02;
+  }
+}
+
+@include breakpoints-max(lg) {
+
+  body .tariff-page .wrapper, body .error-page .wrapper {
+    padding: 1.2rem 0;
+  }
+
+  .header-fixed > .content-box {
+    margin-top: 0;
+  }
+
+  .personal-box {
+
+    .button-wrapper.more:active,
+    .button-wrapper.more.active {
+
+      i {
+        color: $black-04;
+      }
+    }
+
+    button.hamburger {
+      width: 3.2rem !important;
+      height: 1.6rem;
+      min-width: 0;
+      padding: 0 .4rem;
+
+      .bar {
+        width: 2.4rem;
+        height: .2rem;
+        background-color: $black-04;
+        left: .4rem;
+      }
+
+      &:hover, &:active {
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+@include breakpoints-max(md) {
+
+  .xs-txt-16 {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+  }
+
+  .txt-larger {
+    line-height: 2.4rem;
+    font-weight: 500;
+  }
+
+  .xs-txt-small {
+    font-size: 1.2rem !important;
+    line-height: 1.6rem;
+  }
+}

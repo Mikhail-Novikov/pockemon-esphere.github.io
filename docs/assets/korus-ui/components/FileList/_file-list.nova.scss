@@ -1,0 +1,152 @@
+.file-list {
+  &.table table {
+    border-spacing: 0 16px;
+    margin-bottom: -16px;
+  }
+  &-subtitle {
+    display: block;
+    font-size: 12px;
+    line-height: 18px;
+    color: $gray-dark;
+  }
+  &-name {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &-icon {
+    &::before {
+      background-image: url(https://cdn.esphere.ru/images/nova/dropzone/icon-img.svg);
+      @extend %file-icon;
+    }
+    &-1c,
+    &-1-c {
+      &::before {
+        background-image: url(https://cdn.esphere.ru/images/nova/dropzone/icon-1c.svg);
+        @extend %file-icon;
+      }
+    }
+    &-csv::before {
+      background-image: url(https://cdn.esphere.ru/images/nova/dropzone/icon-csv.svg);
+      @extend %file-icon;
+    }
+    &-doc::before {
+      background-image: url(https://cdn.esphere.ru/images/nova/dropzone/icon-doc.svg);
+      @extend %file-icon;
+    }
+    &-xls::before {
+      background-image: url(https://cdn.esphere.ru/images/nova/dropzone/icon-xls.svg);
+      @extend %file-icon;
+    }
+    &-xml::before {
+      background-image: url(https://cdn.esphere.ru/images/nova/dropzone/icon-xml.svg);
+      @extend %file-icon;
+    }
+    &-pdf::before {
+      background-image: url(https://cdn.esphere.ru/images/nova/dropzone/icon-pdf.svg);
+      @extend %file-icon;
+    }
+  }
+  &-tag {
+    background-color: transparent;
+    box-sizing: border-box;
+    display: inline-block;
+    line-height: 20px;
+    margin-left: 13px;
+    padding: 0;
+    position: relative;
+    vertical-align: middle;
+    &::before {
+      background: $black-04;
+      border-radius: 50%;
+      content: "";
+      display: block;
+      height: 8px;
+      left: -13px;
+      margin: 6px 0;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      width: 8px;
+    }
+    &.success::before {
+      background-color: var(--brand-hover-color);
+    }
+    &.danger::before {
+      background-color: $error-03;
+    }
+  }
+  .button-wrapper {
+    color: $black-04;
+    min-width: 20px;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+    &:hover, &:focus, &:active {
+      color: $black-03;
+    }
+    &:focus {
+      padding: 0;
+    }
+    &:disabled {
+      color: $black-05;
+      cursor: not-allowed;
+    }
+  }
+  button.more:not(.blank):focus {
+    padding: 0;
+  }
+  &-download {
+    @extend %button-icon;
+    &::before {
+      content: "\e97d";
+    }
+  }
+  &-delete {
+    @extend %button-icon;
+    &::before {
+      content: "\e97c";
+    }
+  }
+
+  & td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &.with-button {
+      text-overflow: clip;
+    }
+
+    & .file-list-subtitle {
+      white-space: normal;
+    }
+
+    &[colspan="2"]:last-of-type {
+      text-align: right;
+    }
+  }
+}
+
+%file-icon {
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  content: "";
+  display: block;
+  height: 42px;
+  width: 38px;
+}
+
+%button-icon {
+  font-family: 'prodicon' !important;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  speak: none;
+  text-transform: none;
+  vertical-align: middle;
+}

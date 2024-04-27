@@ -1,0 +1,399 @@
+$lightbox-width: 1000px;
+$lightbox-large-width: 1122px;
+$overlay-sm: 480px;
+$overlay-md: 600px;
+$overlay-lg: 800px;
+$overlay-type: (
+  'sm' $overlay-sm 525px 85%,
+  'md' $overlay-md 684px 90%,
+  'lg' $overlay-lg 848px 95%,
+);
+
+%common-controls {
+  position: fixed;
+  z-index: $zindex-lightbox-controls;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  cursor: pointer;
+}
+
+%common-controls-mobile {
+  display: block;
+  position: static;
+  transform: none;
+  width: 32px;
+  height: 32px;
+  z-index: $zindex-lightbox-controls-mobile;
+
+  label {
+    display: none;
+  }
+}
+
+%common-arrows {
+  width: 64px;
+  height: 64px;
+
+  @media (max-width: 1211px) {
+    display: none;
+  }
+
+  &:hover {
+    opacity: .8;
+  }
+}
+
+%common-arrow-labels {
+  position: absolute;
+  color: white;
+  cursor: pointer;
+}
+
+.light-box {
+  $self: &;
+
+  &-wrapper-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    min-height: 100%;
+    overflow-y: scroll;
+    background-color: $base-56;
+    z-index: $zindex-lightbox-wrapper-bg;
+  }
+
+  &-no-overflow {
+    overflow: hidden;
+  }
+
+  &-window {
+    min-height: 100vh;
+    width: $lightbox-width;
+
+    @media (max-width: 1024px) {
+      width: 100%;
+    }
+
+    z-index: $zindex-lightbox-window;
+    margin: 0 auto;
+    box-shadow: 0 2px 10px 1px $base-2;
+    background-color: $white;
+    height: 100%;
+  }
+
+  &-cross {
+    @extend %common-controls;
+    top: 16px;
+    right: calc((100vw - #{$lightbox-width}) / 2 - 8px);
+    transform: translateX(100%);
+    width: 32px;
+    height: 32px;
+    background-image: url("https://cdn.esphere.ru/images/close.svg");
+
+    &-main {
+      @media (max-width: 1211px) {
+        display: none;
+      }
+    }
+  }
+
+  &-prev-arrow {
+    @extend %common-controls;
+    @extend %common-arrows;
+    top: calc(100vh / 2);
+    left: calc(((100vw - #{$lightbox-width}) / 2) - 20px);
+    transform: translateX(-100%);
+    background-image: url("https://cdn.esphere.ru/images/nova/arrow-left.svg");
+
+    &.with-labels {
+      left: calc(((100vw - #{$lightbox-width}) / 2) - 86px);
+    }
+
+    > label {
+      @extend %common-arrow-labels;
+      left: 80px;
+    }
+  }
+
+  &-next-arrow {
+    @extend %common-controls;
+    @extend %common-arrows;
+    top: calc(100vh / 2);
+    right: calc(((100vw - #{$lightbox-width}) / 2) - 12px);
+    transform: translateX(100%);
+    background-image: url("https://cdn.esphere.ru/images/nova/arrow-right.svg");
+
+    &.with-labels {
+      right: calc(((100vw - #{$lightbox-width}) / 2) - 60px);
+    }
+
+    > label {
+      @extend %common-arrow-labels;
+      right: 70px;
+    }
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background-color: $white;
+    position: relative;
+  }
+
+  &-body {
+    background: $white;
+    flex: 1 0 auto;
+
+    //поддержка футера в IE - отступ, чтобы футер не перекрывал контент
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      padding-bottom: 11rem;
+    }
+  }
+
+  &-heading,
+  &-alert {
+    padding: 24px 32px;
+    background: $modal-header-footer-bg;
+
+    &.fixed {
+      position: sticky;
+      z-index: $zindex-lightbox-heading-fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+
+    .list-h > li {
+      padding: 0;
+
+      &:not(:last-child) {
+        margin-right: 16px;
+      }
+    }
+  }
+
+  &-mobile-controls {
+    align-items: center;
+    background: $black-02;
+    border-bottom: 1px solid $black-02;
+    display: flex;
+    justify-content: flex-start;
+    padding: 24px 32px;
+
+    @media (min-width: 1212px) {
+      display: none;
+    }
+
+    #{$self}-cross {
+      @extend %common-controls-mobile;
+      margin-left: auto;
+    }
+
+    #{$self}-prev-arrow {
+      @extend %common-controls-mobile;
+      margin-right: 16px;
+    }
+
+    #{$self}-next-arrow {
+      @extend %common-controls-mobile;
+    }
+  }
+
+  &-footer {
+    padding: 24px 32px;
+    text-align: right;
+    background: $modal-header-footer-bg;
+    margin-top: auto;
+    flex: 0 0 auto;
+
+    //поддержка футера в IE
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+
+    &.fixed {
+      position: sticky;
+      z-index: $zindex-lightbox-footer-fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    .list-h > li {
+      padding: 0;
+
+      &:not(:last-child) {
+        margin-right: 16px;
+      }
+    }
+  }
+
+  &-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    min-height: 100%;
+    overflow-y: scroll;
+    z-index: $zindex-lightbox-overlay;
+
+
+    .light-box-heading {
+      padding-right: 52px;
+    }
+
+    .light-box-content {
+      box-shadow: -17px 0px 20px $base-15;
+      margin-left: auto;
+      min-height: 100vh;
+
+      .light-box-cross {
+        position: absolute;
+        right: 52px;
+        width: 20px;
+        height: 20px;
+        top: 30px;
+        background-image: url(https://cdn.esphere.ru/images/nova/close-small.svg);
+      }
+
+      &-wrapper {
+        position: absolute;
+        top: 0;
+        right: 50%;
+        width: 1000px;
+        transform: translateX(50%);
+        min-height: 100%;
+        @media (max-width: 1024px) {
+          width: 100%;
+        }
+
+        &.overlay-bg {
+          background-color: rgba($white, .8);
+        }
+      }
+    }
+
+    @each $overlay-size, $content-width, $screen-width-media, $content-width-media in $overlay-type {
+      &.#{$overlay-size} .light-box-content {
+        width: $content-width;
+        @media (max-width: $screen-width-media) {
+          width: $content-width-media;
+        }
+      }
+    }
+  }
+
+  &-alert {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    box-shadow: 0 13px 17px 0 rgba(0, 0, 0, .14);
+    padding: 24px 32px;
+    z-index: $zindex-lightbox-alert;
+
+    h2 {
+      padding-right: 24px;
+    }
+
+    .light-box-cross {
+      position: absolute;
+      top: 24px;
+      right: 52px;
+      width: 20px;
+      height: 20px;
+      background-image: url(https://cdn.esphere.ru/images/nova/close-small.svg);
+      z-index: $zindex-lightbox-cross;
+    }
+
+    &.danger {
+      background-color: $error-05;
+      border-bottom-color: $error-02;
+    }
+
+    &.warning {
+      background-color: $accent-05;
+      border-bottom-color: $accent-02;
+    }
+
+    &.info {
+      background-color: $secondary-05;
+      border-bottom-color: $secondary-03;
+    }
+
+    &.success {
+      background-color: $primary-05;
+      border-bottom-color: var(--brand-color);
+    }
+
+    &-overlay {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(255, 255, 255, .8);
+      z-index: $zindex-lightbox-alert-overlay;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+
+  .light-box-wrapper .window-content,
+  .light-box-heading,
+  .light-box-footer,
+  .light-box-mobile-controls {
+    padding: 16px;
+
+    .light-box-cross {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .light-box-overlay .light-box-content .light-box-cross,
+  .light-box-alert .light-box-cross {
+    right: 36px;
+    top: 22px;
+  }
+}
+
+@media (min-width: 1212px) {
+
+  .light-box {
+
+    &-cross {
+      right: calc((100vw - #{$lightbox-large-width}) / 2 - 12px);
+    }
+
+    &-prev-arrow {
+      left: calc(((100vw -  #{$lightbox-large-width}) / 2) - 20px);
+
+      &.with-labels {
+        left: calc(((100vw -  #{$lightbox-large-width}) / 2) - 86px);
+      }
+    }
+
+    &-next-arrow {
+      right: calc(((100vw -  #{$lightbox-large-width}) / 2) - 12px);
+  
+      &.with-labels {
+        right: calc(((100vw -  #{$lightbox-large-width}) / 2) - 60px);
+      }
+    }
+  }
+
+  .light-box-wrapper .light-box-window,
+  .light-box-wrapper .light-box-content,
+  .light-box-overlay .light-box-content-wrapper {
+    width: $lightbox-large-width;
+  }
+}
+

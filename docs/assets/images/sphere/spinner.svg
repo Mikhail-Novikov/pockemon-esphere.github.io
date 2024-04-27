@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <linearGradient x1="50%" y1="87.4747728%" x2="50%" y2="-0.904841653%" id="linearGradient-1">
+            <stop stop-color="#9BCC90" offset="0%"></stop>
+            <stop stop-color="#FAFCF9" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="87.3375934%" x2="50%" y2="0%" id="linearGradient-2">
+            <stop stop-color="#9BCC90" offset="0%"></stop>
+            <stop stop-color="#3A9B28" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M14,21.7112001 C18.5161219,20.7860078 21.9130435,16.7897007 21.9130435,12 C21.9130435,7.76547143 19.2334184,4.04009538 15.3057857,2.65123426 C14.7624577,2.45910654 14.4777536,1.86290187 14.6698813,1.31957386 C14.8620091,0.776245861 15.4582137,0.491541783 16.0015417,0.683669508 C20.7566464,2.36513528 24,6.87424069 24,12 C24,17.9459926 19.6754267,22.8819269 14,23.8340831 L14,21.7112001 Z" id="Oval-3-Copy-21" fill="url(#linearGradient-1)" fill-rule="nonzero" />
+        <path d="M14,21.7112001 C13.3540108,21.8435403 12.6851221,21.9130435 12,21.9130435 C6.52517726,21.9130435 2.08695652,17.4748227 2.08695652,12 C2.08695652,6.52517726 6.52517726,2.08695652 12,2.08695652 C12.5762971,2.08695652 13.0434783,1.61977539 13.0434783,1.04347826 C13.0434783,0.467181131 12.5762971,0 12,0 C5.372583,0 0,5.372583 0,12 C0,18.627417 5.372583,24 12,24 C12.6814244,24 13.3495831,23.9432024 14,23.8340831 L14,21.7112001 Z" id="Oval-3-Copy-19" fill="url(#linearGradient-2)" fill-rule="nonzero" />
+    </g>
+</svg>

@@ -1,0 +1,23 @@
+.rating {
+  &-wrapper {
+    display: inline-flex;
+  }
+
+  &-item {
+    cursor: pointer;
+
+    &::after {
+      display: block;
+      content: '\e949';
+      color: $black-03;
+      width: 40px;
+      font-size: 40px;
+      height: 40px;
+      font-family: 'uicons', sans-serif;
+    }
+
+    &.filled::after {
+      color: $brand-warning;
+    }
+  }
+}

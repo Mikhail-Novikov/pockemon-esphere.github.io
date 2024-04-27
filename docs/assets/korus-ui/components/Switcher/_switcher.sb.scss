@@ -1,0 +1,73 @@
+.switcher {
+  &-handle {
+    cursor: pointer;
+    border-radius: 50%;
+    display: block;
+    transition: all 0.1s linear;
+    height: 14px;
+    width: 14px;
+    border: 1px solid $gray;
+    box-shadow: none;
+    background: $white;
+  }
+
+  &-label:not(:empty) {
+    margin-left: 12px;
+    user-select: none;
+  }
+
+  &-wrapper {
+    vertical-align: middle;
+    display: inline-block;
+    cursor: pointer;
+    background: $white;
+    border: 1px solid $gray;
+    padding: 2px;
+    border-radius: 10px;
+    width: 39px;
+    user-select: none;
+
+    &:hover {
+      border-color: $base-15;
+
+      .switcher-handle {
+        background: $gray-light;
+        border-color: $gray;
+      }
+    }
+
+    &:active {
+      box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.06);
+    }
+
+    &.active {
+      background: $white;
+      border-color: $gray;
+
+      .switcher-handle {
+        transform: translateX(100%);
+        background: #359b1d;
+        border-color: $gray;
+      }
+
+      &:hover {
+        border-color: $base-15;
+      }
+    }
+
+    &.disabled {
+      pointer-events: none;
+      border-color: $base-15 !important; // из-за хелперов ui-kit
+      background: $white !important;
+    }
+
+    &.active.disabled {
+      background: $white !important;
+
+      .switcher-handle {
+        background: rgba(#359b1d, 0.5);
+        border-color: transparent;
+      }
+    }
+  }
+}

@@ -1,0 +1,217 @@
+.dropdownselect {
+
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &.wide-list {
+
+      .suggestion-wrapper {
+        width: 200px;
+      }
+    }
+
+    &.large {
+
+      .dropdownselect-input-wrapper {
+        @extend %input-large;
+      }
+    }
+  }
+
+  &-input-wrapper {
+    @extend %input-wrapper;
+    padding: 0;
+    align-items: center;
+
+    &:not(.focused):not(.danger):not(.disabled):hover {
+      @extend %input-hovered;
+    }
+
+    &:not(.focused):not(.disabled).danger {
+      border-color: $brand-danger;
+    }
+
+    &.focused {
+      @extend %input-focused;
+    }
+
+    &.disabled {
+      @extend %input-disabled;
+
+      & .dropdownselect-select-icon {
+        cursor: default;
+      }
+    }
+  }
+
+  &-input {
+    border: none;
+    width: 100%;
+    padding: 5px 4px 6px 12px;
+    text-overflow: ellipsis;
+    background-color: rgba(0, 0, 0, 0);
+    font-family: inherit;
+    font-size: 14px;
+
+    &[readonly] {
+      cursor: pointer;
+    }
+
+    &::placeholder {
+      color: $black-03;
+    }
+
+    &:disabled {
+      -webkit-text-fill-color: $black-03;
+    }
+  }
+
+  &-clear-icon {
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    position: relative;
+    font-family: "prodicon";
+    color: $black-03;
+
+    &::before {
+      content: "\e995";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &-select-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    position: relative;
+    transition: transform .2s linear;
+
+    &.opened::before {
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    &::before {
+      content: "\e998";
+      font-family: "prodicon";
+      font-size: 16px;
+      position: absolute;
+      top: 50%;
+      right: 11px;
+      transform: translateY(-50%) rotate(0);
+      transition: transform .3s;
+    }
+  }
+
+  &-filter {
+
+    &-wrapper {
+      @extend %input;
+      @extend %input-focused;
+      display: flex;
+      justify-content: space-between;
+      padding: 3px 4px 3px 12px;
+      margin: 5px 2px;
+    }
+
+    &-input {
+      border: none;
+      width: 100%;
+      font-size: 14px;
+    }
+
+    &-icon {
+      @extend %common-dropdown-icon;
+      @extend %input-icon-search;
+      padding: 2px 5px 0 0;
+      color: $black-03;
+    }
+  }
+
+  &-suggestions {
+
+    &-container {
+      @extend %suggestions-container;
+
+      &.opened {
+        @extend %suggestions-container-opened;
+      }
+    }
+
+    &-list {
+      @extend %suggestions-container-list;
+    }
+  }
+
+  &-suggestion {
+    @extend %suggestion;
+
+    &.placeholder {
+      @extend %suggestion-placeholder;
+    }
+
+    &.selected {
+      @extend %suggestion-selected;
+    }
+  }
+}
+
+// условие для дропа внутри списочной формы
+
+ul[class*=list] {
+
+  .dropdownselect {
+
+    &-wrapper {
+
+      ul {
+        padding: 0;
+        list-style-type: none;
+      }
+    }
+  }
+}
+
+// loading .dropdownselect-select
+
+.loading-input {
+
+  .dropdownselect-select-icon {
+
+    &.opened {
+      transform: none;
+    }
+
+    &::before {
+      left: 11px;
+      width: 20px;
+      height: 20px;
+      font-size: 0;
+      background-repeat: no-repeat;
+      background-image: $loader-element-item;
+      background-size: contain;
+      animation: rotate-clockwise 1s linear infinite;
+    }
+  }
+
+  .dropdownselect-clear-icon {
+    display: none;
+  }
+}
+
+@keyframes rotate-clockwise {
+
+  from {
+    transform: translateY(-50%) rotate(0);
+  }
+
+  to {
+    transform: translateY(-50%) rotate(1turn);
+  }
+}

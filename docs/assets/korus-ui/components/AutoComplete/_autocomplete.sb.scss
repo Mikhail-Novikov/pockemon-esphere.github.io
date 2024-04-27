@@ -1,0 +1,60 @@
+.autocomplete {
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    > .uicon-close {
+      position: absolute;
+      right: 5px;
+      top: 5px;
+    }
+
+    &.large {
+      .autocomplete-input {
+        @extend %input-large;
+      }
+    }
+  }
+
+  &-input {
+    @extend %input;
+
+    &.focused {
+      @extend %input-focused;
+    }
+
+    &:hover {
+      @extend %input-hovered;
+    }
+
+    &:not(.focused):not(:disabled).danger {
+      border-color: $brand-danger;
+    }
+
+    &:disabled {
+      background-color: inherit;
+      border-color: $gray;
+    }
+  }
+
+  &-suggestions-container {
+    @extend %suggestions-container;
+
+    &.opened {
+      @extend %suggestions-container-opened;
+    }
+  }
+
+  &-suggestions-list {
+    @extend %suggestions-container-list;
+  }
+
+  &-suggestion {
+    @extend %suggestion;
+
+    &.highlighted {
+      @extend %suggestion-highlighted;
+    }
+  }
+}

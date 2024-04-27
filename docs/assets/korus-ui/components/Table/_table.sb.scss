@@ -1,0 +1,149 @@
+.table {
+  border-width: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &.table-block {
+    display: block;
+  }
+
+  .table-container {
+    display: flex;
+    flex: 1 1 auto;
+    overflow: hidden;
+  }
+
+  table {
+    margin: 0;
+    width: 100%;
+    max-width: none;
+    border-width: 0;
+    border-color: inherit;
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    outline: 0;
+    table-layout: fixed;
+  }
+
+  thead,
+  tbody,
+  tfoot {
+    text-align: left;
+    border-color: $black-06;
+  }
+
+  tbody {
+    border-bottom: 1px solid $black-06;
+  }
+
+  tfoot {
+    border-top: 1px solid $black-06;
+  }
+
+  tr {
+    border-color: inherit;
+
+    &.disabled {
+      @extend %tr-disabled;
+    }
+  }
+
+  tbody tr:hover {
+    background-color: $black-07;
+  }
+
+  th,
+  td {
+    padding: 12px;
+    border-style: solid;
+    border-color: inherit;
+    outline: 0;
+    font-weight: inherit;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  th {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: $black-03;
+    line-height: 1.3;
+    text-transform: uppercase;
+    text-align: left;
+  }
+
+  .table-header {
+    border-bottom-width: 1px;
+    border-top-width: 1px;
+  }
+
+  .table-header tr:first-child th,
+  .table-content tr:first-child td,
+  .table-content-locked tr:first-child td {
+    border-top-width: 0;
+  }
+
+  .table-header,
+  td,
+  .table-footer {
+    border-color: $border;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  .middle td {
+    vertical-align: middle;
+  }
+
+  .top td {
+    vertical-align: top;
+  }
+
+  .bottom td {
+    vertical-align: bottom;
+  }
+
+  &.zebra {
+    width: 100%;
+    background: $white;
+
+    caption {
+      text-align: left;
+      font-style: italic;
+      font-size: 13px;
+      color: $black-05;
+    }
+
+    th,
+    td {
+      word-wrap: break-word;
+    }
+
+    th,
+    thead {
+      color: $black-03;
+    }
+
+    td {
+      border-top: 1px solid $white;
+    }
+
+    tbody tr:nth-child(odd) td {
+      background-color: rgba($black-01, .03);
+    }
+
+    td:first-child {
+      border-left: 2px solid transparent;
+    }
+
+    .focus {
+      background-color: $base-focus;
+    }
+  }
+}

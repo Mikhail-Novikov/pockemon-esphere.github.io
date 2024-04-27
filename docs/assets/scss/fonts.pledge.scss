@@ -1,0 +1,235 @@
+/* Menu & Control
+----------------------------------------------------------------------------- Menu & Control */
+
+@font-face {
+  font-family: 'pledge-icons';
+  src:  url('https://cdn.esphere.ru/fonts/black/icons/pledge-icons.woff2') format('woff2'),
+        url('https://cdn.esphere.ru/fonts/black/icons/pledge-icons.woff?r7yxgt') format('woff'),
+        url('https://cdn.esphere.ru/fonts/black/icons/pledge-icons.ttf?r7yxgt') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="picon-"], [class*=" picon-"] {
+  font-family: 'pledge-icons' !important;
+  speak: none;
+  position: relative;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="picon-"].big, [class*=" picon-"].big,
+[class^="caticon-"].big, [class*=" caticon-"].big {
+  font-size: 7rem;
+}
+
+.button [class^="picon-"], .button [class*=" picon-"] {
+  font-size: 2rem;
+  margin-left: .5rem;
+}
+
+.picon-back_one_step:before {
+  content: "\e900";
+}
+.picon-show_stack:before {
+  content: "\e901";
+}
+.picon-hide_stack:before {
+  content: "\e902";
+}
+.picon-active_apps:before {
+  content: "\e903";
+}
+.picon-completed_apps:before {
+  content: "\e904";
+}
+.picon-clients:before {
+  content: "\e905";
+}
+.picon-users:before {
+  content: "\e906";
+}
+.picon-dashboard:before {
+  content: "\e907";
+}
+.picon-settings:before {
+  content: "\e908";
+}
+.picon-appearance:before {
+  content: "\e909";
+}
+.picon-filter:before {
+  content: "\e90a";
+}
+.picon-add_new_app:before {
+  content: "\e90b";
+}
+.picon-new_app:before {
+  content: "\e90c";
+}
+.picon-collateral_discription:before {
+  content: "\e90d";
+}
+.picon-doc_analisys:before {
+  content: "\e90e";
+}
+.picon-inspection:before {
+  content: "\e90f";
+}
+.picon-valuation:before {
+  content: "\e910";
+}
+.picon-control:before {
+  content: "\e911";
+}
+.picon-edit:before {
+  content: "\e912";
+}
+.picon-delete_entity:before {
+  content: "\e913";
+}
+
+.picon-info_micro:before {
+  content: "\e914";
+}
+
+.picon-success:before {
+  content: "\e915";
+}
+
+.picon-calendar:before {
+  content: "\e916";
+}
+
+.picon-calendar_mini:before {
+  content: "\e917";
+}
+
+.picon-group:before {
+  content: "\e918";
+}
+
+.picon-reassign:before {
+  content: "\e919";
+}
+
+.picon-link:before {
+  content: "\e91a";
+}
+
+.picon-valuation-small:before {
+  content: "\e91b";
+}
+
+.picon-upload:before {
+  content: "\e91c";
+}
+
+.picon-add_user:before {
+  content: "\e91d";
+}
+
+.picon-locked:before {
+  content: "\e91e";
+}
+
+.picon-unlocked:before {
+  content: "\e91f";
+}
+
+.picon-chat:before {
+  content: "\e920";
+}
+
+.picon-expand:before {
+  content: "\e921";
+}
+
+
+.count-days .picon-calendar_mini {
+  font-size: 1.8rem;
+  position: relative;
+  top: 3px;
+}
+
+.k-widget [class^="picon-"] {
+  font-size: 2.5rem;
+}
+
+label .picon-info_micro {
+  content: "\e914";
+  color: #fff;
+  float: right;
+  line-height: 2rem;
+  background: #474b4d;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  margin-left: .5rem;
+}
+
+label .picon-info_micro:before {
+  position: absolute;
+  left: -5px;
+}
+
+/* Categories
+----------------------------------------------------------------------------- Categories */
+
+@font-face {
+  font-family: 'categories';
+  src:  url('https://cdn.esphere.ru/fonts/black/icons/categories.woff2') format('woff2'),
+        url('https://cdn.esphere.ru/fonts/black/icons/categories.woff?2fajjp') format('woff'),
+        url('https://cdn.esphere.ru/fonts/black/icons/categories.ttf?2fajjp') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="caticon-"], [class*=" caticon-"] {
+  font-family: 'categories' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.caticon-specialized_vehicle:before {
+  content: "\e900";
+}
+.caticon-cars:before {
+  content: "\e901";
+}
+.caticon-trucks:before {
+  content: "\e902";
+}
+.caticon-street_retail:before {
+  content: "\e903";
+}
+.caticon-warehouses:before {
+  content: "\e904";
+}
+.caticon-offices:before {
+  content: "\e905";
+}
+.caticon-apartment_house:before {
+  content: "\e906";
+}
+.caticon-malls:before {
+  content: "\e907";
+}
+.caticon-land:before {
+  content: "\e908";
+}
+.caticon-property_rights:before {
+  content: "\e909";
+}

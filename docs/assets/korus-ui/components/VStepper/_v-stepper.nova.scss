@@ -1,0 +1,306 @@
+.v-stepper {
+  &-wrapper {
+    counter-reset: step;
+  }
+
+  &-icon {
+    background-color: $white;
+    border-radius: 100%;
+    border: 2px solid transparent;
+    margin: 20px 0;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0px 2px 7px rgba(31, 31, 34, 0.08);
+    z-index: $zindex-v-stepper-icon;
+
+    &::before {
+      color: $black-04;
+      font-style: normal;
+      font-size: 14px;
+      text-transform: none;
+      text-align: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 24px;
+      line-height: 21px;
+      z-index: $zindex-v-stepper-icon-before;
+      counter-increment: step;
+      content: counter(step);
+    }
+
+    &::after {
+      font-family: 'novicon', sans-serif;
+      font-size: 20px;
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 24px;
+      color: $white;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  }
+
+  &-step {
+    padding-left: 32px;
+    margin-bottom: 16px;
+    border-radius: 16px;
+    background-color: $black-07;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    border: 1px solid $black-07;
+
+    &:last-child .v-stepper-line {
+      border-left: 0;
+      height: 0;
+    }
+
+    &.active {
+      border: 1px solid $black-05;
+    }
+
+    &.disabled {
+      .v-stepper-title, .v-stepper-status, .v-stepper-heading-icon {
+        color: $black-04 !important;
+      }
+    }
+
+    &:hover:not(.active):not(.disabled) {
+      background-color: $black-06;
+      border-color: $black-06;
+    }
+
+    &.danger,
+    &.success {
+      .v-stepper-icon::before {
+        color: $white;
+      }
+    }
+
+    &.danger, &.success  {
+      .v-stepper-icon.sign-stop, .v-stepper-icon.sign-check {
+        &::before {
+          visibility: hidden;
+        }
+      }
+    }
+
+    &.danger .v-stepper-icon.sign-stop::after {
+      content: '\e96b';
+    }
+
+    &.success .v-stepper-icon.sign-check::after {
+      content: '\e96c';
+    }
+
+    &.danger {
+      .v-stepper-status {
+        color: $brand-danger;
+      }
+
+      .v-stepper-icon {
+        background-color: $brand-danger;
+      }
+
+      .v-stepper-circle {
+        background-color: $brand-danger;
+        border-color: $brand-danger;
+      }
+
+      &.stop .v-stepper-circle {
+        &::after {
+          content: "\e96b";
+        }
+        &:before {
+          visibility: hidden;
+        }
+      }
+    }
+
+    &.success {
+      .v-stepper-status {
+        color: var(--brand-color);
+      }
+
+      .v-stepper-icon {
+        background-color: var(--brand-color);
+      }
+
+      .v-stepper-circle {
+        background-color: var(--brand-color);
+        border-color: var(--brand-color);
+      }
+
+      &.check .v-stepper-circle {
+        &::after {
+          content: "\e96c";
+        }
+        &:before {
+          visibility: hidden;
+        }
+      }
+    }
+
+    &.progress {
+      .v-stepper-icon {
+        border: 2px solid var(--brand-color);
+        &:before {
+          color: var(--brand-color);
+        }
+      }
+
+      .v-stepper-circle {
+        background-color: var(--brand-color);
+        border-color: var(--brand-color);
+      }
+    }
+
+    &.warning {
+      .v-stepper-status {
+        color: $accent-02;
+      }
+
+      .v-stepper-icon {
+        border: 2px solid $brand-warning;
+        &:before {
+          color: $brand-warning;
+        }
+      }
+
+      .v-stepper-circle {
+        background-color: $brand-warning;
+        border-color: $brand-warning;
+      }
+    }
+
+    &:not(.success):not(.danger):not(.warning) .v-stepper-status {
+      color: $gray-dark;
+    }
+  }
+
+  &-sign {
+    position: relative;
+  }
+
+  &-circle {
+    border-radius: 100%;
+    background-color: $black-05;
+    margin: 1.7rem 0;
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+    text-align: center;
+    z-index: $zindex-v-stepper-circle;
+    color: $white;
+    &::before {
+      font-family: "Roboto";
+      font-style: normal;
+      font-size: 1.4rem;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      text-align: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2rem;
+      line-height: 2rem;
+      z-index: $zindex-v-stepper-circle-before;
+      counter-increment: step;
+      content: counter(step);
+    }
+    &::after {
+      display: inline-block;
+      font-family: 'novicon' !important;
+      speak: none;
+      font-size: 1.4rem;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1.5;
+      vertical-align: top;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  }
+
+  &-line {
+    border-left: 2px solid $black-05;
+    top: 48px;
+    left: 50%;
+    margin-left: -1px;
+    position: absolute;
+    height: calc(100% - 14px);
+    z-index: $zindex-v-stepper-line;
+    &.success,
+    &.progress {
+      border-left-color: var(--brand-color);
+    }
+    &.danger {
+      border-left-color: $brand-danger;
+    }
+    &.warning {
+      border-left-color: $brand-warning;
+    }
+  }
+
+  &-content-wrapper {
+    padding: 0 0 0 24px;
+    width: 100%;
+  }
+
+  &-heading {
+    height: 64px;
+    line-height: 64px;
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+  }
+
+  &-title {
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  &-status {
+    margin-right: 64px;
+  }
+
+  &-heading-icon {
+    &::after {
+      content: '\e908';
+      font-family: 'novicon', sans-serif;
+      font-size: 20px;
+      vertical-align: middle;
+      position: absolute;
+      top: 0;
+      right: 32px;
+      transform: rotate(0deg);
+      transition: transform 0.3s;
+    }
+
+    &.open::after {
+      transform: rotate(-180deg);
+    }
+  }
+
+  &-content {
+    border-top: 1px solid $black-05;
+    padding: 24px 32px 24px 0;
+  }
+
+  &-ending {
+    border-top: 1px solid $black-05;
+    padding: 24px 32px 24px 0;
+    text-align: right;
+  }
+}

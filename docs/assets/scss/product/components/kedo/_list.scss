@@ -1,0 +1,78 @@
+.division-tree {
+
+  a:active,
+  a:hover,
+  .link-tree-item a,
+  .link-tree-item.current > a:hover {
+    color: $black-01;
+  }
+
+  .link-tree-item {
+
+    a {
+      padding-bottom: .8rem;
+    }
+
+    &.current > a {
+      font-weight: normal;
+    }
+
+    &.last a::after {
+      content: none;
+    }
+  }
+
+  .link-tree-icon {
+    left: 0;
+  }
+}
+
+.list {
+
+  & > dt:not(.checkbox-term),
+  & > dd,
+  & > li,
+  &-item > li,
+  &-check > li,
+  &-tree > li {
+    padding-top: .6rem;
+    line-height: 2rem;
+  }
+}
+
+.form {
+
+  &[class*="list"] dt > label {
+    margin-top: 1px;
+  }
+}
+
+.filter {
+
+  .list > dd {
+    padding: 0;
+  }
+}
+
+.link-tree-item {
+  word-break: break-word;
+}
+
+.list-separated {
+
+  > li:not(:first-child) {
+
+    &::before {
+
+      content: "·";
+      margin-right: .6rem;
+    }
+  }
+
+  > li {
+
+    margin-right: .6rem;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}

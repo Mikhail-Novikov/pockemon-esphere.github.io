@@ -1,0 +1,35 @@
+.checkboxtree {
+  &-list {
+    padding-left: 24px;
+    position: relative;
+    .checkbox-wrapper {
+      margin-bottom: 8px;
+    }
+  }
+  &-icon {
+    cursor: pointer;
+    font-family: 'prodicon' !important;
+    font-size: 16px;
+    left: 0;
+    line-height: 24px;
+    position: absolute;
+    transition-duration: .2s;
+    &::before {
+      content: "\e998";
+    }
+    &-expanded {
+      transform: rotate(180deg);
+    }
+  }
+
+  &-item {
+    .checkboxtree-list {
+      display: none;
+    }
+    &.opened {
+      & > .checkboxtree-list {
+        display: block;
+      }
+    }
+  }  
+}

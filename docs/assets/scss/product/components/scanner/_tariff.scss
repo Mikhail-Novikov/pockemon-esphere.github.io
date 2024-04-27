@@ -1,0 +1,102 @@
+@import 'variables';
+
+/* tarrif page
+--------------------*/
+
+.select-tariff {
+
+  &-item {
+    min-height: 5rem;
+  }
+}
+
+.offer-tariff {
+  box-shadow: $shadow;
+  border-color: $primary-02;
+}
+
+.tariff-layout {
+
+  .cards {
+    border-radius: 1.6rem;
+    border: 1px solid $black-05;
+    background: $white;
+    box-shadow: 0 1px .3rem 0 rgba(31, 31, 34, .25);
+    padding: 0;
+  }
+}
+
+@include breakpoints-max(sm) {
+
+  .tariff-layout {
+
+    .txt-large {
+      font-size: 1.4rem;
+      line-height: 1.8rem;
+    }
+
+    h2, .h2 {
+      font-size: 1.6rem;
+      line-height: 2rem;
+
+      > span {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+      }
+    }
+
+    .cards .list-space-large li:not(:last-child) {
+      margin-bottom: .2rem;
+    }
+  }
+}
+
+@include breakpoints-min(md) {
+
+  .tariff-layout {
+
+    .sup {
+      font-size: 1.4rem;
+      height: auto;
+      padding: .2rem 1.2rem;
+      top: -1rem;
+      right: 4rem;
+      transform: translateX(0);
+    }
+
+    .wrapper-base {
+      padding: 2.4rem 3.2rem;
+    }
+  }
+}
+
+@include breakpoints-min(lg) {
+
+  .tariff-layout {
+
+    .cards {
+
+      &-tariff-footer {
+        min-height: 12.8rem;
+      }
+    }
+  }
+}
+
+@include breakpoints-min(xxl) {
+
+  /* tariff - min1400 laptop
+  ----------------------------------------------------------------------------- */
+
+  .tariff-layout {
+
+    .cards {
+
+      min-height: 60rem;
+
+      &-tariff-footer {
+        min-height: 7.2rem;
+      }
+    }
+  }
+}

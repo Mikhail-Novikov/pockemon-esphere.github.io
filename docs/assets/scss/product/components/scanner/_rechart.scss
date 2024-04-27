@@ -1,0 +1,127 @@
+@import 'variables';
+
+.base-chart-donut-wrapper {
+  position: relative;
+}
+
+.base-chart-donut-value {
+  position: absolute!important;
+  right: 50%;
+  top: 50%;
+  height: 5rem;
+  min-width: 10rem;
+  margin-right: -5rem;
+  margin-top: -2rem;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 500;
+}
+
+.fundchanges-k-chart {
+  height: 30rem;
+}
+
+.bar-chart {
+  width: 100%;
+  margin: 0 auto;
+  height: 40rem;
+}
+
+.founders-chart {
+  height: 16rem;
+}
+
+.donut-chart {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.fns-chart {
+  height: 40rem;;
+}
+
+.vis {
+  min-height: 50rem;
+}
+
+.bar-tooltip {
+  background-color: $black-01;
+  color: $text-reverse;
+  padding: 1.6rem;
+  line-height: 2.4rem;
+  border-radius: .8rem;
+
+  .txt-gray {
+    color: $black-04 !important;
+  }
+}
+
+.recharts-rectangle.recharts-tooltip-cursor {
+  fill: transparent !important;
+}
+
+.recharts-label-surface {
+  width: 1.5rem;
+  height: .3rem;
+}
+
+.txt-light {
+  color: $black-03;
+}
+
+/* responsive
+----------------------------------------------------------------------------- */
+
+@include breakpoints-max(md) {
+
+  .bar-chart {
+    height: auto;
+  }
+
+  .chart-wrapper {
+    padding-top: 2rem;
+    overflow: hidden !important;
+  }
+}
+
+@include breakpoints-min(md) {
+
+  .base-chart-donut-wrapper {
+    position: absolute !important;
+    right: 0;
+    top: 1rem;
+    min-height: 15rem;
+    max-width: 17rem;
+    z-index: 1;
+  }
+}
+
+@include breakpoints-min(md) {
+
+  .base-chart-donut-wrapper {
+    position: absolute !important;
+    right: 0;
+    top: 1rem;
+    min-height: 15rem;
+    max-width: 17rem;
+    z-index: 1;
+  }
+}
+
+@include breakpoints-min(lg) {
+
+  .gz-chart {
+
+    .table {
+      padding-right: 15rem;
+
+      tr:last-child td {
+        padding-bottom: 0;
+      }
+    }
+
+    .wrapper-base {
+      padding: 3.2rem 4rem;
+    }
+  }
+}

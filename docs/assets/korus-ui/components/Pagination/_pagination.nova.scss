@@ -1,0 +1,186 @@
+.pagination {
+  &-wrapper {
+    overflow: visible;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+  }
+
+  &-numbers {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    order: 2;
+
+    .pagination-button {
+      color: $black-01;
+      margin: 0 8px;
+      min-width: auto;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: none;
+        background-color: transparent;
+        color: $black-01;
+      }
+
+      &.selected {
+        background-color: transparent;
+        color: $black-01;
+        cursor: default;
+        font-weight: 700;
+      }
+
+      &.disabled {
+        cursor: default !important;
+        color: $black-03;
+        font-weight: normal;
+      }
+    }
+  }
+
+  &-button {
+    margin: 1px;
+    padding: 0;
+    min-width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    order: 2;
+    border-radius: 50%;
+    color: $black-01;
+    cursor: pointer;
+
+    &:hover {
+      color: $black-01;
+      text-decoration: none;
+      background-color: transparent;
+    }
+  }
+
+  &-controls {
+    background-color: $black-07;
+
+    &:hover {
+      background-color: $black-06;
+    }
+
+    &.disabled {
+      background-color: $black-07 !important;
+      cursor: default !important;
+
+      & > i {
+        color: inherit !important;
+        cursor: default !important;
+      }
+
+      &:hover {
+        background-color: $black-07 !important;
+
+        & > i {
+          color: inherit !important;
+        }
+      }
+    }
+
+    %common-control-icons {
+      @extend %common-dropdown-icon;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      &::before {
+        content: " ";
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        display: block;
+        width: 20px;
+        height: 20px;
+        transform: rotate(0);
+      }
+    }
+
+    @mixin control-state($selector, $type) {
+      &:hover, &:active {
+        #{$selector} {
+          &::before {
+            background-image: url(https://cdn.esphere.ru/images/nova/icons/angle#{$type}-right-hover.svg);
+          }
+        }
+      }
+      &.disabled {
+        #{$selector} {
+          background-image: none;
+          &::before {
+            background-image: url(https://cdn.esphere.ru/images/nova/icons/angle#{$type}-right-disabled.svg);
+          }
+        }
+      }
+    }
+
+    &.first {
+      .icon-first {
+        @extend %common-control-icons;
+        background-image: url(https://cdn.esphere.ru/images/nova/icons/angle-double-right-default.svg);
+        transform: rotate(180deg);
+      }
+      @include control-state(".icon-first", "-double");
+    }
+
+    &.prev {
+      .icon-prev {
+        @extend %common-control-icons;
+        background-image: url(https://cdn.esphere.ru/images/nova/icons/angle-right-default.svg);
+        transform: rotate(180deg);
+      }
+      @include control-state(".icon-prev", "");
+    }
+
+    &.next {
+      .icon-next {
+        @extend %common-control-icons;
+        background-image: url(https://cdn.esphere.ru/images/nova/icons/angle-right-default.svg);
+      }
+      @include control-state(".icon-next", "");
+    }
+
+    &.last {
+      .icon-last {
+        @extend %common-control-icons;
+        background-image: url(https://cdn.esphere.ru/images/nova/icons/angle-double-right-default.svg);
+      }
+      @include control-state(".icon-last", "-double");
+    }
+  }
+
+  &-label {
+    &-options {
+      display: flex;
+      flex: 1;
+      justify-content: flex-end;
+      flex-direction: row-reverse;
+      align-items: baseline;
+      order: 1;
+
+      .dropdownselect {
+        &-wrapper {
+          margin-left: 8px;
+          width: 72px;
+        }
+        &-input-wrapper input[class*="input"] {
+          width: calc(100% - 30px);
+          padding-right: 0;
+        }
+      }
+    }
+
+    &-info {
+      display: flex;
+      flex: 1;
+      order: 3;
+      justify-content: flex-end;
+      color: $black-03;
+      font-size: 12px;
+    }
+  }
+}

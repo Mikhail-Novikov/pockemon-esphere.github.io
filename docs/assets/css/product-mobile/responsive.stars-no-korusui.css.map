@@ -1,0 +1,10 @@
+{
+	"version": 3,
+	"file": "responsive.stars-no-korusui.css",
+	"sources": [
+		"../../scss/product-mobile/responsive.stars-no-korusui.scss",
+		"../../scss/product-mobile/components/stars-no-korusui/_min-768.scss"
+	],
+	"names": [],
+	"mappings": "ACAA,MAAM,EAAE,SAAS,EAAE,KAAK,EACtB,AAAA,QAAQ,AAAC,CACP,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,GAAG,CACpB,AAED,AAAA,cAAc,AAAC,CACb,KAAK,CAAE,IAAI,CACZ"
+}

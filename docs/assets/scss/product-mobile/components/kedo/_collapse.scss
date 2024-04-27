@@ -1,0 +1,21 @@
+@media (max-width: 575.98px) {
+
+  .collapse {
+
+    .collapse-heading-wrapper {
+      padding: 2rem 1.6rem;
+      
+      .collapse-heading-icon {
+        height: 2rem;
+        width: 1.2rem;
+      }
+      
+      & + div {
+      
+        > div {
+          padding: 2.4rem 1.6rem;
+        }
+      }
+    }
+  }
+}

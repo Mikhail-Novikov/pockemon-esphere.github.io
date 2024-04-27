@@ -1,0 +1,477 @@
+@import "../variables/_base.scss";
+@import "../variables/themes/_sb.scss";
+
+@media screen and (max-width: 1400px) {
+  .center .search-container .avia-badge {
+    left: -5rem;
+    top: -2rem;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  body {
+    &.m-body-wrapper {
+      min-width: auto !important;
+    }
+
+    .wrapper {
+      width: auto !important;
+      min-width: auto !important;
+      margin-bottom: 0 !important;
+      .content-box {
+        padding-bottom: 0;
+      }
+    }
+
+    .support-dropdown {
+      left: auto !important;
+      right: -1.5rem;
+    }
+  }
+
+  .landing-container {
+    width: auto;
+    right: 0;
+    z-index: 930;
+
+    .center .search-container {
+      max-width: 100%;
+      width: auto;
+      margin-left: auto;
+      margin-top: -30rem;
+      left: 4.5rem;
+      right: 4.5rem;
+      .avia-badge {
+        left: 0;
+        top: -2rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1023.98px) {
+  .emulate-dcb-iframe {
+    background-color: $body-bg;
+  }
+
+  .menu-box {
+    margin-bottom: 0;
+  }
+
+  .search-box {
+    padding-top: 2rem;
+    background-color: $gray-lighter;
+    overflow: hidden;
+  }
+
+  .qtip {
+    display: none !important;
+  }
+
+  .sticky-wrapper > div {
+    width: auto !important;
+  }
+
+  .wrapper {
+    padding: 0;
+  }
+
+  .landing-container .center .search-container {
+    margin-left: auto;
+    margin-top: 24rem;
+    top: auto;
+
+    .search-container-title {
+      padding-bottom: 3rem;
+      & > div {
+        text-align: left !important;
+      }
+    }
+
+    h2 {
+      font-size: 3.2rem;
+      line-height: 1.4;
+      text-align: left !important;
+    }
+
+    .avia-badge {
+      top: -15rem;
+      left: 0;
+    }
+  }
+
+  .filter-wrap {
+    .m-filter-search {
+      left: auto;
+      right: 0;
+      top: 0;
+      width: 100%;
+      max-width: 46rem;
+      box-shadow: 0 1.4rem 1.4rem rgba($black-01, 0.25);
+      background-color: $gray-lighter;
+    }
+  }
+
+  .filter-wrap.active {
+    height: 100vh;
+  }
+
+  .quick-view-tbody {
+    .list dt {
+      float: left;
+      width: 25% !important;
+    }
+  }
+
+  .card-payment {
+    background: $body-bg;
+    border: 1px solid $brand-primary !important;
+    border-radius: 0.6rem;
+    padding: 0.9rem 1rem;
+    margin: 0 1rem 2rem;
+    .list dt {
+      float: left;
+      width: auto !important;
+    }
+  }
+
+  .k-window {
+    margin-top: 5rem;
+  }
+}
+
+@media screen and (max-width: 801px) {
+  .landing-container {
+    min-height: 100vh;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+
+    .bottom {
+      display: none !important;
+    }
+
+    .center .search-container {
+      margin-top: 45%;
+      padding: 0 1.5rem;
+      position: static;
+      td {
+        padding-right: 1rem !important;
+        padding-bottom: 0;
+      }
+      td:nth-child(5) {
+        padding-bottom: 1rem;
+      }
+      .search-container-title {
+        & > div {
+          font-size: 1.4rem;
+          line-height: 1.4;
+        }
+        .txt-large {
+          padding-top: 1rem;
+        }
+      }
+
+      h2 {
+        font-size: 2.8rem;
+        max-width: 30rem;
+        margin-bottom: 1rem;
+      }
+
+      .avia-badge {
+        right: 1.5rem;
+        top: 0;
+        width: 12rem;
+        height: 12rem;
+      }
+    }
+  }
+
+  .list dt > label {
+    font-weight: 400 !important;
+    color: $gray-dark !important;
+  }
+
+  .k-window {
+    margin-top: 0;
+  }
+
+  .k-window-actions .k-button {
+    background: none !important;
+  }
+
+  .k-window-content {
+    padding: 0;
+  }
+
+  .tiles {
+    .tile > .inner {
+      box-shadow: 0 1.6rem 2.4rem rgba($black-01, 0.1), 0 0 0.8rem rgba($black-01, 0.03);
+    }
+
+    .tile.active > .inner {
+      padding-bottom: 2rem;
+    }
+  }
+
+  .xs-trip-waiting {
+    background: $gray;
+  }
+
+  body.m-modal {
+    .k-window {
+      width: 100% !important;
+      max-width: 100% !important;
+      left: 0 !important;
+      right: 0 !important;
+      top: 6rem !important;
+      bottom: 0 !important;
+      position: fixed;
+      border-radius: 0;
+    }
+
+    .k-header {
+      padding: 3rem 1rem 2.5rem;
+      text-align: center;
+      font-size: 2rem;
+      .k-window-title {
+        text-transform: capitalize;
+      }
+    }
+
+    .window-content {
+      text-align: center;
+    }
+
+    .ending {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      left: 0;
+      right: 0;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      text-align: center !important;
+      .button {
+        padding: 0.9rem 2.3rem;
+        min-width: 15rem;
+        width: 95%;
+        margin: 0.5rem 0;
+      }
+    }
+  }
+
+  .m-toolbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $body-bg;
+    box-shadow: -5px 0rem 1.4rem rgba(0, 0, 0, 0.25);
+    padding: 2rem 1rem 1rem;
+  }
+  .individual .search-container li.table-layout > * {
+    display: table-row !important;
+  }
+
+  .xs-txt-uppercase {
+    text-transform: uppercase;
+  }
+}
+
+@media screen and (max-height: 582px) {
+  .landing-container {
+    .center {
+      .search-container {
+        top: auto;
+        margin-top: 35px;
+      }
+
+      .search-container-title {
+        & > div {
+          font-size: 1.4rem;
+          line-height: 1.4;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .avia-change-directions {
+    position: absolute;
+    z-index: 40;
+    top: 2rem;
+    right: 4rem;
+    background-color: $white;
+    padding: .7rem;
+    display: inline-block;
+    border: 1px solid $black-06;
+    border-radius: 50%;
+    i {
+      padding-top: 0;
+      transform: rotate(90deg);
+    }
+  }
+
+  .tiles {
+    .tile {
+      width: 45%;
+      &.tile-hidden-400 {
+        display: none;
+      }
+    }
+  }
+
+  .quick-view-tbody {
+    border: 0 !important;
+    box-shadow: 0 1.6rem 2.4rem rgba($black-01, 0.1), 0 0 0.8rem rgba($black-01, 0.03);
+    border-radius: 0.4rem;
+    margin: 1.5rem 1rem 0;
+    display: block;
+
+    tr {
+      display: block;
+    }
+
+    td {
+      padding: 0;
+      border-radius: 0.4rem;
+      display: block;
+    }
+
+    div:first-child {
+      border-top-right-radius: 0.4rem;
+      border-top-left-radius: 0.4rem;
+    }
+
+    &:nth-child(2) {
+      margin-top: 0 !important;
+    }
+  }
+
+  .quick-view-tbody-selected {
+    & + tbody {
+      border: 0 !important;
+      box-shadow: 1px 0.6rem 0.8rem rgba($black-01, 0.3);
+      display: block !important;
+      margin: 1.5rem 1rem;
+      td {
+        border: 0 !important;
+      }
+    }
+
+    & + tr {
+      display: block !important;
+    }
+  }
+}
+
+@media screen and (max-width: 482px) {
+  .landing-container .center .search-container {
+    margin-top: 5rem;
+
+    td {
+      padding-right: 1rem !important;
+      padding-bottom: 0;
+    }
+
+    td:nth-child(5) {
+      padding-bottom: 1rem;
+    }
+
+    h2 {
+      max-width: 16rem;
+    }
+
+    a {
+      &.button {
+        width: 100%;
+        padding: 1rem 0;
+        font-size: 1.6rem;
+      }
+    }
+    .avia-badge {
+      width: 11rem;
+      height: 11rem;
+    }
+  }
+
+  body.m-modal {
+    .loader-container {
+      transform: scale(0.8);
+      margin-left: -6rem;
+    }
+  }
+  .passenger-container.dropdown > ul:not(.pos-right) {
+    min-width: 100%;
+  }
+  .tiles .tile.tile-hidden-600 {
+    display: none;
+  }
+  .tiles .tile {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  body.m-modal {
+    .loader-container {
+      transform: scale(0.7);
+      margin-left: -10.5rem;
+    }
+  }
+
+  .tiles {
+    .tile {
+      width: 80%;
+      &.tile-hidden-600 {
+        display: none;
+      }
+    }
+  }
+
+  .xss-scale-6 {
+    transform: scale(0.6);
+  }
+
+  .public-error-saving {
+    width: 32rem;
+    margin-left: -17rem;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .tiles-slider-button, .s-none {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .individual {
+    .actionbar {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .toolbar-padding {
+    padding-bottom: 5rem
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .timeline {
+    .step {
+      &::before, &::after {
+        border-color: $gray-dark !important;
+      }
+      .line {
+        background-color: $gray-dark;
+      }
+    }
+  }
+}
+

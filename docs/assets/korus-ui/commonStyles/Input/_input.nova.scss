@@ -1,0 +1,110 @@
+// общие стили для инпутов
+%input {
+  outline: none;
+  color: $black-01;
+  border: 1px solid $black-05;
+  background-color: $white;
+  padding: 5px 4px 7px 12px;
+  border-radius: $input-border-radius;
+  display: flex;
+  justify-content: space-between;
+  height: 32px;
+  font-size: 14px;
+  &::-ms-clear {
+    display: none;
+  }
+}
+
+%input-wrapper {
+  color: $black-01;
+  align-items: center;
+  border: 1px solid $black-05;
+  background-color: $white;
+  border-radius: $input-border-radius;
+  display: flex;
+  justify-content: space-between;
+  height: 32px;
+
+  & > input[class*="input"] {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 30px;
+    border-radius: $input-border-radius;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 0 8px 0 12px;
+    min-width: 0;
+    &::-ms-clear {
+      display: none;
+    }
+
+    &::placeholder {
+      @extend %input-placeholder;
+    }
+  }
+}
+
+%input-hovered {
+  border-color: $black-02;
+}
+
+%input-focused {
+  border: 1px solid $black-02;
+  box-shadow: none;
+}
+
+%input-disabled {
+  border-color: $black-05;
+  // Из-за important в styles-esphere
+  background-color: $black-07 !important;
+  color: $black-03 !important;
+}
+
+%input-placeholder {
+  color: $input-placeholder-color;
+}
+
+%input-prefix {
+  margin-left: 12px;
+}
+
+%input-suffix {
+  margin-right: 8px;
+}
+
+%input-prefix, %input-suffix {
+  user-select: none;
+  flex: none;
+  white-space: nowrap;
+  color: $black-03;
+}
+
+%input-icon-search {
+  &:before {
+    content: '\e92c';
+    color:  $black-03;
+    width: 20px;
+    height: 20px;
+    display: block;
+  }
+}
+
+%input-large {
+  height: 40px;
+}
+
+%datepicker-large {
+  .datepicker-input-wrapper {
+    @extend %input-large;
+
+    > input[class*="input"] {
+      padding-left: 10px;
+    }
+  }
+
+  .datepicker-calendar-icon {
+    margin-right: 4px;
+  }
+}

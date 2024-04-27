@@ -1,0 +1,63 @@
+.switcher {
+  &-handle {
+    cursor: pointer;
+    border-radius: 50%;
+    display: block;
+    transition: all 0.1s linear;
+    height: 17px;
+    width: 17px;
+    box-shadow: 3px 0 8px rgba(88, 87, 87, 0.29);
+    background: $black-07;
+  }
+
+  &-label:not(:empty) {
+    margin-left: 12px;
+    cursor: pointer;
+  }
+
+  &-wrapper {
+    vertical-align: middle;
+    display: inline-block;
+    cursor: pointer;
+    background: $black-06;
+    padding: 2px;
+    border-radius: 10px;
+    width: 38px;
+
+    &:hover .switcher-handle {
+        background: $white;
+    }
+
+    &.active {
+      background: var(--brand-color);
+
+      .switcher-handle {
+        transform: translateX(100%);
+        background: $white;
+        box-shadow: -3px 0 8px rgba(88, 87, 87, 0.29);
+      }
+
+      &:hover .switcher-handle {
+          background: $black-06;
+      }
+    }
+
+    &.disabled {
+      pointer-events: none;
+      background: $black-07 !important;
+
+      .switcher-handle {
+        box-shadow: 0 2px 7px $base-09;
+      }
+    }
+
+    &.active.disabled {
+      background: var(--brand-disabled-color) !important;
+
+      .switcher-handle {
+        background: $black-07;
+        box-shadow: 0 2px 7px $base-09;
+      }
+    }
+  }
+}

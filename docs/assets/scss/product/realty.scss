@@ -1,0 +1,942 @@
+a {
+
+  &:hover {
+    color: #f49530;
+  }
+}
+
+.logo {
+  display: inline-block;
+  margin: 0 2rem 0 1rem;
+  background: url('https://cdn.esphere.ru/images/realty/logo.png') no-repeat 0 50%;
+  width: 258px;
+  height: 42px;
+}
+
+i.i-logo {
+  background-image: url(https://cdn.esphere.ru/images-2x/sb/logo.png);
+}
+
+.auth {
+
+  .logo {
+    background: url('https://cdn.esphere.ru/images/realty/mail_logo.png') no-repeat 0 50%;
+    background-size: 100% 100%;
+  }
+}
+
+.wrapper {
+  min-width: 100rem;
+}
+
+aside, bside {
+  box-sizing: border-box;
+  width: 25%;
+  padding: 1rem;
+}
+
+body.map.hover {
+  background-image: url('https://cdn.esphere.ru/images/gis/map-realty-hover.png');
+}
+
+body.map {
+  box-sizing: border-box;
+  background: #b9dbf0 url('https://cdn.esphere.ru/images/gis/map-realty.png') 50% 50% no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+
+  .content-box {
+
+    .wrapper {
+      max-width: inherit !important;
+    }
+  }
+}
+
+body.map.selected {
+  background-image: url('https://cdn.esphere.ru/images/gis/map-realty-selected.png');
+}
+
+body.map.scale2 {
+  background-image: url('https://cdn.esphere.ru/images/gis/map-realty-scale-2.png');
+}
+
+body.map.scale3 {
+  background-image: url('https://cdn.esphere.ru/images/gis/map-realty-scale-3.png');
+}
+
+body.map.scale2.selected {
+  background-image: url('https://cdn.esphere.ru/images/gis/map-realty-scale-2-selected.png');
+}
+
+body.map.scale3.selected {
+  background-image: url('https://cdn.esphere.ru/images/gis/map-realty-scale-3-selected.png');
+}
+
+body.map.bank {
+  background-image: url('https://cdn.esphere.ru/images/gis/map-realty-bank.png');
+}
+
+body.map.bank.selected {
+  background-image: url('https://cdn.esphere.ru/images/gis/map-realty-bank-selected.png');
+}
+
+.map {
+
+  .footer-box {
+    display: none;
+  }
+
+  .content-box {
+    background: transparent;
+    position: relative;
+    height: 100vh;
+  }
+
+  .fixed-left {
+    left: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  .fixed-right {
+    right: 0;
+    top: 0;
+  }
+
+  .search-box {
+    background: rgba(255,255,255,.95);
+    box-shadow: .5rem 0 1.5rem rgba(0,0,0,.1);
+  }
+}
+
+[class*="fixed-"] {
+  position: absolute;
+  margin: 1rem;
+  background: rgba(255,255,255,.95);
+  box-shadow: .5rem 0 1.5rem rgba(0,0,0,.1);
+}
+
+[class*="fixed-center"][class*="fixed-"] {
+  margin: auto 1rem;
+}
+
+[class*="fixed-center"] {
+  top: 0;
+  bottom: 0;
+}
+
+[class*="-top"] {
+  top: 0;
+}
+
+[class*="-bottom"] {
+  bottom: 0;
+}
+
+[class*="-left"] {
+  left: 0;
+}
+
+[class*="-right"] {
+  right: 0;
+}
+
+.markers {
+
+  .inner {
+    cursor: default;
+  }
+}
+
+
+/* Search
+----------------------------------------------------------------------------- */
+
+.search-box {
+
+  .list {
+
+    li {
+
+      &:hover {
+        background: white;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .search-fast {
+    position: absolute;
+    top: 11.2rem;
+    left: 0;
+    right: 0;
+    z-index: 91;
+    margin: -1.1rem 1rem 0;
+    border-radius: 0 0 .5rem;
+    border-top-color: #f49530;
+  }
+}
+
+
+/* Colours
+----------------------------------------------------------------------------- */
+
+del.danger {background-color: lavenderblush;}
+
+ins.success {background-color: honeydew;}
+
+/* Promo
+----------------------------------------------------------------------------- */
+
+.promo-category {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  box-sizing: border-box;
+  position: relative;
+  padding: 5rem 0;
+  background-color: whitesmoke;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.category-list {
+  font-size: 1.6rem;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  -o-column-count: 2;
+  column-count: 2;
+
+  li {
+    display: block;
+    padding: 2rem 1rem;
+    position: relative;
+    box-sizing: border-box;
+    cursor: pointer;
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+
+    &:hover {
+      color: #f49530;
+    }
+  }
+}
+
+.category-icon {
+
+  li {
+
+    &:before {
+      font-family: "sbbol-icons" !important;
+      font-size: 3rem;
+      line-height: 4rem;
+      color: #ccc;
+      display: block;
+      content: "\e94b";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 4rem;
+      height: 4rem;
+      margin-top: -2rem;
+    }
+  }
+}
+
+.category-list.category-icon {
+
+  li {
+    padding: 2rem 4rem;
+  }
+}
+
+
+/* Login & Registration
+----------------------------------------------------------------------------- */
+
+.realty.auth {
+
+  .header {
+    display: none;
+  }
+
+  .content-box {
+
+    >* {
+
+      >.box {
+        background: transparent;
+        border: none;
+        padding: 0;
+      }
+    }
+  }
+
+  >* {
+
+    >.wrapper {
+      background: transparent;
+    }
+  }
+}
+
+
+/* Tile
+----------------------------------------------------------------------------- */
+
+.tiles {
+
+  .photo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: 50% 50%;
+    background-size: cover;
+    width: 20%;
+  }
+
+  .tile {
+    width: 100%;
+  }
+}
+
+.tile {
+
+  >* {
+    padding-left: 20%;
+
+    &:before {
+      content: " ";
+      display: block;
+      position: absolute;
+      left: 30%;
+      right: 0;
+      bottom: 0;
+      height: 2rem;
+      background: rgb(255,255,255);
+      background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+      background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+      background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00fafafa', endColorstr='#fafafa',GradientType=0 );
+      z-index: 1;
+    }
+  }
+}
+
+.tile.disable {
+
+  >* {
+    cursor: inherit;
+  }
+}
+
+/* Markers
+----------------------------------------------------------------------------- */
+
+.request.card .markers {
+  padding-bottom: 1rem;
+}
+
+tfoot tr {background: #fafafa;}
+
+
+/* Gallery
+----------------------------------------------------------------------------- */
+
+.gallery {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: space-between;
+  flex-wrap: wrap;
+  margin-left: -1rem;
+  margin-bottom: -1rem;
+
+  >div {
+    display: inline-flex;
+    position: relative;
+
+    .photo {
+      width: 100%;
+      position: relative;
+      background-size: cover;
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+      cursor: pointer;
+
+      &:after {
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+      }
+
+      &:before {
+        content: " ";
+        display: block;
+        margin-top: 100%;
+      }
+
+      &:hover {
+        border-color: #e5e5e5;
+        box-shadow: 0 0 1rem #ccc;
+      }
+    }
+
+    .photo.pinned {
+      opacity: .6;
+
+      i {
+        position: absolute;
+        top: 50%;
+        margin-top: -5rem;
+        left: 50%;
+        margin-left: -5rem;
+        color: #fff;
+        font-size: 10rem;
+        z-index: 5;
+      }
+    }
+
+    .controls {
+      opacity: 0;
+      position: absolute;
+      top: 2%;
+      right: 2%;
+      z-index: 2;
+      transition: opacity .3s;
+
+      i {
+        background: #fff;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+    }
+
+    &:hover {
+
+      .controls {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.gallery.preview-6 {
+
+  >div {
+    width: calc(100%/6);
+  }
+}
+
+.gallery.preview-5 {
+
+  >div {
+    width: calc(100%/5);
+  }
+}
+
+.active-photo {
+  background-size: cover;
+  width: 30rem;
+  height: 20rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+
+/* Services
+----------------------------------------------------------------------------- */
+
+[class*="sbicon-"].txt-gray {
+  color: #ccc;
+}
+
+[class*="sbicon-"].txt-success {
+  color: #4fad31;
+}
+
+.list-services {
+
+  [class*="sbicon-"] {
+    font-size: 2.5rem;
+    margin: 0 1rem .6rem 0;
+  }
+
+  [class*="sbicon-question"] {
+    margin: 0;
+    opacity: 0;
+    transition: opacity .3s ease;
+  }
+
+  div.inner {
+
+    &:hover {
+      background: aliceblue;
+      border: .5rem;
+      cursor: pointer;
+
+      [class*="sbicon-question"] {
+        opacity: 1;
+      }
+    }
+
+    div {
+      padding-left: 3.5rem;
+    }
+  }
+
+  .k-checkbox-label {
+    margin: 0 0 1rem 0;
+    padding-left: 3.9rem;
+    min-height: 1.5rem;
+  }
+}
+
+.markers {
+
+  .first {
+
+    [class*="sbicon-external-url"] {
+      margin: 0;
+      opacity: 0;
+      transition: opacity .3s ease;
+    }
+
+    &:hover {
+
+      [class*="sbicon-external-url"] {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+/* Sberchat
+----------------------------------------------------------------------------- */
+
+.chat {
+  padding: 0;
+
+  .chat-window {
+    min-height: 25rem;
+  }
+
+  nav {
+    background: whitesmoke;
+
+    li {
+      white-space: normal;
+
+      a {
+        max-height: 2rem;
+
+        span {
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}
+
+/* With-hint label
+----------------------------------------------------------------------------- */
+
+.k-radio-label.with-hint {
+  flex-wrap: wrap;
+
+  small {
+    flex-basis: 100%;
+  }
+}
+
+
+/* Title for Landing
+----------------------------------------------------------------------------- Title for Landing */
+
+.line-title {
+  text-align: center;
+  position: relative;
+  margin: 0 1rem 2rem;
+
+  h5 {
+    display: inline-block;
+    position: relative;
+    background: #fff;
+    padding: 1rem;
+    z-index: 2;
+  }
+
+  &:after {
+    content: " ";
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 50%;
+    margin-top: -.1rem;
+    height: .2rem;
+    background: #ffdba1;
+  }
+}
+
+
+/* Tiles for landing
+----------------------------------------------------------------------------- Tiles for landing */
+
+.l-tiles {
+  margin: 0 .5rem 6rem;
+
+  &:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+
+  .l-tile {
+    float: left;
+    width: 20%;
+    box-sizing: border-box;
+    text-align: left;
+    cursor: pointer;
+
+    .photo {
+      position: relative;
+      background: 50% 50%;
+      background-size: cover;
+      width: 100%;
+      height: 15rem;
+    }
+  }
+}
+
+.l-tile {
+
+  >* {
+    box-sizing: border-box;
+    border: 1px solid #eee;
+    position: relative;
+    border-radius: .5rem;
+    margin: .5rem;
+    overflow: hidden;
+
+    &:hover {
+      border-color: #e5e5e5;
+      box-shadow: 0 0 1rem #ccc;
+      z-index: 2;
+    }
+  }
+
+  .title {
+    margin: 0;
+    min-height: 4rem;
+    height: 4rem;
+    overflow: hidden;
+    border-bottom: 0;
+  }
+
+  .txt-large {
+    font-size: 2.4rem;
+    line-height: 4rem;
+  }
+
+  .address {
+    display: inline-block;
+    min-height: 5.5rem;
+    height: 5.5rem;
+    overflow: hidden;
+  }
+}
+
+
+/* Styles for landing
+----------------------------------------------------------------------------- Styles for landing */
+
+.main-banner {
+  background: transparent url('https://cdn.esphere.ru/images/realty/banner.jpg') 50% 0 no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 50rem;
+  display: flex;
+  flex-basis: auto;
+  flex-direction: column-reverse;
+  text-align: center;
+  align-content: center;
+  justify-content: center;
+
+    .finder {
+
+      .k-textbox.large {
+        margin: .4rem auto;
+        height: 4.1rem;
+        padding-top: 1.1rem;
+        padding-bottom: 1.1rem;
+      }
+
+      .k-dropdown.large .k-dropdown-wrap {
+        margin: .4rem auto 0;
+        padding-top: .5rem;
+        padding-bottom: .4rem;
+      }
+    }
+
+  .active.button {
+    background-color: #039a32;
+  }
+}
+
+
+/* Calculator
+----------------------------------------------------------------------------- Calculator */
+
+.calculator-build,
+.calculator-done {
+
+  .wrapper {
+
+    > .content {
+      padding: 2rem 0;
+    }
+  }
+}
+
+.commercial .box {
+  border: .5rem solid #fafafa;
+}
+
+.building {
+  background: transparent url('https://cdn.esphere.ru/images/realty/building.png') 150% 0 no-repeat;
+  background-size: auto 100%;
+  position: relative;
+  height: 100%;
+}
+
+.credit {
+
+  .building {
+    background-size: auto auto;
+    background-position: 100% 0;
+  }
+}
+
+.credit-line {
+  height: 100%;
+  padding: 1rem 0 0 2rem;
+
+    li {
+      height: calc(100%/3);
+      position: relative;
+      clear: both;
+
+        label {
+          width: 70%;
+          position: absolute;
+          top: 0;
+          border-bottom: 1px dashed #e5e5e5;
+
+          span {
+            display: inline-block;
+            width: 100%;
+            position: absolute;
+            bottom: -3rem;
+            left: 0;
+            color: #4d4d4d;
+            font-weight: 500;
+          }
+        }
+
+        .credit-bar {
+          position: relative;
+          width: 30%;
+          height: 100%;
+          float: right;
+          background: rgba(0,0,0,.5);
+          text-align: right;
+          color: #fff;
+          font-size: 8rem;
+          overflow: hidden;
+
+          &.type-1 {
+            background: rgba(255, 0, 0, .38);
+          }
+
+          &.type-2 {
+            background: rgba(255, 153, 0, .5);
+          }
+
+          &.type-3 {
+            background: rgba(145, 0, 255, .24);
+          }
+
+          &.type-4 {
+            background: rgba(215, 114, 114, .24);
+          }
+
+          span {
+            position: absolute;
+            bottom: 1rem;
+            right: 0;
+          }
+        }
+    }
+}
+
+.balloons .table-layout {
+  padding: 0 1rem;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+
+  > div > div {
+    padding: 1rem;
+    background: rgb(250, 250, 250);
+    border: 2px solid #fff;
+  }
+
+  .balloon-title > div {
+    background: transparent;
+    border-top: 2px solid rgb(250, 250, 250);
+  }
+
+  div.summ {
+    color: transparent;
+
+    &.visible {
+      background: rgba(45, 186, 89, .3);
+      color: inherit;
+    }
+  }
+}
+
+.k-button.k-primary, .k-slider .k-draghandle {
+  color: white;
+  background-color: #2dba59;
+  border-color: #2dba59;
+}
+
+.k-slider .k-slider-selection {
+  background-color: #2dba59;
+}
+
+.k-slider .k-draghandle:hover,
+.k-slider .k-draghandle:active {
+  color: white;
+  background-color: #2dba59;
+  border-color: #2dba59;
+}
+
+/* project card for map
+----------------------------------------------------------------------------- */
+
+.project-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+
+  .photo {
+    height: 100%;
+    background-image: url(//a4.pbase.com/o6/52/155652/1/82181073.xCWAoAHA.IMG_5286.jpg);
+  }
+}
+
+
+/* Print styles
+----------------------------------------------------------------------------- */
+
+@media print {
+
+  .actionbar {
+    display: none;
+  }
+
+  .k-grid {
+
+    th {
+      border: 1px solid #000 !important;
+    }
+
+    td {
+      border: 1px solid #000 !important;
+    }
+  }
+}
+
+/* Contract
+------------------------------------------------------------------------------- */
+
+.contract {
+
+  .wrapper {
+    max-width: 102.4rem;
+  }
+
+  .content-box {
+    padding-top: 4rem;
+    background: aliceblue;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .header-box, .personal-box {
+    display: none;
+  }
+
+  a.button {
+    background: white;
+  }
+
+  .toolbar .k-dropdown {
+    margin: .4rem;
+  }
+}
+/* Map
+---------------------------------------------------------------------------------  */
+
+.legend .count {
+  height: 1rem;
+  width: 1rem;
+  min-width: 1rem;
+  padding: 0;
+  margin: .5rem;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+/* Card
+---------------------------------------------------------------------------------- */
+/*-- Имитация textarea --*/
+
+.pseudo-area {
+  height: 15rem;
+  overflow-y: scroll;
+  border-radius: .2rem;
+  padding: .5rem .9rem;
+  border-width: 1px;
+  border-style: solid;
+  outline: 0;
+  border-color: rgb(221, 221, 221);
+}
+
+.request {
+
+  .list, .list-item {margin-bottom: 2rem;}
+}
+
+/* Text-indent
+--------------------------------------------------------------------- Text-indent */
+
+.indent-none {text-indent: 0;}
+
+.indent-small {text-indent:1rem;}
+
+.indent-middle {text-indent:2rem;}
+
+.indent-large {text-indent:4rem;}

@@ -1,0 +1,54 @@
+@include breakpoints-max(sm) {
+
+  .xs-large-button {
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    line-height: 2.8rem;
+    border-radius: 2.4rem !important;
+
+    &.xs-success {
+      background-color: $primary-02;
+      color: $white;
+    }
+  }
+
+  .xs-blank-button {
+    background-color: transparent;
+    border-width: 0;
+    color: $primary-02;
+    font-weight: 700;
+    width: 100%;
+
+    &:focus {
+      border-width: .1rem !important;
+    }
+  }
+
+  .button-wrapper.xs-blank-button {
+    background-color: transparent;
+    border-width: 0;
+    line-height: 3rem;
+    color: $primary-02;
+    font-weight: 700;
+    width: 100%;
+
+    &:focus {
+      border-width: .1rem !important;
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  
+ .history .button-group-buttons-wrapper {
+    display: flex;
+    flex-direction: row;
+
+    .button-group-item {
+      font-size: 1rem;
+      flex-grow: 1;
+      padding: .4rem .8rem !important;
+      min-width: auto;
+    }
+  }
+}

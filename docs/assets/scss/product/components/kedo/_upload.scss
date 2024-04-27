@@ -1,0 +1,68 @@
+.filedrop {
+
+  &-wrapper {
+    border-color: $black-05;
+  }
+
+  &-wrapper.interactive:hover,
+  &-wrapper.drag-active {
+    border-color: $black-01;
+  }
+
+  &-wrapper.interactive:hover {
+    cursor: pointer;
+  }
+
+  &-other-button,
+  &-visible-button {
+    border: none;
+  }
+
+  &-other-button {
+    min-width: 5.2rem !important;
+    padding: 0 1.6rem 2.4rem 1.6rem !important;
+  }
+
+  &-visible-button {
+    min-width: 4.4rem !important;
+    padding: 0 .8rem 2.4rem 1.6rem !important;
+  }
+
+  &-cloud-icon.small {
+    width: 4.6rem;
+    height: 3.2rem;
+    margin-bottom: .4rem;
+    background-size: 4.6rem auto;
+    background-repeat: no-repeat;
+    background-position: 0;
+  }
+}
+
+.dropzone {
+
+  &-wrapper.drag-active .dropzone-file-upload {
+    border-color: $black-01;
+  }
+
+  &-file-upload {
+    padding: 3.2rem 0;
+
+    > div {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &-icon::before {
+    width: 4.6rem;
+    height: 3.2rem;
+    background-size: 4.6rem auto;
+    background-repeat: no-repeat;
+    background-position: 0;
+    background-image: url(https://cdn.esphere.ru/images/nova/filedrop/filedrop-upload.svg);
+  }
+
+  &-hint {
+    display: none;
+  }
+}

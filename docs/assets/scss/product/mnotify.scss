@@ -1,0 +1,100 @@
+@import '../variables/themes/nova';
+
+@mixin button-more {
+
+  & button.more {
+    height: auto;
+    min-width: auto;
+
+    &:hover {
+      background-color: inherit;
+    }
+  }
+}
+
+@keyframes notificationFadeIn {
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes notificationFadeOut {
+
+  0% {
+    max-height: 30rem;
+    opacity: 1;
+  }
+
+  100% {
+    max-height: 0;
+    opacity: 0;
+  }
+}
+
+.notifications {
+
+  &-fade-out {
+    animation: notificationFadeOut .7s;
+    will-change: 'height';
+  }
+
+  &-fade-in {
+    animation: notificationFadeIn .7s;
+    will-change: 'height';
+  }
+
+  &-wrapper {
+    z-index: 499;
+
+    @include button-more;
+
+    &.notifications-top.notifications-regular {
+      position: relative;
+      width: auto;
+      top: inherit;
+      right: inherit;
+      bottom: inherit;
+      left: inherit;
+      transform: initial;
+    }
+  }
+
+  &-top .notifications-item {
+    margin-bottom: 1.6rem;
+  }
+}
+
+.bside {
+  position: fixed;
+  top: 6rem;
+  right: 42.4rem;
+  z-index: 100;
+  width: 42.4rem;
+  height: calc(100% - 6rem);
+  background-color: $black-07;
+  transform: translateX(200%);
+  transition: .3s ease transform;
+  box-shadow: 0 .6rem 1rem 0 rgba(31, 31, 34, .25);
+
+  &-header {
+    position: sticky;
+    top: 0;
+    z-index: 500;
+    background-color: $black-07;
+  }
+
+  @include button-more;
+
+  &.visible {
+    transform: translateX(100%);
+  }
+
+  .loader-container {
+    background-color: transparent;
+  }
+}

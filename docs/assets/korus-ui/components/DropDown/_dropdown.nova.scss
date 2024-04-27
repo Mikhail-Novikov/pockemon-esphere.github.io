@@ -1,0 +1,203 @@
+@mixin button-disabled($type) {
+  background-color: $type !important;
+  color: $text-reverse !important;
+  border-color: $type !important;
+}
+
+.dropdown-wrapper {
+  display: inline-block;
+  position: relative;
+  overflow: visible; // fix IE11 <button/> overflow: hidden
+
+  & > ul {
+    background-color: $white;
+    border-radius: $input-border-radius;
+    min-width: 100%;
+    max-height: 204px;
+    display: none;
+    margin-top: 4px;
+    padding: 4px 4px 0;
+    position: absolute;
+    top: 100%;
+    border-bottom: 4px solid $white;
+    box-shadow: $shadow-level-5;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    scrollbar-width: none;
+    visibility: hidden;
+
+    &.visible {
+      visibility: visible;
+    }
+
+    &.pos-top {
+      top: auto;
+      bottom: 100%;
+      margin-bottom: 4px;
+      margin-top: 0;
+      box-shadow: $shadow-level-5-top;
+    }
+
+    &.pos-right {
+      right: 0;
+    }
+
+    &:not(.pos-right) {
+      left: 0;
+    }
+
+    & > li {
+      display: block;
+      position: relative;
+      padding: 0;
+      border-radius: 8px !important;
+
+      &.level-2 {
+        border-top: 0;
+
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
+
+      & > a:not(.button), & > div, & > span {
+        min-width: 160px;
+        margin-bottom: 2px;
+        padding: 6px 8px;
+        line-height: 16px;
+        color: $black-01;
+        display: flex;
+        justify-content: start;
+        border-radius: 8px !important;
+      }
+
+      &:last-child > a:not(.button), &:last-child > div, &:last-child > span {
+        margin-bottom: 0;
+      }
+
+      &:hover > a:not(.count), &:hover > div:not(.count), &:hover > span:not(.count) {
+        background-color: $black-07;
+      }
+
+      &.active > a, &.active > div, &.active > span {
+        background-color: $black-05;
+      }
+
+      .count {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        min-width: 8px;
+        width: 8px;
+        height: 8px;
+        background-color: $accent-02;
+        border-radius: 50%;
+        padding: 0;
+      }
+
+      & > a:focus {
+        box-shadow: none;
+      }
+
+    }
+  }
+
+  &.opened {
+    z-index: $zindex-dropdown;
+
+    & > .button-wrapper {
+      background-color: $black-05;
+    }
+
+    & > .button-dropdown {
+      &::after {
+        transform: rotate(180deg);
+        right: 18px
+      }
+
+      &.success,
+      &.primary {
+        background-color: var(--brand-active-color)
+      }
+    }
+
+    & > ul {
+      display: block;
+    }
+
+    &::after, &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      left: 0;
+    }
+
+    &::after {
+      bottom: -4px;
+    }
+
+    &::before {
+      top: -4px;
+    }
+  }
+
+  &.disabled {
+    background-color: transparent !important;
+    .button-wrapper {
+      color: $black-05 !important;
+      background-color: $body-bg !important;
+      border-color: $black-05;
+
+      > * {
+        color: $black-05 !important;
+      }
+
+      &:not(.blank):focus {
+        padding: 7px 40px 7px 24px;
+        border-width: 1px;
+        border-color: $black-05;
+      }
+
+      &.small:not(.blank):focus {
+        padding: 5px 31px 5px 16px;
+        &::after {
+          right: 13px;
+        }
+      }
+
+      &.more {
+        &:not(.blank):focus {
+          padding: 5px;
+        }
+        &.small:not(.blank):focus {
+          padding: 3px;
+        }
+      }
+
+      &.success,
+      &.primary {
+        &:hover, & {
+          @include button-disabled(var(--brand-disabled-color));
+        }
+      }
+
+      &.warning {
+        &:hover, & {
+          @include button-disabled($accent-04);
+        }
+      }
+
+      &.danger {
+        &:hover, & {
+          @include button-disabled($error-04);
+        }
+      }
+    }
+  }
+}

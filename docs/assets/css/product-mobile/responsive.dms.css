@@ -1,0 +1,3 @@
+@media (min-width: 768px){.sidebar.sidebar-full+.content-box{padding-left:0}.wrapper.flex-row{justify-content:space-between}.wrapper .product-item{margin-right:auto;margin-left:auto}}@media (min-width: 1024px){.sidebar.sidebar-full+.content-box{padding-left:0}.wrapper{width:100%}.wrapper.flex-row{justify-content:flex-start}.wrapper .product-item{margin-left:0}}@media (min-width: 1200px){.wrapper .product-item{margin-right:2.2rem}}@media (max-width: 1199.98px){tr td.tools *,tr:hover td.tools *{visibility:visible}}
+
+/*# sourceMappingURL=responsive.dms.css.map */

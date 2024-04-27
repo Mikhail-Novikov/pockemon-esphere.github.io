@@ -1,0 +1,10 @@
+{
+	"version": 3,
+	"file": "responsive.stars.css",
+	"sources": [
+		"../../scss/product-mobile/responsive.stars.scss",
+		"../../scss/product-mobile/components/stars/_min-768.scss"
+	],
+	"names": [],
+	"mappings": "ACAA,MAAM,EAAE,SAAS,EAAE,KAAK,EACtB,AAAA,QAAQ,AAAC,CACP,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,GAAG,CACpB,AAED,AAAA,cAAc,AAAC,CACb,KAAK,CAAE,IAAI,CACZ"
+}

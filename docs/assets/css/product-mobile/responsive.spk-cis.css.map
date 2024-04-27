@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "responsive.spk-cis.css",
+	"sources": [
+		"../../scss/product-mobile/responsive.spk-cis.scss",
+		"../../scss/variables/_base.scss",
+		"../../scss/variables/themes/_sb.scss",
+		"../../scss/variables/themes/_nova.scss"
+	],
+	"names": [],
+	"mappings": ""
+}

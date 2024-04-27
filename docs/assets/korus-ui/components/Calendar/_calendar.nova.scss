@@ -1,0 +1,272 @@
+.calendar {
+  &-wrapper {
+    visibility: hidden;
+    width: 204px;
+    position: absolute;
+    margin-top: 4px;
+    top: 100%;
+    z-index: $zindex-calendar;
+    background-color: $white;
+    box-shadow: $shadow-level-5;
+    border-radius: $input-border-radius;
+
+    &.wide-list {
+      .suggestion-wrapper {
+        width: 200px;
+      }
+    }
+
+    &.visible {
+      visibility: visible;
+    }
+
+    &.pos-top {
+      top: auto;
+      bottom: 100%;
+      box-shadow: $shadow-level-5-top;
+    }
+
+    &.pos-right {
+      right: 0;
+    }
+  }
+
+  &-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 12px;
+
+    %common-icon {
+      font-family: 'prodicon';
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    %common-button {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      cursor: pointer;
+
+      &.disabled-button {
+        cursor: default;
+
+        &:hover {
+          background-color: $white;
+        }
+
+        .calendar-prev-icon,
+        .calendar-next-icon {
+          color: $black-04;
+        }
+      }
+    }
+
+    .calendar {
+      &-prev-button {
+        @extend %common-button;
+      }
+
+      &-next-button {
+        @extend %common-button;
+      }
+
+      &-next-icon {
+        @extend %common-icon;
+        color: $black-04;
+
+        &:before {
+          content: "\e993";
+        }
+
+        &:hover {
+          color: $black-03;
+        }
+      }
+
+      &-prev-icon {
+        @extend %common-icon;
+        color: $black-04;
+
+        &:before {
+          content: "\e992";
+        }
+
+        &:hover {
+          color: $black-03;
+        }
+      }
+
+      &-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        flex-grow: 1;
+        color: $secondary-02;
+
+        &:hover {
+          background-color: $white;
+        }
+
+        &.disabled-title {
+          cursor: default;
+          color: inherit;
+
+          &:hover {
+            background-color: $white;
+          }
+        }
+      }
+    }
+  }
+
+  &-week-days {
+    display: flex;
+    justify-content: space-between;
+    background-color: $white;
+    height: 24px;
+    align-items: center;
+    padding: 0 12px;
+
+    .calendar-date-cell {
+      color: $black-03;
+      cursor: default;
+      height: 24px;
+      width: 24px;
+      font-size: 14px;
+      text-align: center;
+    }
+  }
+
+  &-month-dates {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 12px;
+
+    .calendar {
+      &-dates-row {
+        display: flex;
+        justify-content: space-between;
+
+        &:not(:last-of-type) {
+          margin-bottom: 2px;
+        }
+      }
+
+      &-date-cell {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        height: 24px;
+        width: 24px;
+        font-size: 14px;
+        border-radius: 50%;
+
+        &.different-month-date {
+          color: $black-05;
+          &:hover {
+            background-color: $black-06;
+            color: $black-01;
+          }
+        }
+
+        &.today {
+          font-weight: 600;
+        }
+
+        &:hover {
+          background-color: $black-07;
+        }
+
+        &.active {
+          background-color: var(--brand-color);
+          color: $white;
+        }
+
+        &.disabled-date {
+          cursor: not-allowed;
+          color: $black-05;
+
+          &:hover {
+            background-color: $white;
+          }
+        }
+
+        &.marked-date::after {
+          content: '';
+          width: 4px;
+          height: 4px;
+          border-radius: 50%;
+          background-color: $black-04;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+    color: $black-05;
+  }
+
+  &-month-year {
+    &-view {
+      padding: 2px 12px 12px;
+    }
+
+    &-row {
+      display: flex;
+      justify-content: space-between;
+
+      &:not(:last-of-type) {
+        margin-bottom: 12px;
+      }
+    }
+
+    &-cell {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 56px;
+      height: 36px;
+      cursor: pointer;
+      border-radius: 8px;
+
+      &:hover {
+        background-color: $black-07;
+      }
+
+      &.active {
+        background-color: var(--brand-color);
+        color: $white;
+      }
+
+      &.disabled-month-year {
+        cursor: not-allowed;
+        color: $black-04;
+
+        &:hover {
+          background-color: $white;
+        }
+      }
+
+      &.different-year {
+        &:hover {
+          background-color: $black-06;
+          color: $black-01;
+        }
+      }
+    }
+  }
+}

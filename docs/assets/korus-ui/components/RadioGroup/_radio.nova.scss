@@ -1,0 +1,99 @@
+.radio {
+  &-wrapper {
+    display: inline-block;
+    &.space-large .radio-button {
+      padding-bottom: 1.4rem;
+    }
+  }
+
+  &-button {
+    &-input {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+      pointer-events: none;
+
+      &:checked + .radio-button-label {
+        &::after {
+          background-color: $white;
+          transform: scale(1);
+        }
+
+        &::before {
+          background-color: var(--brand-color);
+          border-color: var(--brand-color);
+        }
+
+        &:hover::before {
+          background-color: var(--brand-hover-color);
+          border-color: var(--brand-hover-color);
+        }
+      }
+
+      &:disabled + .radio-button-label {
+        cursor: default;
+
+        &::before {
+          border: 1px solid $black-05;
+          background-color: $black-07;
+        }
+
+        &:hover {
+          &::before {
+            border: 1px solid $black-05;
+            background-color: $black-07;
+          }
+        }
+      }
+
+      &:checked:disabled + .radio-button-label::after {
+        background-color: $black-05;
+      }
+
+      &:focus + .radio-button-label::before {
+        border-color: $focus-border;
+      }
+
+      &:checked:focus + .radio-button-label::before {
+        border-color: $focus-border;
+      }
+    }
+
+    &-label {
+      padding-left: 24px;
+      vertical-align: text-top;
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+
+      &::before {
+        content: " ";
+        width: 16px;
+        height: 16px;
+        border: 1px solid $black-05;
+        background-color: $white;
+        border-radius: 50%;
+        position: absolute;
+        top: 2px;
+        left: 0;
+      }
+
+      &::after {
+        content: " ";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        position: absolute;
+        top: 7px;
+        left: 5px;
+        transform: scale(0);
+        transition: transform .2s ease-out;
+      }
+
+      &:hover::before {
+        border-color: var(--brand-hover-color);
+      }
+    }
+  }
+}

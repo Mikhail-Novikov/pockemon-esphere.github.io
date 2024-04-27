@@ -1,0 +1,134 @@
+.input {
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    &.large {
+      .input-element-wrapper {
+        @extend %input-large;
+      }
+      .input-clear-icon {
+        top: 4px;
+      }
+    }
+  }
+
+  &-element {
+    text-overflow: ellipsis;
+
+    &:disabled {
+      -webkit-text-fill-color: $black-03;
+    }
+  }
+
+  &-element-wrapper {
+    @extend %input-wrapper;
+    padding: 0;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+
+    &:not(.disabled):not(.danger):hover {
+      @extend %input-hovered;
+    }
+
+    &:not(.focused):not(.disabled).danger {
+      border-color: $error-02;
+    }
+
+    &.focused {
+      @extend %input-focused;
+    }
+
+    &.disabled {
+      @extend %input-disabled;
+    }
+    & > input[class*="input"] {
+      padding: 0 24px 0 12px;
+    }
+  }
+
+  &-clear-icon {
+    font-size: 20px;
+    width: 24px;
+    height: 30px;
+    cursor: pointer;
+    font-family: "prodicon";
+    color: $black-03;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    &::before {
+      content: "\e995";
+      position: absolute;
+      top: 50%;
+      right: -5px;
+      transform: translate(-50%, -50%);
+      font-style: normal;
+    }
+  }
+
+  &-icon {
+    margin: 0;
+    font-size: 14px;
+    color: $black-03;
+
+    &:before {
+      position: relative;
+      top: 5px;
+    }
+
+    &.icon-left {
+      padding-left: 5px;
+
+      & + input {
+        padding-left: 7px;
+      }
+    }
+
+    &.icon-right {
+      padding-right: 7px;
+    }
+  }
+
+  &-prefix {
+    @extend %input-prefix;
+  }
+
+  &-suffix {
+    @extend %input-suffix;
+  }
+}
+
+// loading .input
+.loading-input {
+  position: relative;
+  .input-element-wrapper {
+    &::before {
+      content: " ";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 50%;
+      right: -2px;
+      transform: translateY(-50%) rotate(0);
+      background-image: $loader-element-item;
+      background-size: contain;
+      animation: rotate-clockwise 1s linear infinite;
+    }
+    .input-element {
+      padding-right: 36px;
+    }
+  }
+  .input-clear-icon {
+    display: none;
+  }
+}
+
+@keyframes rotate-clockwise {
+  from {
+    transform: translateY(-50%) rotate(0); }
+  to {
+    transform: translateY(-50%) rotate(1turn); }
+}

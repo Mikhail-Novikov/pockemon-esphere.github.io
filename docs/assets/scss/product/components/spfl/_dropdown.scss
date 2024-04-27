@@ -1,0 +1,63 @@
+@import 'variables';
+
+/* header
+----------------------------------------------------------------------------- */
+
+.personal-box .dropdown-projects .more, 
+.personal-box .dropdown-projects .more:hover {
+  min-width: auto;
+  height: auto;
+  padding-bottom: .8rem !important;
+  padding-top: .8rem !important;
+  background-color: transparent;
+  border-color: transparent !important;
+}
+
+.personal-box .dropdown-projects.opened ul {
+  max-height: 25.6rem;
+
+  a {
+    font-family: 'SbSansDisplay';
+    font-weight: 600;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    color: $primary-02;
+    padding-top: .9rem;
+    padding-bottom: .9rem;
+  }
+}
+
+.dropdown-wrapper {
+
+  &.opened > .button-dropdown::after,
+  &.button-dropdown:focus::after {
+    right: 1.9rem !important;
+  }
+
+  &.opened .button-wrapper {
+    border-color: $black-05;
+  }
+}
+
+.dropdown-btn + ul > li > a {
+  min-width: auto !important;
+  max-width: 25rem;
+  display: block !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// активность строки, не доступность
+
+.suggestion-wrapper {
+
+  .no-active.suggestion-item, .no-active.suggestion-item.selected {
+    cursor: not-allowed;
+    background-color: transparent;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}

@@ -1,0 +1,75 @@
+@import './nova';
+@import 'themable/button';
+@import 'themable/button-group';
+@import 'themable/checkbox';
+@import 'themable/dropdown';
+@import 'themable/h-stepper';
+@import 'themable/radio';
+@import 'themable/switch';
+@import 'themable/progress-bar';
+@import 'themable/layout';
+@import 'themable/loader';
+@import 'themable/tabs';
+@import 'themable/v-stepper';
+@import 'themable/statusbar';
+@import 'themable/slider';
+@import 'themable/sms-box';
+@import 'themable/date-picker';
+
+// Задаем название темы и ее переменные
+$sky: (
+  // Основная группа цветов, при необходимости можно сделать такой же блок для групп цветов danger, warning и т.д. */
+  primary: (
+    default: $secondary-02,
+    hover: $secondary-03,
+    active: $secondary-01,
+    disabled: $secondary-04,
+  ),
+);
+
+// Пример использования:
+//
+// В продуктовый файл импортируем файл themable:
+//@import '../variables/themes/themable';
+//
+// Подключаем нужную тему:
+//@include themable($sky);
+
+@mixin themable($theme-map) {
+  // Loop through each of the keys (sections)
+  @each $section, $map in $theme-map {
+
+    // Для каждого компонента передаем только те переменные, которые нужны
+    @include button(map-get($map, default), map-get($map, hover), map-get($map, active), map-get($map, disabled));
+
+    @include button-group(map-get($map, default), map-get($map, hover), map-get($map, disabled));
+
+    @include dropdown(map-get($map, active));
+
+    @include checkbox(map-get($map, default), map-get($map, hover));
+
+    @include h-stepper(map-get($map, default));
+
+    @include radio(map-get($map, default), map-get($map, hover));
+
+    @include switch(map-get($map, default), map-get($map, disabled));
+
+    @include progress-bar(map-get($map, default));
+
+    @include layout(map-get($map, default));
+
+    @include loader(map-get($map, default));
+
+    @include tabs(map-get($map, hover), map-get($map, active));
+
+    @include v-stepper(map-get($map, default));
+
+    @include statusbar(map-get($map, default));
+
+    @include slider(map-get($map, default), map-get($map, active));
+
+    @include sms-box(map-get($map, default), map-get($map, disabled));
+
+    @include date-picker(map-get($map, default));
+  }
+}

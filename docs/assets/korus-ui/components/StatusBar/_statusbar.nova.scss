@@ -1,0 +1,121 @@
+.statusbar {
+  &-wrapper {
+    padding: 5px 10px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    counter-reset: step;
+  }
+
+  &-status-item {
+    color: $gray-dark;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 2px;
+    position: relative;
+
+    .statusbar-icon:before {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 12px;
+      color: $black-01;
+      text-transform: none;
+      background-size: contain;
+      counter-increment: step;
+      content: counter(step);
+      width: 22px;
+      height: 22px;
+      box-shadow: 0 6px 10px $base-08, 0 0 2px $base-03;
+      border-radius: 50%;
+      line-height: 1;
+      background-color: $white;
+      z-index: $zindex-statusbar-icon;
+    }
+
+    &.first {
+      align-items: flex-start;
+    }
+
+    &.last {
+      align-items: flex-end;
+
+      & + .statusbar-line {
+        display: none;
+      }
+
+      & > .statusbar-label {
+        right: 0;
+      }
+    }
+
+    &:not(.first):not(.last) > .statusbar-label {
+      -ms-transform: translateX(-50%);
+    }
+
+    .success {
+      & + .statusbar-label {
+        color: var(--brand-color);
+      }
+
+      &:before {
+        box-shadow: 0 6px 10px $base-08, 0 0 2px $base-03;
+        background-color: var(--brand-color);
+        color: $white;
+      }
+    }
+
+    .danger {
+      & + .statusbar-label {
+        color: $error-01;
+      }
+
+      &:before {
+        box-shadow: 0 6px 10px $base-08, 0 0 2px $base-03;
+        content: counter(step);
+        font-size: 12px;
+        color: $white;
+        background-color: $error-01;
+      }
+    }
+
+    .progress {
+      & + .statusbar-label {
+        color: $black-01;
+        font-weight: 500;
+      }
+
+      &:before {
+        box-shadow: 0 6px 10px $base-08, 0 0 2px $base-03;
+        background-image: #{$statusbar-progress-label-color};
+      }
+    }
+  }
+
+  &-line {
+    display: flex;
+    flex-grow: 1;
+    align-self: flex-start;
+    height: 2px;
+    background-color: $gray;
+    margin: 11px 5px 5px 5px;
+  }
+
+  &-label {
+    position: absolute;
+    top: 50%;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 8px;
+
+    a {
+      color: inherit;
+    }
+  }
+}

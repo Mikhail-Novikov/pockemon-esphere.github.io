@@ -1,0 +1,359 @@
+@import "../variables/_base.scss";
+
+$box-border: #e2f0fb;
+$grid-color: #09526d;
+$body-bg: #fff;
+$color-warning: #f49530;
+$sphere-error: #f7142f;
+$nova-error: #c11030;
+
+// для устаревшего кендо
+
+@font-face {
+  font-family: 'WebComponentsIcons';
+  src: url("../../fonts/kendo-glyphs/WebComponentsIcons.woff2"), url("../../fonts/kendo-glyphs/WebComponentsIcons.woff"), url("../../fonts/kendo-glyphs/WebComponentsIcons.ttf");
+  font-weight: normal;
+  font-style: normal; }
+
+// Логин
+
+.login {
+
+  &.sphere {
+    background: $body-bg url(https://cdn.esphere.ru/images/bg-cloud.png) 50% 0 no-repeat;
+    background-size: 100%;
+  }
+
+  .banner {
+    background: url(../../images/scanner/spk-bg-8.jpg) 50% 50% no-repeat;
+    background-size: 150%;
+    padding: 2rem 0;
+    border-radius: .3rem;
+    transition: 800ms;
+
+    &:hover {
+      background-size: 160%;
+    }
+  }
+
+  .wrapper {
+    max-width: 100rem;
+  }
+
+  .content-box {
+    background-repeat: no-repeat;
+    padding: 5% 0;
+  }
+
+  .box {
+    border-color: $box-border;
+  }
+
+  .textbox {
+    background-color: $body-bg;
+    border: 1px solid $gray;
+    border-radius: 3px;
+    box-sizing: border-box;
+
+    color: $gray-base;
+    display: inline-block;
+
+    font-family: inherit;
+    font-size: 100%;
+    font-weight: normal;
+
+    line-height: 2rem;
+    height: 4rem;
+    text-indent: .9rem;
+    padding: .9rem 0;
+    position: relative;
+    outline: 0;
+    overflow: visible;
+
+    vertical-align: middle;
+    -webkit-appearance: none;
+  }
+
+  .avatar {
+    background: $gray-lighter;
+    border: 1px solid $gray;
+    margin: 1rem auto;
+    height: 12.8rem;
+    width: 12.8rem;
+  }
+}
+
+// Баннер
+
+.banner {
+  color: $body-bg;
+
+  .allert {
+    background: $body-bg;
+    color: $gray-base;
+    padding: 1rem;
+    border: .5rem solid $gray-base;
+    margin: auto;
+    width: 70%;
+  }
+
+  .text,
+  .note,
+  .title {
+    text-shadow: 0 1px 2px $gray-base;
+  }
+
+  h3 {
+    font-size: 2.4rem;
+  }
+
+  .title {
+    border: none;
+    margin: 0 0 1rem;
+  }
+
+  .text {
+    padding: 2rem 0;
+  }
+
+  .note {
+    padding: 1rem 0 0;
+    opacity: .7;
+  }
+}
+
+
+// Регистрация
+
+.reg {
+  background: $body-bg url(https://cdn.esphere.ru/images/bg-cloud.png) 50% 0 no-repeat;
+  background-size: 100%;
+
+  .content-box {
+    padding-top: 5rem;
+  }
+
+  header {
+    padding-bottom: 3rem;
+    color: $grid-color;
+
+    .k-grid {
+      color: $grid-color;
+      border-color: transparent;
+
+      td {
+        border-color: $body-bg;
+      }
+    }
+
+    .button {
+      background: transparent;
+      color: inherit;
+      border-color: inherit;
+
+      &:hover {
+        background: $body-bg;
+      }
+    }
+  }
+
+  .wrapper {
+    max-width: 65rem;
+    min-width: 0;
+  }
+
+  .box {
+    padding: 1.6rem 3.2rem;
+    box-shadow: 0 -1.5rem 2rem $box-border;
+    border-color: $box-border $box-border transparent;
+    min-height: 40rem;
+  }
+
+  &.bill, &.manager {
+
+    .box {
+      padding: 3rem 6rem;
+    }
+
+    .k-grid {
+      margin: 1rem 0;
+    }
+  }
+}
+
+
+// Ошибки
+
+body.error h1 {
+  font-size: 8em;
+  line-height: 100%;
+}
+
+.error-box {
+  position: relative;
+  margin-top: 4rem;
+  box-shadow: .7rem .7rem 0 rgba($gray-base,.1);
+
+  .box {
+    padding: 4rem 3rem 6rem;
+  }
+
+  .button-box {
+    position: absolute;
+    bottom: .5rem;
+    left: 0;
+    right: 0;
+  }
+}
+
+// Браузеры
+
+* html ul li {zoom: 1;}
+
+body.browsers .box.blank {box-shadow: none;}
+
+/* Browser Icons */
+
+.i-browser {display:block; width: 64px; height: 64px; margin: 0 auto; background-image: url(https://cdn.esphere.ru/images/browser_sprite.png);}
+
+.i-chrome  {background-position: -265px 0;}
+
+.i-ff      {background-position: -67px  0;}
+
+.i-ie      {background-position: -134px 0;}
+
+.i-ya      {background-position:    0   0;}
+
+.i-edge    {background-position: -199px 0;}
+
+.i-safari  {background-position: -402px 0;}
+
+.i-opera   {background-position: -333px 0;}
+
+.k-dropzone em {
+  width: 60%;
+}
+
+/* анимация пульсации ошибок на инпутах */
+
+.sphere .k-checkbox.outbreak + .k-checkbox-label:before,
+.sphere .k-textbox.outbreak {
+  -webkit-animation: pulsating-sphere 1s ease-in-out;
+  -webkit-animation-delay: .25s;
+}
+
+.nova .k-checkbox.outbreak + .k-checkbox-label:before,
+.nova .k-textbox.outbreak {
+  -webkit-animation: pulsating-nova 1s ease-in-out;
+  -webkit-animation-delay: .25s;
+}
+
+@-webkit-keyframes pulsating-sphere {
+
+  0% {
+    border-color: $gray; }
+
+  50% {
+    border-color: $sphere-error; }
+
+  100% {
+    border-color: $gray; }
+}
+
+@-webkit-keyframes pulsating-nova {
+
+  0% {
+    border-color: $black-06; }
+
+  50% {
+    border-color: $nova-error; }
+
+  100% {
+    border-color: $black-06; }
+}
+
+
+/* Карточки сервисов и услуг */
+
+.service-card {
+  box-sizing: border-box;
+  width: 25.6rem;
+  margin-right: 2.4rem;
+  margin-bottom: 2.4rem;
+  border: 1px solid $black-06;
+  border-radius: 1.6rem;
+  padding: 1.6rem 2.4rem;
+  transition: border-color .2s;
+
+  &:hover {
+    border-color: $black-03;
+  }
+
+  &:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+
+.sphere .service-card {
+
+  &.active {
+    border-color: $grid-color;
+  }
+
+  .button.small {
+    padding: .3rem 1.6rem;
+    min-width: 8rem;
+  }
+}
+
+// дополнительные общие классы
+
+.padding-top-120 {
+  padding-top: 12rem;
+}
+
+.scroll-vertical-40 {
+  min-height: 30rem;
+  max-height: 40rem;
+  margin-right: -2.4rem;
+  overflow-y: auto;
+}
+
+/* хелпер для сброса высоты */
+
+.height-auto {
+  min-height: auto !important;
+}
+
+/* ширина лейбла в формах */
+
+.w-50[class*="list"] dt {
+  width: 49%;
+}
+
+.w-50[class*="list"] dd {
+  padding-left: 50%;
+}
+
+/* сообщение об ошибке под инпутом */
+
+.invalid-message {
+  position: relative;
+  padding-top: .8rem;
+  padding-left: 2rem;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+
+  i {
+    left: 0;
+    top: 1rem;
+    font-size: 1.6rem;
+    line-height: 1.2rem;
+  }
+}
+
+/* заголовок в окнах 2 и более строки */
+
+.k-window-titlebar {
+  white-space: normal;
+}

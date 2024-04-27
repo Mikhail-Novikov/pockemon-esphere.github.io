@@ -1,0 +1,48 @@
+.textarea {
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-input {
+    @extend %input;
+    width: 100%;
+    resize: none;
+    height: 120px;
+    font-family: inherit;
+    padding: 8px 12px;
+
+    &:not(.disabled):not(.danger):hover {
+      @extend %input-hovered;
+    }
+
+    &:not(.focused):not(.disabled).danger {
+      border-color: $brand-danger;
+    }
+
+    &.focused {
+      @extend %input-focused;
+    }
+
+    &.disabled {
+      @extend %input-disabled;
+    }
+
+    &::placeholder {
+      @extend %input-placeholder;
+    }
+
+    &:disabled {
+      -webkit-text-fill-color: $black-03;
+    }
+
+    &.auto-resize {
+      scrollbar-width: none;
+      overflow-y: hidden;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}

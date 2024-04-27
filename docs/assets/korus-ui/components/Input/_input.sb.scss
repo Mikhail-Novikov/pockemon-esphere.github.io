@@ -1,0 +1,60 @@
+.input {
+  &-wrapper {
+    display: flex;;
+    flex-direction: column;
+
+    &.large {
+      .input-element-wrapper {
+        @extend %input-large;
+      }
+    }
+  }
+
+  &-element-wrapper {
+    @extend %input-wrapper;
+    padding: 0;
+
+    &:not(.disabled):not(.danger):hover {
+      @extend %input-hovered;
+    }
+
+    &:not(.focused):not(.disabled).danger {
+      border-color: $brand-danger;
+    }
+
+    &.focused {
+      @extend %input-focused;
+    }
+  }
+
+  &-icon {
+    margin: 0;
+    font-size: 18px;
+    color: $gray-dark;
+
+    &:before {
+      position: relative;
+      top: 5px;
+    }
+
+    &.icon-left {
+      padding-left: 5px;
+
+      & + input {
+        padding-left: 7px;
+      }
+    }
+
+    &.icon-right {
+      padding-right: 7px;
+    }
+  }
+
+  &-prefix {
+    @extend %input-prefix;
+  }
+
+  &-suffix {
+    @extend %input-suffix;
+  }
+}

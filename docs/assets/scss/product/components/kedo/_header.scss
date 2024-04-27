@@ -1,0 +1,82 @@
+.personal-box {
+  width: 100%;
+  height: 6rem;
+  padding: 0 .8rem 0 1.6rem;
+  position: fixed;
+  background-color: $text-reverse;
+  z-index: 92;
+
+  img {
+    height: 2.4rem;
+  }
+
+  .button-wrapper {
+    border-radius: 1.6rem;
+    max-width: 24.8rem;
+    padding: 0 1.6rem;
+
+    &.blank {
+
+      &.active {
+        background-color: $black-06;
+      }
+
+      &:hover {
+        border-radius: 1.6rem;
+        background-color: $black-07;
+
+        & > i {
+          color: $black-04;
+        }
+      }
+    }
+
+    &.success {
+
+      &:active, &:focus {
+        border-color: transparent;
+      }
+    }
+  }
+
+  .hamburger {
+    display: none;
+    height: 2.4rem;
+    width: 2.4rem !important;
+
+    .bar {
+      width: 2.4rem;
+      background-color: $success;
+    }
+
+    .bar-2 {
+      top: .6rem;
+    }
+
+    .bar-4 {
+      top: 1.2rem;
+    }
+
+    &-text {
+      position: absolute;
+      bottom: 0;
+      color: $success;
+      font-size: .9rem;
+      line-height: .9rem;
+      text-transform: lowercase;
+    }
+
+    i {
+      padding-left: .2rem;
+      color: $success;
+    }
+  }
+
+  button.more {
+
+    &.active i,
+    &:active i {
+      color: $success;
+    }
+  }
+}

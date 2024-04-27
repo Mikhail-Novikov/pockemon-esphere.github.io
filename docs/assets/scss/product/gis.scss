@@ -1,0 +1,148 @@
+@import "../variables/_base.scss";
+
+$body-bg: #fff;
+$secondary-bg: #b9dbf0;
+
+.auth {
+
+  .content-box {
+    background-image: url('https://cdn.esphere.ru/images/gis/map3d.png');
+  }
+
+  .header {
+    display: none;
+  }
+}
+
+.header {
+  border: 0;
+  background: #2c2f38;
+  color: $body-bg;
+}
+
+.logo {
+  box-sizing: border-box;
+  display: block;
+  height: 4rem;
+  width: 24rem;
+  background-image: url('https://cdn.esphere.ru/images/gis/lesprom-logo.svg');
+  background-repeat: no-repeat;
+  background-size: 24rem;
+}
+
+.nav-box {
+
+  .logo {
+    margin-right: 2rem;
+    margin-left: 2rem;
+    width: 4rem;
+  }
+
+  .menu-h .level-1 {
+
+    > a,
+    > div,
+    > span {
+      padding: 1rem 2rem 1rem 2rem;
+      font-size: 1.6rem;
+    }
+  }
+}
+
+body {
+
+  &.gis {
+    background: radial-gradient(ellipse at center, $body-bg 0%, $secondary-bg 98%);
+
+    &.realty {
+
+      .content-box {
+        background-image: url('https://cdn.esphere.ru/images/gis/map2d.png');
+      }
+    }
+  }
+
+  &.aside .content-box {
+    margin-left: 29rem;
+  }
+
+  &.d2 {
+
+    .content-box {
+      background-image: url('https://cdn.esphere.ru/images/gis/map2d.png');
+    }
+
+    &.selected {
+
+      .content-box {
+        background-image: url('https://cdn.esphere.ru/images/gis/map2D-selected.png');
+      }
+    }
+  }
+
+  &.d3 {
+
+    .content-box {
+      background-image: url('https://cdn.esphere.ru/images/gis/map3d.png');
+    }
+
+    &.selected {
+
+      .content-box {
+        background-image: url('https://cdn.esphere.ru/images/gis/map3D-selected.png');
+      }
+    }
+  }
+}
+
+%border {
+  border-radius: .5rem;
+  border: none;
+}
+
+.sidebar {
+  background: $body-bg;
+  margin: 8rem 0 2rem 2rem;
+  padding: 2rem 1rem !important;
+  width: 27rem;
+  box-shadow: .5rem 0 1.5rem rgba($gray-base,.1);
+  @extend %border;
+}
+
+.box {
+  box-shadow: 0 0 1.5rem rgba($gray-base,.1);
+  @extend %border;
+}
+
+.content-box {
+  box-sizing: border-box;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: 120rem 60rem;
+  background-position: center center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+aside .list > li {
+
+  &:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+
+  &:hover {
+    background: $body-bg;
+  }
+}
+
+.inner-content {
+  position: absolute;
+  right: 22.5%;
+  top: 45%;
+}
+
+#gisMapController {
+  position: relative;
+}

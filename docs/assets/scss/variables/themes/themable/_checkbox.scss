@@ -1,0 +1,18 @@
+@mixin checkbox($default, $hover) {
+  .checkbox-input:checked:not(:disabled) + .checkbox-label::before,
+  .checkbox-input:checked:not(:disabled) + .checkbox-label:not(.semi)::after {
+    background-color: $default;
+    border-color: $default;
+  }
+
+  .checkbox-input + .checkbox-label:hover::before,
+  .checkbox-input + .checkbox-label:not(.semi):hover::after {
+    border-color: $hover;
+  }
+
+  .checkbox-input:checked + .checkbox-label:hover::before,
+  .checkbox-input:checked + .checkbox-label:not(.semi):hover::after {
+    background-color: $hover;
+    border-color: $hover;
+  }
+}

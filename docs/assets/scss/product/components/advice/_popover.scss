@@ -1,0 +1,83 @@
+@import 'variables';
+
+/* popover
+----------------------------------------------------------------------*/
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s, visibility 0s linear .3s;
+}
+
+.p-content {
+  background: $white;
+  box-shadow: $shadow;
+  border-radius: .6rem;
+  box-sizing: border-box;
+  min-width: 25rem;
+  margin-left: -12.5rem;
+  position: absolute;
+  left: 50%;
+  bottom: 2rem;
+  text-align: left;
+  @extend .hidden;
+  z-index: 1;
+
+  &.open {
+    @extend .visible;
+  }
+
+  &:after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 1rem solid transparent;
+    border-right: 1rem solid transparent;
+    border-top: 1rem solid $white;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -1rem;
+  }
+}
+
+.p-open, .popover {
+ display: block;
+ position: relative;
+ user-select: none;
+ cursor: help;
+}
+
+.p-close {
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.popover {
+
+  .p-content.overleft {
+    left: 10rem;
+
+    &:after {
+      left: 8rem;
+    }
+  }
+
+  .p-content.overright {
+    left: 1rem;
+
+    &:after {
+      left: 17rem;
+    }
+  }
+}

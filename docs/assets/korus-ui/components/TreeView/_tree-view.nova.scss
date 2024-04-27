@@ -1,0 +1,78 @@
+.tree {
+  &-view {
+    &-wrapper {
+      > .tree-view-list {
+        margin-left: 0;
+      }
+    }
+  
+     &-list {
+      position: relative;
+      margin-left: 24px;
+    }
+  }
+  
+  &-item {
+    &-content {
+      display: flex;
+      width: 100%;
+      align-items: flex-start;
+      margin-bottom: 8px;
+  
+      &.pointer {
+        cursor: pointer;
+      }
+  
+      &.disabled {
+        background-color: transparent !important;
+        color: $black-03;
+        cursor: not-allowed;
+  
+        .tree-item-icon {
+          cursor: not-allowed;
+  
+          &::before {
+            content: url(https://cdn.esphere.ru/images/nova/icons/arrow-down-grey.svg);
+          }
+        }
+      }
+    }
+  
+    .tree-view-list {
+      display: none;
+    }
+  
+    &.opened {
+      & > .tree-view-list {
+        display: block;
+      }
+  
+      & > .tree-item-content .tree-item-icon {
+        transform: rotate(180deg);
+      }
+    }
+  
+    &-label {
+      width: 100%;
+      min-width: 0;
+    }
+  
+    &-icon {
+      cursor: pointer;
+      line-height: 20px;
+      transition-duration: .2s;
+  
+      &::before {
+        content: url(https://cdn.esphere.ru/images/nova/icons/arrow-down-black.svg);
+      }
+        
+      &-container {
+        display: flex;
+        flex-shrink: 0;
+        justify-content: center;
+        margin-right: 8px;
+        min-width: 16px;
+      }
+    }
+  }
+}

@@ -1,0 +1,270 @@
+@import "../variables/_base.scss";
+
+$dropdown-hover: $black-07;
+$dropdown-bg: $white;
+$param-selected-bg: #b4e9c6;
+$param-selected-border: #3ed170;
+//--------- CRUTCHES ----------------------------------------------------------------------------------------
+
+body {
+  font-family: SBSans, Arial, PT_sans, sans-serif;
+}
+
+.rub {
+  font-family: "Roboto", "Arial", "PT_sans", sans-serif;
+
+  &::after {
+    content: '\20BD';
+  }
+}
+
+.k-window-content {
+  overflow: inherit !important;
+}
+
+.border-radius-none {
+  border-radius: 0;
+}
+//--------- END CRUTCHES ------------------------------------------------------------------------------------
+
+//--------- MIXINS ------------------------------------------------------------------------------------------
+@mixin padding-x($i) {
+  padding-left: #{$i}rem;
+  padding-right: #{$i}rem;
+}
+
+@mixin padding-y($i) {
+  padding-top: #{$i}rem;
+  padding-bottom: #{$i}rem;
+}
+//--------- END MIXINS ---------------------------------------------------------------------------------------
+
+// --------- HEADER STYLES -----------------------------------------------------------------------------------
+
+.trip {
+
+  .header {
+    margin-bottom: .5rem;
+  }
+}
+// --------- END HEADER STYLES -------------------------------------------------------------------------------
+
+//--------- PERSONAL STYLES ----------------------------------------------------------------------------------
+
+.personal-box {
+  float: none;
+
+  .personal-title {
+    padding-right: 2.4rem;
+    border-right: 1px solid $black-06;
+
+    li {
+      vertical-align: middle;
+
+      h3, div {
+        line-height: 2rem;
+        padding: 0 !important;
+
+        &:hover {
+         background-color: transparent !important;
+        }
+      }
+    }
+  }
+
+  .personal-nav, .personal-controls {
+    margin-left: 2.4rem;
+
+    li {
+      @include padding-x(1.6);
+    }
+  }
+
+  .personal-controls {
+
+    li {
+      border-left: 1px solid $black-06;
+
+      &:first-child, &:last-child {
+        border-left: none;
+      }
+
+      &:last-child {
+        @include padding-x(0);
+      }
+    }
+  }
+}
+
+.padding-x-4_8rem, .padding-x-4-8-rem {
+  @include padding-x(4.8);
+}
+// --------- END PERSONAL STYLES -----------------------------------------------------------------------------
+
+// --------- END ICONS STYLES --------------------------------------------------------------------------------
+
+.icon-3rem, .icon-3-rem {
+  width: 3.5rem;
+  height: auto;
+}
+
+.txt-small {
+
+  &.center {
+    padding-top: .3rem;
+  }
+}
+// --------- END ICONS STYLES --------------------------------------------------------------------------------
+
+// --------- TAB STYLES --------------------------------------------------------------------------------------
+
+.trip .tabs-filter {
+  margin-left: 0;
+}
+// --------- END TAB STYLES ----------------------------------------------------------------------------------
+
+// --------- SNACKBAR STYLES ---------------------------------------------------------------------------------
+
+.snackbar-container {
+  position: fixed;
+  bottom: 2rem;
+  left: 0;
+  width: 100%;
+
+  .snackbar {
+    margin: 0 auto;
+  }
+}
+// --------- END SNACKBAR STYLES -----------------------------------------------------------------------------
+
+// --------- CREATE.HTML STYLES ------------------------------------------------------------------------------
+
+.v-stepper {
+
+  #title-1 {
+
+    .box {
+      background-color: transparent;
+    }
+  }
+
+  .content-item {
+    padding-right: 2rem !important;
+  }
+}
+// --------- END CREATE.HTML STYLES --------------------------------------------------------------------------
+
+// --------- END TRIP.HTML STYLES ----------------------------------------------------------------------------
+
+.trip {
+
+  .k-grid th, .k-grid td {
+    padding: 1.2rem 1rem;
+  }
+}
+// --------- END TRIP.HTML STYLES ----------------------------------------------------------------------------
+
+// --------- SETTINGS.HTML STYLES ----------------------------------------------------------------------------
+
+.settings {
+
+  .menu-v {
+
+    li {
+
+      a {
+        white-space: normal;
+
+        &.disabled {
+          background-color: transparent !important;
+        }
+      }
+    }
+  }
+
+  .settings-counter {
+    padding-top: .6rem;
+  }
+}
+// --------- END SETTINGS.HTML STYLES ------------------------------------------------------------------------
+
+// --------- LIMITS.HTML STYLES ------------------------------------------------------------------------------
+
+.dropdown {
+  position: relative;
+
+  &.manual {
+
+    > ul {
+      display: block;
+    }
+  }
+
+  .dropdown-container {
+    position: absolute;
+    z-index: 100;
+    top: calc(100% + .5rem);
+    padding: 1rem;
+    background: white;
+    box-shadow: $shadow;
+    border-radius: .6rem;
+    box-sizing: border-box;
+
+    & > div, & > ul {
+      max-height: 40rem;
+      overflow-y: scroll;
+    }
+
+    li {
+      padding: .8rem 1rem;
+    }
+
+    .pointer {
+
+      &:hover {
+        background-color: $dropdown-hover;
+        border-radius: .6rem;
+      }
+    }
+
+    &.w-35 {
+      width: 35rem;
+
+      &.left {
+        left: 1rem;
+      }
+    }
+  }
+}
+
+.w-10rem, .w-10-rem {
+  width: 10rem;
+}
+// --------- END LIMITS.HTML STYLES --------------------------------------------------------------------------
+
+// --------- END MATCHING.HTML STYLES ------------------------------------------------------------------------
+
+.no-rules-placeholder {
+  width: 45rem;
+  height: 42rem;
+  margin: 2rem auto;
+  background: url('https://cdn.esphere.ru/images/trip/images/baloons.svg') no-repeat;
+  background-size: cover;
+
+  div {
+    padding-top: 11rem;
+    text-align: center;
+  }
+}
+
+.match-step-padding {
+  padding-top: .5rem;
+  padding-bottom: .2rem;
+}
+// --------- END MATCHING.HTML STYLES ------------------------------------------------------------------------
+
+.avia-icon-small {
+  transform: rotate(305deg);
+  font-size: 1rem;
+  margin-top: .4rem;
+}

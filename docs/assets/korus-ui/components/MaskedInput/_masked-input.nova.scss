@@ -1,0 +1,65 @@
+.masked {
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &-input{
+
+    &-element {
+      text-overflow: ellipsis;
+    }
+
+    &-wrapper {
+      @extend %input-wrapper;
+
+      &:not(.disabled):not(.danger):hover {
+        @extend %input-hovered;
+      }
+
+      &:not(.focused):not(.disabled).danger {
+        border-color: $brand-danger;
+      }
+
+      &.focused {
+        @extend %input-focused;
+      }
+
+      &.disabled {
+        @extend %input-disabled;
+      }
+
+      & > input[class*="input"] {
+        padding: 0 24px 0 12px;
+      }
+    }
+
+    &-clear-icon {
+      font-size: 20px;
+      width: 24px;
+      height: 32px;
+      cursor: pointer;
+      font-family: "prodicon";
+      color: $black-03;
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      &::before {
+        content: "\e995";
+        position: absolute;
+        top: 50%;
+        right: -5px;
+        transform: translate(-50%, -50%);
+        font-style: normal;
+      }
+    }
+  }
+}
+
+.masked-wrapper.large {
+  .masked-input-wrapper {
+    @extend %input-large;
+  }
+}

@@ -1,0 +1,81 @@
+%modal-wrapper-overlay-common-styles {
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.modal {
+  &-wrapper {
+    @extend %modal-wrapper-overlay-common-styles;
+    position: fixed;
+    min-height: 100%;
+    z-index: 400;
+    background-color: rgba(#000, 0.56);
+    overflow: auto;
+  }
+
+  &-overlay {
+    @extend %modal-wrapper-overlay-common-styles;
+  }
+
+  &-window {
+    margin: 64px 0;
+    max-width: 98%;
+    z-index: 500;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    box-shadow: 0 2px 10px 1px rgba(#000, 0.2);
+    border-radius: 6px;
+  }
+
+  &-cross {
+    position: absolute;
+    top: 30px;
+    right: 24px;
+    display: block;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAwIDEwMDAiPjxwYXRoIGZpbGw9IiM5NDk0OTQiIGQ9Ik03Ny4xNyA3Ny45M0wxMCAxNDUuMDlsMTc3LjA3IDE3Ny4wNyAxNzcuMDcgMTc3LjA4LTE3Ny4wNyAxNzcuMDdMMTAgODUzLjM4bDY4LjA4IDY3Ljc4IDY3Ljc4IDY4LjA4IDE3Ny4wNy0xNzcuMDdMNTAwIDYzNS4wOWwxNzcuMDcgMTc3LjA3IDE3Ny4wNyAxNzcuMDcgNjcuNzgtNjguMDhMOTkwIDg1My4zNyA4MTIuOTMgNjc2LjMxIDYzNS44NiA0OTkuMjRsMTc2LjQ2LTE3Ni40NkM5MDkuMSAyMjYgOTg4LjQ3IDE0NS4wOSA5ODguNDcgMTQzLjU3YzAtMy45Ny0xMjguODQtMTMyLjgtMTMyLjgtMTMyLjgtMS41MyAwLTgyLjQzIDc5LjM4LTE3OS4yMSAxNzYuMTZMNTAwIDM2My4zOCAzMjMuNTQgMTg2LjkyQzIyNi43NiA5MC4xNCAxNDYuNzcgMTAuNzYgMTQ1Ljg2IDEwLjc2Yy0uOTIgMC0zMS43NSAzMC4yMy02OC42OSA2Ny4xN3oiLz48L3N2Zz4=");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 13px;
+    width: 30px;
+    height: 30px;
+    transform: translate(50%, -50%);
+    cursor: pointer;
+  }
+
+  &-body {
+    background: $white;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+
+    &:last-child {
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
+    }
+  }
+
+  &-header {
+    border-radius: 6px 6px 0 0;
+    border-bottom: 1px solid $black-05;
+    padding: 20px 48px 20px 24px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    background: #fbfbfb;
+
+    & + .modal-body {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+
+  &-footer {
+    border-top: 1px solid $black-05;
+    padding: 19px 24px 20px;
+    text-align: right;
+    background: $white;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+}

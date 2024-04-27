@@ -1,0 +1,44 @@
+.daterange {
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    &.wide-list {
+      .suggestion-wrapper {
+        width: 200px;
+      }
+    }
+
+    & > .datepicker-wrapper {
+      flex-grow: 1;
+      width: 50%;
+
+      &:first-child {
+        order: 1;
+      }
+
+      &:last-child {
+        order: 3;
+      }
+    }
+
+    &.large {
+      @extend %datepicker-large;
+
+      .daterange-delimiter {
+        line-height: 40px;
+      }
+    }
+  }
+
+  &-delimiter {
+    display: block;
+    text-align: center;
+    line-height: 32px;
+    width: 16px;
+    min-width: 16px;
+    order: 2;
+    margin-right: 4px;
+    margin-left: 4px;
+  }
+}

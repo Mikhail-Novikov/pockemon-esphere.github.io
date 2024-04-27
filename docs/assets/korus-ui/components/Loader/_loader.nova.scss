@@ -1,0 +1,134 @@
+$loader-element-size: 48px;
+
+.loader {
+  &-wrapper {
+    position: relative;
+    min-height: 100px;
+
+    .light-box-content > & {
+      position: absolute;
+      width: 100%;
+      min-height: 100%;
+
+      @media (max-width: 1212px) {
+        top: 8rem;
+        min-height: calc(100% - 8rem);
+      }
+    }
+
+    .light-box-overlay .light-box-content > & {
+      top: 0;
+      min-height: 100%;
+    }
+
+    &.small,
+    &.small .loader-container {
+      min-height: 33px;
+    }
+
+    &.fullscreen {
+      background-color: rgba($white, 0.8);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: $zindex-loader-fullscreen;
+    }
+  }
+
+  &-container {
+    background-color: rgba($white, 0.8);
+    min-height: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: $zindex-loader-container;
+  }
+
+  &-element {
+    width: $loader-element-size;
+    height: $loader-element-size;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(0);
+    background: $loader-element-item;
+    animation: rotate-clockwise 1s linear infinite;
+    .light-box-content > .loader-wrapper & {
+      top: 50vh;
+    }
+    @keyframes rotate-clockwise {
+      from {
+        transform: translate(-50%, -50%) rotate(0);
+      }
+      to {
+        transform: translate(-50%, -50%) rotate(1turn);
+      }
+    }
+  }
+
+  &-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -12px;
+    margin-top: -12px;
+    width: 24px;
+    height: 24px;
+    z-index: $zindex-loader-logo;
+    transform-origin: 50%;
+    background: url(https://cdn.esphere.ru/images/booking/logo-sber.svg);
+    background-position: center;
+    background-size: 100% 100%;
+  }
+
+  &-spinner {
+    width: 56px;
+    height: 56px;
+    background: none;
+
+    &::before, &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      border-radius: 50%;
+      border: 1px $black-01 solid;
+      border-top-color: transparent;
+      border-bottom-color: transparent;
+      background-color: transparent;
+    }
+
+    &::before {
+      width: 100%;
+      height: 100%;
+      animation: loader-spinner-animation .7s linear infinite;
+      background: none;
+    }
+
+    &::after {
+      width: 50%;
+      height: 50%;
+      top: 25%;
+      left: 25%;
+      margin-left: 0;
+      margin-top: 0;
+      animation: loader-spinner-animation reverse 1.4s linear infinite;
+    }
+  }
+
+  @keyframes loader-spinner-animation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.global-loader-overflow {
+  overflow: hidden;
+}

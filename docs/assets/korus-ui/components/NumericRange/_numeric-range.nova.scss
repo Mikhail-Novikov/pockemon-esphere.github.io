@@ -1,0 +1,35 @@
+.numeric-range {
+  &-wrapper {
+    align-items: center;
+
+    // Костыль, потому что в helpers.css стили для .disabled идут с !important
+    &.disabled {background: transparent !important;}
+    display: flex;
+    
+    & > .numeric-wrapper, & > .numeric-text-box-wrapper {
+      width: 50%;
+      flex-grow: 1;
+    }
+    
+    &.large {
+      .numeric-text-box-input-wrapper {
+        height: 40px;
+      }
+    }
+  }
+
+  &-label {
+    flex: none;
+    margin-right: 16px;
+  }
+
+  &-delimiter {
+    display: block;
+    text-align: center;
+    line-height: 32px;
+    width: 16px;
+    min-width: 16px;
+    margin-right: 4px;
+    margin-left: 4px;
+  }
+}

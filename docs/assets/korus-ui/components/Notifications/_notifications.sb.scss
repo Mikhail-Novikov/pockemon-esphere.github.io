@@ -1,0 +1,48 @@
+.notifications {
+  &-wrapper {
+    position: fixed;
+    width: 50%;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+  }
+
+  &-icon-close {
+    &:before {
+      font-size: 30px;
+      color: $gray-dark;
+      content: "\e90d";
+      width: 30px;
+      display: block;
+      height: 30px;
+    }
+
+    width: 30px;
+    height: 30px;
+    display: block;
+    cursor: pointer;
+  }
+
+  &-content {
+    border-left: 2px solid $gray;
+    padding: 10px;
+    width: 90%;
+  }
+
+  &-icon {
+    padding: 0 16px 0 10px;
+  }
+
+  &-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
+    box-shadow: 0 5px 20px #ccc;
+    padding: 10px;
+    color: $black-01;
+    background-color: $white;
+    border-radius: 0;
+  }
+}

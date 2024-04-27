@@ -1,0 +1,219 @@
+@mixin position($position) {
+  @if $position == 'top' {
+    margin-top: -10px;
+    transform: translate(-50%, -100%);
+
+    &::after {
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 8px 8px 0;
+      border-top-color: $black-01;
+    }
+  }
+
+  @if $position == 'bottom' {
+    margin-top: 10px;
+    transform: translateX(-50%);
+
+    &::after {
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 0 8px 8px;
+      border-bottom-color: $black-01;
+    }
+  }
+
+  @if $position == 'left' {
+    margin-left: -10px;
+    transform: translate(-100%, -50%);
+
+    &::after {
+      top: 50%;
+      left: 100%;
+      transform: translateY(-50%);
+      border-width: 8px 0 8px 8px;
+      border-left-color: $black-01;
+    }
+  }
+
+  @if $position == 'right' {
+    margin-left: 10px;
+    transform: translateY(-50%);
+
+    &::after {
+      top: 50%;
+      right: 100%;
+      transform: translateY(-50%);
+      border-width: 8px 8px 8px 0;
+      border-right-color: $black-01;
+    }
+  }
+
+  @if $position == 'top-left' {
+    margin-top: -10px;
+    margin-left: 56px;
+    transform: translate(-100%, -100%);
+
+    &::after {
+      top: 100%;
+      right: 0;
+      transform: translateX(-150%);
+      border-width: 8px 8px 0;
+      border-top-color: $black-01;
+    }
+  }
+
+  @if $position == 'top-right' {
+    margin-top: -10px;
+    margin-left: -56px;
+    transform: translateY(-100%);
+
+    &::after {
+      top: 100%;
+      left: 0;
+      transform: translateX(150%);
+      border-width: 8px 8px 0;
+      border-top-color: $black-01;
+    }
+  }
+
+  @if $position == 'bottom-left' {
+    margin-top: 10px;
+    margin-left: 56px;
+    transform: translateX(-100%);
+
+    &::after {
+      bottom: 100%;
+      right: 0;
+      transform: translateX(-150%);
+      border-width: 0 8px 8px;
+      border-bottom-color: $black-01;
+    }
+  }
+
+  @if $position == 'bottom-right' {
+    margin-top: 10px;
+    margin-left: -56px;
+
+    &::after {
+      bottom: 100%;
+      left: 0;
+      transform: translateX(150%);
+      border-width: 0 8px 8px;
+      border-bottom-color: $black-01;
+    }
+  }
+}
+
+.tooltip {
+  position: absolute;
+  z-index: $zindex-tooltip;
+  max-width: 384px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 20px;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  white-space: normal;
+  letter-spacing: normal;
+  color: $white;
+  background-color: $black-01;
+  border-radius: 8px;
+  transition: opacity .2s;
+
+  div:last-child {
+    padding: 16px;
+    //IE 11 --- bugfix: early line wrap(other calculated values border-box);
+    width: calc(100% + 7px);
+    word-wrap: break-word;
+  }
+
+  &-wrapper {
+    display: inline-block;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+  }
+
+  &.top {
+    @include position('top');
+  }
+
+  &.right {
+    @include position('right');
+  }
+
+  &.bottom {
+    @include position('bottom');
+  }
+
+  &.left {
+    @include position('left');
+  }
+
+  &.top-left {
+    @include position('top-left');
+  }
+
+  &.top-right {
+    @include position('top-right');
+  }
+
+  &.bottom-left {
+    @include position('bottom-left');
+  }
+
+  &.bottom-right {
+    @include position('bottom-right');
+  }
+
+  // класс для тултипа, закрывающегося по кнопке
+  &.closable {
+    div:last-child {
+      padding-right: 32px;
+    }
+  }
+
+  // кнопка закрытия тултипа
+  .button-close {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: none;
+    border: none;
+    padding: 0;
+    line-height: 20px;
+    min-width: 0;
+
+    &::after {
+      color: $black-05;
+      content: "\e995";
+      font-family: "prodicon";
+      font-size: 20px;
+      vertical-align: middle;
+    }
+
+    &:hover {
+
+      &::after {
+        color: $text-reverse;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .tooltip {
+    max-width: 50%;
+  }
+}

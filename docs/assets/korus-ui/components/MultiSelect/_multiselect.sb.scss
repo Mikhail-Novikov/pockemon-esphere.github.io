@@ -1,0 +1,120 @@
+.multiselect {
+  &-wrapper {
+    position: relative;
+    display: flex;
+  }
+
+  &-input-wrapper {
+    @extend %input-wrapper;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: auto;
+    min-height: 32px;
+    padding: 0 20px 0 0;
+
+    &:not(.danger):not(.disabled):hover {
+      @extend %input-hovered;
+    }
+
+    &:not(.disabled):not(.focused).danger {
+      border-color: $brand-danger;
+    }
+
+    &.focused {
+      @extend %input-focused;
+    }
+
+    &.disabled {
+      background-color: inherit;
+      border-color: $gray;
+    }
+  }
+
+  &-input {
+    border: none;
+    width: 2px !important;
+    margin-left: 5px;
+    display: inline-block;
+
+    &.placeholder {
+      width: min-content;
+      margin-left: 12px;
+    }
+
+    &.hidden {
+      display: none;
+    }
+  }
+
+  &-clear-icon {
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    font-size: 18px;
+    color: rgba($gray-dark, .6) !important;
+
+    &:not(.disabled):hover {
+      color: rgba($gray-dark, .6) !important;
+    }
+  }
+
+  &-tags-container {
+    padding: 0;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    width: 100%;
+  }
+
+  &-tag-item {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 2px;
+    background-color: $gray-lighter;
+    border: 1px solid $gray;
+    padding: 1px 4px;
+    height: auto;
+    margin: 2px 0 0 2px;
+    white-space: normal;
+    float: left;
+
+    &:not(.disabled):hover {
+      background-color: $gray-light;
+      border-color: $gray;
+      > .multiselect-tag-icon {
+        color: rgba($gray-dark, .6) !important;
+      }
+    }
+  }
+
+  &-tag-icon {
+    color: rgba($gray-dark, .6) !important;
+    padding: 0;
+    margin-left: 8px;
+    margin-bottom: 2px;
+
+    &:not(.disabled):hover {
+      color: rgba($gray-dark, .6) !important;
+    }
+  }
+
+  &-suggestions-container {
+    @extend %suggestions-container;
+
+    &.opened {
+      @extend %suggestions-container-opened;
+    }
+  }
+
+  &-suggestions-list {
+    @extend %suggestions-container-list;
+  }
+
+  &-suggestion {
+    @extend %suggestion;
+
+    &.highlighted {
+       @extend %suggestion-highlighted;
+    }
+  }
+}

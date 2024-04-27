@@ -1,0 +1,423 @@
+@import 'variables';
+
+.push-content-6 {
+
+  & + .content-box {
+    padding-top: 6rem !important;
+    min-height: 100vh;
+  }
+}
+
+.inner-content-less-6 {
+  min-height: calc(100vh - 6rem);
+}
+
+.inner-content-mid {
+  min-height: calc(100vh - 10.5rem);
+}
+
+.footer-wrapper {
+  background: $black-07;
+}
+
+.block-border-bottom hr:last-child {
+  display: none;
+}
+
+.hide-block {
+  display: none;
+}
+
+.shadow {
+  box-shadow: $shadow;
+}
+
+/* svg-color
+----------------------------------------------------------------------------- */
+
+.svg {
+
+  &-success {
+    fill: $brand-primary;
+  }
+
+  &-warning {
+    fill: $brand-warning;
+  }
+
+  &-danger {
+    fill: $brand-danger;
+  }
+
+  &-gray {
+    fill: $hr-color;
+  }
+}
+
+.padding-top-large {
+  padding-top: 2.4rem;
+}
+
+.bg-transparent {
+  background-color: transparent !important;
+}
+
+.bg-gray-06 {
+  background-color: $black-06;
+}
+
+.bg-gray-07 {
+  background-color: $black-07;
+}
+
+.bg-gray-08 {
+  background-color: $gray-lighter;
+}
+
+.scanner {
+
+  &:not(.admin) .wrapper {
+    padding-top: 2.4rem;
+    padding-bottom: 1.2rem;
+    background: $black-07;
+
+    &-clear {
+      // ie
+      max-width: 100%;
+      max-width: initial; /* stylelint-disable-line */
+      padding: 0;
+    }
+  }
+
+  &.oldbrowser .wrapper {
+    background-color: $white;
+  }
+
+  .search-box {
+    background-color: $white;
+    padding: 1rem 3rem .2rem;
+  }
+
+  .header {
+    margin: 1rem 1rem 1.6rem;
+  }
+
+  .content-box {
+    padding-bottom: 0;
+  }
+
+  .footer {
+    padding-top: 0;
+  }
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.bg-white {
+  background-color: $white !important;
+}
+
+.border-top-gray {
+  border-top: 1px solid $black-05;
+}
+
+.border-right-gray {
+  border-right: 1px solid $black-05;
+}
+
+/* logo-partner
+----------------------------------------------------------------------*/
+
+.max-height-5 {
+  max-height: 5rem;
+}
+
+.advice {
+
+  .search {
+
+    &-success {
+      border-color: $primary-02;
+
+      .novicon-search {
+        color: $primary-02 !important;
+      }
+    }
+
+    .k-autocomplete {
+      border: 0;
+    }
+
+    .k-input {
+      padding: 1px 0;
+    }
+
+    .k-space-left {
+      padding-left: 1.4rem;
+    }
+
+    .k-icon {
+      margin-top: -1rem;
+    }
+
+    .k-i-close {
+      margin-top: -1rem;
+      right: 0;
+      left: auto;
+    }
+  }
+}
+
+.advice-wrap {
+  border: 1px solid $gray;
+  border-radius: .6rem;
+  padding-bottom: 4rem;
+  margin-top: 2.4rem;
+
+  .content {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .promo {
+    background: $black-06 url("https://cdn.esphere.ru/images/advice/credit-intro.png") no-repeat 81% bottom;
+    min-height: 33rem;
+
+    &.content {
+
+      .inner {
+        padding-right: 45%;
+      }
+    }
+  }
+}
+
+@keyframes tooltip-bootom {
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    top: 50%;
+  }
+}
+
+@keyframes tooltip-top {
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    bottom: 100%;
+  }
+}
+
+.block-pos-r-b {
+  position: absolute;
+  right: -1.5rem;
+  bottom: 1.5rem;
+  z-index: 10;
+}
+
+@include breakpoints-max(lg) {
+
+  .first.inner.sm-no-first {
+    padding-left: 1rem;
+  }
+
+ .inner.sm-no-inner, .sm-no-inner {
+    padding: 0;
+  }
+
+  .inner + .title {
+    margin-top: 0;
+  }
+
+  .overflow {
+    overflow: hidden;
+  }
+
+  .overflow-x {
+    overflow-x: hidden;
+  }
+}
+
+/* notary
+----------------------------------------------------------------------*/
+
+#notary iframe {
+  min-height: 20rem;
+}
+
+@include breakpoints-max(md) {
+
+  .wrapper-main {
+    padding: 0;
+  }
+
+  .content-box.m-content-box {
+    min-height: initial;
+    position: relative;
+  }
+
+  body.scanner.company .menu-box {
+    margin-bottom: 0;
+  }
+
+  .scanner {
+
+    &:not(.admin) .wrapper {
+      padding-top: 0;
+    }
+  }
+
+  .xs-border {
+    border: 1px solid $black-06;
+  }
+
+  .sm-border-none {
+    border: none !important;
+  }
+
+  .xs-height-init {
+    height: auto !important;
+    max-height: unset !important;
+  }
+
+  .xs-height-100-vh {
+    height: 100vh;
+  }
+
+  .xs-position-inherit {
+    position: inherit;
+  }
+
+  .xs-position-static {
+    position: static !important;
+  }
+
+  .first.inner.xs-no-first {
+    padding-left: 1.2rem;
+  }
+
+  .inner.xs-no-inner, .xs-no-inner {
+    padding: 0;
+  }
+
+  .xs-bgi-none {
+    background-image: none;
+    padding-bottom: 0;
+  }
+
+  .xs-bg-none {
+    background-color: transparent !important;
+  }
+
+}
+
+@include breakpoints-max(sm) {
+
+  .personal-box .user-name {
+    max-width: 19rem;
+  }
+
+  [class*="list"].col-2 {
+    -webkit-column-count: 1;
+       -moz-column-count: 1;
+         -o-column-count: 1;
+            column-count: 1;
+  }
+
+  .xs-txt-small {
+    line-height: 2rem;
+  }
+
+  .xs-txt-extra-small {
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
+
+  .xs-border-none {
+    border: none !important;
+  }
+
+  .xs-txt-break {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .xs-txt-black {
+    color: $black-01 !important;
+  }
+
+  .xs-txt-gray {
+    color: $black-03 !important;
+  }
+
+  .xs-txt-light-gray {
+    color: $black-05 !important;
+  }
+
+  .xs-txt-30 {
+    font-size: 3rem;
+    line-height: 3.4rem;
+  }
+
+  .xs-txt-18 {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+  }
+
+  .xs-txt-16 {
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
+
+  .xs-label {
+    color: $black-01 !important;
+    font-size: 1.4rem !important;
+    font-weight: 500 !important;
+  }
+
+  .xs-nolink {
+    pointer-events: none;
+    color: $black-03;
+  }
+}
+
+@include breakpoints-min(md) {
+
+  .height-without-cap {
+    min-height: calc(100vh - 11.7rem);
+  }
+}
+
+@include breakpoints-min(lg) {
+
+  body .wrapper {
+    padding: 0 3.2rem;
+  }
+
+  .inner-content-mid {
+    min-height: calc(100vh - 12rem);
+  }
+}

@@ -1,0 +1,109 @@
+.checkbox {
+  &-wrapper {
+    display: inline-block;
+  }
+
+  &-input {
+    opacity: 0;
+    height: 0;
+    width: 0;
+    position: absolute;
+
+    &:checked + .checkbox-label {
+      &::after {
+        transform: scale(1);
+      }
+
+      &.semi::after {
+        content: " ";
+        width: 10px;
+        height: 2px;
+        background-color: $white;
+        top: 11px;
+        left: 3px;
+      }
+
+      &::before,
+      &::after {
+        background-color: var(--brand-color);
+        border-color: var(--brand-color);
+      }
+
+      &:hover::before,
+      &:not(.semi):hover::after {
+        background-color: var(--brand-hover-color);
+        border-color: var(--brand-hover-color);
+      }
+    }
+
+    &:disabled + .checkbox-label {
+      cursor: default;
+      pointer-events: none;
+
+      &::before {
+        background-color: $black-07;
+        border-color: $black-05;
+      }
+
+      &::after {
+        color: $black-05;
+        background-color: transparent;
+      }
+
+      &.semi::after {
+        background-color: $black-05;
+      }
+    }
+
+    &:focus + .checkbox-label::before {
+      border-color: $focus-border;
+    }
+
+    &:checked:focus + .checkbox-label:not(.semi)::after {
+      border: 1px solid $focus-border;
+      line-height: 1.4;
+    }
+  }
+
+  &-label {
+    padding-left: 25px;
+    padding-top: 2px;
+    vertical-align: text-top;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+
+    &::before,
+    &::after {
+      position: absolute;
+      top: 4px;
+      left: 0;
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+    }
+
+    &::before {
+      content: " ";
+      background-color: $white;
+      border: 1px solid $black-05;
+    }
+
+    &::after {
+      content: "\e96c";
+      color: $white;
+      font-family: 'novicon', sans-serif;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: bolder;
+      text-align: center;
+      line-height: 1.5;
+      transform: scale(0);
+      transition: transform .2s ease-out;
+    }
+
+    &:hover::before {
+      border-color: var(--brand-hover-color);
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+	"version": 3,
+	"file": "auth.css",
+	"sources": [
+		"../../scss/product/auth.scss",
+		"../../scss/variables/themes/_nova.scss",
+		"../../scss/variables/_base.scss"
+	],
+	"names": [],
+	"mappings": "AAEA,AAEE,mBAFiB,AAEhB,QAAQ,CAFX,mBAAmB,AAGhB,OAAO,AAAC,CACP,GAAG,CAAE,GAAG,CACR,SAAS,CAAE,gBAAgB,CAC5B,AAGH,AAAA,mBAAmB,AAAA,QAAQ,CAAG,mBAAmB,AAAA,OAAO,AAAC,CACvD,SAAS,CAAE,gBAAgB,CAAC,QAAQ,CACrC,AAED,AAAA,aAAa,AAAC,CACZ,MAAM,CCJK,OAAO,CDKnB,AAED,AAAA,WAAW,AAAC,CACV,IAAI,CCRO,OAAO,CDSnB"
+}

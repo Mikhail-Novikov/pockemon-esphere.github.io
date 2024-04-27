@@ -1,0 +1,51 @@
+.tags {
+  &-wrapper {
+    overflow: hidden;
+    padding: 3px 0 2px 0;
+    white-space: normal;
+  }
+
+  &-item {
+    display: inline-flex;
+    align-items: center;
+    min-width: 20px;
+    padding: 1px 4px;
+    margin-right: 8px;
+    height: auto;
+    background-color: $gray-lighter;
+    border-radius: 2px;
+    border: 1px solid $gray;
+    float: left;
+    transition: 250ms ease-out;
+
+    &:hover {
+      background-color: $gray-light;
+
+      .tags-icon {
+        color: $gray-dark;
+      }
+    }
+  }
+
+  &-icon {
+    color: rgba($gray-dark, .6);
+    margin-left: 8px;
+
+    &:hover {
+      color: rgba($gray-dark, .6);
+    }
+
+    &.icon-default {
+      @extend %common-dropdown-icon;
+      color: rgba($gray-dark, .6);
+
+      &:before {
+        content: "\e11b";
+      }
+
+      &:hover {
+        color: rgba($gray-dark, .6);
+      }
+    }
+  }
+}

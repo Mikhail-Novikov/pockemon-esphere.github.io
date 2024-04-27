@@ -1,0 +1,46 @@
+.modal-body-indent {
+  padding: 2.4rem 3.2rem;
+}
+
+.modal-status-indent-lg {
+  padding-top: 12.8rem;
+  padding-bottom: 12.8rem;
+}
+
+.info-modal {
+
+  .modal-window {
+
+    .modal-body {
+      min-height: 52rem;
+    }
+  }
+
+  .modal-cross {
+    display: none;
+  }
+}
+
+.file-error-modal {
+
+  .modal-header {
+    background-color: $error-05;
+    border-bottom: 1px solid $error-03;
+  }
+}
+
+.modal-alert {
+  min-height: 0;
+}
+
+.preview-modal {
+
+  .modal-body {
+    max-height: 76rem;
+    overflow-y: auto;
+  }
+}
+
+.modal-wrapper {
+  z-index: 601;
+}

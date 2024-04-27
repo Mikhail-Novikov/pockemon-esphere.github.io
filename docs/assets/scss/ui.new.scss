@@ -1,0 +1,303 @@
+body.auth .content-box {
+	background: aliceblue;
+}
+
+body.auth .personal-box,
+body.auth .header-box ,
+body.auth .promo-box ,
+body.auth .top-box ,
+body.auth .title-box,
+body.auth .search-box,
+body.auth .timeline-box {display: none;}
+
+body.auth .content-box {background: transparent}
+
+body {
+  font-family: "roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+/* reset.css
+----------------------------------------------------------------------------- reset.css */
+
+/*
+a,  .link[href], .alt,
+a > .link {
+	border-width: 0;
+	text-decoration: none;
+}
+*/
+a:hover {color: #4a8ed2;}
+
+.wrapper {padding: 0;}
+
+.alt {
+  border-bottom: 1px dashed;
+}
+
+.alt:hover {
+  border-color: transparent;
+}
+
+
+/* layouts.css
+----------------------------------------------------------------------------- layouts.css */
+
+.content-box {background-color: white;}
+
+.header-box {
+	background-color: #4d4d4d;
+	color: white;
+}
+
+.toolbar,
+.search-box,
+.title-box,
+.timeline-box {background: aliceblue;}
+
+.actionbar .toolbar {box-shadow: none;}
+
+body,
+aside,
+bside,
+.personal-box,
+.sub-box {background: whitesmoke;}
+
+.sub-box {box-shadow: inset 0 -1px 0 rgba(0,0,0,0.1);}
+
+body.aside .header-box,
+body.aside .content-box,
+body.aside .footer-box {margin-left: 0;}
+
+aside {padding-right: 2rem;}
+bside {padding-left:  2rem;}
+
+aside,
+bside {width: 20rem}
+
+.header-box {
+	padding: 1rem 0;
+	font-size: 1.6rem;
+	position: relative;
+}
+
+.sub-box {position: relative;}
+
+/* Filter
+----------------------------------------------------------------------------- Filter */
+
+.search-box .filter-box {
+	border-top: 1px solid #e5e5e5;
+}
+
+/* Content
+----------------------------------------------------------------------------- Content */
+
+.content-box {}
+
+.wrapper > .content {padding: 2rem 0 5rem;}
+
+.new > td:first-child {border-left-color: steelblue;}
+
+/* nav.css
+----------------------------------------------------------------------------- nav.css */
+
+.menu-v [class*="level-"].active  > a {border-color: #FFAC21;}
+
+/* Nav */
+.nav-box .level-1 > a,
+.nav-box .level-1 > span {padding: 1rem 2rem;}
+
+.nav-box .active  > a,
+.nav-box .active  > span {background: rgba(0,0,0,.1)}
+
+/* Main */
+
+.menu-box .level-1 > a,
+.menu-box .level-1 > span {
+	box-shadow: inset 1px 0 0 rgba(255,255,255,0.25);
+	padding: .5rem 2rem;
+	margin:  .5rem 0;
+}
+
+.menu-box nav .level-1:first-child > a,
+.menu-box nav .level-1:first-child > span {box-shadow: none;}
+
+.menu-box nav li:hover > a,
+.menu-box nav .active  > a,
+.menu-box nav .active  > span {color: #FFAC21;}
+
+
+/* Sub */
+
+.sub-box nav .level-1 {border-radius: .3rem;}
+
+.sub-box nav .level-1  > a,
+.sub-box nav .level-1  > span {padding: .9rem 1.5rem;}
+
+.sub-box nav .level-1:hover  {background: #eee}
+.sub-box nav .level-1.active {background: #949494;color: white}
+
+
+/* Controls
+----------------------------------------------------------------------------- Controls */
+
+a.button,
+.button,
+.button.border{
+	background-color: #fafafa;
+	border-color:     #ddd;
+	color: black;
+}
+
+.button:hover,
+.button.border:hover {background-color: #eee;}
+
+.tag  {
+	background-color: transparent;
+	padding: 0;
+}
+
+.tag:before {
+	content: " ";
+	display: block;
+	float: left;
+	background: #e5e5e5;
+	border-radius: 50%;
+	overflow: hidden;
+	height: .7rem;
+	width:  .7rem;
+	margin: .7rem .5rem .6rem 0;
+}
+
+.count.primary, .button.primary,
+.count.success, .button.success,
+.count.warning, .button.warning,
+.count.danger,  .button.danger,
+.progressbar {
+	color: white !important;
+	border-color: transparent;
+}
+
+.statusbar,
+.progressbar     {background-color: #fafafa;}
+.chunkbar > .bar {background-color: #e5e5e5;}
+
+.primary.tag:before,
+.primary.count,
+.primary.button,
+.success.button    {background-color: #2dba59;}
+.success.tag:before,
+.success.count,
+.button .success.count,
+.chunkbar    > .progress,
+.chunkbar    > .success,
+.progressbar > .bar {background-color: #2dba59;}
+
+.warning.tag:before,
+.warning.count,
+.warning.button,
+.chunkbar    > .warning,
+.warning     > .bar,
+.primary     > .bar {background-color: #FFAC21;}
+
+.danger.tag:before,
+.danger.count,
+.danger.button,
+.chunkbar    > .danger,
+.statusbar   > .bar,
+.danger      > .bar {background-color: #e84040;}
+
+/* Notices
+----------------------------------------------------------------------------- */
+
+.box {border-radius: .3rem;}
+
+.message {
+	border-style: solid;
+	border-width: 0 0 0 .2rem;
+	padding-left:  1.8rem;
+}
+
+.message.first     {padding-left: 3.8rem;}
+
+.message           {border-color: steelblue;}
+.message.secondary {border-color: #e5e5e5;}
+.message.success   {border-color: #2dba59;}
+.message.warning   {border-color:  #FFAC21;}
+.message.danger    {border-color: #e84040;}
+
+.message           {background-color: aliceblue;}
+.secondary.box,
+.secondary.inner,
+.secondary.message {background-color: #fafafa;}
+.success.inner,
+.success.message   {background-color: honeydew;}
+.warning.inner,
+.warning.message   {background-color: lightyellow;}
+.danger.inner,
+.danger.message    {background-color: lavenderblush;}
+
+/* Icons
+----------------------------------------------------------------------------- Icons */
+
+i.i-refresh {background-image: url(../images-2x/sphere/preloader.gif);}
+i.icon-20,
+i.icon-20   {background-image: url(../images-2x/sphere/icons-20.png);}
+i.icon-40   {background-image: url(../images-2x/sphere/icons-40.png);}
+
+/* SVG Icons
+----------------------------------------------------------------------------- SVG Icons */
+
+/*.svg-primary-light {fill: #B9DBF0 !important;}*/
+
+.svg-primary-dark {fill: #0083B7 !important;}
+.svg-primary      {fill: #74A1C7 !important;}
+
+/* login
+-----------------------------------------------------------------------------
+
+.login .content-box	{
+	background-image: url(../images/sphere/bg-login.png);
+	background-position: 50% 10px;
+	background-size: 800px 480px;
+	background-repeat: no-repeat;
+}*/
+
+/* i-80
+----------------------------------------------------------------------------- i-40 */
+.i-80 {background-image: url(../images/sphere/i-80.png);}
+
+/* i-270
+----------------------------------------------------------------------------- i-40 */
+.i-270 {background-image: url(../images/sphere/i-270.png);}
+
+/* responsive
+----------------------------------------------------------------------------- */
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {
+
+}
+
+@media (min-width: 1200px) {
+
+	.wrapper {max-width: 120rem;}
+
+	.content-box,
+	.sidebar {}
+
+}
+@media (max-width: 1199px) {
+
+	body {min-width: 95.9rem;}
+
+	.content-box {}
+
+}

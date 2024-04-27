@@ -1,0 +1,10 @@
+.button-wrapper {
+
+  &.blank:hover {
+    color: $success-hover;
+  }
+
+  &.more.padding-none {
+    border-radius: 0;
+  }
+}

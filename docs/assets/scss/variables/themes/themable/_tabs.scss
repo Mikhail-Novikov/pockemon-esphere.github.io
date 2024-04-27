@@ -1,0 +1,26 @@
+@mixin tabs($hover, $active) {
+  .tabs-wrapper:not(.mobile-tabs) > .tabs-container  .tabs-item {
+
+    &.active::after {
+      background-color: $active;
+    }
+
+    &:not(.active):not(.disabled):hover::after {
+      background-color: $hover;
+    }
+  }
+
+  @media (min-width: 768px) {
+
+    .tabs-wrapper.mobile-tabs > .tabs-container  .tabs-item {
+
+      &.active::after {
+        background-color: $active;
+      }
+
+      &:not(.active):not(.disabled):hover::after {
+        background-color: $hover;
+      }
+    }
+  }
+}

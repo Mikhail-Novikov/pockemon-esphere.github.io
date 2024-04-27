@@ -1,0 +1,331 @@
+@import "../_base.scss";
+
+// brand
+$text: #fff;
+$bg-main: #454545;
+$black-09: #393939;
+
+$accent-01: #fbe04e;
+$accent-02: #fbe04e;
+$accent-03: #ff9f3a;
+$accent-04: #ffd5a9;
+$accent-05: #fff6ed;
+
+$primary-01: #2fc069;
+$primary-02: #2fc069;
+$primary-03: #3ed170;
+$primary-04: #b4e9c6;
+$primary-05: #ebf9f0;
+
+$secondary-01: #1358bf;
+$secondary-03: #198cfe;
+$secondary-05: #f2f8ff;
+
+$error-01: #c02f2f;
+$error-02: #c02f2f;
+$error-03: #ff6970;
+$error-04: #ffbdc5;
+$error-05: #fff2f2;
+
+$shadow-level-1: 0 .5rem 1.1rem .5rem $black-09;
+
+$brand-primary: $primary-02;
+$brand-warning: $accent-02;
+$brand-danger: $error-02;
+
+$brand-primary-disabled: $primary-04;
+$brand-warning-disabled: $accent-04;
+$brand-danger-disabled: $error-04;
+
+$brand-primary-light: $primary-05;
+$brand-warning-light: $accent-03;
+$brand-danger-light: $error-03;
+
+$brand-primary-dark: $primary-01;
+$brand-warning-dark: $accent-01;
+$brand-danger-dark: $error-01;
+
+$link-color: $white;
+
+$icon-color: $gray-darker;
+
+$hr-color: $gray;
+
+$base-gray: $black-03;
+
+$base-action: #828282;
+
+$bg-info: #748698;
+$bg-marquee: #78d237;
+$bg-nonwork: #f7f7f7;
+$bg-hover: #f2f2f2;
+
+// element state
+$hover: $black-07;
+$focus: $black-06;
+$active: #8d9294;
+
+// switch
+$switch-on-handle-bg: $white;
+$switch-on-handle-hover: $black-06;
+$switch-on-handle-disabled: $black-07;
+$switch-on-bg: $brand-primary;
+$switch-on-border: $brand-primary;
+$switch-on-disabled: $brand-primary-disabled;
+$switch-on-shadow: $shadow-level-2;
+
+$switch-off-handle-bg: $black-07;
+$switch-off-handle-hover: $white;
+$switch-off-handle-disabled: $black-07;
+$switch-off-color: $gray-darker;
+$switch-off-bg: $black-06;
+$switch-off-border: $black-06;
+$switch-off-disabled: $black-07;
+$switch-off-shadow: $shadow-level-3;
+$switch-off-border-action: $black-05;
+
+// calendar
+$calendar-color: $black-01;
+$calendar-week-day-color: $black-03;
+$calendar-other-month-color: $black-04;
+
+$calendar-bg: $white;
+$calendar-border: $black-05;
+$calendar-shadow: $shadow-level-2;
+
+$calendar-header-color: $brand-primary;
+$calendar-header-hover-color: $secondary-03;
+
+$calendar-selected-color: $black-01;
+$calendar-selected-bg: $brand-primary-disabled;
+$calendar-selected-hover-bg: $brand-primary-light;
+
+$calendar-period-bg: $black-08;
+
+// k-block, k-widget, .k-content, .k-window, .k-popup, k-toolbar
+$overlay-bg-2: $gray-lighter;
+$border: $black-05;
+$border-light: $black-04;
+$border-focused: $black-02;
+$border-reverse: $reverse;
+
+// only active
+$active-item-color: $gray-darker;
+
+// selected and active, marque, ::selection
+$selected-item: $base-action;
+
+// buttons
+$btn-color: $text-reverse;
+$btn-default-bg: $gray-lighter;
+
+
+$btn-outline: $gray-darker;
+$btn-outline-hover-color: $gray-light;
+$btn-outline-hover: $black-01;
+
+$btn-primary: $brand-primary;
+$btn-primary-hover: #359b1d;
+
+$btn-small-radius: .6rem;
+$btn-big-radius: 2.4rem;
+
+// info
+$info-color: #50607f;
+$info-bg: #f0f9ff;
+$info-border: #d0d9df;
+
+$info-success-color: #507f50;
+$info-success-bg: #f0fff0;
+$info-success-border: #d0dfd0;
+
+$info-error-color: #7f5050;
+$info-error-bg: #fff0f0;
+$info-error-border: #dfd0d0;
+
+// progressbar
+$progressbar-bg: $gray;
+$progressbar-selected: #359B1D;
+$progressbar-item-border: $reverse;
+
+// scroollbar
+$scrollbar-bg: #858585;
+$scrollbar-touch-bg: $gray-darker;
+$scrollbar-border: #8a8a8a;
+
+// input
+$input-bg: rgba(#303030, 0.6);
+$input-color: $black-01;
+$input-placeholder-color: $black-03;
+$input-upload-color: $gray-dark;
+$input-progress-color: $gray-darker;
+$input-upload-file: #bababa;
+
+$input-hover-bg: $gray-light;
+$input-progress-bg: $bg-info;
+$input-hover-border-color: $black-01;
+
+$input-ng-danger-border: rgba($brand-danger, 0.5);
+$input-danger-upload-file-border: #fce6e5;
+
+$input-base-padding: .4rem 1rem .5rem 1.2rem;
+$input-base-lineheight: 1.43;
+$input-border-radius: .6rem;
+
+// form
+$form-info-color: #545454;
+
+// popup group
+$group: $brand-primary;
+$group-button-bg: $base-action;
+
+// pager
+$pager-color: $black-01;
+$pager-label-color: $black-03;
+$pager-bg: $black-05;
+$pager-hover-bg: $black-04;
+$pager-hover-color: $white;
+$pager-select-bg: $black-03;
+$pager-select-color: $white;
+$pager-disabled-bg: $black-06;
+
+// panelbar
+$panelbar-base-color: $black-01;
+$panelbar-color: $gray-darker;
+$panelbar-hover-bg: #787878;
+$panelbar-border: $reverse;
+$panelbar-darker-border: $gray;
+
+// dropzone
+$dropzone-hover-bg: $gray-light;
+$dropzone-border: $reverse;
+
+// table
+$table-color: $gray-darker;
+$table-th-color: $gray-dark;
+$table-cell-color: $black-01;
+$table-header-filter-color: $text-reverse;
+
+$table-cell-bg: #ededed;
+$table-hover-bg: $gray-lighter;
+$table-header-filter-bg: $gray-light;
+$table-header-filter-active-bg: $base-action;
+$table-dropclue: $gray-darker;
+
+// spreadsheet
+$spreadsheet-cell-color: $black-01;
+$spreadsheet-selection-bg: rgba(130, 130, 130, 0.25);
+$spreadsheet-punch-bg: rgba($white, 0.5);
+$spreadsheet-selection-border: $base-action;
+$spreadsheet-selection-full-border: rgba($black-01, 0.25);
+
+// slider
+$slider-bg: #e6e6e6;
+
+// h.k-item:hover.k-state-selected
+$item-color: $black-01;
+$item-clue-bg: $base-action;
+$item-hover-bg: #7d7d7d;
+
+// time
+$time-current: #f00;
+
+// tooltip
+$tooltip: #646464;
+
+// splitbar
+$splitbar-bg: rgba(235, 235, 235, 0.8);
+$splitbar-hover-bg: #ebebeb;
+
+// task
+$task-color: #0d0d0d;
+$task-hover-color: $text-reverse;
+$task-selected-color: #9b9b9b;
+$task-selected-complete-color: #787878;
+
+$task: $black-01;
+$task-selected-bg: $base-action;
+$task-single-bg: $gray-darker;
+$task-single-selected-bg: #a8a8a8;
+
+// task
+$sidebar-width: 25rem;
+
+
+// общие стили для инпутов
+%input {
+  color: $black-01;
+  border: 1px solid $black-01;
+  background-color: transparent;
+  padding: 5px 4px 7px 12px;
+  border-radius: $input-border-radius;
+  display: flex;
+  justify-content: space-between;
+  height: 32px;
+  font-size: inherit;
+}
+
+%input-wrapper {
+  color: $black-01;
+  align-items: center;
+  border: 1px solid $black-01;
+  background-color: $white;
+  border-radius: $input-border-radius;
+  display: flex;
+  justify-content: space-between;
+  height: 32px;
+
+  & > input[class*="input"] {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    font-size: inherit;
+    color: $black-01;
+    padding: 5px 4px 7px 12px;
+  }
+}
+
+%input-hovered {
+  border-color: $input-hover-border-color;
+}
+
+%input-focused {
+  border: 1px solid $black-01;
+  box-shadow: $shadow-level-1;
+}
+
+%input-disabled {
+  border-color: $black-05;
+  // Из-за important в styles-esphere
+  background-color: $black-07 !important;
+  color: $black-05 !important;
+}
+
+%input-placeholder {
+  color: $black-03;
+}
+
+%input-prefix {
+  margin-left: 8px;
+}
+
+%input-suffix {
+  margin-right: 8px;
+}
+
+%input-prefix, %input-suffix {
+  user-select: none;
+  flex: none;
+  white-space: nowrap;
+  color: $black-03;
+}
+
+%input-icon-search {
+  &:before {
+    content: '\e92c';
+    color:  $black-03;
+    width: 20px;
+    height: 20px;
+    display: block;
+  }
+}

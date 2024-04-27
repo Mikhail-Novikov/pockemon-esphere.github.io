@@ -1,0 +1,38 @@
+.tabs {
+  &-wrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  &-item {
+    padding: 15px 20px 14px 20px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba($black-01, 0.08);
+
+    &.active {
+      border-bottom: 3px solid $brand-warning;
+      padding: 15px 20px 12px 20px;
+      cursor: default;
+    }
+
+    &:not(.active):hover {
+      color: $brand-warning;
+    }
+  }
+
+  &-bar {
+    padding-left: 0;
+    background-color: rgba($black-01, 0.08);
+    display: flex;
+
+    &-filler {
+      display: flex;
+      flex-grow: 1;
+      border-bottom: 1px solid rgba($black-01, 0.08);
+    }
+  }
+}

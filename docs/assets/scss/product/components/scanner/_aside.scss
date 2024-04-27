@@ -1,0 +1,107 @@
+@import 'variables';
+
+.tariff-sidebar {
+  height: 100vh;
+  width: 42.4rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin-right: -43.2rem;
+  box-shadow: 0 .6rem 1rem rgba($black-01, .25);
+  z-index: 302;
+  transition: margin-right .3s;
+
+  &-offset {
+    margin-top: 6rem;
+
+    .tariff-sidebar-footer {
+      margin-bottom: 6rem;
+    }
+  }
+
+  &.open {
+    margin-right: 0;
+    z-index: 303;
+
+    .notifications-top {
+      right: 44rem;
+    }
+
+    .footer-filter {
+      padding: 1.6rem;
+      position: fixed !important;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: $black-07;
+      z-index: 1;
+
+      li {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+
+  .box {
+    box-shadow: $shadow-level-5;
+  }
+}
+
+.m-content-sidebar {
+
+  height: calc(100% - 6.4rem) ;
+  overflow-y: auto;
+
+  .informer-sidebar {
+    background-color: transparent;
+    border-width: 1px 0 0 0;
+    border-radius: 0;
+    margin-bottom: 0;
+
+    a, *:not(.subtitle) {
+      color: $text-reverse;
+    }
+    
+    .subtitle {
+      color: $black-05;
+    }
+  }
+}
+
+.aside-menu {
+  padding-top: 5.8rem ;
+  padding-bottom: 0;
+  overflow: hidden;
+}
+
+.aside-menu + .content-box {
+  min-height: 100vh;
+}
+
+@include breakpoints-max(md) {
+
+  .tariff-sidebar-offset {
+    margin-top: 5.2rem;
+  }
+}
+
+@include breakpoints-max(sm) {
+
+  .aside-menu {
+    width: 100%;
+    border: 0;
+  }
+
+  .tariff-sidebar-offset.open {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@include breakpoints-min(lg) {
+
+  .aside-menu + .content-box {
+    padding-left: 22.5rem;
+  }
+}

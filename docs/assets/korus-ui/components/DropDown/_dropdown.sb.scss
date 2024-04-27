@@ -1,0 +1,62 @@
+.dropdown-wrapper {
+  display: inline-block;
+  position: relative;
+  overflow: visible; // fix IE11 <button/> overflow: hidden
+
+  & > ul {
+    background-color: $white;
+    border-radius: 0;
+    min-width: 100%;
+    display: none;
+    padding-left: 0;
+    position: absolute;
+    top: 100%;
+    border: 1px solid $gray-light;
+    box-shadow: none;
+    overflow: hidden;
+
+    &:not(.pos-right) {
+      left: 0;
+    }
+
+    &.pos-right {
+      right: 0;
+    }
+
+
+    & > li {
+      display: block;
+      position: relative;
+      padding: 3px 0;
+      border-bottom: 0;
+
+      &.level-2 {
+        border-top: 0;
+
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
+
+      & > a:not(.button), & > div, & > span {
+        min-width: 160px;
+        padding: 7px 12px 9px;
+        color: $black-01;
+        display: flex;
+        justify-content: center;
+      }
+
+      &:hover > a, &:hover > div, &:hover > span {
+        background-color: $black-07;
+      }
+    }
+  }
+
+  &:hover {
+    z-index: 91;
+
+    & > ul {
+      display: block;
+    }
+  }
+}

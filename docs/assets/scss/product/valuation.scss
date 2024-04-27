@@ -1,0 +1,149 @@
+
+/* Layout
+----------------------------------------------------------------------------- */
+
+.chunkbar {
+  padding: .5rem 0;
+
+  > .bar {
+    height: .3rem;
+  }
+}
+
+.list-h {
+  display: flex;
+
+  li {
+
+    &:not(:last-child) {
+
+      &:after {
+        content: "\00b7";
+      }
+    }
+  }
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 300;
+  margin: 0 2rem 0 1rem;
+  color: inherit;
+
+  &:before {
+    font-family: "sbbol-icons" !important;
+    content: "\e980";
+    vertical-align: top;
+    font-size: 3.5rem;
+    line-height: 4rem;
+    color: #ffac21;
+    margin: 0 1rem;
+    display: inline-block;
+  }
+}
+
+.wrapper {min-width: 100rem;}
+
+aside,
+bside {
+  box-sizing: border-box;
+  width: 25%;
+  padding: 1rem;
+}
+
+/* Search
+----------------------------------------------------------------------------- */
+
+.search-box {
+
+  .list {
+
+    li {
+
+      &:hover {
+        background: white;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .search-fast {
+    position: absolute;
+    top: 11.2rem;
+    left: 0;
+    right: 0;
+    z-index: 91;
+    margin: -1.1rem 1rem 0;
+    border-radius: 0 0 .5rem;
+    border-top-color: #f49530;
+  }
+}
+
+/* Login & Registration
+----------------------------------------------------------------------------- */
+
+.realty {
+
+  &.auth {
+
+    .header {
+      display: none;
+    }
+
+    .content-box {
+
+      > * {
+
+        > .box {
+          background: transparent;
+          border: none;
+          padding: 0;
+        }
+      }
+    }
+
+    > * {
+
+      > .wrapper {
+        background: transparent;
+      }
+    }
+  }
+}
+
+/* Tile
+----------------------------------------------------------------------------- */
+
+.tiles {
+
+  .photo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: 50% 50%;
+    background-size: cover;
+    width: 20%;
+  }
+
+  .tile {
+    width: 100%;
+  }
+}
+
+.tile {
+
+  > * {
+    padding-left: 20%;
+  }
+
+  .button {
+    visibility: visible;
+  }
+
+  dl + dl {
+    padding-left: 1.5rem;
+  }
+}
+
+

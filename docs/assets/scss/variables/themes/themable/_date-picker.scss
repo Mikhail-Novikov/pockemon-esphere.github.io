@@ -1,0 +1,7 @@
+@mixin date-picker($default) {
+
+  .calendar-month-dates .calendar-date-cell.active,
+  .calendar-month-year-cell.active {
+    background-color: $default;
+  }
+}

@@ -1,0 +1,46 @@
+.dropdown > ul {
+  opacity: 0;
+  transition: .3s;
+  min-width: 25rem;
+  left: 0;
+  box-shadow: $shadow;
+
+  .triangle-marker {
+    position: absolute;
+  }
+
+  &.pos-bottom {
+    top: 8rem;
+    margin-top: 2rem;
+
+    .triangle-marker {
+      top: -.5rem;
+      right: 7.1rem;
+      transform: rotate(180deg);
+    }
+  }
+
+  &.pos-top {
+    top: auto;
+    bottom: calc( 100% + 5rem );
+
+    .triangle-marker {
+      bottom: -.5rem;
+      right: 7rem;
+    }
+  }
+}
+
+.dropdown:hover > ul {
+  animation-duration: .4s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+
+  &.pos-bottom {
+    animation-name: tooltip-bootom;
+  }
+
+  &.pos-top {
+    animation-name: tooltip-top;
+  }
+}

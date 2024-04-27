@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "leda.mobile.css",
+	"sources": [
+		"../../scss/product-mobile/leda.mobile.scss"
+	],
+	"names": [],
+	"mappings": ""
+}

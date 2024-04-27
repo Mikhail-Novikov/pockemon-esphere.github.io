@@ -1,0 +1,134 @@
+@import 'variables';
+
+.light-box-heading.fixed,
+.light-box-footer.fixed {
+  z-index: 200 !important;
+}
+
+.scroll-margin-top {
+  scroll-margin-top: 7rem;
+}
+
+.padding-top-120 {
+  padding-top: 12rem;
+}
+
+.light-box-mobile-controls {
+  position: sticky;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.collapse-heading-wrapper {
+  height: auto;
+}
+
+@include breakpoints-max(lg) {
+
+  .light-box-window {
+    width: 100%;
+  }
+
+  .light-box-is-overlay {
+
+    .light-box-wrapper {
+      overflow-y: hidden;
+    }
+
+    .light-box-content {
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    .light-box-overlay {
+
+      .light-box-content {
+        height: 100vh;
+      }
+
+      .light-box-body {
+        overflow-y: auto;
+        height: calc(100% - 16rem);
+      }
+    }
+  }
+
+  .light-box-overlay {
+    overflow-y: visible;
+  }
+
+  .light-box-content {
+    height: 100vh;
+  }
+
+  .light-box-body {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .light-box-heading {
+    padding: 2.4rem 1.6rem;
+  }
+
+  .light-box-body.window-content,
+  .light-box-footer {
+    padding: 1.6rem;
+  }
+
+  .collapse-heading-wrapper {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
+}
+
+@include breakpoints-max(md) {
+
+  .light-box-footer {
+    padding: 1.6rem;
+  }
+
+  .light-box-overlay.md .light-box-content {
+    width: 100%;
+  }
+
+  .light-box-mobile-controls {
+    padding: 1.6rem;
+
+    .light-box-cross {
+      height: 2.4rem;
+      width: 2.4rem;
+    }
+  }
+}
+
+@include breakpoints-min(md) {
+
+  .light-box-mobile-controls {
+    position: static;
+  }
+}
+
+@media (min-width: 1212px) {
+
+  .light-box-wrapper {
+
+    .light-box-window, 
+    .light-box-content-wrapper {
+      width: 112.2rem;
+    }
+  }
+
+  .light-box-cross {
+    right: calc((100vw - 112.2rem) / 2 - 1.2rem);
+  }
+
+  .light-box-prev-arrow {
+    left: calc(((100vw - 112.2rem) / 2) - 2rem);
+  }
+
+  .light-box-next-arrow {
+    right: calc(((100vw - 112.2rem) / 2) - 1.2rem);
+  }
+}

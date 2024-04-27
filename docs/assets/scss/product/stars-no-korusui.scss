@@ -1,0 +1,46 @@
+@import "../../../common/variables/themes/blue";
+@import "../../../common/mixins/root";
+@include root($theme-blue-color);
+
+@import 'components/stars/font';
+@import 'components/stars/variables';
+@import 'components/stars-no-korusui/font';
+
+.feedback-widget-wrapper {
+  font-family: "SBSans", "Roboto", "Arial", "PT_sans", sans-serif;
+  color: $black-01;
+  background: $white;
+  font-size: 14px;
+  line-height: 20px;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @import '../reset.scss';
+
+  @import '../../../assets/korus-ui/commonStyles/border-box';
+  @import '../../../assets/korus-ui/commonStyles/Input/input.nova';
+
+  @import '../../../assets/korus-ui/components/Button/button.nova';
+  @import '../../../assets/korus-ui/components/CheckBox/checkbox.nova';
+  @import '../../../assets/korus-ui/components/Loader/loader.nova';
+  @import '../../../assets/korus-ui/components/Modal/modal.nova';
+  @import '../../../assets/korus-ui/components/RadioGroup/radio.nova';
+  @import '../../../assets/korus-ui/components/Rating/rating.nova';
+  @import '../../../assets/korus-ui/components/Textarea/textarea.nova';
+
+  @import 'components/stars/button';
+  @import 'components/stars/form';
+
+  @import 'components/stars-no-korusui/button';
+  @import 'components/stars-no-korusui/form';
+  @import 'components/stars-no-korusui/icon';
+  @import 'components/stars-no-korusui/list';
+
+  @import 'components/stars-no-korusui/helpers';
+  @import '../product-mobile/responsive.stars-no-korusui';
+
+}
+
+@import 'components/stars/modal';
+@import 'components/stars-no-korusui/modal';

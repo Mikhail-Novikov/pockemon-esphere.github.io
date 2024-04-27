@@ -1,0 +1,130 @@
+@import '../variables/themes/_nova.scss';
+
+.spider {
+
+  &-wrap {
+  position: relative;
+  height: 50rem;
+  }
+
+  &-node-name {
+    max-width: 15rem;
+    background-color: $white;
+    text-align: center;
+
+    * {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+    }
+  }
+}
+
+.icon-spider-company {
+  height: 4.2rem;
+  width: 4.2rem;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.infoform {
+  background-color: $white;
+  -moz-user-select: text;
+  -khtml-user-select: text;
+  -webkit-user-select: text;
+  -o-user-select: text;
+  user-select: text;
+}
+
+.popup-header {
+  padding: 1rem 0;
+  background-color: $gray-lighter;
+  border-bottom: 1px solid $gray;
+}
+
+.popup-header-text {
+  padding: 0 2.5rem 0 2rem;
+  line-height: 2rem;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  text-overflow: ellipsis;
+}
+
+.popup-actions {
+  position: absolute;
+  top: 0;
+  right: 1.5rem;
+  padding-top: .9rem;
+}
+
+.close-button {
+  display: inline-block;
+  width: 1.6rem;
+  height: 1.6rem;
+  padding: .2rem;
+  text-decoration: none;
+  vertical-align: middle;
+  opacity: .7;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.action {
+  visibility: hidden;
+  width: 3.2rem;
+  height: 3.2rem;
+  position: absolute;
+  top: 0;
+  left: 6rem;
+  z-index: 1;
+  background-color: $white;
+  border-radius: 50%;
+  border: 1px solid $black-05;
+  color: $black-01;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.2rem;
+
+  &:hover {
+    border-color: $black-01;
+  }
+
+  i {
+    line-height: 1.4rem;
+    display: inline-block;
+  }
+}
+
+.pie-menu.open {
+
+  .action {
+    transition: .2s ease-in;
+    visibility: visible;
+  }
+
+  .card {
+    top: 1rem;
+    left: .6rem;
+  }
+
+  .connections {
+    top: -2.5rem;
+    left: 2rem;
+  }
+
+  .add {
+    top: -2.5rem;
+    left: 8.7rem;
+  }
+
+  .pinned {
+    top: -4.4rem;
+    left: 5.4rem;
+  }
+}

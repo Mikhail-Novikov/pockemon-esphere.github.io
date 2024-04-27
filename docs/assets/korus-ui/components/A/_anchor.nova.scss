@@ -1,0 +1,27 @@
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:not(.pagination-button):focus {
+    box-shadow: 0 0 0 1px $focus-border;
+  }
+
+  &.external {
+    color: $secondary-01;
+
+    &:hover {
+      color: $secondary-02;
+    }
+  }
+
+  &.internal {
+    color: var(--brand-color);
+
+    &:hover {
+      color: var(--brand-hover-color);
+    }
+  }
+}

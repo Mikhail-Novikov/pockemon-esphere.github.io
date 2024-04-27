@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "responsive.spfl.css",
+	"sources": [
+		"../../scss/product-mobile/responsive.spfl.scss",
+		"../../scss/variables/_base.scss",
+		"../../scss/variables/themes/_sb.scss",
+		"../../scss/variables/themes/_nova.scss"
+	],
+	"names": [],
+	"mappings": ""
+}

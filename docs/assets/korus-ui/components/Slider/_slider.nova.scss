@@ -1,0 +1,206 @@
+.slider {
+  &-wrapper {
+    position: relative;
+  }
+
+  &-container {
+    height: 24px;
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 6px;
+      background-color: $white;
+      z-index: $zindex-slider-hidden-element;
+    }
+
+    &::before {
+      left: 0;
+    }
+
+    &::after {
+      right: 0;
+    }
+  }
+
+  &-track {
+    height: 4px;
+    background-color: $black-05;
+    border-radius: 2px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &.active {
+      background-color: var(--brand-color);
+      cursor: pointer;
+    }
+  }
+
+  &-handle {
+    background-color: var(--brand-color);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    z-index: $zindex-slider-handle !important;
+
+    .tooltip {
+      display: none;
+      left: 50%;
+      text-align: center;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: 2px solid $white;
+      background-color: var(--brand-color);
+    }
+
+    &:hover, &:active {
+      background-color: var(--brand-active-color);
+
+      &::after {
+        background-color: $white;
+      }
+
+      .tooltip {
+        display: block;
+      }
+    }
+
+    &:focus {
+      border: 1px solid $focus-border;
+    }
+  }
+
+  &-mark {
+    background-color: $black-05;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: 1px solid $black-05;
+
+    &.active {
+      background-color: var(--brand-color);
+      border: 1px solid var(--brand-color);
+    }
+
+    &-container {
+      position: absolute;
+      top: 8px;
+      width: 100%;
+      padding-left: 8px;
+      padding-right: 8px;
+      display: flex;
+      justify-content: space-between;
+      z-index: $zindex-slider-mark-container;
+    }
+  }
+
+  &-label {
+    color: $gray-dark;
+
+    &-container {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 4px;
+      padding-right: 8px;
+      padding-left: 8px;
+    }
+
+    &-step {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      color: $black-04;
+
+      &.active {
+        color: $black-03;
+      }
+
+      &-container {
+        position: relative;
+        width: 8px;
+        height: 20px;
+
+        &:first-of-type {
+          .slider-label-step {
+            left: 0;
+            transform: none;
+          }
+        }
+        &:last-of-type {
+          .slider-label-step {
+            right: 0;
+            left: auto;
+            transform: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.slider-disabled {
+  .slider {
+    &-handle:hover .tooltip,
+    &-handle:active .tooltip {
+      display: none;
+    }
+
+    &-handle::after {
+      border: 2px solid $white;
+    }
+
+    &-mark.active {
+      border: 1px solid $black-04;
+    }
+
+    &-handle,
+    &-handle:hover,
+    &-handle:hover::after,
+    &-handle:active,
+    &-handle:active::after,
+    &-handle::after,
+    &-track.active,
+    &-mark.active {
+      background-color: $black-04;
+    }
+
+    &-handle:focus {
+      border: none;
+    }
+
+    &-label,
+    &-label-step,
+    &-label-step.active {
+      color: $black-04;
+    }
+
+    &-handle {
+      cursor: not-allowed;
+    }
+
+    &-track.active {
+      cursor: default;
+    }
+  }
+
+  // Корректировка из-за совпадения хелпера со стандартным классом слайдера
+  .disabled:not(li) {
+    background-color: transparent !important;
+  }
+}

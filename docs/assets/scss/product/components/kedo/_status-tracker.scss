@@ -1,0 +1,70 @@
+.status-tracker {
+  width: 29.6rem;
+  background-color: $black-07;
+  border-radius: .8rem;
+
+  .statusbar-status-item {
+
+    .statusbar-icon::before {
+      width: 2.4rem;
+      height: 2.4rem;
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: $black-04;
+      box-shadow: $box-shadow-stepper-icon;
+    }
+
+    .progress::before {
+      font-weight: bold;
+      color: $success;
+      border: .2rem solid $success;
+      background-image: none;
+    }
+
+    .success {
+
+      &::before {
+        background-color: $success;
+        color: $white;
+      }
+    }
+
+    .danger {
+
+      &::before {
+        color: $white;
+      }
+    }
+
+    &.prev-success + .statusbar-line {
+      background-color: $success;
+    }
+
+    &.prev-danger + .statusbar-line {
+      background-color: $error-02;
+    }
+  }
+
+  &-footer {
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: calc(100% + 4.8rem);
+      height: 1px;
+      margin: 0 -2.4rem;
+      background-color: $black-05;
+    }
+  }
+}
+
+.doc-status {
+
+  div {
+    width: 5.6rem;
+  }
+}

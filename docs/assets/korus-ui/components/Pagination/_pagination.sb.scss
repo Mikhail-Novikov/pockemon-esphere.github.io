@@ -1,0 +1,192 @@
+.pagination {
+  &-wrapper {
+    overflow: visible;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+
+    .dropdownselect {
+      &-wrapper {
+        margin: 0 10px 0 15px;
+        width: 60px;
+      }
+
+      &-input-wrapper {
+        border-width: 1px;
+        background-color: inherit;
+        border-radius: 0;
+        justify-content: flex-start;
+        align-items: center;
+
+        &:hover {
+          background-color: inherit;
+        }
+
+        &.focused {
+          border-width: 1px;
+        }
+      }
+
+      &-suggestion {
+        color: $black-01;
+
+        &.selected {
+          color: $base-action;
+        }
+      }
+    }
+  }
+
+  &-numbers {
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+
+    .pagination-button {
+      color: $link-color;
+      margin: 0;
+      min-width: 30px;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: none;
+        background-color: $gray-light;
+        color: $link-color;
+      }
+
+      &.selected {
+        background-color: $base-action;
+        color: $white;
+        cursor: default;
+        font-weight: 400;
+      }
+
+      &.disabled {
+        cursor: default !important;
+        color: $black-03;
+        font-weight: normal;
+      }
+    }
+  }
+
+  &-button {
+    padding: 4px;
+    min-width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $link-color;
+    cursor: pointer;
+
+    &:hover {
+      color: $black-01;
+      text-decoration: none;
+      background-color: $gray-light;
+    }
+  }
+
+  &-controls {
+    background-color: transparent;
+
+    &:hover {
+      background-color: $gray-light;
+    }
+
+    &.disabled {
+      background-color: transparent !important;
+      cursor: default !important;
+
+      & > i {
+        color: rgba($gray-dark, 0.6) !important;
+        cursor: default !important;
+      }
+
+      &:hover {
+        background-color: transparent !important;
+
+        & > i {
+          color: rgba($gray-dark, 0.6) !important;
+        }
+      }
+    }
+
+    %common-control-icons {
+      @extend %common-dropdown-icon;
+
+      &:before {
+        background: no-repeat center;
+        display: block;
+        width: 20px;
+        height: 20px;
+        transform: rotate(0);
+      }
+    }
+
+    &.first {
+      .icon-first {
+        @extend %common-control-icons;
+
+        &:before {
+          content: "\e00b";
+        }
+      }
+    }
+
+    &.prev {
+      .icon-prev {
+        @extend %common-control-icons;
+
+        &:before {
+          content: "\e007";
+        }
+      }
+    }
+
+    &.next {
+      .icon-next {
+        @extend %common-control-icons;
+
+        &:before {
+          content: "\e005";
+        }
+      }
+    }
+
+    &.last {
+      .icon-last {
+        @extend %common-control-icons;
+
+        &:before {
+          content: "\e009";
+        }
+      }
+    }
+  }
+
+  &-label {
+    &-options {
+      display: flex;
+      flex: 1;
+      justify-content: flex-start;
+      flex-direction: row;
+      align-items: baseline;
+      color: $black-03;
+      font-size: 14px;
+
+      .dropdownselect-input-wrapper input[class*="input"] {
+        font-size: 14px;
+        @extend %pagination-options-label-input-extra !optional;
+      }
+    }
+
+    &-info {
+      display: flex;
+      flex: 1;
+      justify-content: flex-end;
+      color: $black-03;
+      font-size: 14px;
+    }
+  }
+}

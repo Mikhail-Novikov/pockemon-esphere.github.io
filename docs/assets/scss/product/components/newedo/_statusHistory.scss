@@ -1,0 +1,52 @@
+.status-history {
+
+  &-item {
+    position: relative;
+    min-height: 7.2rem;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 2.8rem;
+      left: 15.5rem;
+      display: block;
+      width: .2rem;
+      height: calc(100% - 3.2rem);
+      background-color: $black-05;
+      border-radius: .1rem;
+    }
+
+    &-success {
+
+      &::after {
+        background-color: $success;
+      }
+    }
+
+    &:last-of-type {
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &-date {
+    width: 12rem;
+  }
+
+  &-icon {
+    width: 2.4rem;
+    height: 2.4rem;
+    font-size: 2.4rem;
+    border-radius: 50%;
+
+    &.txt-light-gray {
+      font-size: 1.8rem;
+      line-height: 2.4rem;
+      text-align: center;
+      border-color: transparent;
+      box-shadow: 0 .2rem .7rem 0 rgba($black-01, .08);
+    }
+  }
+}

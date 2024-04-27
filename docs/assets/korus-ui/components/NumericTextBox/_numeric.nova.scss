@@ -1,0 +1,101 @@
+.numeric-text-box {
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    &.large{
+      .numeric-text-box-input-wrapper {
+        min-height: 40px;
+      }
+    }
+    align-items: center;
+  }
+
+  &-input-wrapper {
+    @extend %input-wrapper;
+    width: 100%;
+
+    &.danger {
+      border-color: $brand-danger;
+    }
+
+    &:hover {
+      @extend %input-hovered;
+    }
+
+    &.focused {
+      @extend %input-focused;
+    }
+
+    &.disabled {
+      cursor: not-allowed;
+      @extend %input-disabled;
+
+      &.numeric-text-box-arrow-up, &.numeric-text-box-arrow-down {
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  &-prefix {
+    @extend %input-prefix;
+  }
+
+  &-input-wrapper > &-prefix + &-input {
+    padding-left: 4px;
+    line-height: 1.5;
+  }
+
+  &-suffix {
+    @extend %input-suffix;
+  }
+
+  &-input {
+    width: 100%;
+    outline: none !important;
+    text-overflow: ellipsis;
+
+    &::placeholder {
+      @extend %input-placeholder;
+    }
+
+    &:disabled {
+      -webkit-text-fill-color: $black-03;
+    }
+  }
+
+  &-arrow-buttons {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+    user-select: none;
+  }
+
+  &-arrow-up {
+    cursor: pointer;
+
+    &::before {
+      background-image: url("https://cdn.esphere.ru/images/nova/icons/arrow-down.svg");
+      transform: rotate(180deg);
+      content: " ";
+      background-position: bottom;
+      display: block;
+      height: 16px;
+      width: 20px;
+    }
+  }
+
+  &-arrow-down {
+    cursor: pointer;
+
+    &::before {
+      background-image: url("https://cdn.esphere.ru/images/nova/icons/arrow-down.svg");
+      content: " ";
+      display: block;
+      background-position: bottom;
+      height: 16px;
+      width: 20px;
+    }
+  }
+}
+

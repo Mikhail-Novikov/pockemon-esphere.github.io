@@ -1,0 +1,27 @@
+.button-group {
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-buttons-wrapper {
+    display: inline-flex;
+    justify-content: flex-start;
+  }
+
+  &-item {
+    &.button-wrapper {
+      display: flex;
+      justify-content: center;
+      border-radius: 0;
+    }
+
+    &.first {
+      border-radius: 3px 0 0 3px;
+    }
+
+    &.last {
+      border-radius: 0 3px 3px 0;
+    }
+  }
+}

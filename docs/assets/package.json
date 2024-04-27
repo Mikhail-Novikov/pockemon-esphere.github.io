@@ -1,0 +1,44 @@
+{
+  "_from": "styles-esphere@^2.1.31",
+  "_inBundle": false,
+  "_integrity": "sha512-eJq8BrvsQIVc1KO39WUnlmMVYqs2uLM9meVBFubQ+e9X5Lvy5UBGFHy20xJQ5Bl/JNueQipNR35/8w2KleRuAg==",
+  "_location": "/styles-esphere",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "styles-esphere@^2.1.31",
+    "name": "styles-esphere",
+    "escapedName": "styles-esphere",
+    "rawSpec": "^2.1.31",
+    "saveSpec": null,
+    "fetchSpec": "^2.1.31"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "http://nexus.esphere.local/repository/npm-all/styles-esphere/-/styles-esphere-2.1.31.tgz",
+  "_shasum": "58e197c0cd1c28d137d4794f14a5fe376d5bb94f",
+  "_spec": "styles-esphere@^2.1.31",
+  "_where": "C:\\dev\\reakit",
+  "author": {
+    "name": "Корус Консалтинг СНГ"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Стили",
+  "license": "ISC",
+  "main": "index.js",
+  "name": "styles-esphere",
+  "repository": {
+    "type": "git",
+    "url": "git@git.esphere.local:internal/ui.git"
+  },
+  "scripts": {
+    "clean": "rm -f *.tgz",
+    "finish": "cp package.json.off package.json",
+    "prepare": "cp package.json package.json.off",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "2.2.354"
+}

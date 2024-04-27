@@ -1,0 +1,100 @@
+.dropzone {
+  &-wrapper {
+    background-color: transparent;
+
+    .rejected-list {
+      padding-top: 8px;
+    }
+  }
+
+  &-content {
+    align-items: center;
+    border: 1px dashed $black-05;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+  }
+
+  &-file-upload {
+    align-items: center;
+    border: 1px dashed $black-05;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 0;
+    &:hover {
+      border-color: $black-01;
+      cursor: pointer;
+    }
+  }
+  &-icon::before {
+    background-image: url(https://cdn.esphere.ru/images/nova/uploadzone-icon.svg);
+    content: "";
+    display: block;
+    height: 32px;
+    margin-bottom: 4px;
+    width: 32px;
+  }
+  &-hint {
+    color: $black-04;
+    font-family: 'prodicon' !important;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    line-height: 1;
+    margin-left: 4px;
+    speak: none;
+    text-transform: none;
+    vertical-align: middle;
+    &::before {
+      content: "\e99b";
+    }
+    &:hover {
+      color: $black-03;
+    }
+  }
+
+  &-button {
+    min-width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: none;
+  }
+
+  &-description {
+    width: 100%;
+    display: inline-block;
+    text-align: start;
+    font-size: 12px;
+    padding-left: 24px;
+    padding-right: 48px;
+    color: $gray-dark;
+    text-overflow: ellipsis;
+    font-style: normal;
+  }
+
+  &-status {
+    display: flex;
+    align-items: center;
+    flex: none;
+    margin-right: 24px;
+    font-weight: 500;
+
+    & > [class*="icon"] {
+      margin-right: 5px;
+    }
+  }
+
+  &-delete-icon {
+    font-size: 14px;
+    cursor: pointer;
+    font-family: "prodicon";
+    &::before {
+      content: "\e97c";
+      font-style: normal;
+    }
+  }
+}

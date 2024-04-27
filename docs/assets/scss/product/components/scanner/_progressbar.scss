@@ -1,0 +1,27 @@
+@import 'variables';
+
+/* ProgressBar
+--------------------*/
+
+.progressbar-small {
+
+  &.progressbar-wrapper {
+    background-color: $black-06;
+    border-radius: 1.6rem;
+    height: 1.6rem;
+
+    .progressbar-fill {
+      border-radius: 1.6rem;
+      border-right: .1rem solid $white;
+    }
+
+    &.full-value .progressbar-fill {
+      border-radius: 1.6rem;
+      border-right-width: 0;
+    }
+
+    &.zero-value .progressbar-fill {
+      border-right-width: 0;
+    }
+  }
+}

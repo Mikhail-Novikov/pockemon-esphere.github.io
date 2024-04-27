@@ -1,0 +1,13 @@
+{
+  "changelogBranch": "master",
+  "changelogFileName": "CHANGELOG.md",
+  "jiraLink": "https://jira.com/browse/",
+  "templateRowPrefix": "- ",
+  "commitPrefix": "^(\\[TASK\\-\\d+\\]|\\[NO-TASK\\])",
+  "taskPrefix": "(\\[TASK\\-\\d+\\])",
+  "withoutTaskPrefix": "(\\[NO-TASK\\])",
+  "escapeTasksPrefix": "",
+  "fixTaskKeyword": "Fixed, Исправлен, Поправлен",
+  "changeTaskKeyword": "Changed, Обновлен, Заменен, Рефакторинг, Выполнен",
+  "addedTaskKeyword": "Added, Добавлен, Реализован"
+}

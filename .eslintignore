@@ -1,0 +1,10 @@
+webpack/*
+dist/*
+.prettierrc.js
+src/mockups/*
+src/**/*.test.js
+src/**/*.test.jsx
+src/**/*.test.tsx
+src/**/*.test.ts
+jest-base.js
+jest.config.js

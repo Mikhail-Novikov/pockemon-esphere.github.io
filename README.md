@@ -1,2 +1,2 @@
-# pokemon-esphere.github.io
+# pokemon-esphere
 Картотека покемонов(ТЗ FrontEnd SberKorus)

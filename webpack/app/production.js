@@ -15,6 +15,7 @@ module.exports = merge(webpackCommomConfig, {
   output: {
     path: config.appDist,
     filename: '[name]-[fullhash].js',
+    publicPath: './',
   },
   optimization: {
     runtimeChunk: true,

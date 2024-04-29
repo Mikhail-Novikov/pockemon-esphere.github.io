@@ -1,9 +1,5 @@
 node_modules
 
-docs
-
-docs/*
-
 coverage
 
 eslint-report.json

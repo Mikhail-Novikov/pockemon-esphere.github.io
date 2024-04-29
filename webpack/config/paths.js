@@ -16,9 +16,9 @@ const appPaths = {
   // папка с контейнерами страниц приложения
   appPages: path.resolve(__dirname, '../../src/pages'),
   // папка с билдом приложения
-  appDist: path.resolve(__dirname, '../../docs'),
+  appDist: path.resolve(__dirname, '../../docs/'),
   // папка с ресурсами приложения (картинками шрифтами и пр.)
-  appAssets: path.resolve(__dirname, '../../puplic'),
+  appAssets: path.resolve(__dirname, '../../public'),
   // папка со стилями
   appStyles: path.resolve(__dirname, '../../src/shared/styles'),
   // точка входа в приложение

@@ -9,7 +9,7 @@
     "prepare": "husky install",
     "test": "npm run jest",
     "jest": "jest --coverage",
-    "start": "npm run clean && npm run addAssets && npm run develop",
+    "start": "npm run develop",
     "build": "npm run tsc && npm run clean && npm run addAssets && npm run production && npm run clearScss",
     "develop": "webpack serve --config ./webpack/app/develop",
     "production": "webpack --config ./webpack/app/production",

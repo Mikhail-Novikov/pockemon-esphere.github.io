@@ -1,7 +1,7 @@
 {
   "name": "react-ts-start-v2",
   "short_name": "react-ts-start-v2",
-  "description": "Заготовка под проект на react-redux стеке",
+  "description": "Картотека покемонов",
   "dir": "auto",
   "lang": "en-US",
   "display": "standalone",

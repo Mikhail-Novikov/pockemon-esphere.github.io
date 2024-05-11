@@ -2,7 +2,7 @@ import { createSelector } from '@reduxjs/toolkit';
 import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
-import { Task } from '@shared/api';
+import { Task } from '@shared/api/todo-api';
 import {
   PartialState,
   createHookSelector,

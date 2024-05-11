@@ -1,2 +1,41 @@
+td {
+  vertical-align: middle !important;
+}
+
+.document-box {
+  position: relative;
+  transition: all 0.3s;
+  cursor: pointer;
+  margin-right: 2rem;
+}
+
+.document-box .document-status-indicator {
+  position: absolute;
+  top: 1.2rem;
+  left: -0.1rem;
+  width: 0.6rem;
+  height: 2.3rem;
+  background-color: #ff9900;
+  border-radius: 4rem;
+}
+
+.document-box .document-status-indicator.success {
+  background-color: #107f8c;
+}
+
+.document-box:hover,
+.document-box.active {
+  border-color: #107f8c;
+}
+
+.document-box:last-child {
+  margin-bottom: 0.9rem;
+}
+
+.grid-documents {
+  display: grid;
+  grid-template-rows: 60px auto 80px;
+  min-height: 100vh;
+}
 
 

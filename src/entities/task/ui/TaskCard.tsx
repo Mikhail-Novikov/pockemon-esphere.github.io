@@ -1,7 +1,7 @@
 import React from 'react';
 import * as L from 'korus-ui';
 
-import { Task } from '@shared/api';
+import { Task } from '@shared/api/todo-api';
 
 type TaskCardProps = {
   task: Task;

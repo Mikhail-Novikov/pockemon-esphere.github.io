@@ -1,7 +1,7 @@
 import React from 'react';
 import * as L from 'korus-ui';
 
-import { Pokemon } from '@shared/api';
+import { Pokemon } from '@shared/api/pokemon-api';
 
 type PokemonCardProps = {
   pokemon: Pokemon;

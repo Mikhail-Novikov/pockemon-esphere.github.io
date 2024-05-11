@@ -1,0 +1,121 @@
+@font-face {
+  font-family: 'WebComponentsIcons';
+  src: url("../../fonts/kendo-glyphs/WebComponentsIcons.woff2"), url("../../fonts/kendo-glyphs/WebComponentsIcons.woff"), url("../../fonts/kendo-glyphs/WebComponentsIcons.ttf");
+  font-weight: normal;
+  font-style: normal; }
+
+aside {
+
+  h4 {
+    padding: 0 2rem;
+  }
+
+  .menu-v {
+    margin-bottom: 2rem;
+  }
+}
+
+.menu-v .level-1 {
+
+  > a,
+  > div,
+  > span {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+  }
+}
+
+// Иконки и изображения
+
+img {
+  max-width: 100%;
+  border: 0;
+}
+
+svg.icon {
+  float: left;
+  height: 3.2rem;
+  width: 3.2rem;
+  padding: .4rem .5rem .4rem 0;
+}
+
+.iconset-svg {
+  width: 4rem;
+  height: 4rem;
+  vertical-align: top;
+}
+
+.iconset-svg-booking {
+  width: 3rem;
+  height: 5rem;
+}
+
+// Special aside
+
+.guide aside.sidebar {
+  width: 23rem;
+}
+
+body.aside {
+
+  .content-box,
+  .footer-box {
+    margin-left: 23rem;
+  }
+}
+
+// Навигация
+
+.page-navigation {
+  margin-bottom: 2rem;
+
+  a {
+    text-decoration: none;
+    margin-right: 1rem;
+    border-bottom: 1px solid #1697b7;
+  }
+}
+
+.note-box {
+  position: relative;
+}
+
+.note {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: -45%;
+  width: 40%;
+}
+
+.example {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #fafafa;
+}
+
+.content.docs {
+
+  .k-grid {
+    border-color: transparent;
+
+    tbody tr:hover {
+      background: #fff;
+    }
+
+    td {
+      vertical-align: middle;
+      border-color: transparent;
+
+      &:first-child {
+        vertical-align: top;
+      }
+    }
+
+    th {
+      border-color: transparent;
+    }
+  }
+}
+
+

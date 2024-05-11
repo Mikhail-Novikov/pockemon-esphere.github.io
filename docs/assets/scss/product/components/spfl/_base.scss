@@ -1,0 +1,29 @@
+@import 'variables';
+
+@media screen and (max-width: 1023.98px) {
+
+  .wrapper-pic, .wrapper-text {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+
+  .notifications-wrapper.notifications-here {
+    left: 50%;
+    max-width: unset;
+    transform: translateX(-50%);
+  }
+
+  .shadow-bottom-gray::before {
+    background: linear-gradient(0deg, $gray-2 0%, $white .01%, rgba(255, 255, 255, 0) 100%);
+    top: -6.4rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+
+  .scroll-margin-top {
+    scroll-margin-top: 11rem;
+  }
+}

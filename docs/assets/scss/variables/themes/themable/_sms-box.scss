@@ -1,0 +1,48 @@
+@mixin sms-box($default, $disabled) {
+  .k-sms-box {
+    
+    .button, a.button {
+      background-color: $default;
+    }
+      
+    input:not(:placeholder-shown) + a.button, input:not(:placeholder-shown) + .button{
+      background-color: $default;
+    }
+    
+    input:not(:placeholder-shown) {
+      + i[class^="novicon-"],
+      + i[class^="prodicon-"] {
+        color: $default;
+      }
+    }
+      
+    &.active {
+  
+      .button, a.button {
+        background-color: $default;
+      }
+    }
+      
+    &.primary, &.success {
+  
+      .button, a.button {
+        background-color: $disabled;
+      }
+  
+      input:not(:placeholder-shown) + a.button, input:not(:placeholder-shown) + .button{
+        background-color: $default;
+      }
+      
+      &.active {
+  
+        .button, a.button {
+          background-color: $default;
+        }
+      }
+    }
+  
+    i {
+      color: $disabled;
+    }
+  }
+}

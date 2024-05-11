@@ -1,0 +1,77 @@
+@import "../variables/_base.scss";
+
+@media screen and (max-width: 1025px) {
+  .wrapper-menu {
+    position: relative;
+    z-index: 960;
+  }
+
+  .top-menu {
+    right: -105%;
+    transition: .3s;
+    border-top: 1px solid rgba(148, 148, 148, .38);
+    box-shadow: 0 1.4rem 1.4rem rgba($black-01, .25);
+    &.open {
+      right: 0;
+    }
+
+    ul {
+      margin: 0;
+      li {
+        display: block;
+        margin: 0 0 .9rem .9rem;
+        padding-left: 1.5rem;
+        position: relative;
+        h6, > a {
+          padding-left: 2.8rem;
+        }
+      }
+    }
+  }
+
+  .m-menu {
+    background: $text-reverse;
+    max-width: 32rem;
+    width: 100%;
+    position: fixed;
+    top: 6.6rem;
+    z-index: 930;
+    padding: 2rem 0 1.5rem 0 !important;
+
+    li {
+      float: none;
+      margin-bottom: 2.5rem;
+    }
+
+    .level-1 {
+      > a, > span {
+        box-shadow: none !important;
+        font-size: 2rem;
+        color: $text-reverse;
+      }
+    }
+
+    .m-menu-text {
+      display: inline-block !important;
+    }
+  }
+}
+
+@media screen and (max-width: 801px) {
+  .m-menu {
+    max-width: none;
+    height: 100%;
+  }
+}
+
+.nav-box {
+  background-color: $text-reverse;
+  box-shadow: 0 .4rem .4rem rgba(111, 111, 111, .25);
+  border-radius: 0;
+  padding: 1.5rem 1rem;
+}
+
+.icon-4rem, .icon-4-rem {
+  width: 4rem;
+  height: 3rem;
+}

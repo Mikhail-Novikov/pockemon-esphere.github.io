@@ -41,17 +41,17 @@
       pointer-events: none;
 
       &::before {
-        background-color: $black-07;
-        border-color: $black-05;
+        background-color: var(--control-bg-disabled);
+        border-color: var(--control-border);
       }
 
       &::after {
-        color: $black-05;
+        color: var(--text-disabled-color);
         background-color: transparent;
       }
 
       &.semi::after {
-        background-color: $black-05;
+        background-color: var(--text-disabled-color);
       }
     }
 
@@ -85,8 +85,8 @@
 
     &::before {
       content: " ";
-      background-color: $white;
-      border: 1px solid $black-05;
+      background-color: var(--control-bg);
+      border: 1px solid var(--control-border);
     }
 
     &::after {

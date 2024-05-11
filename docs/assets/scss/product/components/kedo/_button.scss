@@ -1,0 +1,189 @@
+.button-wrapper {
+
+  &.success {
+    background-color: $success;
+    border-color: transparent;
+
+    &:hover {
+      background-color: $success-hover;
+      border-color: transparent;
+    }
+
+    &:active {
+      background-color: $success-active;
+    }
+
+    &.disabled {
+      background-color: $success-disabled !important;
+
+      &:hover {
+        background-color: $success-disabled !important;
+      }
+    }
+  }
+
+  &.blank.more {
+    padding: 0 .5rem;
+
+    tr &:hover i,
+    tr:hover &:hover i,
+    tr.selected &:hover i {
+      color: $black-03;
+    }
+
+    i {
+      transition: color .2s;
+    }
+
+    tr & {
+
+      i {
+        color: $black-05;
+      }
+    }
+
+    tr:hover &,
+    tr.selected & {
+
+      i {
+        color: $black-04;
+      }
+    }
+  }
+
+  &.loading::before {
+    background-image: url(https://cdn.esphere.ru/images/loading-spinner-sky-small.svg);
+  }
+
+  // Удалить после обновления библиотеки
+  &.more:not(.blank):focus {
+    padding: .2rem;
+    border-width: .2rem;
+  }
+}
+
+.sberid-button {
+  background-color: $green;
+  color: $text-reverse;
+  border-color: transparent;
+
+  &:hover {
+    background-color: $green-hover;
+    color: $text-reverse;
+    border-color: transparent;
+  }
+
+  &:active {
+    background-color: $green-active;
+  }
+}
+
+.button-group-wrapper {
+
+  &.button-group-wide {
+    max-width: 44.4rem;
+  }
+
+  .button-group-item.active {
+    background-color: $success;
+    border-color: transparent;
+    color: $text-reverse;
+
+    &:focus {
+      border-color: $focus-border;
+    }
+
+    &:hover {
+      background-color: $success-hover;
+      border-color: $success-hover;
+
+      + .button-wrapper:not(:hover) {
+        border-color: $black-05;
+      }
+    }
+  }
+}
+
+.header-button-group {
+
+  .button-group-buttons-wrapper {
+    padding: .2rem 1px;
+    border-radius: 1.6rem;
+    background-color: $text-reverse;
+  }
+
+  .button-wrapper {
+    margin: 0 1px;
+    padding: .6rem 1.6rem !important;
+    border-radius: 1.4rem !important;
+    border: none;
+
+    &.active,
+    &.active:hover {
+      background-color: $black-05;
+      color: $text !important;
+      font-weight: 400 !important;
+      cursor: default;
+    }
+
+    &:hover {
+      background-color: $black-07;
+    }
+  }
+}
+
+.text-button {
+  min-width: 0;
+  padding: 0;
+  border: none;
+  color: $success;
+  background-color: transparent;
+  border-radius: 0;
+
+  &:hover,
+  &:active,
+  &:not(.blank):focus {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+  }
+
+  &:hover {
+    color: $primary-02;
+  }
+
+  &:active {
+    color: $secondary-01;
+  }
+}
+
+.banner-close-button {
+  position: absolute;
+  top: 1.2rem;
+  right: .8rem;
+}
+
+.notification-structure-view {
+  border-radius: .8rem;
+
+  &,
+  &:hover,
+  &:not(.blank):focus {
+    border-color: transparent;
+  }
+
+  &:hover {
+    background-color: $black-07;
+    border-color: $black-07;
+  }
+
+  &.selected {
+    background-color: $black-06;
+    border-color: $black-06;
+    cursor: default;
+
+    i {
+      color: $secondary-02;
+    }
+  }
+}

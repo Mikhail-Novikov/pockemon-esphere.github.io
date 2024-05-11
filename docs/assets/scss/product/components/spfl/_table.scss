@@ -1,0 +1,373 @@
+@import 'variables';
+
+/* rating-admin-table
+----------------------------------------------------------------------*/
+
+.search > .table-layout {
+  height: 100vh;
+  min-height: 50rem;
+}
+
+/* fin-table
+----------------------------------------------------------------------*/
+
+table.m-fin-table tr.fin-title {
+  background: $gray-lighter;
+}
+
+/* table
+----------------------------------------------------------------------*/
+
+.border .table table {
+  border-collapse: collapse;
+}
+
+.table.table-no-hover tr:hover {
+  background: transparent;
+}
+
+.table-collapse {
+
+  &-content {
+    border-bottom-right-radius: .8rem;
+    border-bottom-left-radius: .8rem;
+  }
+
+  &-open {
+
+    .table-collapse-head {
+      background-color: $black-07;
+
+      td {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        border-bottom: .1rem solid $border;
+      }
+    }
+
+    .table-collapse-item:hover {
+      background-color: transparent;
+    }
+  }
+}
+
+.table th.sort-column {
+  cursor: pointer;
+  padding-top: .8rem;
+  padding-bottom: .8rem;
+
+  > div {
+    padding-top: .8rem;
+    padding-bottom: .8rem;
+  }
+
+  .sort-column-icon {
+    height: 1.1rem;
+    width: .7rem;
+    fill: $black-02;
+  }
+
+  .sort-icon-hover {
+    opacity: 0;
+  }
+
+  &:hover {
+
+    .sort-column-icon:not(.sort-icon-hover) path {
+      fill: $black-03;
+    }
+
+    .sort-icon-hover {
+      opacity: 1;
+    }
+  }
+
+  .sorted::after {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.table-loading {
+
+  > thead, tbody {
+    visibility: visible;
+    opacity: .2;
+    backdrop-filter: blur(.4rem);
+    -webkit-backdrop-filter: blur(.4rem);
+  }
+
+  a {
+    pointer-events: none;
+  }
+
+  &:before {
+    z-index: 2;
+  }
+}
+
+.table-line {
+
+  th {
+    background-color: transparent;
+    padding-left: 0;
+  }
+
+  td {
+    border-radius: 0 !important;
+  }
+
+  .table-line-separator {
+    border-top: .1rem solid $black-05;
+    margin: .8rem 0 1.6rem !important;
+    padding: 0 !important;
+  }
+  
+  & tbody + tbody caption {
+    margin-top: 2.4rem;
+  }
+}
+
+.table th.checkbox-header {
+  text-overflow: inherit;
+
+  .checkbox-label {
+    margin-top: -.4rem;
+  }
+}
+
+.checkbox-single > .checkbox-wrapper {
+  position: relative;
+  top: -.4rem;
+}
+
+table[class*="-spfl-table"] {
+
+  .with-button .button-wrapper.disabled.more:focus {
+    padding: .5rem;
+  }
+
+  tr:hover .button-wrapper.disabled {
+    background-color: transparent !important;
+  }
+}
+
+.table-with-checked {
+  background-color: $black-06;
+  margin-left: -1.6rem;
+  margin-right: -1.6rem;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+}
+
+@include breakpoints-max(md) {
+
+  table {
+
+    .m-cell-float {
+      float: left;
+    }
+
+    &.m-table colgroup {
+      display: none;
+    }
+
+    &.m-table thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+
+    &.m-table tr:not([class^="table-collapse-"]) {
+      box-shadow: 0 .2rem .3rem $gray;
+      border: 1px solid $gray;
+      border-radius: .8rem;
+      max-width: 100%;
+      margin-bottom: 1.2rem;
+      padding: 1.2rem 1.2rem .8rem;
+      position: relative;
+      display: block;
+    }
+
+    &.m-table td {
+      display: block;
+      text-align: left;
+      padding: 0;
+    }
+
+    &.m-table {
+
+      .m-td-wrap {
+        margin-left: 3.5rem;
+      }
+
+      td .m-td-wrap::before {
+        left: -2.5rem;
+      }
+
+      .cell-brd-bottom {
+        border-bottom: 1px solid $gray;
+        padding: 0 0 1rem;
+        margin-bottom: 1rem;
+      }
+
+      td::before {
+        content: attr(data-label);
+        text-transform: uppercase;
+        display: block;
+        float: none;
+        text-align: left;
+        width: 100%;
+      }
+    }
+
+    &.xs-block {
+      display: block;
+
+      tr {
+        display: block;
+      }
+
+      colgroup {
+        display: none;
+      }
+    }
+
+    .m-cell-none {
+      display: none !important;
+    }
+
+    &.m-table td:last-child {
+      border-bottom: 0;
+      padding-top: 1rem;
+      font-size: 1.2rem;
+      color: $gray-dark;
+    }
+  }
+
+  .report-table {
+    display: block;
+    margin-top: 0 !important;
+    margin-bottom: .8rem !important;
+
+    thead, colgroup {
+      display: none;
+    }
+
+    tbody {
+      display: block;
+
+      tr {
+        position: relative;
+        padding: 1.2rem 2.4rem;
+        margin: 0 -2.4rem .8rem -2.4rem;
+        display: flex;
+        flex-direction: column;
+
+        &:hover {
+          background-color: $black-07;
+        }
+      }
+
+      td {
+        display: block;
+        padding-bottom: .4rem;
+      }
+
+      .subtitle {
+        color: $black-03 !important;
+      }
+    }
+
+    &-txt-gray {
+      color: $black-03 !important;
+    }
+
+    &-txt-black {
+      color: $black-01 !important;
+    }
+
+    &-txt-small {
+      font-size: 1.2rem;
+      line-height: 1.6rem;
+    }
+
+    &-txt-large {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+    }
+
+    &-txt-bold {
+      font-weight: 500 !important;
+    }
+  }
+
+  .report-table-with-icon {
+
+    tbody {
+
+      td:not(:first-of-type) {
+        padding-left: 4.8rem;
+      }
+
+      td:first-of-type {
+        position: absolute;
+        top: 1.2rem;
+        left: 1.6rem;
+      }
+    }
+  }
+
+  .m-spfl-table {
+    display: block;
+
+    colgroup, thead {
+      display: none;
+    }
+
+    tbody {
+      display: block;
+    }
+
+    td {
+      display: flex;
+      flex-direction: column;
+      padding: .2rem 1.6rem;
+    }
+
+    tr {
+      display: block;
+      padding-top: 1.2rem;
+      padding-bottom: 1.2rem;
+
+      td:first-child {
+        flex-direction: row;
+        justify-content: space-between;
+        padding-left: .4rem;
+      }
+
+      &:not(:last-child) {
+        border-bottom: .1rem solid $border;
+      }
+    }
+  }
+}
+
+@include breakpoints-max(sm) {
+  
+  .report-table {
+
+    tbody {
+
+      tr {
+        padding: 1.2rem 1.6rem;
+        margin: 0 -1.6rem .8rem -1.5rem;
+      }
+    }
+  }
+}

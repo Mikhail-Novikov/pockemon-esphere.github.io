@@ -27,7 +27,7 @@ $loader-element-size: 48px;
     }
 
     &.fullscreen {
-      background-color: rgba($white, 0.8);
+      background-color: var(--loader-fullscreen-bg, var(--body-bg));
       position: fixed;
       top: 0;
       left: 0;
@@ -38,7 +38,7 @@ $loader-element-size: 48px;
   }
 
   &-container {
-    background-color: rgba($white, 0.8);
+    background-color: var(--loader-fullscreen-bg, var(--body-bg));
     min-height: 100px;
     position: absolute;
     top: 0;
@@ -55,7 +55,7 @@ $loader-element-size: 48px;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%) rotate(0);
-    background: $loader-element-item;
+    background:var(--loader-element-item);
     animation: rotate-clockwise 1s linear infinite;
     .light-box-content > .loader-wrapper & {
       top: 50vh;
@@ -95,7 +95,7 @@ $loader-element-size: 48px;
       display: block;
       position: absolute;
       border-radius: 50%;
-      border: 1px $black-01 solid;
+      border: 1px solid var(--text-color);
       border-top-color: transparent;
       border-bottom-color: transparent;
       background-color: transparent;

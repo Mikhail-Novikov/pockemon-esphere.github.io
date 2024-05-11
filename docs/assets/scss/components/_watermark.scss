@@ -1,0 +1,26 @@
+/* Передаем текст "водяного знака", который необходимо вывести, размер шрифта и минимальную высоту */
+
+@mixin watermark($text, $font-size, $min-height) {
+    
+    .watermark {
+  
+      position: relative;
+      min-height: $min-height;
+      
+      &::before {
+    
+        content: $text; 
+        color: $black-05;
+        font-size: $font-size;
+        font-weight: 600;
+        opacity: .5;
+        transform: rotate(-45deg) translate(-50%, -50%);
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 47%;
+        transform-origin: 0 0;
+        z-index: 1;
+      }
+    }
+  }

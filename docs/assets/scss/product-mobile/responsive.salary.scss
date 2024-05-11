@@ -1,0 +1,117 @@
+@import '../variables/themes/_nova.scss';
+
+@media (max-width: 575.98px) {
+  .button-wrapper {
+    padding: 1.5rem 2.3rem;
+    border-radius: 2.4rem;
+    &:focus {
+      padding: 1.4rem 2.4rem !important;
+    }
+    &.disabled:focus {
+      border-width: .2rem !important;
+    }
+  }
+
+  .button-wrapper.blank {
+    padding: .5rem;
+    &:focus {
+      padding: .5rem !important;
+    }
+  }
+
+  .autocomplete-input-wrapper,
+  .input-element-wrapper,
+  .dropdownselect-input-wrapper,
+  .datepicker-input-wrapper {
+    height: 4.8rem;
+    & > input[class*='input'] {
+      height: 4.6rem;
+    }
+  }
+
+  .fixed-button {
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 2.4rem;
+  }
+
+  .padding-before-fixed-button {
+    padding-bottom: 7.2rem;
+  }
+
+  header {
+    height: 5.3rem;
+    .button-wrapper {
+      &.blank:focus {
+        padding: 0 1.5rem !important;
+      }
+      &:not(.blank):focus {
+        border-color: transparent;
+      }
+    }
+  }
+
+  .light-box-wrapper-bg {
+    overflow-y: auto;
+  }
+
+  .light-box-mobile-controls {
+    display: none;
+  }
+
+  .light-box-heading {
+    position: relative;
+    padding-right: 4.8rem;
+    h2 {
+      font-size: 1.8rem;
+      line-height: 2.8rem;
+    }
+    .icon-close {
+      min-width: 0;
+      position: absolute;
+      top: 2.4rem;
+      right: 1.6rem;
+      padding: 0 !important;
+      border: 0;
+      line-height: 2rem;
+      background-color: transparent;
+    }
+  }
+
+  .light-box-footer {
+    padding: 2.4rem 1.6rem;
+    background-color: transparent;
+    .list-h > li:not(:last-child) {
+      margin-right: 0;
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  .notifications-top {
+    top: 6.8rem;
+    right: auto;
+    bottom: auto;
+    left: 1.6rem;
+    width: calc(100% - 3.2rem);
+  }
+
+  .employer-field {
+    .suggestion-wrapper {
+      margin: 0;
+      box-shadow: 0 .2rem .7rem rgba(31, 31, 34, .25);
+      .suggestion-list {
+        max-height: 26.4rem;
+      }
+      .nodata {
+        min-height: 0;
+      }
+    }
+    .dropdownselect-select-icon {
+      display: none;
+    }
+  }
+
+  .global-error {
+    padding-top: 20rem;
+  }
+}

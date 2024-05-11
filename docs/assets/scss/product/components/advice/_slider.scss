@@ -1,0 +1,29 @@
+.advice {
+
+  .k-slider-horizontal {
+    width: 100% !important;
+
+    .k-tick {
+      background: none;
+    }
+
+    .k-label {
+      bottom: -.7em;
+    }
+
+    .k-first .k-label {
+      left: -40%;
+    }
+
+    .k-last .k-label {
+      right: -30%;
+    }
+  }
+  
+  .k-slider-tooltip {
+    background-color: $white;
+    box-shadow: none;
+    color: $primary-02;
+    border: 1px solid $black-05;
+  }
+}

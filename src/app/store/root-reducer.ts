@@ -8,6 +8,7 @@ import { filterModel } from '@shared/lib/store-filter';
 
 import { toastModel } from '@entities/toast';
 import { taskModel } from '@entities/task';
+import { pokemonModel } from '@entities/pokemon';
 
 const rootReducer = combineReducers({
   /** shared */
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
   /** entities */
   [toastModel.config.modelName]: toastModel.reducer,
   [taskModel.config.modelName]: taskModel.reducer,
+  [pokemonModel.config.modelName]: pokemonModel.reducer,
 
   /** features */
 

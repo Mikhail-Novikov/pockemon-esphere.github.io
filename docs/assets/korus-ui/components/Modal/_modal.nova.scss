@@ -15,7 +15,7 @@
 }
 
 @mixin modal-wrapper-mobile {
-  padding: 20px 16px;
+  padding: 16px;
 }
 
 @mixin modal-wrapper-desktop {
@@ -28,8 +28,28 @@
     position: fixed;
     min-height: 100%;
     z-index: $zindex-modal;
-    background-color: $base-56;
+    background-color: var(--backdrop-bg);
     overflow: auto;
+
+    &:not(.m-modal) {
+      .modal-window {
+        &.sm {
+          max-width: 480px;
+        }
+    
+        &.md {
+          max-width: 600px;
+        }
+    
+        &.lg {
+          max-width: 800px;
+        }
+      }
+
+      .modal-footer {
+        text-align: right
+      }
+    }
   }
 
   &-overlay {
@@ -38,30 +58,29 @@
 
   &-window {
     padding-bottom: 64px;
-    max-width: 98%;
+    width: calc(100% - 32px);
     z-index: $zindex-modal-window;
     position: absolute;
-    top: 64px;
-    left: 50%;
+    top: 80px;
+    left: calc(50% - 16px);
     transform: translate(-50%, 0);
     border-radius: 16px;
+    margin-left: 16px;
+    margin-right: 16px;
 
     &.sm {
-      width: 480px;
       .modal-body {
         min-height: 200px;
       }
     }
 
     &.md {
-      width: 600px;
       .modal-body {
         min-height: 290px;
       }
     }
 
     &.lg {
-      width: 800px;
       .modal-body {
         min-height: 440px;
       }
@@ -83,7 +102,7 @@
   }
 
   &-body {
-    background: $white;
+    background: var(--body-bg);
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
 
@@ -103,7 +122,7 @@
     font-size: 16px;
     line-height: 24px;
     font-weight: 500;
-    background: #F2F4F7;
+    background: var(--header-bg);
 
     & + .modal-body {
       border-top-left-radius: 0;
@@ -112,9 +131,8 @@
   }
 
   &-footer {
-    background: #F2F4F7;
+    background: var(--footer-bg);
     @include modal-wrapper-mobile;
-    text-align: right;
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
 
@@ -128,16 +146,16 @@
   }
 
   &-alert {
-    background-color: $error-05;
+    background-color: var(--modal-alert-bg);
     border-bottom: 1px solid;
-    border-bottom-color: $error-02;
+    border-bottom-color: var(--modal-alert-border);
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
     min-height: 184px;
-    padding: 24px 32px;
+    padding: 20px 52px 20px 16px;
 
     &-overlay {
-      background: rgba($white, 0.8);
+      background: var(--overlay-bg);
       border-radius: 16px;
       height: calc(100% - 64px);
       width: 100%;
@@ -149,19 +167,79 @@
   }
 }
 
-@media screen and (min-width: 576px) {
-  .modal-window {
-    .modal-cross,
-    .modal-alert-cross {
-      @include modal-cross-position-desktop;
+@media screen and (min-width: 575px) {
+  .modal-wrapper:not(.m-modal) {
+    .modal-window {
+      .modal-cross,
+      .modal-alert-cross {
+        @include modal-cross-position-desktop;
+      }
+      
+      .modal-header {
+        padding: 24px 68px 24px 32px;
+        font-size: 21px;
+        line-height: 32px;
+      }
+
+      .modal-footer, .window-content {
+        @include modal-wrapper-desktop;
+      }
+
+      .modal-alert {
+        padding: 24px 68px 24px 32px;
+      }
     }
-    .modal-header {
-      padding: 24px 68px 24px 32px;
-      font-size: 21px;
-      line-height: 32px;
-    }
-    .modal-footer, .window-content {
-      @include modal-wrapper-desktop;
+  }
+
+  .m-modal {
+    .modal-window {
+      &.sm {
+        max-width: 480px;
+      }
     }
   }
 }
+
+@media screen and (min-width: 768px) {
+  .m-modal {
+    .modal-window {
+      &.md {
+        max-width: 600px;
+      }
+
+      .modal-cross,
+      .modal-alert-cross {
+        @include modal-cross-position-desktop;
+      }
+
+      .modal-header {
+        padding: 24px 68px 24px 32px;
+        font-size: 21px;
+        line-height: 32px;
+      }
+
+      .modal-footer, .window-content {
+        @include modal-wrapper-desktop;
+      }
+
+      .modal-footer {
+        text-align: right;
+      }
+
+      .modal-alert {
+        padding: 24px 68px 24px 32px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .m-modal {
+    .modal-window {
+      &.lg {
+        max-width: 800px;
+      }
+    }
+  }
+}
+

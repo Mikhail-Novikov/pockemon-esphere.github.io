@@ -1,0 +1,207 @@
+@import "../variables/themes/_nova.scss";
+
+.common-loader .loader-logo {
+  background: url(https://cdn.esphere.ru/images/booking/logo-sber.svg);
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.secondary.box, .inner.secondary {
+  background-color: $black-07;
+}
+
+.wrapper {
+  max-width: 130rem;
+  min-width: 98.4rem;
+  padding: 0 1rem;
+}
+
+.personal-box {
+
+  .menu-h .level-1 {
+
+    > a {
+      padding: 1rem 2.8rem;
+
+      [class^="novicon-"] {
+        font-size: 1.6rem;
+        vertical-align: unset;
+        padding-left: .8rem;
+      }
+    }
+  }
+}
+
+.logo {
+  margin: .8rem 0 0 0;
+  padding-left: 4rem;
+  background: url('https://cdn.esphere.ru/images/booking/logo-sber.svg') no-repeat 0 50%/2.4rem;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  color: $text;
+
+  &:hover {
+    color: $text;
+  }
+}
+
+.header {
+  margin-bottom: .6rem;
+  margin-top: 1.9rem;
+}
+
+.list {
+
+  > dt {
+    line-height: 2.2rem;
+  }
+
+  > dd ul.list-h > li {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+
+.doc-buttons {
+
+  .box {
+    padding: .5rem 1.4rem;
+    margin-bottom: 1.6rem;
+
+    .buttons {
+      min-width: 28rem;
+
+      .button {
+        margin-left: 1.6rem;
+      }
+    }
+
+    .status {
+      min-width: 19.5rem;
+      padding: 1.5rem 4.8rem;
+    }
+  }
+}
+
+.invoice-grid {
+
+  th {
+    font-size: 1rem;
+    line-height: 1.2rem;
+    padding: 1.2rem .4rem;
+  }
+
+  td {
+    padding: .8rem .4rem;
+  }
+
+  .button.more {
+    padding: .5rem;
+  }
+
+  tfoot {
+
+    td {
+      padding: .3rem .4rem;
+      border-bottom: 1px solid $black-05;
+    }
+  }
+
+  &.read-only {
+
+    td, th {
+      padding: 1.2rem 1.4rem 1.3rem 1.6rem;
+
+      &:last-child, &:first-child {
+        padding: 1.2rem 0;
+      }
+    }
+
+    th {
+      padding-right: 0;
+    }
+  }
+}
+
+.edit-radio {
+  padding: 2.4rem 3.2rem;
+
+  .list-h li {
+    margin-right: 3rem;
+  }
+}
+
+.box {
+  border-radius: .6rem;
+
+  &.services {
+    padding: 2rem 0 2rem 2.4rem;
+    margin-bottom: 1.6rem;
+
+    .service-button-container {
+      min-width: 25.6rem;
+      margin-left: 2.4rem;
+    }
+  }
+}
+
+.progressbar {
+  height: .3rem;
+  background: $body-bg;
+
+  > .bar {
+    height: .3rem;
+  }
+}
+
+.actionbar .toolbar {
+  box-shadow: none;
+}
+
+.margin-bottom-small {
+  margin-bottom: .5rem;
+}
+
+.border-dashed {
+  border: 1px dashed $black-05;
+  border-radius: 1.5rem;
+}
+
+.k-animation-container {
+  max-width: 40rem;
+}
+
+main {
+  min-height: 46rem;
+}
+
+.snackbar-container {
+  position: fixed;
+  top: 7.6rem;
+  left: auto;
+  max-width: 130rem;
+  right: auto;
+  width: calc(100% - 2rem);
+
+  .snackbar {
+    box-shadow: 0 .6rem 2rem $base-3, 0 0 .3rem $base-06;
+  }
+}
+
+
+//Кастомизация для Леды, чтобы снэкбар всплывал в верхнем правом углу
+
+.notifications-wrapper {
+  top: 7.6rem;
+  bottom: auto;
+  max-width: 130rem;
+  width: calc(100% - 2rem);
+  transform: translateX(-50%);
+
+  .notifications-item {
+    max-width: 60rem;
+    min-height: 4rem;
+    margin-left: auto;
+    margin-right: 0;
+  }
+}

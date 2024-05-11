@@ -1,0 +1,89 @@
+@import '../../../../variables/themes/nova';
+
+.feedback-widget-wrapper {
+
+  &:not(.feedback-modal-wrapper) {
+
+    .txt-bold {
+      white-space: nowrap;
+    }
+  }
+
+  &.feedback-modal-wrapper,
+  .window-content {
+
+    .loader-wrapper {
+
+    > .txt-center {
+
+        p {
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }
+
+  .checkbox-input + .checkbox-label:hover::before,
+  .checkbox-input + .checkbox-label:not(.semi):hover::after {
+    border-color: $secondary-03;
+  }
+
+  .checkbox-input:checked + .checkbox-label::before,
+  .checkbox-input:checked + .checkbox-label:not(.semi)::after {
+    background-color: $secondary-02;
+    border-color: $secondary-02;
+  }
+
+  .checkbox-input:checked + .checkbox-label:hover::before,
+  .checkbox-input:checked + .checkbox-label:not(.semi):hover::after {
+    background-color: $secondary-03;
+    border-color: $secondary-03;
+  }
+
+  .button-wrapper {
+
+    &.success {
+      background-color: $secondary-02 !important;
+      border-color: transparent;
+
+      &.disabled,
+      &.disabled:hover {
+        background-color: $secondary-04 !important;
+        border-color: $secondary-04 !important;
+      }
+    }
+
+    &.success:hover {
+      background-color: $secondary-03;
+    }
+
+    &.success:active {
+      background-color: $secondary-01;
+      border-color: transparent;
+    }
+  }
+
+  .icon {
+    color: $accent-02;
+  }
+
+  .icon-star-filled {
+
+    &:before {
+      content: "\e901";
+      color: $accent-02;
+    }
+  }
+
+  .modal-body {
+
+    .loader-wrapper {
+
+      > img {
+        content: url("https://cdn.esphere.ru/images/notifications/notification-ok-flat-blue.svg");
+        width: 6.4rem;
+        height: 6.4rem;
+      }
+    }
+  }
+}

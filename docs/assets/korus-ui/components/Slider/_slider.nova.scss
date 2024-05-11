@@ -13,7 +13,7 @@
       transform: translateY(-50%);
       width: 12px;
       height: 6px;
-      background-color: $white;
+      background-color: var(--main-bg);
       z-index: $zindex-slider-hidden-element;
     }
 
@@ -28,7 +28,7 @@
 
   &-track {
     height: 4px;
-    background-color: $black-05;
+    background-color: var(--slider-bg);
     border-radius: 2px;
     position: absolute;
     top: 50%;
@@ -64,15 +64,15 @@
       width: 12px;
       height: 12px;
       border-radius: 50%;
-      border: 2px solid $white;
+      border: 2px solid var(--main-bg);
       background-color: var(--brand-color);
     }
 
     &:hover, &:active {
-      background-color: var(--brand-active-color);
+      background-color: var(--slider-handle-bg-hover);
 
       &::after {
-        background-color: $white;
+        background-color: var(--main-bg);
       }
 
       .tooltip {
@@ -86,11 +86,11 @@
   }
 
   &-mark {
-    background-color: $black-05;
+    background-color: var(--slider-bg);
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    border: 1px solid $black-05;
+    border: 1px solid var(--slider-bg);
 
     &.active {
       background-color: var(--brand-color);
@@ -128,7 +128,7 @@
       color: $black-04;
 
       &.active {
-        color: $black-03;
+        color: var(--text-color);
       }
 
       &-container {
@@ -162,11 +162,7 @@
     }
 
     &-handle::after {
-      border: 2px solid $white;
-    }
-
-    &-mark.active {
-      border: 1px solid $black-04;
+      border: 2px solid var(--main-bg);
     }
 
     &-handle,
@@ -177,7 +173,7 @@
     &-handle::after,
     &-track.active,
     &-mark.active {
-      background-color: $black-04;
+      background-color: var(--slider-bg-disabled);
     }
 
     &-handle:focus {
@@ -187,7 +183,7 @@
     &-label,
     &-label-step,
     &-label-step.active {
-      color: $black-04;
+      color: var(--slider-bg-disabled);
     }
 
     &-handle {
@@ -196,6 +192,11 @@
 
     &-track.active {
       cursor: default;
+    }
+
+    &-mark.active {
+      background-color: var(--slider-bg-disabled);
+      border: 1px solid var(--slider-bg-disabled);
     }
   }
 

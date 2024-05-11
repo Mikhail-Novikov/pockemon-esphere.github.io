@@ -1,13 +1,13 @@
 @mixin button-default($type) {
   background-color: $type;
-  color: $text-reverse;
+  color: var(--button-color);
   border-color: $type;
   font-weight: 500;
 }
 
 @mixin button-disabled($type) {
   background-color: $type !important;
-  color: $text-reverse !important;
+  color: var(--button-color-disabled) !important;
   border-color: transparent;
 }
 
@@ -17,10 +17,10 @@
 }
 
 .button-wrapper {
-  background-color: $body-bg;
-  border: 1px solid $black-05;
+  background-color: var(--button-bg);
+  border: 1px solid var(--button-border);
   border-radius: 16px;
-  color: inherit;
+  color: var(--text-color);
   line-height: 16px;
   min-width: 96px;
   outline: none !important;
@@ -39,23 +39,24 @@
   &.blank {
 
     &:hover {
-      color: $link-hover;
+      color: var(--link-hover-color);
     }
 
-    &:active {
-      color: $link-active;
+    &:active,
+    &.active {
+      color: var(--link-active-color);
     }
   }
 
   &:hover {
     background-image: none;
-    border-color: $btn-border-hover;
+    border-color: var(--button-border-hover);
   }
 
   &:active,
   &.active {
-    background-color: $black-05;
-    border-color: $black-05;
+    background-color: var(--button-bg-active);
+    border-color: var(--button-border-active);
   }
 
   &:not(.blank):focus {
@@ -70,8 +71,10 @@
       @include button-hover(var(--brand-hover-color));
     }
 
-    &:active {
+    &:active,
+    &.active {
       background-color: var(--brand-active-color);
+      border-color: var(--brand-active-color);
     }
 
     &:focus {
@@ -80,14 +83,16 @@
   }
 
   &.danger {
-    @include button-default($error-02);
+    @include button-default(var(--button-danger-bg));
 
     &:hover {
-      @include button-hover($error-03);
+      @include button-hover(var(--button-danger-bg-hover));
     }
 
-    &:active {
-      background-color: $error-01;
+    &:active,
+    &.active {
+      background-color: var(--button-danger-bg-active);
+      border-color: var(--button-danger-bg-active);
     }
 
     &:focus {
@@ -112,7 +117,7 @@
   }
 
   &.blank {
-    color: $link-color;
+    color: var(--link-color);
     background: transparent;
     border-color: transparent;
     border-radius: 0;
@@ -142,12 +147,12 @@
   }
 
   &.disabled {
-    color: $black-05 !important;
-    background-color: $body-bg !important;
-    border-color: $black-05;
+    color: var(--text-disabled-color) !important;
+    background-color: var(--button-bg) !important;
+    border-color: var(--button-border);
 
     > * {
-      color: $black-05 !important;
+      color: var(--text-disabled-color) !important;
     }
 
     &.success,
@@ -168,12 +173,13 @@
     &.danger {
 
       &:hover, & {
-        @include button-disabled($error-04);
+        @include button-disabled(var(--button-danger-bg-disabled));
       }
     }
 
     &.blank {
       border-color: transparent;
+      background-color: transparent !important;
     }
 
     &:focus {
@@ -181,7 +187,7 @@
     }
 
     &:not(.success):not(.primary):not(.warning):not(.danger):not(.blank):focus {
-      border-color: $black-05;
+      border-color: var(--button-border);
     }
 
     &:not(.blank):focus {
@@ -222,7 +228,7 @@
       top: 50%;
       transform: translate(-50%, -50%) rotate(0);
       background-size: auto;
-      background-image: $loader-small-element-item;
+      background-image: var(--loader-small-element-item);
       background-position: center;
       background-repeat: no-repeat;
       animation: rotate-clockwise 1s linear infinite;

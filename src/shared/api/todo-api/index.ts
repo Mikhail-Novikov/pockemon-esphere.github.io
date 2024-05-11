@@ -1,2 +1,2 @@
 export * from './types';
-export * from './api';
+export { todoApi } from './api';

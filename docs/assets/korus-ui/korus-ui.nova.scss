@@ -1,6 +1,6 @@
 @import "../../common/variables/themes/nova";
-@import "../../common/mixins/root";
-@include root($theme-nova-color);
+@import "../../common/mixins/root-variables";
+@include root-variables('nova');
 
 @import "../../common/utils/breakpoints";
 
@@ -35,6 +35,7 @@
 @import "components/NumericRange/numeric-range.nova";
 @import "components/NumericTextBox/numeric.nova";
 @import "components/Password/password.nova";
+@import "components/OfferFeedCards/offer-cards.nova";
 @import "components/Pagination/pagination.nova";
 @import "components/ProgressBar/progress-bar.nova";
 @import "components/RadioGroup/radio.nova";

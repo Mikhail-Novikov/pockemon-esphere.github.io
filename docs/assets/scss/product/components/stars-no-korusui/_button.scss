@@ -1,0 +1,9 @@
+.button-wrapper {
+  padding: 7px 24px;
+  cursor: pointer;
+
+  &:not(.blank):focus {
+    padding: 6px 23px;
+    border-width: 2px;
+  }
+}

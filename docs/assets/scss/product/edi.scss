@@ -1,0 +1,104 @@
+body.edi.sphere .content-box {
+  padding-top: 0;
+}
+
+/* doc list */
+
+.edi-grid {
+  border-bottom: 0;
+  position: static;
+
+  th {
+
+    &.choice-col {
+      overflow: visible;
+      padding: .3rem 1rem;
+
+      .more {
+        padding: 0 .9rem;
+      }
+    }
+
+    .rub {
+      font-size: 1.2rem;
+    }
+  }
+
+  .k-grid-header {
+
+    th.k-header.txt-right {
+      text-align: right;
+    }
+  }
+
+  tr {
+    cursor: pointer;
+  }
+
+  td {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .td-btn-more {
+    padding: 0 1rem;
+    overflow: visible;
+  }
+
+  .choice-col ul {
+    padding: .5rem;
+    color: #000;
+  }
+
+  .doc-new .doc-name {
+    font-weight: 500;
+  }
+}
+
+.edi-actionbar .toolbar {
+  box-shadow: 0 -1px 0 0 #e5e5e5;
+}
+
+.edi-grid-pager {
+  border-bottom: 1px solid #e5e5e5;
+
+  .k-pager-sizes {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.edi {
+
+  .k-pager-sizes .k-dropdown {
+    width: 7rem;
+  }
+
+  .menu-h .level-1 .phone {
+    font-size: 1.8rem;
+  }
+
+  .button .count {
+    top: .2rem;
+    right: .4rem;
+    background-color: #dcdcdc;
+  }
+}
+
+.status-icon .danger {
+  color: #e84040;
+}
+
+.scroll-content {
+  overflow-x: scroll;
+}
+
+.fixed-column.h-scroll {
+  box-shadow: 1rem 0 1rem -.6rem #e5e5e5;
+  overflow-x: scroll;
+}
+
+.hover {
+  background-color: #fafafa;
+}

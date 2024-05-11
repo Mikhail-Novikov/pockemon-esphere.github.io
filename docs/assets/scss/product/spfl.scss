@@ -1,0 +1,26 @@
+// @import "scanner.scss";
+@import "../variables/themes/_sb.scss", "../variables/themes/_nova.scss";
+
+@import 'components/spfl/base';
+@import 'components/spfl/layout';
+@import 'components/spfl/header';
+@import 'components/spfl/aside';
+@import 'components/spfl/bottompanel';
+
+@import 'components/spfl/button';
+@import 'components/spfl/collapse';
+@import 'components/spfl/dropdown';
+@import 'components/spfl/form';
+@import 'components/spfl/filter';
+@import 'components/spfl/list';
+@import 'components/spfl/link';
+@import 'components/spfl/light-box';
+@import 'components/spfl/modal';
+@import 'components/spfl/multiselect';
+@import 'components/spfl/notifications';
+@import 'components/spfl/pagination';
+@import 'components/spfl/stars';
+@import 'components/spfl/table';
+@import 'components/spfl/tariff';
+@import 'components/spfl/tabs';
+@import 'components/spfl/tooltip';

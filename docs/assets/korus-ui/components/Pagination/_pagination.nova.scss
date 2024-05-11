@@ -14,7 +14,7 @@
     order: 2;
 
     .pagination-button {
-      color: $black-01;
+      color: var(--text-color);
       margin: 0 8px;
       min-width: auto;
       cursor: pointer;
@@ -22,12 +22,10 @@
       &:hover {
         text-decoration: none;
         background-color: transparent;
-        color: $black-01;
       }
 
       &.selected {
         background-color: transparent;
-        color: $black-01;
         cursor: default;
         font-weight: 700;
       }
@@ -50,25 +48,32 @@
     justify-content: center;
     order: 2;
     border-radius: 50%;
-    color: $black-01;
+    color: var(--text-color);
     cursor: pointer;
 
     &:hover {
-      color: $black-01;
+      color: inherit;
       text-decoration: none;
       background-color: transparent;
     }
   }
 
   &-controls {
-    background-color: $black-07;
+    background-color: var(--pagination-button-bg);
 
-    &:hover {
-      background-color: $black-06;
+    &:not(.disabled):hover {
+      background-color: var(--pagination-button-bg-hover);
+
+      .icon-next,
+      .icon-prev {
+        &::before {
+          color: $black-01;
+        }
+      }
     }
 
     &.disabled {
-      background-color: $black-07 !important;
+      background-color: var(--pagination-button-bg-disabled) !important;
       cursor: default !important;
 
       & > i {
@@ -76,11 +81,23 @@
         cursor: default !important;
       }
 
-      &:hover {
-        background-color: $black-07 !important;
+      .icon-prev,
+      .icon-next {
+        &::before {
+          color: var(--text-disabled-color) !important;
+        }
+      }
 
-        & > i {
-          color: inherit !important;
+      &.first {
+        .icon-first {
+          background-image: var(--pagination-button-icon-bg-disabled);
+          transform: rotate(180deg);
+        }
+      }
+
+      &.last {
+        .icon-last {
+          background-image: var(--pagination-button-icon-bg-disabled);
         }
       }
     }
@@ -100,48 +117,36 @@
       }
     }
 
-    @mixin control-state($selector, $type) {
-      &:hover, &:active {
-        #{$selector} {
-          &::before {
-            background-image: url(https://cdn.esphere.ru/images/nova/icons/angle#{$type}-right-hover.svg);
-          }
-        }
-      }
-      &.disabled {
-        #{$selector} {
-          background-image: none;
-          &::before {
-            background-image: url(https://cdn.esphere.ru/images/nova/icons/angle#{$type}-right-disabled.svg);
-          }
-        }
-      }
-    }
-
     &.first {
       .icon-first {
         @extend %common-control-icons;
         background-image: url(https://cdn.esphere.ru/images/nova/icons/angle-double-right-default.svg);
         transform: rotate(180deg);
       }
-      @include control-state(".icon-first", "-double");
     }
 
     &.prev {
       .icon-prev {
-        @extend %common-control-icons;
-        background-image: url(https://cdn.esphere.ru/images/nova/icons/angle-right-default.svg);
-        transform: rotate(180deg);
+        &::before {
+          content: "\e9b8";
+          color: var(--pagination-button-icon-color);
+          font-family: "prodicon";
+          font-size: 18px;
+          display: block;
+        }
       }
-      @include control-state(".icon-prev", "");
     }
 
     &.next {
       .icon-next {
-        @extend %common-control-icons;
-        background-image: url(https://cdn.esphere.ru/images/nova/icons/angle-right-default.svg);
+        &::before {
+          content: "\e9b7";
+          color: var(--pagination-button-icon-color);
+          font-family: "prodicon";
+          font-size: 18px;
+          display: block;
+        }
       }
-      @include control-state(".icon-next", "");
     }
 
     &.last {
@@ -149,7 +154,6 @@
         @extend %common-control-icons;
         background-image: url(https://cdn.esphere.ru/images/nova/icons/angle-double-right-default.svg);
       }
-      @include control-state(".icon-last", "-double");
     }
   }
 

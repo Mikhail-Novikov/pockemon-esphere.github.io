@@ -1,0 +1,984 @@
+@import '../variables/themes/nova';
+
+// Variables------------------------------------------------------------------------------------------------------------
+$brand-color: $secondary-02;
+$brand-color-hover: $secondary-03;
+$brand-color-active: $secondary-01;
+$brand-color-disabled: #87b0ed;
+$brand-color-tag: #349c6a;
+$table-header-color: #7a7a7c;
+$green: #21a038;
+$green-hover: #1a802d;
+$green-active: #156624;
+
+// Controls-------------------------------------------------------------------------------------------------------------
+
+.button-wrapper {
+
+  &:active,
+  &.active {
+    border-color: $black-03;
+    background-color: $black-03;
+    color: $white;
+  }
+
+  &.brand-color {
+    color: $white;
+    background-color: $brand-color;
+    border-color: transparent;
+    font-weight: 500;
+
+    &:hover {
+      background-color: $brand-color-hover;
+    }
+
+    &:active {
+      background-color: $brand-color-active;
+    }
+
+    &.disabled {
+      background-color: $brand-color-disabled !important;
+      color: $white !important;
+    }
+
+    svg {
+      fill: $white;
+    }
+  }
+
+  &.blank.more:hover > i {
+    color: $black-03;
+  }
+
+  &.sber-id {
+    background-color: $green;
+    border-color: transparent;
+    color: $white;
+
+    &:hover {
+      background-color: $green-hover;
+    }
+
+    &:active {
+      background-color: $green-active;
+    }
+  }
+}
+
+.search-input {
+
+  > * {
+    min-width: 30rem;
+    background-color: transparent;
+    border-color: transparent !important;
+  }
+
+  .tabs-container & {
+    width: 100%;
+  }
+}
+
+.custom-search-input {
+  width: 30rem;
+}
+
+// Layout---------------------------------------------------------------------------------------------------------------
+
+.personal-box {
+  background-color: $brand-color;
+  box-shadow: none;
+  padding: .6rem .8rem .6rem 3.2rem;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+
+  .logo {
+    color: $text-reverse;
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: .2rem;
+    line-height: 2.1rem;
+    width: 20.8rem;
+  }
+
+  .search-input {
+
+    .input-element-wrapper {
+
+      i,
+      .input-element,
+      .input-element::placeholder {
+        color: $text-reverse;
+      }
+    }
+  }
+
+  .button-wrapper {
+
+    &,
+    i {
+      color: $text-reverse !important;
+    }
+
+    &:hover,
+    &:active {
+      background-color: transparent !important;
+    }
+
+    &.button-dropdown {
+      max-width: 29.2rem;
+
+      &:after {
+        right: 1.3rem;
+        top: calc(50% - .8rem);
+      }
+
+      &:focus {
+        padding-right: 4rem;
+      }
+    }
+  }
+}
+
+.sidebar {
+  background-color: $secondary-05;
+  padding-top: 6rem;
+  z-index: 1;
+  width: 24rem;
+  padding-bottom: 0;
+
+  .aside-menu-list {
+    margin-top: 6.2rem;
+
+    > li {
+      padding: 0;
+
+      &:hover > a {
+        background-color: transparent;
+      }
+
+      > a {
+        margin-left: 0;
+        padding: 1.4rem 3.2rem;
+      }
+
+      &::after {
+        background: $brand-color;
+      }
+    }
+
+    > li.active {
+
+      [class^='prodicon-'],
+      [class*=' prodicon-'] {
+        color: $brand-color;
+      }
+
+      > a {
+        padding: 1.4rem 3.2rem;
+      }
+    }
+  }
+}
+
+.content-box {
+  margin-left: 24rem;
+  padding-top: 6rem;
+  padding-bottom: 0;
+  height: 100vh;
+
+  .wrapper {
+    padding: 3.2rem 2.4rem;
+  }
+
+  .empty-list-inbox,
+  .empty-list-outbox {
+    display: none;
+  }
+
+  &.document-nonempty-list {
+
+    .doc-tabs-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .mobile-input {
+        display: none;
+      }
+    }
+  }
+}
+
+.doc-tabs-body {
+  height: 100%;
+
+  .tabs-content {
+    height: 100%;
+  }
+}
+
+.menu {
+  display: none;
+}
+
+.navigation-menu {
+  margin-bottom: 8rem;
+  font-size: 1.2rem;
+  line-height: 2.6rem;
+
+  .level-1 {
+    margin-left: .4rem;
+    margin-right: 1.6rem;
+    color: $black-03;
+
+    &.active {
+      color: $black-01;
+    }
+
+    > a {
+      padding: 0;
+      line-height: 2.6rem;
+    }
+  }
+}
+
+// Table
+
+.table {
+
+  thead::after {
+    content: none;
+  }
+
+  .table-header {
+    background-color: transparent;
+    border-style: solid;
+    border-color: $black-06;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    font-size: 1.6rem;
+    color: $table-header-color;
+    text-transform: uppercase;
+
+    &:first-child,
+    &:last-child {
+      border-radius: 0;
+    }
+
+    i {
+      color: $black-02;
+    }
+
+    .dropdown-wrapper ul {
+      text-transform: none;
+    }
+  }
+
+  &.not-hover tr:hover,
+  &.not-hover tr:hover td {
+    background-color: transparent;
+  }
+
+  th {
+    overflow: visible;
+  }
+
+  td {
+
+    &:first-child,
+    &:last-child {
+      border-radius: 0;
+    }
+
+    .button.more:hover > i {
+      color: $black-03;
+    }
+
+    &:nth-of-type(5) {
+
+      button:nth-of-type(2):not(.button-visible) {
+        display: none;
+      }
+    }
+  }
+
+  th,
+  td {
+    padding: 2.4rem 1.2rem;
+
+    &.padding-top-12 {
+      padding-top: 1.2rem;
+    }
+
+    .button-wrapper {
+
+      &:hover,
+      &:active {
+
+        i::before {
+          color: $black-03;
+        }
+      }
+    }
+
+    .checkbox-wrapper {
+      position: relative;
+      top: -.3rem;
+    }
+  }
+
+  tr {
+
+    &.new {
+      background-color: $secondary-05;
+    }
+
+    &:hover {
+
+      td {
+        background-color: $black-06;
+      }
+    }
+  }
+
+  table {
+
+    .same-data-list {
+
+      tr {
+
+        .same-data {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &.slim-row {
+
+    td {
+      padding: .4rem 1.2rem;
+    }
+  }
+
+  .list-outbox {
+
+    td {
+
+      &:nth-of-type(3) {
+
+        .subtitle {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .list-inbox {
+
+    td {
+
+      &:nth-of-type(4) {
+
+        div:last-of-type {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.list > dd.padding-top-8 {
+  padding-top: .8rem;
+}
+
+h3 {
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+}
+
+.before-brand {
+
+  &:before {
+    color: $brand-color;
+  }
+}
+
+.icon-doc {
+  fill: $black-04;
+  width: 1.6rem;
+  height: 1.6rem;
+
+  &.del {
+    width: 1rem;
+  }
+
+  .txt-warning & {
+    fill: $accent-02;
+  }
+
+  .txt-success & {
+    fill: $primary-03;
+  }
+
+  .success & {
+    fill: $text-reverse;
+  }
+
+  .txt-danger & {
+    fill: $error-02;
+  }
+}
+
+[class*='prodicon'].big {
+  opacity: 1;
+}
+
+.txt-brand-color {
+  color: $brand-color;
+}
+
+.tag {
+
+  &.txt-gray {
+    color: $black-04;
+
+    &::before {
+      background-color: $black-04;
+    }
+  }
+
+  &.brand-color::before {
+    background-color: $brand-color-tag;
+  }
+}
+
+.large-padding-top {
+  padding-top: 6rem;
+}
+
+.max-width-90 {
+  max-width: 90%;
+}
+
+.txt-light-gray {
+  color: $black-04;
+}
+
+.checkbox-input:checked + .checkbox-label {
+
+  &::before,
+  &::after {
+    background-color: $brand-color;
+    border-color: $brand-color;
+  }
+
+  &:hover::before,
+  &:not(.semi):hover::after {
+    background-color: $brand-color-hover;
+    border-color: $brand-color-hover;
+  }
+}
+
+.checkbox-label:hover::before {
+  border-color: $brand-color-hover;
+}
+
+.checkbox-wrapper.danger {
+  .checkbox-label::before {
+    border-color: $error-02;
+  }
+}
+
+.radio-button-input:checked + .radio-button-label {
+
+  &::before {
+    background-color: $brand-color;
+    border-color: $brand-color;
+  }
+
+  &:hover::before {
+    background-color: $brand-color-hover;
+    border-color: $brand-color-hover;
+  }
+}
+
+.radio-button-label:hover::before {
+  border-color: $brand-color-hover;
+}
+
+// Registration page----------------------------------------------------------------------------------------------------
+
+.reg-page {
+
+  &-bg {
+    background-image: url('https://cdn.esphere.ru/images/hypotheses/kedo/bg-reg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &-title {
+
+    h1 {
+      font-size: 9rem;
+      line-height: 10.5rem;
+      font-weight: 700;
+    }
+  }
+
+  &-row {
+    height: 100vh;
+
+    & > * {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .reg-font-size {
+      font-size: 3rem;
+      line-height: 3.8rem;
+    }
+  }
+
+  &-block {
+    max-width: 46rem;
+    height: 36%;
+
+    .tabs-bar {
+      display: inline-flex;
+
+      .tabs-item {
+        color: $black-03;
+        font-size: 1.6rem;
+        font-weight: bold;
+        margin-left: 1rem;
+        margin-right: 3rem;
+        padding: .6rem 1.2rem;
+
+        &:hover::after {
+          border-right-color: transparent;
+          border-top-color: transparent;
+          border-left-color: transparent;
+        }
+
+        &.active {
+          color: $black-01;
+
+          &::after {
+            border-right-color: $brand-color;
+            border-top-color: $brand-color;
+            border-left-color: $brand-color;
+          }
+        }
+      }
+    }
+  }
+
+  &-entry-mobile {
+    display: none;
+  }
+}
+
+h1 .dropdown-wrapper,
+.modal-header .txt-small,
+.table-header .dropdown-wrapper {
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  font-weight: 400;
+}
+
+// Requisites page------------------------------------------------------------------------------------------------------
+
+.requisites-list > li {
+  margin-bottom: 3.2rem;
+}
+
+.info-sidebar {
+  background-color: $black-07;
+  height: calc(100% - 6rem);
+  margin-right: -48.4rem;
+  margin-top: 6rem;
+  overflow-y: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: .3s;
+  width: 47.4rem;
+  z-index: 0;
+
+  &.visible {
+    margin-right: 0;
+    transition: .3s;
+  }
+
+  &-footer {
+    background-color: $black-06;
+  }
+
+  .list {
+
+    > dd,
+    > dt {
+      padding-bottom: 1.2rem;
+      padding-top: .4rem;
+    }
+  }
+}
+
+.button-with-icon {
+  padding-left: 1.8rem;
+
+  &:not(.blank):focus {
+    padding-left: 1.7rem;
+  }
+
+  &.small {
+    position: relative;
+    padding-left: 1.2rem;
+  }
+
+  &.brand-color:hover i::before {
+    color: $white !important;
+  }
+
+  &:hover i::before {
+    color: $black-03;
+  }
+
+  &:active i::before {
+    color: $white;
+  }
+
+  &.more,
+  &.more:not(.blank):focus {
+    padding: 1.2rem;
+    border-radius: 50%;
+    border-width: .2rem;
+  }
+}
+
+.requisites-text-margin-top {
+  margin-top: 20rem;
+}
+
+.requisites-support-margin-top {
+  margin-top: 8.2rem;
+}
+
+.requisites-text {
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+}
+
+.requisites-support-text {
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+}
+
+.label-list > li {
+  min-height: 3.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.txt-largest {
+  font-size: 2.4rem;
+}
+
+// Modal window------------------------------------------------------------------------------------------------------
+
+.info-modal {
+
+  .modal-window {
+    border-radius: 0;
+  }
+
+  .window-content {
+    border-radius: 0;
+    padding-top: 6.4rem;
+    padding-bottom: 7.6rem;
+  }
+
+  .modal-cross {
+    display: none;
+  }
+}
+
+.card-modal {
+
+  .modal-window,
+  .modal-header,
+  .modal-footer {
+    border-radius: 0;
+  }
+
+  .modal-header {
+    min-height: 8rem;
+    padding-bottom: 0;
+
+    .subtitle {
+      font-size: 1.4rem;
+      line-height: 1.6rem;
+      font-weight: normal;
+      color: $black-02;
+    }
+  }
+
+  .window-content {
+    border-radius: 0;
+    padding-top: 3.6rem;
+    padding-bottom: 3.6rem;
+  }
+
+  .modal-cross {
+    width: 2rem;
+    height: 2rem;
+    top: 2.8rem;
+    right: 5.2rem;
+    background-image: url(https://cdn.esphere.ru/images/hypotheses/podpisant/cross.svg);
+  }
+}
+
+.modal-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba($black-01, .8);
+}
+
+.modal-window {
+  margin: 0;
+}
+
+.modal-header {
+
+  &.danger {
+    background-color: $error-05;
+    border-bottom: 1px solid $error-02;
+  }
+}
+
+.border-radius-8 {
+  border-radius: .8rem;
+}
+
+.invintion-height {
+  height: 6rem;
+}
+
+// ProgressBar -----------------------------------------------------------------------------------------------------
+
+.progressbar-wrapper {
+  height: .4rem;
+}
+
+.progressbar-fill {
+  background: $brand-color;
+}
+
+// notifications----------------------------------------------------------------------------------------------------
+
+.notifications-wrapper {
+  width: auto;
+}
+
+.notifications-item {
+  background-color: $black-01;
+}
+
+.notifications-content {
+  width: auto;
+  max-width: 40rem;
+  text-align: center;
+  padding-left: 3.2rem;
+  padding-right: 3.2rem;
+  color: $white;
+}
+
+.notifications-icon-close {
+  display: none;
+}
+
+.notifications-height {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 42rem;
+}
+
+// Tabs-------------------------------------------------------------------------------------------------------------
+
+.tabs-item {
+
+  &.active::after {
+    border-right-color: $brand-color;
+    border-top-color: $brand-color;
+    border-left-color: $brand-color;
+  }
+
+  &:not(.active):not(.disabled):hover::after {
+    border-right-color: $brand-color-hover;
+    border-top-color: $brand-color-hover;
+    border-left-color: $brand-color-hover;
+  }
+}
+
+.preloader-wrap {
+  background-color: $spreadsheet-punch-bg;
+  height: calc(100vh - 6.1rem);
+  width: calc(100vw - 24rem);
+  position: fixed;
+  top: 6.1rem;
+  left: 24rem;
+  z-index: 1;
+}
+
+.tabs-warning::before {
+  content: '';
+  width: .8rem;
+  height: .8rem;
+  position: absolute;
+  top: 1.2rem;
+  right: .4rem;
+  border-radius: 50%;
+  background-color: $accent-02;
+}
+
+.common-loader {
+  background-image: url(https://cdn.esphere.ru/images/hypotheses/kedo/loading-spinner.svg);
+}
+
+// icons----------------------------------------------------------------------------------------------------------------
+
+.icon-16 {
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
+.icon-24 {
+  font-size: 2.4rem;
+}
+
+.icon-64 {
+  font-size: 6.4rem;
+}
+
+// pagination-----------------------------------------------------------------------------------------------------------
+
+.pagination-numbers .pagination-button {
+  margin-left: .2rem;
+  margin-right: .2rem;
+  color: $black-03;
+}
+
+.pagination-button {
+
+  &.first,
+  &.last {
+    display: none;
+  }
+
+  &.next,
+  &.prev {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+}
+
+.pagination-controls {
+  background-color: $black-07;
+
+  &:hover {
+    background-color: $black-06;
+  }
+
+  &.prev {
+    margin-right: 2.4rem;
+  }
+
+  &.next {
+    margin-left: 2.4rem;
+  }
+
+  &.disabled,
+  &.disabled:hover {
+    background-color: $black-07 !important;
+  }
+}
+
+a {
+  color: $brand-color;
+
+  &:hover {
+    color: $brand-color-hover;
+  }
+}
+
+a.inherit-icon > [class^='prodicon-'] {
+  color: inherit;
+}
+
+.max-w-35 {
+  max-width: 35%;
+}
+
+.max-w-90 {
+  max-width: 90%;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: column;
+  max-width: none;
+  height: 100%;
+}
+
+.tabs-container .tabs-bar {
+  border-bottom: 1px solid #e4e8eb;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.txt-info {
+  color: $secondary-02;
+}
+
+// lightbox--------------------------------------------------------------------------------------------------------------
+
+.margin-bottom-18 {
+  margin-bottom: 1.8rem;
+}
+
+// mobile-banner---------------------------------------------------------------------------------------------------------
+
+.mobile-image-width {
+  max-width: 44rem;
+  width: 100%;
+}
+
+// drop-zone---------------------------------------------------------------------------------------------------------
+
+span.dropzone-icon, i.dropzone-hint {
+  display: none;
+}
+
+// organization page----------------------------------------------------------------------------------------------------
+
+.input-border-top {
+  border-top: 1px solid $black-06;
+}
+
+// validation----------------------------------------------------------------------------------------------------
+
+.invalid-message-date {
+  width: 30rem;
+}

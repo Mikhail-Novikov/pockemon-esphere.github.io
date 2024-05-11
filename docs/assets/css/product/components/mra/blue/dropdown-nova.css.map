@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "dropdown-nova.css",
+	"sources": [
+		"../../../../../scss/product/components/mra/blue/dropdown-nova.scss",
+		"../../../../../scss/product/components/mra/variables.scss",
+		"../../../../../scss/variables/themes/_nova.scss",
+		"../../../../../scss/variables/_base.scss"
+	],
+	"names": [],
+	"mappings": "AAEA,AAII,aAJS,CAEX,kBAAkB,AAEf,OAAO,CAAC,EAAE,CAAC,CAAC,AAAC,CACZ,WAAW,CAAE,eAAe,CAC5B,WAAW,CAAE,GAAG,CAChB,SAAS,CAAE,MAAM,CACjB,cAAc,CAAE,SAAS,CACzB,KAAK,CESI,OAAO,CFRhB,WAAW,CAAE,KAAK,CAClB,cAAc,CAAE,KAAK,CACtB,AAZL,AAcI,aAdS,CAEX,kBAAkB,CAYhB,MAAM,AAAA,KAAK,CAdf,aAAa,CAEX,kBAAkB,CAYH,aAAa,CAAC,kBAAkB,CAAC,MAAM,AAAA,KAAK,AAAA,MAAM,AAAC,CAC9D,SAAS,CAAE,IAAI,CACf,MAAM,CAAE,IAAI,CACZ,cAAc,CAAE,gBAAgB,CAChC,WAAW,CAAE,gBAAgB,CAC7B,gBAAgB,CAAE,WAAW,CAC7B,YAAY,CAAE,sBAAsB,CACrC,AArBL,AAyBE,aAzBW,CAyBX,iBAAiB,CAAC,EAAE,AAAC,CACnB,GAAG,CAAE,IAAI,CACV"
+}

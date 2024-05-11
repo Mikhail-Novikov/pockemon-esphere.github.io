@@ -1,0 +1,303 @@
+@mixin padding-x-size($size) {
+  padding-left: $size;
+  padding-right: $size;
+}
+
+/* Kendo UI */
+
+@font-face {
+  font-family: 'WebComponentsIcons';
+  src: url("../../fonts/kendo-glyphs/WebComponentsIcons.woff2"),
+       url("../../fonts/kendo-glyphs/WebComponentsIcons.woff"),
+       url("../../fonts/kendo-glyphs/WebComponentsIcons.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.k-grid {
+
+  &.docs {
+
+    svg.icon {
+      height: 4rem;
+      width: 3.2rem;
+    }
+
+    td:first-child {
+      vertical-align: top;
+    }
+  }
+
+  .k-header {
+    border-color: #f49530;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  th,
+  td {
+    @include padding-x-size(2rem);
+  }
+}
+
+.k-tabstrip-items {
+  @include padding-x-size(4rem);
+}
+
+.k-tabstrip > .k-tabstrip-items {
+  background-color: whitesmoke;
+}
+
+/* Reset */
+
+.secondary {
+
+  &.box,
+  &.inner {
+    background-color: whitesmoke;
+  }
+}
+
+.content-box > * > .box {
+  padding: 0;
+}
+
+body.sbl {
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url(https://cdn.esphere.ru/images/sbl/bg-login.jpg);
+}
+
+.sbl {
+
+  .user-box {
+    display: none;
+  }
+
+  .top-box {
+    border-color: transparent;
+  }
+
+  .logo {
+    display: block;
+    width: 34.5rem;
+    height: 4rem;
+    background: url(https://cdn.esphere.ru/images/sbl/logo-green.svg) 0 0 no-repeat;
+    background-size: cover;
+  }
+
+  &.auth {
+
+    .logo {
+      background-image: url(https://cdn.esphere.ru/images/sbl/logo-white.svg);
+    }
+  }
+}
+
+.tag {
+  margin-left: 2rem;
+}
+
+.txt-large {
+  font-size: 3.4rem;
+  line-height: 4rem;
+}
+
+.panel {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.inner {
+  @include padding-x-size(2rem);
+
+  &.wide {
+    padding: 3rem 4rem;
+  }
+}
+
+/* Login & Registration */
+
+.auth {
+
+  header {
+    color: white;
+    display: none;
+  }
+
+  footer {
+    color: white;
+  }
+}
+
+/* Nav-box */
+
+nav {
+  vertical-align: top;
+}
+
+.nav-box {
+  border-radius: 0;
+  background-color: #2dba59;
+
+  .level-1 {
+    border-radius: 0;
+
+    > span,
+    > a {
+      padding: 1rem 2rem;
+      font-size: 1.6rem;
+    }
+
+    &.active {
+      background: rgba(0, 0, 0, .15);
+
+      > span,
+      > a {
+        color: white;
+      }
+    }
+
+    &:hover {
+      background: rgba(0, 0, 0, .15);
+    }
+  }
+}
+
+.button {
+  border-radius: 0;
+}
+
+/* Car lists */
+
+.car-header {
+  color: white;
+  background: #06a378;
+
+  svg.icon {
+    height: 7rem;
+    width: 6rem;
+    fill: white;
+  }
+
+  .level-1 {
+    width: 18.3rem;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .menu-h li > a {
+    padding-bottom: 1.5rem;
+  }
+
+  li {
+
+    &:hover {
+      background: rgba(255, 255, 255, .2);
+    }
+
+    &.active {
+      background: rgba(0, 0, 0, .1);
+    }
+  }
+}
+
+.car-promo {
+  background: #def1f7 url(https://cdn.esphere.ru/images/sbl/mercedes-big.png) 3% 50% no-repeat;
+  background-size: 50rem 25rem;
+  padding-left: 50%;
+}
+
+%list-car-actions {
+
+  &:hover {
+    background: whitesmoke;
+  }
+
+  &.active {
+    background: #def1f7;
+    font-weight: bold;
+  }
+}
+
+.list {
+
+  &.car-brand {
+    content: " ";
+    display: block;
+    clear: both;
+
+    li {
+      border-radius: .3rem;
+      margin: .2rem 1rem;
+
+      @extend %list-car-actions;
+    }
+
+    a {
+      display: block;
+      padding: 0 1rem;
+    }
+  }
+
+  &.car-model {
+
+    &:after {
+      content: " ";
+      display: block;
+      clear: both;
+    }
+
+    li {
+      border-radius: .3rem;
+      float: left;
+      text-align: center;
+      width: 14rem;
+      padding: 1rem 0;
+      margin: .2rem;
+
+      @extend %list-car-actions;
+    }
+
+    a,
+    span {
+      display: block;
+    }
+  }
+}
+
+/* Icons */
+@for $i from 1 through 5 {
+  .sbl-#{$i} {
+    background-position: -2rem * $i + 2rem 0;
+  }
+  .sbl-big-#{$i} {
+    background-position: 0 -4rem * $i + 4rem;
+  }
+}
+
+@mixin sbl-icon($bg-url, $bg-width, $bg-height, $width, $height, $margin-right) {
+  display: inline-block;
+  background: url(https://cdn.esphere.ru/images/sbl/#{$bg-url}) no-repeat;
+  background-size: $bg-width $bg-height;
+  width: $width;
+  height: $height;
+  padding: 0 !important;
+  margin: 0 $margin-right 0 0;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.sbl-icon {
+  @include sbl-icon("icons.png", 10rem, 2rem, 2rem, 2rem, 0);
+}
+
+.sbl-icon-big {
+  @include sbl-icon("icons-big.png", 4rem, 20rem, 4rem, 4rem, 2rem);
+}
+
+.icon-blank .sbicon-document-overdue {
+  font-size: 20rem;
+  color: #e5e5e5;
+}

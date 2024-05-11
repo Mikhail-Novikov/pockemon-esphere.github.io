@@ -1,0 +1,91 @@
+@import 'variables';
+
+/* list
+----------------------------------------------------------------------------- */
+
+
+.list > li, .list-item > li, .list-check > li, .list-tree > li {
+  padding-top: .4rem;
+  padding-bottom: .4rem;
+}
+
+li.tag-check, .tag-check {
+  border: .1rem solid $black-05;
+  border-radius: 1.6rem;
+  cursor: help;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  margin-top: 1.6rem;
+  padding: .7rem 1.05rem;
+}
+
+$spacers: (4, 8, 12, 16, 24, 32) !default;
+
+@each $spacer in $spacers {
+  .list-space-#{$spacer} {
+
+    dt {
+      padding-top: 0;
+    }
+
+    dd {
+      padding-top: 0;
+      padding-bottom: 0;
+      margin-bottom: #{$spacer}px;
+      min-height: auto;
+    }
+
+    li {
+      padding-top: 0;
+      padding-bottom: 0;
+      
+      &::before {
+        top: 0;
+      }
+    }
+
+    li:not(:last-child) {
+      padding-bottom: #{$spacer}px;
+    }
+  }
+}
+
+.list-endash {
+
+  > li {
+    position: relative;
+
+    &:not(:last-child) {
+      margin-bottom: 1.2rem;
+    }
+
+    &::before {
+      content: "\2013";
+      position: absolute;
+      top: 0;
+      left: -1.6rem;
+      color: $black-01;
+    }
+  }
+}
+
+@include breakpoints-max(lg) {
+
+  .list-gray-div {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    color: $black-03 !important;
+  }
+
+  .form.list dt {
+    float: none;
+    font-size: 1.4rem;
+    font-weight: 400;
+    width: 100% !important;
+
+    & > label {
+      margin-top: 0;
+      font-weight: 400;
+    }
+  }
+}

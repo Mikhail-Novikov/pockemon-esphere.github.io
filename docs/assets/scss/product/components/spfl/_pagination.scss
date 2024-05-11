@@ -1,0 +1,6 @@
+@include breakpoints-max(md) {
+  
+  .pagination-label-info {
+    display: none;
+  }
+}

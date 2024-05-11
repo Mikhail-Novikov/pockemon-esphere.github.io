@@ -1,0 +1,5 @@
+@mixin progress-bar($default) {
+  .progressbar-fill {
+    background: $default;
+  }
+}

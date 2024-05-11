@@ -1,0 +1,143 @@
+@import 'variables';
+
+/* rating page
+----------------------------------------------------------------------------- */
+
+.tooltip-w150 {
+  width: 15rem;
+}
+
+.tooltip-badge {
+  width: 17rem;
+  font-size: 1.4rem;
+  line-height: 1.3;
+  padding: .4rem;
+}
+
+.tooltip-with-link {
+  position: relative;
+
+  .tooltip {
+    width: 38.4rem;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s 1s, visibility .2s 1s;
+
+    &.top {
+      left: .8rem;
+      top: 4px;
+    }
+
+    &.top-right {
+      left: -1.6rem;
+      top: -1rem;
+    }
+
+    &.bottom-right {
+      left: -1.6rem;
+      top: 4.2rem;
+    }
+
+    ul {
+      padding: 0 !important;
+      list-style-type: none !important;
+    }
+
+    a {
+      color: $white;
+      border-bottom: 1px solid $white;
+
+      &:hover {
+        color: $black-03;
+        border-bottom: 1px solid $black-03;
+      }
+    }
+
+    .txt-gray {
+      color: $black-04 !important;
+    }
+
+    .txt-success {
+      color: $primary-03;
+    }
+
+    path.qrt1,
+    path.qrt2,
+    path.qrt3 {
+      fill: $black-02 !important;
+    }
+
+    path.qrt1.opacity-3,
+    path.qrt2.opacity-3,
+    path.qrt3.opacity-3 {
+      fill: transparent !important;
+    }
+
+    .qrt1-gray path.qrt1.opacity-3,
+    .qrt2-gray path.qrt2.opacity-3,
+    .qrt3-gray path.qrt3.opacity-3 {
+      fill: $black-10 !important;
+      opacity: 1;
+    }
+
+    .qrt1-success path.qrt1,
+    .qrt2-success path.qrt2,
+    .qrt3-success path.qrt3 {
+      fill: $primary-03 !important;
+    }
+
+    .qrt1-success path.qrt1.opacity-3,
+    .qrt2-success path.qrt2.opacity-3,
+    .qrt3-success path.qrt3.opacity-3 {
+      fill: $primary-08 !important;
+      opacity: 1;
+    }
+  }
+
+  &:hover {
+
+    .tooltip {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity .2s;
+    }
+
+    i {
+      color: $black-03;
+    }
+  }
+}
+
+@include breakpoints-max(sm) {
+  
+  .tooltip-with-link {
+    position: static;
+
+    .tooltip {
+      width: auto;
+      transform: none;
+      min-width: calc(100vw - 1.6rem);
+
+      &.top {
+        left: -9.1rem;
+        top: 3.6rem;
+      }
+
+      &.top-right {
+        left: auto;
+        right: -.8rem;
+        top: 5.2rem;
+      }
+
+      &.bottom-right {
+        left: -.8rem;
+        top: 3.6rem;
+      }
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+}

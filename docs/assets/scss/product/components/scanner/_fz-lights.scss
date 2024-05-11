@@ -1,0 +1,121 @@
+@import 'variables';
+
+/* menu-fz
+----------------------------------------------------------------------------- */
+
+.menu-fz {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  a {
+    background-color: $white;
+    border: 1px solid $black-05;
+    border-radius: 1.6rem;
+    display: flex;
+    margin-bottom: 1.2rem;
+    width: 32.3%;
+    padding: 1.6rem 2rem;
+    cursor: default;
+
+    svg {
+      flex-shrink: 0;
+    }
+
+    &:hover:not(.active) {
+      box-shadow: 0 1px .3rem rgba(25, 25, 25, .25);
+      cursor: pointer;
+      transition: box-shadow .3s;
+    }
+  }
+
+  li.active, a.active {
+    border: 1px solid $brand-primary;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+/* favorite - page
+----------------------------------------------------------------------------- */
+
+.fz-lights {
+  width: 100%;
+  min-width: 32rem !important;
+}
+
+.dropdown {
+
+  > ul.fz-lights {
+    opacity: 0;
+    transition: .3s;
+    min-width: 25rem;
+    left: -1rem;
+    box-shadow: $shadow;
+  
+    .triangle-marker {
+      position: absolute;
+    }
+  
+    &.pos-bottom {
+      top: 8rem;
+      margin-top: 2rem;
+  
+      .triangle-marker {
+        top: -.5rem;
+        left: 2rem;
+        transform: rotate(180deg);
+      }
+    }
+  
+    &.pos-top {
+      top: auto;
+      bottom: calc( 100% + 5rem );
+  
+      .triangle-marker {
+        bottom: -.5rem;
+        left: 2rem;
+      }
+    }
+  }
+
+  &:hover > ul.fz-lights {
+    animation-duration: .4s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+  
+    &.pos-bottom {
+      animation-name: tooltip-bootom;
+    }
+  
+    &.pos-top {
+      animation-name: tooltip-top;
+    }
+  }
+}
+
+@keyframes tooltip-bootom {
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    top: 50%;
+  }
+}
+
+@keyframes tooltip-top {
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    bottom: 100%;
+  }
+}

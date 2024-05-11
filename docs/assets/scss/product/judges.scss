@@ -1,0 +1,705 @@
+
+@import "../variables/_base.scss";
+@import "../variables/themes/_nova.scss";
+
+$color-primary: #002e5d;
+$color-link: #1358bf;
+$color-auth-page: #4196e1;
+
+@font-face {
+  font-family: "Golos";
+  src: url("https://cdn.esphere.ru/fonts/golos/Golos-Regular.woff2") format("woff2"),
+       url("https://cdn.esphere.ru/fonts/golos/Golos-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Golos";
+  src: url("https://cdn.esphere.ru/fonts/golos/Golos-Bold.woff2") format("woff2"),
+       url("https://cdn.esphere.ru/fonts/golos/Golos-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+html,
+body {
+  font-family: "Golos", "Roboto", "Arial", "PT_sans", sans-serif;
+}
+
+body {
+  font-size: 1.8rem;
+  line-height: 1.4;
+}
+
+.wrapper {
+  max-width: 128rem;
+  min-width: 102.4rem;
+  padding: 0 3.2rem;
+}
+
+.content-box {
+  margin-top: 3.2rem;
+}
+
+.error {
+
+  &-page {
+    max-width: 61.1rem;
+    margin-top: 20.8rem;
+    text-align: center;
+  }
+
+  &-title {
+    font-size: 11.2rem;
+    line-height: 9.1rem;
+    color: $color-primary;
+  }
+
+  &-title,
+  &-description {
+    margin-bottom: 11.2rem;
+  }
+}
+
+.user-box {
+  border: none;
+  box-shadow: .1rem .5rem 1.5rem rgba(121, 121, 121, .4);
+}
+
+.personal-box {
+  max-height: 6rem;
+
+  img {
+    max-height: 4.4rem;
+  }
+
+  .link {
+
+    a {
+      color: $color-primary;
+    }
+
+    &.active {
+
+      a {
+        color: $black-01;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .menu-h {
+
+    > li > {
+
+       a:hover:not(.button):not(.active),
+       a:not(.button):not(.active) {
+        border-radius: .6rem;
+      }
+    }
+  }
+
+  .active:not(a) {
+    background-color: transparent;
+    border-radius: 0;
+  }
+
+  .border-right {
+    margin-right: 1.2rem;
+    padding-right: 1.2rem;
+    border-right: 1px solid $black-06;
+  }
+}
+
+.table {
+
+  .table-header {
+    font-size: 1.4rem;
+    color: $black-03;
+    text-transform: uppercase;
+    background-color: transparent;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-color: $black-05;
+
+    &:first-child,
+    &:last-child {
+      border-radius: 0;
+    }
+  }
+}
+
+a:hover {
+  color: $secondary-03;
+}
+
+.autocomplete-input-wrapper,
+.datepicker-input-wrapper,
+.dropdownselect-input-wrapper,
+.input-element-wrapper,
+.masked-input-wrapper,
+.multiselect-input-wrapper,
+.numeric-text-box-input-wrapper,
+.password-element-wrapper {
+  height: 3.6rem;
+
+  > input[class*="input"] {
+    font-size: 1.8rem;
+  }
+}
+
+.password-is {
+
+  &-visible,
+  &-hidden {
+    height: 2.8rem;
+  }
+}
+
+.checkbox {
+
+  &-label {
+
+    &:hover::before {
+      border-color: $color-primary;
+    }
+  }
+
+  &-input {
+
+    &:checked + {
+
+      .checkbox-label {
+
+        &:not(.semi):hover::after,
+        &:hover::before,
+        &:hover::after,
+        &::before,
+        &::after {
+          background-color: $color-primary;
+          border-color: $color-primary;
+        }
+      }
+    }
+
+    &:disabled + {
+
+      .checkbox-label {
+
+        &:not(.semi):hover::after,
+        &:hover::before,
+        &:hover::after,
+        &::before,
+        &::after {
+          background-color: $black-07;
+          border-color: $black-05;
+        }
+      }
+    }
+  }
+}
+
+.suggestion-item {
+  padding: .2rem .8rem .4rem;
+  line-height: 1.4;
+}
+
+.filedrop {
+
+  &-list {
+    margin: 0 -1.6rem 0;
+  }
+
+  &-item {
+    width: 33.33%;
+    padding: 1.6rem;
+  }
+
+  &-wrapper {
+    min-height: 9.7rem;
+    padding: 1.2rem 1.4rem 1.2rem;
+    border-radius: .6rem;
+
+    &.danger {
+      border-color: $error-02;
+    }
+
+    .button-wrapper {
+      padding: .4rem 1.9rem .6rem;
+
+      &:focus {
+        padding: .3rem 1.8rem .5rem;
+      }
+    }
+
+    .loader-wrapper,
+    .loader-container {
+      min-height: 5.9rem;
+    }
+
+    .loader-container {
+      top: -1rem;
+    }
+  }
+
+  &-content {
+
+    &.disabled {
+      background-color: transparent !important;
+      opacity: .6;
+    }
+  }
+
+  &-description {
+    padding: 0;
+    margin: 0;
+  }
+
+  &-icon {
+    height: 1.2rem;
+  }
+
+  &-file-name {
+    max-width: 15.4rem;
+    vertical-align: bottom;
+  }
+
+  &-progress-loader {
+    margin-bottom: .7rem;
+
+    .progress-base,
+    .progress-circle {
+      width: 4.8rem;
+      height: 4.8rem;
+    }
+
+    .progress-circle {
+      stroke: $accent-02;
+    }
+
+    circle {
+      r: 2.3rem;
+      cx: 4.6rem;
+      cy: 2.4rem;
+    }
+  }
+}
+
+.file-item {
+  width: calc(33.33% - 2rem);
+}
+
+.button-group-wrapper {
+
+  .button-wrapper,
+  .button-wrapper:focus {
+    padding: .5rem 2.4rem .4rem;
+  }
+}
+
+.button-wrapper {
+  line-height: 1.4;
+  border-radius: 2.4rem;
+  transition: none;
+
+  &.default,
+  &.warning,
+  &.success {
+    padding: .6rem 2.4rem .8rem;
+
+    &:focus {
+      padding: .5rem 2.3rem .7rem;
+    }
+  }
+
+  &.default {
+    color: $color-primary;
+
+    &.disabled,
+    &.disabled:focus {
+      border-color: $black-04 !important;
+    }
+  }
+
+  &.success {
+    background-color: $color-primary;
+
+    &.disabled,
+    &.disabled:hover {
+      background-color: $black-04 !important;
+      border-color: $black-04;
+    }
+
+    &:hover {
+      background-color: #406285;
+    }
+  }
+
+  &.default,
+  &.success {
+    border-color: $color-primary;
+  }
+
+  &.blank {
+
+    &:hover {
+      color: $secondary-03;
+    }
+  }
+
+  &.disabled:not(.blank) {
+
+    &:focus {
+      padding: .6rem 2.4rem .8rem;
+    }
+  }
+
+  &.esia {
+    min-height: 6.6rem;
+    padding: 1.5rem 3.1rem;
+    color: $white;
+    background-color: $color-auth-page;
+    border-color: $color-auth-page;
+    border-radius: .4rem;
+
+    &:focus:not(.default) {
+      padding: 1.5rem 3.1rem !important;
+    }
+
+    &:not(.default) {
+      border-width: .2rem;
+    }
+
+    &.default {
+      color: $color-auth-page;
+      background-color: $white;
+      padding: 1.6rem 3.2rem;
+
+      &:focus {
+        padding: 1.5rem 3.1rem;
+      }
+
+      &.disabled {
+        color: $black-04 !important;
+        background-color: $white !important;
+        border-color: $black-04 !important;
+
+        &:focus {
+          padding: 1.5rem 3.2rem;
+        }
+      }
+    }
+
+    &.disabled:not(.default) {
+      color: $white !important;
+      background-color: $black-04 !important;
+      border-color: $black-04 !important;
+    }
+
+    img {
+      width: 3.2rem;
+      height: 3.2rem;
+    }
+  }
+}
+
+.button-group-buttons-wrapper {
+
+  &.disabled {
+
+    .button-wrapper {
+
+      &, &:hover:not(.active) {
+        background-color: $white !important;
+        border-color: $black-05;
+        cursor: not-allowed !important;
+      }
+
+      &.active {
+        color: $black-03 !important;
+        background-color: $black-07 !important;
+        border-color: $black-05;
+      }
+    }
+  }
+
+  .button-wrapper:not(.active) {
+    background-color: $white;
+  }
+}
+
+.button-group-item {
+  min-width: 22.8rem;
+  padding: .6rem 1.6rem .8rem;
+
+  &.width-auto {
+    min-width: auto;
+  }
+}
+
+.appeal-button-dropdown.button-dropdown::after {
+  right: 1.6rem;
+  font-size: 1.6rem;
+}
+
+.appeal-button-dropdown.button-dropdown,
+.button-wrapper.appeal-button-dropdown:focus,
+.opened .appeal-button-dropdown {
+  padding-right: 3.6rem;
+}
+
+.opened .button-dropdown {
+  background-color: $white;
+}
+
+.disabled {
+  background-color: $black-07 !important;
+}
+
+.list {
+  margin-bottom: 3.2rem;
+
+  > dd {
+    padding-top: 0;
+    padding-bottom: 1.6rem;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
+
+  &:not(.form) {
+
+    > dt {
+      padding-top: 0;
+    }
+  }
+}
+
+.secondary {
+  background-color: $black-07 !important;
+  border-radius: .6rem;
+}
+
+
+.ending {
+  padding-top: 1.6rem;
+  padding-bottom: 1.6rem;
+}
+
+.table,
+.txt-small,
+.subtitle,
+.tooltip,
+.pagination-label-options,
+.pagination-label-info,
+.pagination-label-options .dropdownselect-input-wrapper input[class*="input"] {
+  font-size: 1.4rem;
+  line-height: 1.4;
+}
+
+.txt-micro {
+  font-size: 1.2rem
+}
+
+.pagination-label-options .dropdownselect-input-wrapper input[class*="input"] {
+  padding-left: .8rem;
+}
+
+.tag {
+
+  &.default {
+    color: $black-04;
+
+    &::before {
+      background: $black-04;
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.modal-header,
+.txt-700,
+strong {
+  font-weight: bold;
+}
+
+a,
+.txt-link {
+  color: $color-link;
+}
+
+.black-02 {
+  color: $black-02;
+}
+
+.black-04 {
+  color: $black-04;
+}
+
+.opacity-5 {
+  opacity: .5;
+}
+
+.overflow-y {
+  overflow-y: auto;
+}
+
+.border {
+  border-radius: .6rem;
+}
+
+.tooltip {
+  max-width: 32rem;
+}
+
+.appeal {
+
+  &-filter {
+
+    input[class*="input"],
+    .suggestion-item {
+      font-size: 1.6rem;
+    }
+
+    &-input {
+      width: 32rem;
+    }
+  }
+}
+
+.autocomplete-clear-icon::before {
+  right: 1rem;
+}
+
+.dropdownselect-select-icon::before {
+  background-size: 2.6rem;
+  background-position: -.4rem;
+}
+
+.auth-page {
+
+  .checkbox-input {
+
+    &:checked + {
+
+      .checkbox-label {
+
+        &:not(.semi):hover::after,
+        &:hover::before,
+        &:hover::after,
+        &::before,
+        &::after {
+          background-color: $color-auth-page;
+          border-color: $color-auth-page;
+        }
+      }
+    }
+  }
+
+  .checkbox-label:hover::before {
+    border-color: $color-auth-page;
+  }
+
+  a {
+    color: $color-auth-page;
+  }
+}
+
+.vertical-baseline {
+  vertical-align: baseline;
+}
+
+.vertical-text-bottom {
+  vertical-align: text-bottom;
+}
+
+.loading {
+  position: relative;
+  color: transparent;
+  opacity: 1;
+
+  &::before {
+    content: url(https://cdn.esphere.ru/images/loading-spinner-small.svg);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 2rem;
+    height: 2rem;
+    transform: translate(-50%, -50%);
+    animation: rotate-clockwise 1s linear infinite;
+  }
+
+  > * {
+    visibility: hidden;
+  }
+}
+
+// Фрейм авторизации через УКЭП
+
+.radio-button-input:checked + .radio-button-label::before {
+  background-color: $color-auth-page;
+  border-color: $color-auth-page;
+}
+
+.radio-button-label:hover::before {
+  border-color: $color-auth-page;
+}
+
+.token-fill {
+  fill: $secondary-02;
+}
+
+.token-stroke {
+  stroke: $secondary-02;
+}
+
+// Территориальная подсудность
+
+.add-address-form {
+
+  &.list {
+    margin-bottom: 2.4rem;
+  }
+
+  .numeric-text-box-arrow-buttons {
+    display: none;
+  }
+
+  .radio-button {
+    margin-right: 2.4rem;
+
+    &-input:checked + .radio-button-label::before {
+      background-color: $color-primary;
+      border-color: $color-primary;
+    }
+  }
+}
+
+.add-address-button {
+  font-size: 2.1rem;
+
+  &.button-dropdown::after {
+    top: .3rem;
+    font-weight: normal;
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .personal-box {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .wrapper {
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+  }
+}

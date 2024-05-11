@@ -1,0 +1,45 @@
+@mixin button-group($default, $hover, $disabled) {
+  .button-group {
+    &-wrapper {
+      .button-wrapper {
+        &.active {
+          background-color: $default;
+          border-color: $default;
+
+          &:hover {
+            background-color: $default;
+            border-color: $default;
+          }
+        }
+        &:focus {
+          border-color: $focus-border;
+        }
+      }
+  
+      &[type="checkbox"] {
+        .button-wrapper {
+          &.active:hover {
+            background-color: $hover;
+            border-color: $hover;
+
+            &:focus {
+              border-color: $focus-border;
+            }
+          }
+        }
+      }
+    }
+  
+    &-buttons-wrapper {
+      &.disabled {
+        .button-wrapper {
+          &.active,
+          &active:hover {
+            background-color: $disabled;
+            border-color: $disabled;
+          }
+        }
+      }
+    }
+  }
+}

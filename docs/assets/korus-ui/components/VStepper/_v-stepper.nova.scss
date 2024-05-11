@@ -4,10 +4,10 @@
   }
 
   &-icon {
-    background-color: $white;
+    background-color: var(--v-stepper-sign-bg);
     border-radius: 100%;
     border: 2px solid transparent;
-    margin: 20px 0;
+    margin: 19px 0;
     width: 24px;
     height: 24px;
     position: relative;
@@ -16,7 +16,7 @@
     z-index: $zindex-v-stepper-icon;
 
     &::before {
-      color: $black-04;
+      color: var(--v-stepper-sign-color);
       font-style: normal;
       font-size: 14px;
       text-transform: none;
@@ -51,11 +51,11 @@
     padding-left: 32px;
     margin-bottom: 16px;
     border-radius: 16px;
-    background-color: $black-07;
+    background-color: var(--collapse-form-bg);
     display: flex;
     justify-content: flex-start;
     position: relative;
-    border: 1px solid $black-07;
+    border: 1px solid transparent;
 
     &:last-child .v-stepper-line {
       border-left: 0;
@@ -63,24 +63,29 @@
     }
 
     &.active {
-      border: 1px solid $black-05;
+      border: 1px solid var(--collapse-form-active-border);
     }
 
     &.disabled {
-      .v-stepper-title, .v-stepper-status, .v-stepper-heading-icon {
-        color: $black-04 !important;
+      background-color: var(--collapse-form-bg) !important;
+
+      .v-stepper-title, .v-stepper-status {
+        color: var(--collapse-form-disabled-color) !important;
+      }
+
+      .v-stepper-heading-icon {
+        color: var(--collapse-form-disabled-icon-color) !important;
       }
     }
 
     &:hover:not(.active):not(.disabled) {
-      background-color: $black-06;
-      border-color: $black-06;
+      background-color: var(--collapse-form-hover-bg);
     }
 
     &.danger,
     &.success {
       .v-stepper-icon::before {
-        color: $white;
+        color: var(--v-stepper-sign-active-color);
       }
     }
 
@@ -106,12 +111,12 @@
       }
 
       .v-stepper-icon {
-        background-color: $brand-danger;
+        background-color: var(--v-stepper-sign-danger-bg);
       }
 
       .v-stepper-circle {
-        background-color: $brand-danger;
-        border-color: $brand-danger;
+        background-color: var(--v-stepper-sign-danger-bg);
+        border-color: var(--v-stepper-sign-danger-bg);
       }
 
       &.stop .v-stepper-circle {
@@ -150,6 +155,7 @@
 
     &.progress {
       .v-stepper-icon {
+        background-color: var(--v-stepper-sign-active-bg);
         border: 2px solid var(--brand-color);
         &:before {
           color: var(--brand-color);
@@ -168,6 +174,7 @@
       }
 
       .v-stepper-icon {
+        background-color: var(--v-stepper-sign-active-bg);
         border: 2px solid $brand-warning;
         &:before {
           color: $brand-warning;
@@ -187,6 +194,7 @@
 
   &-sign {
     position: relative;
+    width: 24px;
   }
 
   &-circle {
@@ -234,7 +242,7 @@
   }
 
   &-line {
-    border-left: 2px solid $black-05;
+    border-left: 2px solid var(--v-stepper-line-border);
     top: 48px;
     left: 50%;
     margin-left: -1px;
@@ -246,7 +254,7 @@
       border-left-color: var(--brand-color);
     }
     &.danger {
-      border-left-color: $brand-danger;
+      border-left-color: var(--v-stepper-sign-danger-bg);
     }
     &.warning {
       border-left-color: $brand-warning;
@@ -254,28 +262,41 @@
   }
 
   &-content-wrapper {
-    padding: 0 0 0 24px;
-    width: 100%;
+    width: calc(100% - 24px);
   }
 
   &-heading {
-    height: 64px;
-    line-height: 64px;
+    height: 62px;
+    line-height: 62px;
     display: flex;
     cursor: pointer;
     justify-content: space-between;
+    padding-left: 24px;
+    padding-right: 32px;
   }
 
   &-title {
     font-weight: 500;
     font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 12px;
+
+    + div {
+      display: flex;
+    }
   }
 
   &-status {
-    margin-right: 64px;
+    margin-right: 12px;
   }
 
   &-heading-icon {
+    color: var(--collapse-icon-color);
+    position: relative;
+    width: 20px;
+
     &::after {
       content: '\e908';
       font-family: 'novicon', sans-serif;
@@ -283,7 +304,7 @@
       vertical-align: middle;
       position: absolute;
       top: 0;
-      right: 32px;
+      right: 0;
       transform: rotate(0deg);
       transition: transform 0.3s;
     }
@@ -294,13 +315,15 @@
   }
 
   &-content {
-    border-top: 1px solid $black-05;
+    border-top: 1px solid var(--collapse-form-active-border);
     padding: 24px 32px 24px 0;
+    margin-left: 24px;
   }
 
   &-ending {
-    border-top: 1px solid $black-05;
-    padding: 24px 32px 24px 0;
+    border-top: 1px solid var(--collapse-form-active-border);
+    padding: 18px 32px 18px 0;
+    margin-left: 24px;
     text-align: right;
   }
 }

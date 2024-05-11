@@ -1,6 +1,6 @@
 @mixin button-disabled($type) {
   background-color: $type !important;
-  color: $text-reverse !important;
+  color: var(--button-color-disabled) !important;
   border-color: $type !important;
 }
 
@@ -10,7 +10,7 @@
   overflow: visible; // fix IE11 <button/> overflow: hidden
 
   & > ul {
-    background-color: $white;
+    background-color: var(--suggestion-bg);
     border-radius: $input-border-radius;
     min-width: 100%;
     max-height: 204px;
@@ -19,8 +19,8 @@
     padding: 4px 4px 0;
     position: absolute;
     top: 100%;
-    border-bottom: 4px solid $white;
-    box-shadow: $shadow-level-5;
+    border-bottom: 4px solid var(--suggestion-bg);
+    box-shadow: var(--dropdown-shadow);
     overflow-x: hidden;
     overflow-y: auto;
     -ms-overflow-style: none;
@@ -39,7 +39,7 @@
       bottom: 100%;
       margin-bottom: 4px;
       margin-top: 0;
-      box-shadow: $shadow-level-5-top;
+      box-shadow: var(--dropdown-shadow-top);
     }
 
     &.pos-right {
@@ -69,7 +69,7 @@
         margin-bottom: 2px;
         padding: 6px 8px;
         line-height: 16px;
-        color: $black-01;
+        color: var(--text-color);
         display: flex;
         justify-content: start;
         border-radius: 8px !important;
@@ -80,11 +80,12 @@
       }
 
       &:hover > a:not(.count), &:hover > div:not(.count), &:hover > span:not(.count) {
-        background-color: $black-07;
+        background-color: var(--suggestion-bg-hover);
       }
 
       &.active > a, &.active > div, &.active > span {
-        background-color: $black-05;
+        background-color: var(--suggestion-bg-selected);
+        color: var(--text-color);
       }
 
       .count {
@@ -111,7 +112,7 @@
     z-index: $zindex-dropdown;
 
     & > .button-wrapper {
-      background-color: $black-05;
+      background-color: var(--button-bg-active);
     }
 
     & > .button-dropdown {
@@ -150,18 +151,18 @@
   &.disabled {
     background-color: transparent !important;
     .button-wrapper {
-      color: $black-05 !important;
-      background-color: $body-bg !important;
-      border-color: $black-05;
+      color: var(--text-disabled-color) !important;
+      background-color: var(--button-bg) !important;
+      border-color: var(--button-border);
 
       > * {
-        color: $black-05 !important;
+        color: var(--text-disabled-color) !important;
       }
 
       &:not(.blank):focus {
         padding: 7px 40px 7px 24px;
         border-width: 1px;
-        border-color: $black-05;
+        border-color: var(--button-border);
       }
 
       &.small:not(.blank):focus {

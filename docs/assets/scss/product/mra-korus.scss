@@ -1,0 +1,212 @@
+@import '../variables/themes/_nova.scss';
+@import './components/mra/blue/5-stars.scss';
+@import './components/mra/blue/dropdown-nova.scss';
+
+$success: $secondary-02;
+$success-hover: $secondary-03;
+$success-active: $secondary-01;
+$success-disabled: $secondary-04;
+
+.txt-success,
+.card [class^='prodicon-'] {
+  color: $success;
+}
+
+header {
+
+  .page-title {
+    color: $secondary-01;
+    margin-right: 4rem;
+
+    &:hover {
+      color: $secondary-01;
+    }
+  }
+
+  .personal-box button.more {
+
+    &.active i,
+    &.active:hover i {
+      color: $success;
+    }
+  }
+}
+
+a,
+.link,
+.button-wrapper.blank {
+
+  &:hover {
+    color: $success-hover;
+  }
+}
+
+.button-wrapper {
+
+  &.success {
+    background-color: $success;
+    border-color: $success;
+
+    &:hover {
+      background-color: $success-hover;
+      border-color: $success-hover;
+    }
+
+    &:active {
+      background-color: $success-active;
+      border-color: $success-active;
+    }
+
+    &.disabled {
+      background-color: $success-disabled !important;
+
+      &:hover {
+        background-color: $success-disabled !important;
+      }
+    }
+  }
+}
+
+.calendar-wrapper {
+
+  .active,
+  .calendar-date-cell.active {
+    background-color: $success;
+  }
+}
+
+.tabs-wrapper:not(.mobile-tabs) {
+
+  .tabs-item {
+
+    &:not(.active):not(.disabled):hover:after {
+      border-right-color: $success-hover;
+      border-top-color: $success-hover;
+      border-left-color: $success-hover;
+      background-color: $success-hover;
+    }
+
+    &.active::after {
+      border-right-color: $success;
+      border-top-color: $success;
+      border-left-color: $success;
+      background-color: $success;
+    }
+  }
+}
+
+
+.count.primary,
+.count.success,
+.success.count,
+.sidebar ul > li::after,
+.sidebar ul > li.active [class^="prodicon-"],
+.sidebar ul > li.active [class*=" prodicon-"] {
+  background-color: $success;
+}
+
+.success.tag:before,
+.file-list-tag.success::before {
+  background-color: $success-hover;
+}
+
+.statusbar-wrapper .statusbar-status-item {
+
+  .progress::before {
+    border-color: $success;
+    color: $success;
+  }
+
+  .success::before {
+    background-color: $success;
+  }
+}
+
+.loader-element,
+.loading-input .input-element-wrapper::before,
+.loading-input .autocomplete-input-wrapper::before,
+.loading-input .dropdownselect-select-icon::before,
+.button-wrapper.loading::before {
+  background-image: url("https://cdn.esphere.ru/images/loading-spinner-sky.svg");
+}
+
+.button-wrapper.loading::before {
+  background-size: 20px;
+}
+
+.multiselect-wrapper .multiselect-loading-icon::before {
+  content: url("https://cdn.esphere.ru/images/loading-spinner-sky-small.svg")
+}
+
+.checkbox {
+
+  &-input:not(:disabled):checked + .checkbox-label {
+
+    &::before,
+    &::after {
+      background-color: $success;
+      border-color: $success;
+    }
+
+    &:hover::before,
+    &:not(.semi):hover::after {
+      background-color: $success-hover;
+      border-color: $success-hover;
+    }
+  }
+
+  &-label:hover::before {
+    border-color: $success-hover;
+  }
+}
+
+.radio-button {
+
+  &-input:not(:disabled):checked + .radio-button-label {
+
+    &::before {
+      background-color: $success;
+      border-color: $success;
+    }
+
+    &:hover::before {
+      background-color: $success-hover;
+      border-color: $success-hover;
+    }
+  }
+
+  &-label:hover::before {
+    border-color: $success-hover;
+  }
+}
+
+.button-group-wrapper {
+
+  .button-wrapper {
+
+    &.active {
+      background-color: $success;
+      border-color: $success;
+
+      &:hover {
+        background-color: $success-hover;
+        border-color: $success-hover;
+      }
+    }
+  }
+
+  .disabled {
+
+    .button-wrapper {
+
+      &.active {
+        background-color: $success-disabled;
+        border-color: $success-disabled;
+      }
+    }
+  }
+}
+
+.border-success {
+  border-color: $success;
+}

@@ -1,0 +1,189 @@
+.block {
+  display: block;
+}
+
+.none {
+  display: none !important;
+}
+
+h2 {
+  font-size: 21px;
+  line-height: 32px;
+}
+
+p {
+  padding-bottom: 12px;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-end {
+  justify-content: flex-end !important;
+}
+
+.padding {
+  &-bottom-24 {
+    padding-bottom: 24px;
+  }
+
+  &-left-4 {
+    padding-left: 4px;
+  }
+
+  &-right-8 {
+    padding-right: 8px;
+  }
+
+  &-x-8 {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+.margin {
+  &-top-8 {
+    margin-top: 8px;
+  }
+
+  &-top-12 {
+    margin-top: 12px;
+  }
+
+  &-top-16 {
+    margin-top: 16px;
+  }
+
+  &-top-24 {
+    margin-top: 24px;
+  }
+
+  &-bottom-4 {
+    margin-bottom: 4px;
+  }
+
+  &-bottom-16 {
+    margin-bottom: 16px;
+  }
+
+  &-bottom-24 {
+    margin-bottom: 24px;
+  }
+
+  &-bottom-32 {
+    margin-bottom: 32px;
+  }
+
+  &-x-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &-left-auto {
+    margin-left: auto;
+  }
+
+  &-right-16 {
+    margin-right: 16px;
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.font-size-32 {
+  font-size: 32px;
+}
+
+.txt {
+  &-normal {
+    font-weight: normal;
+    text-transform: inherit;
+  }
+  &-small {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  &-micro {
+    font-size: 10px;
+    line-height: 12px;
+  }
+  &-default {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  &-large {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  &-larger {
+    font-size: 18px;
+    line-height: 28px;
+  }
+  &-color-default {
+    color: inherit;
+  }
+  &-monospace {
+    font-family: Consolas, monospace;
+  }
+  &-uppercase {
+    text-transform: uppercase;
+  }
+  &-bold {
+    font-weight: 500 !important;
+  }
+  &-underline {
+    text-decoration: underline;
+  }
+  &-delete {
+    text-decoration: line-through;
+  }
+
+  &-nowrap,
+  &-nowrap td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &-line-clamp-2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+  &-wrap {
+    white-space: normal !important;
+  }
+
+  &-pre-line {
+    white-space: pre-line;
+  }
+
+  &-pre {
+    white-space: pre;
+  }
+
+  &-break {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  &-break-all {
+    word-break: break-all;
+  }
+  &-center {
+    text-align: center;
+  }
+}
+
+@for $i from 0 through 20 {
+  .width-#{$i*5} {
+    width: $i * 5%;
+  }
+}

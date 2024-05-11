@@ -6,10 +6,12 @@
 
   &-item {
     align-items: center;
-    background-color: $white;
-    border: 1px solid $black-05;
+    background-color: var(--tag-bg);
+    border: 1px solid var(--tag-border);
     border-radius: 16px;
     display: inline-flex;
+    font-size: 12px;
+    line-height: 16px;
     margin: 8px 12px 8px 0;
     min-height: 32px;
     min-width: 20px;
@@ -17,9 +19,12 @@
     transition: 250ms ease-out;
     word-break: break-word;
 
-    &:hover {
-      .tags-icon {
-        color: $black-03;
+    &.disabled {
+      color: var(--text-disabled-color) !important;
+      background-color: var(--tag-disabled-bg) !important;
+
+      .tags-icon.icon-default {
+        color: var(--text-disabled-color) !important;
       }
     }
   }
@@ -42,7 +47,7 @@
       }
 
       &:hover {
-        color: $black-03;
+        color: var(--tag-icon-color-hover);
       }
     }
   }

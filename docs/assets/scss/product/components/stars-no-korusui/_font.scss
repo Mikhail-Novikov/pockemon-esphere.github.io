@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'SBSans';
+  src: url('https://cdn.esphere.ru/fonts/sbsans/SBSansUI-Regular/SBSansUI-Regular.woff2') format("woff2"),
+       url('https://cdn.esphere.ru/fonts/sbsans/SBSansUI-Regular/SBSansUI-Regular.woff') format("woff"),
+       url('https://cdn.esphere.ru/fonts/sbsans/SBSansUI-Regular/SBSansUI-Regular.ttf') format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SBSans';
+  src: url('https://cdn.esphere.ru/fonts/sbsans/SBSansUI-Semibold/SBSansUI-Semibold.woff2') format("woff2"),
+       url('https://cdn.esphere.ru/fonts/sbsans/SBSansUI-Semibold/SBSansUI-Semibold.woff') format("woff"),
+       url('https://cdn.esphere.ru/fonts/sbsans/SBSansUI-Semibold/SBSansUI-Semibold.ttf') format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'novicon';
+  src: url('https://cdn.esphere.ru/fonts/novicon/novicon.woff2') format('woff2'),
+  url('https://cdn.esphere.ru/fonts/novicon/novicon.woff') format('woff'),
+  url('https://cdn.esphere.ru/fonts/novicon/novicon.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

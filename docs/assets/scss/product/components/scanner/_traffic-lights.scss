@@ -1,0 +1,53 @@
+@import 'variables';
+
+
+.dropdown > ul {
+
+  &.pos-bottom {
+    margin-top: .5rem;
+    top: auto;
+    transition: .3s;
+    min-width: 25rem;
+  }
+
+  &.pos-right {
+    top: 1rem;
+    left: 100%;
+    transition: .3s;
+    min-width: 25rem;
+
+    .triangle-marker {
+      position: absolute;
+      top: 1rem;
+      left: -1rem;
+      transform: rotate(90deg);
+    }
+  }
+
+  &.pos-bottom .triangle-marker {
+    position: absolute;
+    top: -.5rem;
+    left: 1.2rem;
+    transform: rotate(180deg);
+  }
+}
+
+.blank.traffic-button {
+  padding: 0;
+  line-height: 2rem;
+  border-radius: .8rem;
+  margin-bottom: 1rem;
+
+  i {
+    padding-top: 2px;
+  }
+
+  .icon-help {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,11 @@
+{
+	"version": 3,
+	"file": "variables.css",
+	"sources": [
+		"../../../../scss/product/components/mra/variables.scss",
+		"../../../../scss/variables/themes/_nova.scss",
+		"../../../../scss/variables/_base.scss"
+	],
+	"names": [],
+	"mappings": ""
+}

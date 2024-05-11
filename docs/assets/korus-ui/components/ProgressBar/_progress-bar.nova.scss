@@ -1,9 +1,10 @@
 .progressbar {
   &-wrapper {
-    background: $black-03;
-    height: 20px;
+    background: var(--progressbar-bg);
+    border-radius: 4px;
+    height: 8px;
     position: relative;
-
+overflow: hidden;
     &.warning .progressbar-fill {
       background: $brand-warning;
     }
@@ -15,11 +16,13 @@
 
   &-fill {
     background: var(--brand-color);
+    border-radius: 4px;
     transition: width 0.25s linear;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 12px;
+    font-size: 8px;
+    font-weight: bold;
     color: $white;
     position: absolute;
     height: 100%;

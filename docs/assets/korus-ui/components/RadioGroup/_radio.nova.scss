@@ -35,20 +35,20 @@
         cursor: default;
 
         &::before {
-          border: 1px solid $black-05;
-          background-color: $black-07;
+          border: 1px solid var(--control-border);
+          background-color: var(--control-bg-disabled);
         }
 
         &:hover {
           &::before {
-            border: 1px solid $black-05;
-            background-color: $black-07;
+            border: 1px solid var(--control-border);
+            background-color: var(--control-bg-disabled);
           }
         }
       }
 
       &:checked:disabled + .radio-button-label::after {
-        background-color: $black-05;
+        background-color: var(--control-border);
       }
 
       &:focus + .radio-button-label::before {
@@ -71,8 +71,8 @@
         content: " ";
         width: 16px;
         height: 16px;
-        border: 1px solid $black-05;
-        background-color: $white;
+        border: 1px solid var(--control-border);
+        background-color: var(--control-bg);
         border-radius: 50%;
         position: absolute;
         top: 2px;

@@ -1,9 +1,13 @@
 .filedrop {
   &-wrapper {
     background-color: transparent;
-    border: 1px dashed $black-06;
+    border: 1px dashed var(--dropzone-border);
     padding: 16px 0;
     border-radius: 8px;
+
+    &:hover {
+      border-color: var(--dropzone-border-hover);
+    }
   }
 
   &-content {
@@ -70,7 +74,7 @@
     align-items: center;
     text-align: start;
     font-size: 14px;
-    color: $black-01;
+    color: var(--text-color);
     text-overflow: ellipsis;
     font-style: normal;
     margin: 4px 16px 8px;

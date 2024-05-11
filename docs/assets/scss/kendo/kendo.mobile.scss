@@ -1,0 +1,24 @@
+@media screen and (max-width: 768px) {
+  .k-window {
+    max-width: 100% !important;
+  }
+
+  .k-window-titlebar {
+    padding: 1.6rem 2.2rem 1.5rem 2.2rem;
+  }
+
+  .k-window-content {
+    padding: 1.4rem 1.2rem .6rem;
+  }
+
+  .k-window-actions {
+    position: unset;
+
+    .k-button {
+      background-image: url('https://cdn.esphere.ru/images/svg/close-black.svg') !important;
+      background-size: 2rem 2rem !important;
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+}

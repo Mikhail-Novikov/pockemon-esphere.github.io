@@ -1,0 +1,11 @@
+@mixin dropdown($active) {
+  .dropdown-wrapper {
+      
+    &.opened {
+        
+      .button-dropdown.success {
+        background-color: $active;
+      }
+    }
+  }
+}

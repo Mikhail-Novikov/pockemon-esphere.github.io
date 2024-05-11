@@ -119,3 +119,19 @@
     }
   }
 }
+
+@include breakpoints-max(md) {
+
+  .statusbar-scroll-wrapper {
+    overflow-x: auto;
+    white-space: nowrap;
+
+    .statusbar-wrapper {
+      min-width: 576px;
+    }
+
+    .statusbar-label {
+      font-size: 12px;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from 'react';
+import { useEffect, useLayoutEffect, useRef } from 'react';
 import { shallowEqual } from 'react-redux';
 
 import { useActions } from '@shared/lib/use-it';
@@ -22,7 +22,7 @@ export function useGate<T>(gate: Gate<T>, props: T = null): void {
     count: 0,
   });
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     openGate(gate.id);
     return () => closeGate(gate.id);
   }, [gate]);

@@ -1,0 +1,395 @@
+@import '../variables/themes/nova';
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: $zindex-header-fixed;
+  background-color: $white;
+}
+
+.personal-box .button-wrapper {
+  border-radius: 1.6rem;
+  display: block !important;
+  max-width: 36rem;
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
+
+  &:hover {
+    background-color: $black-07;
+    border-radius: 1.6rem;
+  }
+}
+
+.hamburger {
+  display: none;
+  height: 2.4rem;
+  width: 2.4rem !important;
+
+  @media (max-width: 1365.98px) {
+    display: block;
+  }
+
+  .bar {
+    width: 2.4rem;
+    background-color: $primary-02;
+  }
+
+  .bar-2 {
+    top: .6rem;
+  }
+
+  .bar-4 {
+    top: 1.2rem;
+  }
+
+  &-text {
+    position: absolute;
+    bottom: 0;
+    font-size: 1rem;
+    line-height: .9rem;
+    text-transform: lowercase;
+    font-weight: 500;
+    left: -1px;
+  }
+
+  i {
+    padding-left: .2rem;
+    color: $black-04;
+  }
+}
+
+.sidebar {
+  padding-top: 6rem;
+  margin-left: 0;
+  transition: margin-left .3s;
+
+  @media (max-width: 1365.98px) {
+
+    margin-left: -22.4rem;
+    overflow-y: visible;
+        
+    &.open {
+      margin-left: 0;
+    }
+        
+    &:hover {
+      overflow-x: visible;
+    }
+  }
+}
+
+.document-body {
+  padding-top: 6rem;
+  padding-left: $sidebar-width;
+  // Стили для лоадера на всю высоту, если нет контента:
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: padding-left .3s;
+
+  @media (max-width: 1365.98px) {
+
+    padding-left: 0;
+  }
+}
+
+.loader-wrapper {
+  flex-grow: 1;
+}
+
+// Фикс, чтобы лоадер таблицы не перекрывал футер лайтбокса:
+.table-loader .loader-container {
+  z-index: 39;
+}
+
+// Фикс, чтобы лайтбокс не скроллился во время загрузки:
+.light-box-loading {
+  .light-box-wrapper-bg {
+    overflow-y: unset;
+  }
+}
+
+// Фикс для горизонтального скролла в таблице из-за контекстного меню:
+.table table {
+  overflow-x: hidden;
+}
+
+.panel-color {
+  background-color: $black-07;
+}
+
+.txt-display {
+  font-family: 'SbSansDisplay';
+}
+
+.txt-dark-gray {
+  color: $black-02;
+}
+
+.list {
+
+  > dt,
+  > dd {
+
+    &:not(:first-of-type) {
+      padding-top: .8rem;
+    }
+  }
+
+  > dt,
+  > dd {
+
+    &:first-of-type {
+      padding-top: 0;
+    }
+  }
+
+  > dd {
+    padding-bottom: .8rem;
+  }
+
+  &-small {
+    
+    > dt,
+    > dd {
+
+      &:not(:first-of-type) {
+        padding-top: .8rem;
+      }
+    }
+
+    > dd {
+      padding-bottom: 0;
+    }
+  }
+
+  &-h-separator {
+    
+    > li {
+      margin-right: 0;
+      padding-bottom: 0;
+
+      &:not(:first-child) {
+        padding-left: 1.6rem;
+        position: relative;
+
+        &:before {
+          content: '·';
+          position: absolute;
+          left: .6rem;
+        }
+      }
+    }
+  }
+}
+
+.filedrop-description {
+  margin: 0 1.6rem;
+  text-align: center;
+}
+
+.filedrop {
+
+  &-wrapper {
+    border-color: $black-05;
+  
+    &:hover {
+      border-color: $black-01;
+      cursor: pointer;
+    }
+  }
+
+  &-cloud-icon {
+    background-image: url(https://cdn.esphere.ru/images/nova/uploadzone-icon.svg);
+    height: 3.2rem;
+    margin-bottom: .4rem;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+    width: 3.2rem;
+  }
+}
+
+.vertical-align-none {
+  vertical-align: 0;
+}
+
+.file-list-subtitle {
+  line-height: 1.6rem;
+}
+
+.error-validation {
+
+  i {
+    line-height: 1.6rem;
+  }
+}
+
+.dropzone-hint {
+  display: none;
+}
+
+.file-list {
+
+  &-status-col {
+    width: 13.4rem !important;
+  }
+
+  &-margin-none {
+    margin-bottom: -1.6rem;
+    margin-top: -1.6rem;
+  }
+}
+
+.datepicker-input-wrapper {
+  width: 12.6rem;
+}
+
+.daterange-wrapper {
+  display: inline-flex;
+}
+
+.tags-wrapper .tags-item {
+  max-width: 27.2rem;
+  font-size: 1.2rem;
+}
+
+.tabs-wrapper .tabs-item { 
+  padding-top: 0;
+}
+
+.tabs-bar {
+  padding-left: .8rem;
+}
+
+.button-wrapper {
+  &.blank.more {
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    tr &:hover i,
+    tr:hover &:hover i,
+    tr.selected &:hover i {
+      color: $black-03;
+    }
+
+    i {
+      transition: color .2s;
+    }
+
+    tr & {
+
+      i {
+        color: $black-05;
+      }
+    }
+
+    tr:hover &,
+    tr.selected & {
+
+      i {
+        color: $black-04;
+      }
+    }
+  }
+}
+
+a.more {
+  display: inline-block;
+  padding: 0.5rem;
+  min-width: 0.2rem;
+}
+
+.table.not-hover {
+  &.not-hover tr:hover,
+  &.not-hover tr:hover td {
+    background-color: transparent;
+  }
+}
+
+.table td.with-button {
+  padding: .8rem;
+
+  a.more,
+  button.more {
+    padding: 0.3rem;
+  }
+}
+
+.status-tracker-actions {
+  min-width: 21.6rem;
+}
+
+.loading-page {
+  min-height: 100vh;
+  display: flex;
+}
+
+.page-loader {
+
+  .loader-element {
+    top: calc(50% - 2.4rem);
+  }
+
+  &-text {
+    position: absolute;
+    left: 50%;
+    top: calc(50% + 3.4rem);
+    transform: translate(-50%, -50%) rotate(0);
+    padding-bottom: 0;
+  }
+}
+
+.lightbox-pagination {
+
+  .suggestion-wrapper {
+    top: auto !important;
+    bottom: 100% !important;
+  }
+}
+
+// Фикс для выпадающих списков в фильтрах при лоадере
+.filter-dropdown {
+  .suggestion-wrapper,
+  .calendar-wrapper {
+    z-index: $zindex-dropdown;
+  }
+}
+
+.bside {
+  position: fixed;
+  right: 0;
+  z-index: 100;
+  width: 42.4rem;
+  height: calc(100% - 6rem);
+  transform: translateX(100%);
+  transition: .3s ease transform;
+  top: 6rem;
+  overflow-y: auto;
+
+  &.visible {
+    transform: translateX(0%);
+  }
+
+  &-item {
+    border-radius: .8rem;
+    padding: 1.6rem;
+
+    .list {
+      > li {
+        padding-bottom: 0.4rem;
+        padding-top: 0.4rem;
+      }
+    }
+  }
+}
+
+.icon-link {
+  color: inherit;
+  line-height: 1.6rem;
+}

@@ -1,0 +1,456 @@
+// Временные стили для компонентов библиотеки
+// Единицы измерения - px
+// Перед пушем выполнить команду npx stylelint '**/temporary.scss' --fix
+// Стили удаляются после реализации компонента
+
+@import "variables/_base.scss";
+@import "variables/themes/_nova.scss";
+
+// Удалить после релиза библиотеки v3.72.2 (или v3.73.0 ?), проверить, что файл появился в korus-ui:
+// TREE-VIEW
+
+.tree {
+
+  &-view {
+
+    &-wrapper {
+
+      > .tree-view-list {
+        margin-left: 0;
+      }
+    }
+
+    &-list {
+      position: relative;
+      margin-left: 24px;
+    }
+  }
+
+  &-item {
+
+    &-content {
+      display: flex;
+      width: 100%;
+      align-items: flex-start;
+      margin-bottom: 8px;
+
+      &.pointer {
+        cursor: pointer;
+      }
+
+      &.disabled {
+        background-color: transparent !important;
+        color: $black-03;
+        cursor: not-allowed;
+
+        .tree-item-icon {
+          cursor: not-allowed;
+
+          &::before {
+            content: url(https://cdn.esphere.ru/images/nova/icons/arrow-down-grey.svg);
+          }
+        }
+      }
+    }
+
+    .tree-view-list {
+      display: none;
+    }
+
+    &.opened {
+
+      & > .tree-view-list {
+        display: block;
+      }
+
+      & > .tree-item-content .tree-item-icon {
+        transform: rotate(180deg);
+      }
+    }
+
+    &-label {
+      width: 100%;
+      min-width: 0;
+    }
+
+    &-icon {
+      cursor: pointer;
+      line-height: 20px;
+      transition-duration: .2s;
+
+      &::before {
+        content: url(https://cdn.esphere.ru/images/nova/icons/arrow-down-black.svg);
+      }
+      
+      &-container {
+        display: flex;
+        flex-shrink: 0;
+        justify-content: center;
+        margin-right: 8px;
+        min-width: 16px;
+      }
+    }
+  }
+}
+// END TREE-VIEW
+
+// ALERT CONNECTION
+
+.alert-connection {
+
+  &.danger {
+    background-color: $error-01;
+  }
+
+  &.success {
+    background-color: $brand-primary;
+  }
+
+  .i-label {
+    left: 16px;
+    font-size: 24px;
+    line-height: 20px;
+    color: $white;
+  }
+
+  .alert-close-button {
+    position: absolute;
+    top: 13px;
+    right: 13px;
+    padding: 0;
+    border: 0;
+  }
+
+  position: relative;
+  background-color: $black-01;
+  color: $white;
+  padding: 16px 36px 16px 46px;
+}
+// END ALERT CONNECTION
+
+// CALENDAR-WIDGET
+
+.calendar-widget {
+  box-shadow: 0 1px 3px 0px rgba(31, 31, 34, .25);
+  border-radius: 16px;
+
+  &-header, &-body, &-footer {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    h4 {
+      padding-top: 4px;
+      padding-bottom: 4px;
+
+      button {
+        padding: 0;
+        margin-left: 8px;
+        min-width: 0;
+      }
+    }
+
+    .today-date {
+      color: $black-03;
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
+  &-body {
+    overflow: hidden;
+
+    .event {
+
+      &-item {
+        border-bottom: 1px solid $black-06;
+        margin-bottom: 8px;
+        padding-bottom: 8px;
+
+        > a {
+          display: block;
+          margin-bottom: 8px;
+        }
+
+        &:last-of-type {
+          border-bottom: none;
+          margin-bottom: 0;
+        }
+      }
+
+      &-count {
+        padding: 0 8px;
+        line-height: 20px;
+        border-radius: 24px;
+        background-color: $secondary-05;
+        color: $secondary-02;
+        border: none;
+        min-width: auto;
+        margin-left: 8px;
+      }
+
+      &-title {
+        align-self: flex-start;
+      }
+
+      &-describe {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        position: relative;
+        padding-left: 12px;
+        max-height: 40px;
+        overflow-y: hidden;
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          width: 4px;
+          height: 100%;
+          border-radius: 2px;
+          background-color: $black-04;
+        }
+
+        &.warning::before {
+          background-color: $accent-02;
+        }
+
+        &.danger::before {
+          background-color: $error-03;
+        }
+      }
+
+      &-date {
+        margin-right: 4px;
+        color: $black-03;
+      }
+
+      &-customization {
+
+        i {
+          margin-right: 4px;
+          color: $secondary-02;
+          font-size: 14px;
+          line-height: 20px;
+        }
+
+        a {
+          margin-right: 4px;
+        }
+      }
+    }
+
+    .no-events {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 16px 0 24px;
+      text-align: center;
+
+      img {
+        margin-bottom: 16px;
+      }
+    }
+
+    .calendar-block {
+      width: 204px;
+      text-align: center;
+      
+      .calendar-wrapper {
+        position: static;
+        box-shadow: none;
+        margin-top: 0;
+  
+        .calendar-month-dates {
+          padding-bottom: 8px;
+        }
+      }
+
+      .datepicker-input-wrapper {
+        display: none;
+        border: none;
+      }
+    }
+
+    .show-more-events, .reset-btn {
+      padding: 0;
+    }
+  }
+
+  &-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: $black-02;
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    div button:last-child {
+      margin-left: 16px;
+    }
+
+    .events-total {
+      font-size: 12px;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+
+  .calendar {
+
+    &-widget {
+
+      &-header, &-body, &-footer {
+        padding-left: 32px;
+        padding-right: 32px;
+      }
+
+      &-body {
+        display: flex;
+        flex-direction: row;
+        height: 272px;
+
+        .calendar-block {
+
+          + div {
+            width: 100%;
+            margin-left: 16px;
+            margin-right: 0;
+
+            .no-events {
+              margin-top: 32px;
+              padding-top: 32px;
+            }
+          }
+        }
+      }
+
+      &-footer {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 18px;
+        padding-bottom: 18px;
+
+        .events-total {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+
+  .calendar {
+
+    &-block {
+      display: none;
+    }
+
+    &-widget {
+
+      &-footer {
+
+        div {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}
+// END CALENDAR-WIDGET
+
+// DROPDOWN-MOBILE
+
+.dropdown-mobile {
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  max-height: 50vh;
+  position: absolute;
+  right: 0;
+  transform: translateY(100%);
+  transition: transform .3s;
+
+  &.opened {
+    transform: translateY(0);
+  }
+  
+  &-wrapper {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: $zindex-dropdown-mobile-wrapper;
+  }
+
+  &-backdrop {
+    background: #343434;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: opacity .3s;
+
+    &.opened {
+      opacity: 0.7;
+    }
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 12px 12px 16px;
+    background: $black-07;
+    position: relative;
+    flex-shrink: 1;
+  }
+
+  &-content {
+    background-color: $white;
+    overflow: auto;
+  }
+
+  &-list-item {
+    line-height: 20px;
+    overflow: hidden;
+    padding: 12px 16px;
+    text-overflow: ellipsis;
+
+    &:active {
+      background-color: $black-07
+    }
+
+    &.selected {
+      background-color: $black-05;
+    }
+  }
+
+  &-close {
+    color: $black-04 !important;
+    font-family: 'prodicon' !important;
+    font-size: 20px;
+    line-height: 1;
+
+    &::before {
+      content: "\e995";
+    }
+  }
+}
+
+// END DROPDOWN-MOBILE

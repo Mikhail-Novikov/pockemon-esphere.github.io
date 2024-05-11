@@ -9,7 +9,7 @@
 
   &-content {
     align-items: center;
-    border: 1px dashed $black-05;
+    border: 1px dashed var(--dropzone-border);
     border-radius: 8px;
     display: flex;
     justify-content: space-between;
@@ -18,13 +18,13 @@
 
   &-file-upload {
     align-items: center;
-    border: 1px dashed $black-05;
+    border: 1px dashed var(--dropzone-border);
     border-radius: 8px;
     display: flex;
     flex-direction: column;
-    padding: 16px 0;
+    padding: 16px;
     &:hover {
-      border-color: $black-01;
+      border: 1px dashed var(--dropzone-border-hover);
       cursor: pointer;
     }
   }

@@ -8,7 +8,15 @@ export const Footer: React.FC = () => {
   const date = useMemo(() => currentDate(UiDate.Date), []);
 
   return (
-    <L.Footer _inner _paddingY24 _marginTopAuto _secondary _txtSmall _txtGray>
+    <L.Footer
+      _inner
+      _paddingY24
+      _marginTopAuto
+      _secondary
+      _documentFooter
+      _txtSmall
+      _txtGray
+    >
       <L.Div className="right">8 (800) 100-8-812, бесплатно по РФ</L.Div>
       <L.Div>{`© СберКорус, ${date}`}</L.Div>
       Версия приложения:&nbsp;

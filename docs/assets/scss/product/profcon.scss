@@ -1,0 +1,68 @@
+@import "../variables/themes/_nova.scss";
+$brand-warning: #ef7f1a;
+$brand-success: #066b3f;
+$brand-danger: #dc1d34;
+$border: $black-06;
+
+.personal-box {
+
+  .personal-nav li, .personal-controls li {
+    padding: 1.2rem 1.6rem;
+  }
+}
+
+.warning.button, .chunkbar > .warning, .warning > .bar, .primary > .bar {
+  background-color: $brand-warning;
+}
+
+.success.button, .chunkbar > .success, .success > .bar {
+  background-color: $brand-success;
+}
+
+.danger.button, .chunkbar > .danger, .danger > .bar {
+  background-color: $brand-danger;
+}
+
+.button-group {
+
+  .button {
+
+    &:hover {
+      background-color: $hover;
+    }
+
+    &.active {
+      background-color: $focus;
+
+      &:hover {
+        background-color: $black-05;
+      }
+    }
+  }
+}
+
+.count.sup {
+  top: .3rem;
+  right: .3rem;
+}
+
+.chat nav {
+  background-color: $overlay-bg-2;
+}
+
+/* Change autocomplete styles in WebKit */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid $border;
+  -webkit-text-fill-color: $input-color;
+  -webkit-box-shadow: 0 0 0 100rem transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}

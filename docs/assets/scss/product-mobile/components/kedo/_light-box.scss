@@ -1,0 +1,236 @@
+@media (max-width: 1212px) {
+
+  .light-box-wrapper {
+    overflow-y: auto;
+      
+    .icon-close {
+      display: block;
+    }
+  }
+      
+  .light-box-mobile-controls {
+    display: none;
+  }
+      
+  .show-mobile-controls {
+      
+    .light-box-mobile-controls {
+      display: block;
+    }
+  }
+      
+  .preview-documents {
+    // удалить important после обновления компонента
+    .light-box-content {
+      width: 100% !important;
+      
+      > .loader-wrapper {
+        max-width: 100%;
+      }
+    }
+      
+    .light-box-heading {
+      
+      button:not(.icon-close), .dropdown-wrapper {
+        display: none;
+      }
+    }
+      
+    .light-box-footer {
+      display: block !important;
+    }
+      
+    .light-box-overlay {
+      
+      &.sm,
+      &.md,
+      &.lg {
+      
+        .light-box-content {
+          width: 100%;
+        }
+      }
+    }
+  }
+  
+  // Стили для библиотеки, которая обеспечивает зум встроенных документов. Протестировано на фронте:
+  .preview-zoom {
+    .light-box {
+      &-body {
+        overflow: hidden;
+        touch-action: manipulation;
+      }
+
+      &-content {
+        max-height: 100vh !important;
+      }
+
+      &-wrapper-bg {
+        overflow-y: hidden !important;
+        max-height: 100vh !important;
+        min-height: initial;
+      }
+
+      &-window {
+        overflow-y: hidden !important;
+        max-height: 100vh !important;
+        min-height: initial;
+      }
+    }
+
+    .none {
+      display: none !important;
+    }
+
+    .scaled-header {
+      background: $black-02;
+      height: 5rem;
+    }
+  }
+}
+
+@media (max-width: 1023.98px) {
+
+  .light-box {
+
+    &-window {
+      overflow: unset;
+    }
+      
+    &-wrapper {
+      
+      &-bg {
+        overflow-y: scroll;
+      }
+      
+      .list {
+      
+        dt {
+          width: 100%;
+          padding-top: 0;
+          float: none;
+      
+          label:first-of-type {
+            margin-top: 0;
+          }
+        }
+      
+        dd {
+          padding-left: 0;
+        }
+      }
+    }
+      
+    &-content > .loader-wrapper {
+      min-height: 100vh;
+    }
+  }
+
+  .scale-document {
+    padding: 2.4rem;
+  }
+}
+
+@media (max-width: 1000px) {
+
+  .light-box-overlay {
+
+    &.sm,
+    &.md,
+    &.lg {
+      
+      .light-box-content {
+        left: 0;
+        margin-right: 0;
+      }
+    }
+      
+    &.lg {
+      
+      .light-box-content {
+      
+        &::after,
+        > * {
+          width: calc(100% - 3.2rem);
+        }
+      
+        > .loader-wrapper {
+          width: calc(100% - 4rem);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+
+  .light-box-overlay {
+
+    &.sm {
+      
+      .light-box-content {
+      
+        &::after,
+        > * {
+          width: calc(100% - 4.8rem);
+        }
+      
+        > .loader-wrapper {
+          width: calc(100% - 5.6rem);
+        }
+      }
+    }
+      
+    &.md {
+      
+      .light-box-content {
+      
+        &::after,
+        > * {
+          width: calc(100% - 4rem);
+        }
+      
+        > .loader-wrapper {
+          width: calc(100% - 4.8rem);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+
+  .light-box {
+
+    &-overlay .light-box-heading {
+      padding-right: 1.6rem;
+    }
+      
+    &-wrapper-bg {
+      
+      .light-box-content {
+        background-color: $white;
+      }
+    }
+  }
+      
+  .light-box-footer-mobile,
+  .modal-footer-mobile {
+    background-color: transparent;
+    background-image: linear-gradient(0deg, $white 46.35%, rgba($white, 0) 100%);
+    border-top: none;
+      
+    .button-wrapper {
+      height: 4.8rem;
+      border-radius: 2.4rem;
+    }
+  }
+}
+
+// удалить после обновления компонента
+@media (min-width: 1212px) {
+
+  .light-box-cross {
+    right: calc((100vw - 100rem) / 2 - 1.2rem);
+  }
+}

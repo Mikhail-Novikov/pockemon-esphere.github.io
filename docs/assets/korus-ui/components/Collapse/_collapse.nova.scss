@@ -1,10 +1,18 @@
 .collapse {
   &-panel-wrapper {
-    border: 1px solid $black-05;
+    border: 1px solid var(--collapse-border);
     border-radius: 16px;
     &.form {
-      background-color: $black-07;
+      background-color: var(--collapse-form-bg);
       border-color: transparent;
+
+      .heading-disabled {
+        color: var(--collapse-form-disabled-color);
+
+        .collapse-heading-icon {
+          color: var(--collapse-form-disabled-icon-color);
+        }
+      }
     }
   }
   &-heading {
@@ -35,12 +43,13 @@
       & + div[aria-expanded="true"] {
         border-top-width: 1px;
         border-top-style: solid;
-        border-top-color: $black-05;
+        border-top-color: var(--collapse-border);
         transition: height 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s, border-top-width 0s 50ms !important;
       }
     }
 
     &-icon {
+      color: var(--collapse-icon-color);
       margin-left: 16px;
       &::before {
         content: "\e998";

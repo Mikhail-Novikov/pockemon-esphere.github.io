@@ -35,23 +35,15 @@
     justify-content: center;
     align-items: center;
 
-    &:hover:not(.disabled-state) {
-      @extend %input-hovered;
-    }
-
     &.focused {
       @extend %input-focused;
       .datepicker-icons-wrapper > .datepicker-calendar-icon::before {
-        color: $black-03;
+        color: var(--input-icon-color-active);
       }
     }
 
     &.danger:not(.disabled-state):not(.focused) {
-      border-color: $brand-danger;
-
-      &:hover {
-        border-color: $brand-danger;
-      }
+      border-color: var(--input-border-error);
     }
 
     &.disabled-state {
@@ -66,7 +58,7 @@
         cursor: default;
 
         &::before {
-          color: $black-05;
+          color: var(--input-icon-color-disabled) !important;
         }
       }
     }
@@ -98,6 +90,12 @@
         color: $black-04;
         width: 20px;
         height: 20px;
+      }
+
+      &:hover {
+        &::before {
+          color: $black-03;
+        }
       }
     }
 

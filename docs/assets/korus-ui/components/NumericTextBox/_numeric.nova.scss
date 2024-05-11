@@ -16,11 +16,7 @@
     width: 100%;
 
     &.danger {
-      border-color: $brand-danger;
-    }
-
-    &:hover {
-      @extend %input-hovered;
+      border-color: var(--input-border-error);
     }
 
     &.focused {

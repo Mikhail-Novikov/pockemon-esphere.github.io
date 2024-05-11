@@ -1,0 +1,22 @@
+// Временные стили для мобильной версии
+
+.user-box,
+.document-body {
+  min-width: 116rem;
+}
+
+.light-box-window {
+  min-width: 1000px;
+}
+
+.w-45[class*="list"] {
+
+  dt {
+    width: 44%;
+  }
+
+  dd {
+    padding-left: 45%;
+  }
+}
+

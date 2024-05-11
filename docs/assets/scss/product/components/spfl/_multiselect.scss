@@ -1,0 +1,78 @@
+@import 'variables';
+
+/* header
+----------------------------------------------------------------------------- */
+
+// multiselect. кастом для спфл
+
+.multiselect-checkboxes.multiselect-wrapper {
+
+  .suggestion-list-name {
+    max-width: 27.5rem;
+  }
+
+  .suggestion-list-wrapper li {
+    display: flex;
+    width: 100%;
+  }
+
+  .checkbox-wrapper, .checkbox-label {
+    width: 100%;
+  }
+
+  .checkbox-label::before, .checkbox-label:not(.semi)::after {
+    margin-top: -.8rem;
+    top: 50%;
+  }
+
+  .checkbox-input:checked + .checkbox-label.semi::after {
+    margin-top: -.1rem;
+    top: 50%;
+  }
+
+  .multiselect-checkbox-list {
+    height: auto !important;
+    max-height: 19.6rem;
+  }
+}
+
+.multiselect-checkboxes {
+
+  .multiselect-input-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+
+    .multiselect-tags-container {
+      align-self: center;
+    }
+  }
+
+  .multiselect-tags-union {
+    align-items: center;
+    border-radius: 1.6rem;
+    background-color: $black-07;
+    display: flex;
+    height: 2.4rem;
+    margin: .3rem .8rem .3rem 1.2rem;
+  }
+
+  .multiselect-clear-icon {
+    display: none;
+  }
+}
+
+.autocomplete-wrapper {
+
+  &.clear-button {
+
+    .autocomplete-input {
+      padding-right: 3rem;
+    }
+
+    .autocomplete-clear-icon {
+      position: absolute;
+      right: .4rem;
+      top: .5rem;
+    }
+  }
+}

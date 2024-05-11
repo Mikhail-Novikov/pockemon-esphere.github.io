@@ -6,8 +6,8 @@
     margin-top: 4px;
     top: 100%;
     z-index: $zindex-calendar;
-    background-color: $white;
-    box-shadow: $shadow-level-5;
+    background-color: var(--calendar-bg);
+    box-shadow: var(--dropdown-shadow);
     border-radius: $input-border-radius;
 
     &.wide-list {
@@ -23,7 +23,7 @@
     &.pos-top {
       top: auto;
       bottom: 100%;
-      box-shadow: $shadow-level-5-top;
+      box-shadow: var(--dropdown-shadow-top);
     }
 
     &.pos-right {
@@ -104,19 +104,19 @@
         align-items: center;
         cursor: pointer;
         flex-grow: 1;
-        color: $secondary-02;
+        color: var(--link-color);
 
         &:hover {
-          background-color: $white;
+          color: var(--link-hover-color);
+        }
+
+        &:active {
+          color: var(--link-active-color);
         }
 
         &.disabled-title {
           cursor: default;
           color: inherit;
-
-          &:hover {
-            background-color: $white;
-          }
         }
       }
     }
@@ -125,7 +125,6 @@
   &-week-days {
     display: flex;
     justify-content: space-between;
-    background-color: $white;
     height: 24px;
     align-items: center;
     padding: 0 12px;
@@ -167,11 +166,7 @@
         border-radius: 50%;
 
         &.different-month-date {
-          color: $black-05;
-          &:hover {
-            background-color: $black-06;
-            color: $black-01;
-          }
+          color: var(--calendar-date-color-muted);
         }
 
         &.today {
@@ -179,7 +174,7 @@
         }
 
         &:hover {
-          background-color: $black-07;
+          background-color: var(--calendar-date-color-hover);
         }
 
         &.active {
@@ -189,10 +184,10 @@
 
         &.disabled-date {
           cursor: not-allowed;
-          color: $black-05;
+          color: var(--calendar-date-color-muted);
 
           &:hover {
-            background-color: $white;
+            background-color: inherit;
           }
         }
 
@@ -201,7 +196,7 @@
           width: 4px;
           height: 4px;
           border-radius: 50%;
-          background-color: $black-04;
+          background-color: var(--calendar-date-mark-bg);
           position: absolute;
           bottom: 0;
           left: 50%;
@@ -244,7 +239,7 @@
       border-radius: 8px;
 
       &:hover {
-        background-color: $black-07;
+        background-color: var(--calendar-date-color-hover);
       }
 
       &.active {
@@ -254,17 +249,10 @@
 
       &.disabled-month-year {
         cursor: not-allowed;
-        color: $black-04;
+        color: var(--calendar-date-color-muted);
 
         &:hover {
-          background-color: $white;
-        }
-      }
-
-      &.different-year {
-        &:hover {
-          background-color: $black-06;
-          color: $black-01;
+          background-color: inherit;
         }
       }
     }

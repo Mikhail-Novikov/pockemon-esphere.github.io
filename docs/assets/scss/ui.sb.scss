@@ -1,0 +1,268 @@
+/* reset.css
+----------------------------------------------------------------------------- reset.css */
+a:hover {color: #4a8ed2;}
+
+h1, h2, h3,
+h4, h5, h6 {font-weight: normal;}
+
+h1, h3, h5 {text-transform: uppercase;}
+
+body {
+  color: black;
+  background: white;
+  font-size: 1.4rem;
+  line-height: 2rem;
+}
+
+input[type="radio"],
+input[type="checkbox"] {margin: .2rem .4rem .4rem;}
+
+h1, h2       {font-size: 2.4rem;line-height: 3.2rem;}
+h5, h6       {font-size: 1.6rem;line-height:   2rem;}
+h3, h4, .txt-large,
+blockquote p {font-size:   2rem;line-height: 3.2rem;}
+small        {font-size: 1.2rem;line-height: 1.8rem;}
+
+
+/* layouts.css
+----------------------------------------------------------------------------- layouts.css */
+
+body,
+.fixed .toolbar {background-color: white;}
+
+.sidebar {
+	background-color: #fafafa;
+	border-right: 1px solid #e5e5e5;
+}
+
+.header {padding: .5rem 0;}
+
+.user-box + .top-box {border-top: 1px solid #e5e5e5;}
+
+.user-box {
+	font-size: 1.2rem;
+	padding: 0 1rem;
+}
+
+.top-box {padding: 2rem;}
+
+/* Content
+----------------------------------------------------------------------------- Content */
+
+.content-box {padding-bottom: 4rem;}
+
+.new > td:first-child {border-left-color: #4ea31e;}
+
+/* nav.css
+----------------------------------------------------------------------------- nav.css */
+
+/* Sub */
+
+.sub-box {
+	background: #fafafa;
+	padding: 1rem;
+	margin-bottom: 2rem;
+}
+
+
+.sub-box nav .menu-h {}
+
+.sub-box nav .level-1 {border-radius: .3rem;}
+
+.sub-box nav .level-1  > a,
+.sub-box nav .level-1  > span {padding: .6rem 1.5rem;}
+
+.sub-box nav .level-1:hover  {background: #eee}
+.sub-box nav .level-1.active {background: #949494;color: white}
+
+/* Controls
+----------------------------------------------------------------------------- Controls */
+
+a.button,
+.button,
+.button.border,
+button,
+button.border {
+	color: inherit;
+}
+
+a.button,
+.button,
+button,
+button.button {
+  background-color: #fafafa;
+  border-color:     #e5e5e5;
+	color: inherit;
+  &.more {
+    .uicon-more {
+      line-height: .65;
+    }
+  }
+}
+
+.button:hover,
+.button.border:hover,
+button:hover,
+button.border:hover {background-color: #eee;}
+
+.tag {
+	background-color: transparent;
+	padding: 0;
+	margin-left: 1.5rem;
+	position: relative;
+}
+
+.tag:before {
+	content: " ";
+	display: block;
+	position: absolute;
+	left: -1.5rem;
+	top:0;
+	background: #e5e5e5;
+	border-radius: 50%;
+	overflow: hidden;
+	height: .7rem;
+	width:  .7rem;
+	margin: .7rem 0 .6rem;
+}
+
+.count.primary, .button.primary, button.primary,
+.count.success, .button.success, button.success,
+.count.warning, .button.warning, button.warning,
+.count.danger,  .button.danger, button.danger,
+.progressbar {
+  color: white !important;
+  border-color: transparent;
+}
+
+.statusbar,
+.progressbar,
+.chunkbar > .bar {background-color: #e5e5e5;}
+
+.primary.tag:before,
+.primary.count,
+.primary.button,
+button.primary,
+.success.button,
+button.success,
+.success.tag:before,
+.success.count,
+.chunkbar    > .progress,
+.chunkbar    > .success,
+.statusbar   > .bar,
+.progressbar > .bar {background-color: #4ea31e;}
+
+.warning.tag:before,
+.warning.count,
+.warning.button,
+button.warning,
+.chunkbar    > .warning,
+.warning     > .bar,
+.primary     > .bar {background-color: #f49530;}
+
+.danger.tag:before,
+.danger.count,
+.danger.button,
+button.danger,
+.chunkbar    > .danger,
+.danger      > .bar {background-color: #e84040;}
+
+.v-stepper .step {
+  border-radius: 4px;
+  background-color: #fafafa;
+  .line {
+    border-left: 2px solid #e5e5e5;
+  }
+  .circle {
+    background-color: #e5e5e5;
+    &:before {
+      color: #000;
+    }
+  }
+  &.success {
+    .circle {
+      background-color: #4ea31e;
+      border-color: #4ea31e;
+      &:before {
+        color: #fff;
+      }
+    }
+    .status {
+      color: #4ea31e;
+    }
+    .line {
+      border-left: 2px solid #4ea31e;
+    }
+  }
+
+  &.warning {
+    .circle {
+      background-color: #f49530;
+      border-color: #f49530;
+    }
+    .status {
+      color: #f49530;
+    }
+  }
+
+  &.danger {
+    .circle {
+      background-color: #e84040;
+      border-color: #e84040;
+    }
+    .status {
+      color: #e84040;
+    }
+  }
+}
+
+/* Notices
+----------------------------------------------------------------------------- */
+
+.box {border-radius: .3rem;}
+
+.message,
+.message a {color: white;}
+
+.message .tag:before {background: white;}
+
+.message           {background-color: #748698;}
+.message.success   {background-color: #4ea31e;}
+.message.warning   {background-color: #f49530;}
+.message.danger    {background-color: #e84040;}
+
+.secondary.box,
+.inner.secondary {background-color: #fafafa;}
+.inner.success   {background-color: honeydew;}
+.inner.warning   {background-color: lightyellow;}
+.inner.danger    {background-color: lavenderblush;}
+
+bside .inner.secondary,
+.secondary .inner.secondary {background-color: whitesmoke;}
+
+/* Icons
+----------------------------------------------------------------------------- Icons */
+
+i.i-logo    {background-image: url(https://cdn.esphere.ru/images-2x/sb/logo.png);}
+i.icon-20   {background-image: url(https://cdn.esphere.ru/images-2x/sb/icons-20.png);}
+i.icon-40   {background-image: url(https://cdn.esphere.ru/images-2x/sb/icons-40.png);}
+i.i-refresh {background-image: url(https://cdn.esphere.ru/images-2x/sb/preloader.gif);}
+
+/* i-80
+----------------------------------------------------------------------------- i-80 */
+.i-80 {background-image: url(https://cdn.esphere.ru/images/sb/icons-80.png);}
+
+/* i-270
+----------------------------------------------------------------------------- i-270 */
+.i-270 {background-image: url(https://cdn.esphere.ru/images/sb/icons-270.png);}
+
+/* responsive
+----------------------------------------------------------------------------- */
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {}

@@ -7,6 +7,7 @@ import { filterModel } from '@shared/lib/store-filter';
 import { taskListPageModel } from '@pages/tasks-list';
 
 import { initAppModel } from '@processes/init';
+import { pokemonListPageModel } from '@pages/pokemon-list';
 
 /**
  * Главная сага - точка входа
@@ -29,6 +30,7 @@ export function* rootSaga(): SagaIterator {
 
       /** pages */
       taskListPageModel.sagas.watcher,
+      pokemonListPageModel.sagas.watcher,
 
       /** proccesses */
       initAppModel.sagas.watcher,

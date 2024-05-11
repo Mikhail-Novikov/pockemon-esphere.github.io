@@ -1,0 +1,120 @@
+@media (max-width: 1023.98px) {
+
+  .reg-page {
+
+    &-row {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      min-height: auto;
+    }
+      
+    &-form {
+      padding-top: 6.4rem;
+      padding-bottom: 2.4rem;
+    }
+      
+    &-bg {
+      padding-top: 4.4rem;
+      padding-bottom: 4.4rem;
+      background-image: url('https://cdn.esphere.ru/images/hypotheses/kedo/auth-page/bg-reg-mobile.jpg');
+      background-position: right;
+    }
+      
+    &-picture {
+      height: 100%;
+      width: 100%;
+      
+      &-block {
+        min-height: 21.7rem;
+      
+        .reg-page-title {
+          position: absolute;
+        }
+      }
+    }
+      
+    &-title {
+      
+      h2 {
+        font-size: 2.1rem;
+        line-height: 3.2rem;
+      }
+    }
+      
+    &-link {
+      position: static;
+      margin-top: auto;
+      padding-bottom: 2.4rem;
+      text-align: center;
+      color: $success;
+      
+      &:hover {
+        color: $primary-02;
+      }
+    }
+      
+    &-footer {
+      position: relative;
+      bottom: auto;
+      right: auto;
+      width: calc(100% + 2.4rem);
+      margin: 0 -1.2rem -2.4rem -1.2rem;
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+
+  .reg-page {
+
+    &-block {
+      width: 100%;
+    }
+      
+    &-title {
+      
+      h2 {
+        font-size: 1.8rem;
+        line-height: 2.4rem;
+      }
+      
+      img {
+        height: 5.2rem;
+      }
+    }
+      
+    &-bg {
+      padding-top: 3.2rem;
+      padding-bottom: 3.2rem;
+    }
+      
+    &-picture-block {
+      min-height: 15.7rem;
+    }
+      
+    &-footer {
+      margin: 4.8rem -1.2rem -6.4rem -1.2rem;
+      
+      .reg-page-link {
+        top: -3.6rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .reg-page-picture-block {
+
+    .reg-page-title {
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 50%;
+      position: absolute;
+    }
+  }
+      
+  .reg-page-bg {
+    background-image: url('https://cdn.esphere.ru/images/hypotheses/kedo/auth-page/bg-reg.jpg');
+  }
+}

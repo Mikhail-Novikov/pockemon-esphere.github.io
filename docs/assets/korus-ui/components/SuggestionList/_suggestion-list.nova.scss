@@ -1,8 +1,8 @@
 .suggestion {
   &-wrapper {
     visibility: hidden;
-    background-color: $white;
-    box-shadow: $shadow-level-5;
+    background-color: var(--suggestion-bg);
+    box-shadow: var(--dropdown-shadow);
     position: absolute;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -20,7 +20,7 @@
     &.pos-top {
       top: auto;
       bottom: 100%;
-      box-shadow: $shadow-level-5-top;
+      box-shadow: var(--dropdown-shadow-top);
     }
 
     & .nodata {
@@ -62,7 +62,7 @@
     line-height: 18px;
     border-radius: $input-border-radius;
     cursor: pointer;
-    color: $black-01;
+    color: var(--text-color);
 
     &:not(:last-of-type) {
       margin-bottom: 2px;
@@ -81,12 +81,12 @@
     }
 
     &:hover {
-      background-color: $black-07;
+      background-color: var(--suggestion-bg-hover);
     }
 
     &.selected {
-      background-color: $black-05;
-      color: $black-01;
+      background-color: var(--suggestion-bg-selected);
+      color: var(--text-color);
     }
   }
 }

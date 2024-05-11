@@ -1,0 +1,160 @@
+$preloader-border: #eb8300;
+$textbox-border: #f49530;
+
+/* Overlay */
+
+.overlay-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(250, 250, 250, .8);
+  z-index: 300;
+
+  .preloader-box {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 50%;
+    margin-top: -6.5rem;
+    text-align: center;
+    z-index: 400;
+  }
+}
+
+/* Animated preloader */
+
+.preloader {
+  width: 8rem;
+  height: 8rem;
+  display: inline-block;
+  border-radius: 100%;
+  border: 2px solid;
+  border-top-color: $preloader-border;
+  border-bottom-color: rgba($preloader-border, .2);
+  border-left-color: $preloader-border;
+  border-right-color: rgba($preloader-border, .2);
+  animation: preloader .8s linear infinite;
+}
+
+@keyframes preloader {
+
+  from {transform: rotate(0deg);}
+
+  to {transform: rotate(360deg);}
+}
+
+@-webkit-keyframes preloader {
+
+  from {-webkit-transform: rotate(0deg);}
+
+  to {-webkit-transform: rotate(360deg);}
+}
+
+.notary-sms-box {
+
+  .input-element-wrapper {
+    border-radius: 0;
+    border-color: $textbox-border;
+  }
+
+  .button {
+    border-radius: 0;
+    height: 3.2rem;
+  }
+}
+
+/*** scroll table ***/
+
+@mixin td-fixed {
+  position: -webkit-sticky; /* for Safari */
+  position: sticky;
+  background: #ffffff;
+  z-index: 2;
+  box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, .1);
+}
+
+.scroll-table {
+  overflow: hidden;
+  position: relative;
+
+  table {
+    position: relative;
+    border-collapse: collapse;
+
+    tbody td:nth-of-type(1), thead th.k-header:nth-of-type(1), thead th.table-header:nth-of-type(1) {
+      @include td-fixed;
+      left: 0;
+    }
+
+    tbody td:nth-of-type(2), thead th.k-header:nth-of-type(2), thead th.table-header:nth-of-type(2) {
+      @include td-fixed;
+      left: 4rem;
+    }
+
+    tbody td:nth-of-type(3), thead th.k-header:nth-of-type(3), thead th.table-header:nth-of-type(3) {
+      @include td-fixed;
+      left: 8rem;
+    }
+  }
+}
+
+/** edge IE timeline label.bottom fix **/
+
+.pointline {
+
+  .step {
+    overflow: visible;
+
+    &.table-header {
+      height: 6rem;
+    }
+
+    > .bottom {
+      top: 3.7rem;
+    }
+  }
+}
+
+.secondary {
+
+  &.window-content, &.item {
+    background-color: #fafafa;
+  }
+}
+
+.block-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@-moz-document url-prefix() {
+
+  .icon-15rem, .icon-15-rem {
+    width: 14.5rem;
+  }
+}
+
+/* LKK guides icon-size */
+
+.icon-13rem, .icon-13-rem {
+  width: 12.8rem;
+  height: 12.8rem;
+}
+
+/* PARALLEL SIGNING */
+
+
+.k-grid th, th.table-header {
+  overflow: visible;
+}
+
+.service-nav {
+  position: relative;
+  margin-top: 5rem;
+}

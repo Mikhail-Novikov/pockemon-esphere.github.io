@@ -3,8 +3,9 @@ export const globalConfig = {
   defaultDelay: 2000,
   routes: {
     home: () => '/',
-    tasks: () => '/tasks',
-    about: () => '/about',
+    pokemons: () => '/pokemons',
+    compare: () => '/compare',
   },
+  baseUrl: 'https://pokeapi.co/api/v2/pokemon-form/',
   environment: process.env.NODE_ENV,
 } as const;

@@ -21,11 +21,8 @@
         margin-left: -1px;
       }
 
+      &.active,
       &:active {
-        background-color: $white;
-      }
-
-      &.active {
         background-color: var(--brand-color);
         border-color: var(--brand-color);
         color: $white;
@@ -44,9 +41,10 @@
       }
 
       &:not(.active):not(:focus):hover {
+        border-color: var(--button-group-border-hover);
 
         + .button-wrapper {
-          border-left-color: $black-01;
+          border-left-color: var(--button-group-border-hover);
           transition: border-left-color .2s;
         }
       }
@@ -74,13 +72,15 @@
 
       .button-wrapper {
         cursor: default !important;
-        color: $black-05 !important;
+        color: var(--text-disabled-color) !important;
         pointer-events: none;
+        border-color: var(--button-group-border-disabled);
+        background-color: var(--button-group-bg-disabled);
 
         &.active {
-          background-color: var(--brand-disabled-color);
-          border-color: var(--brand-disabled-color);
-          color: $white !important;
+          background-color: var(--button-group-bg-selected-disabled);
+          border-color: var(--button-group-bg-selected-disabled);
+          color: var(--text-button-group-disabled-color) !important;
         }
       }
     }
@@ -112,17 +112,27 @@
           font-size: 16px;
         }
 
-        &.active {
-          background-color: $black-05;
-          color: $black-02;
+        &.active,
+        &:active {
+          background-color: var(--button-bg-active);
+          color: var(--button-group-secondary-color);
           font-weight: normal;
 
           [class^="prodicon-"] {
-            color: $black-02;
+            color: var(--button-group-secondary-color);
           }
 
           &:not(:focus) {
-            border-color: $black-05;
+            border-color: var(--button-group-secondary-border);
+          }
+        }
+
+        &:not(.active):not(:focus):hover {
+          border-color: var(--button-border-hover);
+
+          + .button-wrapper {
+            border-left-color: var(--button-border-hover);
+            transition: border-left-color .2s;
           }
         }
       }
@@ -132,13 +142,13 @@
         .button-wrapper {
 
           [class^="prodicon-"] {
-            color: $black-05 !important;
+            color: var(--text-disabled-color) !important;
           }
 
           &.active {
-            color: $black-05 !important;
-            background-color: $black-07;
-            border-color: $black-07;
+            color: var(--text-disabled-color) !important;
+            background-color: var(--button-group-secondary-bg-disabled);
+            border-color: var(--button-group-secondary-bg-disabled);
           }
         }
       }
@@ -149,11 +159,16 @@
       .button-wrapper.active {
 
         &:hover {
-          background-color: $black-06;
+          background-color: var(--button-group-secondary-bg-hover);
 
           &,
           &:not(:focus) {
-            border-color: $black-06;
+            border-color: var(--button-group-secondary-border-hover);
+          }
+
+          + .button-wrapper {
+            border-left-color: var(--button-group-secondary-border-hover);
+            transition: border-left-color .2s;
           }
         }
       }

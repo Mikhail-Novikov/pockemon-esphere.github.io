@@ -1,0 +1,108 @@
+.reg-page {
+
+  &-bg {
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &-picture {
+    position: absolute;
+
+    &-block {
+      overflow: hidden;
+    }
+
+    &-image {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &-title {
+
+    h2 {
+      font-size: 3rem;
+      line-height: 3.8rem;
+    }
+  }
+
+  &-row {
+    min-height: 100vh;
+    position: relative;
+  }
+
+  &-form {
+    padding-top: 10%;
+    padding-bottom: 4.8rem;
+  }
+
+  &-block {
+    width: 44rem;
+  }
+
+  &-link {
+    position: absolute;
+    left: 3.2rem;
+    bottom: 2rem;
+  }
+
+  &-footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  &-tooltip {
+    position: relative;
+
+    .tooltip.bottom {
+      right: 0;
+      transform: none;
+      margin-top: .8rem !important;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .2s, visibility .2s;
+
+      &::after {
+        right: 3.6rem;
+        left: auto;
+      }
+    }
+
+    &:hover {
+
+      .tooltip {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity .2s;
+      }
+    }
+  }
+}
+
+.message-type-button {
+  position: absolute;
+  bottom: .4rem;
+  right: .4rem;
+}
+
+.auth-separator {
+
+  &::after, &::before {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 100%;
+    margin-top: 1.1rem;
+    background-color: $black-05;
+  }
+
+  &::after {
+    margin-left: .8rem;
+  }
+
+  &::before {
+    margin-right: .8rem;
+  }
+}

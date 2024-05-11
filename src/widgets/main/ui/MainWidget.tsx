@@ -21,12 +21,14 @@ export const MainWidget: React.FC = ({ children }) => {
 
   return (
     <GlobalLoader>
-      <Header />
+      <L.Div _gridDocuments>
+        <Header />
 
-      <L.Div className="wrapper">
-        <L.Main className="content-box items margin-y">
-          {isErrorExist ? <GlobalError /> : children}
-        </L.Main>
+        <L.Div className="wrapper document-body width-100">
+          <L.Main className="content-box items margin-y">
+            {isErrorExist ? <GlobalError /> : children}
+          </L.Main>
+        </L.Div>
       </L.Div>
 
       <Toasts />

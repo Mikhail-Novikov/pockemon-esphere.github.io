@@ -14,12 +14,8 @@
     &-wrapper {
       @extend %input-wrapper;
 
-      &:not(.disabled):not(.danger):hover {
-        @extend %input-hovered;
-      }
-
       &:not(.focused):not(.disabled).danger {
-        border-color: $brand-danger;
+        border-color: var(--input-border-error);
       }
 
       &.focused {

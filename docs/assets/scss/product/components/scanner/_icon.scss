@@ -1,0 +1,107 @@
+@import 'variables';
+
+.icon-24rem, .icon-24-rem {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.icon-3rem, .icon-3-rem {
+  width: 3rem;
+  height: 3rem;
+}
+
+.icon-42 {
+  font-size: 4.2rem;
+}
+
+.icon-5-rem {
+  width: 5rem;
+  height: 5rem;
+}
+
+.icon-16 {
+  font-size: 1.6rem;
+  line-height: 1 !important;
+}
+
+.icon-24 {
+  font-size: 2.4rem;
+}
+
+.icon-24rem {
+  width: 2.4rem;
+}
+
+.icon-badge-tariff {
+  width: 9rem;
+  height: 9rem;
+}
+
+.icon-pos-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.icon-pos-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.icon {
+
+  &-warning {
+    fill: $accent-02;
+    color: $accent-02;
+  }
+
+  &-danger {
+    fill: $error-02;
+    color: $error-02;
+  }
+
+  &-malachite {
+    fill: $primary-03;
+    color: $primary-03;
+  }
+
+  &-black {
+    fill: $text;
+    color: $text;
+  }
+
+  &-sky {
+    fill: $secondary-02;
+    color: $secondary-02;
+  }
+}
+
+/* Recommend
+----------------------------------------------------------------------------- Recommend */
+
+.i-like {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: inline-block;
+  background: 0 0 no-repeat;
+  background-size: 10rem 2.5rem;
+  margin-right: 1rem;
+  background-image: url(https://cdn.esphere.ru/images/recommend/icon-like.png);
+
+  &.icon-like {
+    background-position: 0 0;
+  }
+
+  &.icon-dislike {
+    background-position: -2.5rem 0;
+  }
+
+  &.icon-like-active {
+    background-position: -5rem 0;
+  }
+
+  &.icon-dislike-active {
+    background-position: -7.5rem 0;
+  }
+}

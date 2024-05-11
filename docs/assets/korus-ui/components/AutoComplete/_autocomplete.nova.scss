@@ -32,12 +32,8 @@
     padding: 0;
     align-items: center;
 
-    &:not(.focused):not(.danger):not(.disabled):hover {
-      @extend %input-hovered;
-    }
-
     &:not(.focused):not(.disabled).danger {
-      border-color: $brand-danger;
+      border-color: var(--input-border-error);
     }
 
     &.focused {
@@ -129,7 +125,7 @@
       top: 50%;
       right: -2px;
       transform: translateY(-50%) rotate(0);
-      background-image: $loader-element-item;
+      background-image: var(--loader-element-item);
       background-size: contain;
       animation: rotate-clockwise 1s linear infinite;
     }

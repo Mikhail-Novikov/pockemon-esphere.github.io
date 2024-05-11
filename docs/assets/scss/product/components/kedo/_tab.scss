@@ -1,0 +1,19 @@
+.header-tabs {
+  background-color: $black-07;
+}
+
+.tabs-item {
+  display: inline-flex;
+
+  &.active::after {
+    border-right-color: $success-active;
+    border-top-color: $success-active;
+    border-left-color: $success-active;
+  }
+
+  &:not(.active):not(.disabled):hover::after {
+    border-right-color: $success-hover;
+    border-top-color: $success-hover;
+    border-left-color: $success-hover;
+  }
+}

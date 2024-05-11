@@ -1,0 +1,138 @@
+@font-face {
+  font-family: "stars";
+  src: url("https://cdn.esphere.ru/fonts/stars/stars.woff2") format("woff2"), url("https://cdn.esphere.ru/fonts/stars/stars.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.feedback-widget-wrapper {
+
+  &.margin-left-auto {
+    margin-left: 0;
+  }
+
+  .icon {
+    font-family: "stars" !important;
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .icon-star-empty::before {
+    content: "\e900";
+    color: $accent-02;
+  }
+
+  .icon-star-filled::before {
+    content: "\e901";
+    color: $accent-02;
+  }
+}
+
+.feedback-modal-wrapper .modal-window.md .modal-body {
+  min-height: auto;
+
+  img[src*=notification-ok-flat-blue] {
+    background: url(https://cdn.esphere.ru/images/notifications/ok-flat.svg) left top no-repeat;
+    background-size: 9.6rem;
+    width: 9.6rem;
+    height: 9.6rem;
+    padding-left: 10rem;
+    margin-top: 4rem;
+  }
+}
+
+footer {
+  margin-left: 0;
+  margin-right: 0;
+
+  hr {
+    border-color: $black-05;
+    margin-bottom: 1.6rem;
+  }
+
+  .feedback-widget-wrapper {
+    background-color: transparent;
+
+    .icon {
+      font-size: 2rem;
+      padding-left: .6rem;
+      padding-right: .6rem;
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 947px) {
+
+  .footer-wrapper {
+    padding-bottom: 4.8rem;
+  }
+}
+
+@include breakpoints-max(md) {
+
+  .feedback-widget-wrapper {
+
+    .flex-row {
+      display: block;
+
+      .rating-wrapper {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+      }
+
+      span {
+
+        &:nth-child(1):not(.icon) {
+          display: block;
+          margin-bottom: .4rem;
+        }
+
+        &.icon:nth-child(1) {
+          padding-left: 0 !important;
+        }
+      }
+    }
+
+    &.margin-left-auto {
+      margin-left: 0;
+    }
+  }
+}
+
+@include breakpoints-max(sm) {
+
+  .footer-widget.flex-row {
+    display: block;
+
+    .feedback-widget-wrapper .flex-row {
+      display: -webkit-box;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+
+      span {
+
+        &:nth-child(1) {
+          margin-bottom: 0;
+        }
+
+        &.icon:nth-child(1) {
+          padding-left: .8rem !important;
+        }
+      }
+    }
+  }
+}

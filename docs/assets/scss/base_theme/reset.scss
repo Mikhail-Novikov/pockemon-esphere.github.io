@@ -1,0 +1,19 @@
+@import './variables.scss';
+
+// тело всего приложения
+body {
+  background-color: var(--body-bg, $white);
+  color: var(--text-color, $black-01);
+}
+
+a {
+  color: var(--link-color, $link-color);
+
+  &:hover {
+    color: var(--link-hover-color, $link-hover);
+  }
+
+  &:active {
+    color: var(--link-active-color, $link-active);
+  }
+}

@@ -1,0 +1,55 @@
+.sidebar {
+  height: calc(100% - 6rem);
+  margin-top: 6rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  ul {
+
+    > li {
+      transition: none;
+
+      &::after {
+        background: $brand-color;
+      }
+
+      > a {
+        padding-right: 1.2rem;
+      }
+    }
+  }
+
+  &-b {
+    flex: 1 1 auto;
+    position: relative !important;
+    background: inherit;
+    border-right: none;
+    padding-right: 3.2rem;
+    padding-left: 3.2rem;
+    width: 30.6rem;
+  }
+
+  .tabs {
+
+    &-container {
+      padding: 0 1.2rem 1.2rem;
+    }
+
+    &-wrapper:not(.mobile-tabs) {
+
+      .tabs-item {
+        padding: 1.2rem 1.6rem;
+
+        &::after {
+          top: 4.4rem;
+          width: 100%;
+          background-color: $brand-color;
+        }
+      }
+    }
+
+    &-item:not(:last-of-type) {
+      margin-right: 1.2rem;
+    }
+  }
+}

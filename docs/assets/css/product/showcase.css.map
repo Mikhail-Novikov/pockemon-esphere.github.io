@@ -1,0 +1,11 @@
+{
+	"version": 3,
+	"file": "showcase.css",
+	"sources": [
+		"../../scss/product/showcase.scss",
+		"../../scss/variables/themes/_nova.scss",
+		"../../scss/variables/_base.scss"
+	],
+	"names": [],
+	"mappings": "AAEA,AAAA,IAAI,AAAC,CACH,gBAAgB,CAAE,4BAA8B,CACjD,AAED,AAAA,aAAa,AAAA,OAAO,AAAC,CACnB,MAAM,CAAE,OAAO,CAChB"
+}

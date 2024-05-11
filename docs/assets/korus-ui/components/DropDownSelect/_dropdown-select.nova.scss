@@ -25,12 +25,8 @@
     padding: 0;
     align-items: center;
 
-    &:not(.focused):not(.danger):not(.disabled):hover {
-      @extend %input-hovered;
-    }
-
     &:not(.focused):not(.disabled).danger {
-      border-color: $brand-danger;
+      border-color: var(--input-border-error);
     }
 
     &.focused {
@@ -42,6 +38,7 @@
 
       & .dropdownselect-select-icon {
         cursor: default;
+        color: var(--input-icon-color-disabled) !important;
       }
     }
   }
@@ -87,6 +84,7 @@
   }
 
   &-select-icon {
+    color: var(--input-icon-color);
     width: 30px;
     height: 30px;
     cursor: pointer;
@@ -194,7 +192,7 @@ ul[class*=list] {
       height: 20px;
       font-size: 0;
       background-repeat: no-repeat;
-      background-image: $loader-element-item;
+      background-image: var(--loader-element-item);
       background-size: contain;
       animation: rotate-clockwise 1s linear infinite;
     }

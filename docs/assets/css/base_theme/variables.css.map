@@ -1,0 +1,11 @@
+{
+	"version": 3,
+	"file": "variables.css",
+	"sources": [
+		"../../scss/base_theme/variables.scss",
+		"../../../common/variables/_base.scss",
+		"../../../common/variables/themes/_nova.scss"
+	],
+	"names": [],
+	"mappings": "AEwaA,UAAU,CACR,WAAW,CAAE,QAAQ,CACrB,GAAG,CAAG,gGAAgG,CAAC,eAAe,CAChH,+FAA+F,CAAC,cAAc,CAC9G,8FAA8F,CAAC,kBAAkB,CACvH,WAAW,CAAE,MAAM,CACnB,UAAU,CAAE,MAAM,CAGpB,UAAU,CACR,WAAW,CAAE,QAAQ,CACrB,GAAG,CAAE,+FAA+F,CAAC,eAAe,CAC/G,8FAA8F,CAAC,cAAc,CAC7G,6FAA6F,CAAC,kBAAkB,CACrH,WAAW,CAAE,GAAG,CAChB,UAAU,CAAE,MAAM,CAGpB,UAAU,CACR,WAAW,CAAE,QAAQ,CACrB,GAAG,CAAE,sGAAsG,CAAC,eAAe,CACtH,qGAAqG,CAAC,cAAc,CACpH,oGAAoG,CAAC,kBAAkB,CAC5H,WAAW,CAAE,GAAG,CAChB,UAAU,CAAE,MAAM"
+}

@@ -77,26 +77,34 @@
       background-color: $error-03;
     }
   }
-  .button-wrapper {
-    color: $black-04;
-    min-width: 20px;
-    padding: 0;
-    border: none;
-    border-radius: 0;
-    background-color: transparent;
-    &:hover, &:focus, &:active {
-      color: $black-03;
+  tr {
+    &:hover {
+      .button-wrapper {
+        color: $black-04;
+      }
     }
-    &:focus {
+    
+    .button-wrapper {
+      color: $black-05;
+      min-width: 20px;
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      background-color: transparent;
+      &:hover, &:focus, &:active {
+        color: $black-03;
+      }
+      &:focus {
+        padding: 0;
+      }
+      &:disabled {
+        color: $black-05;
+        cursor: not-allowed;
+      }
+    }
+    button.more:not(.blank):focus {
       padding: 0;
     }
-    &:disabled {
-      color: $black-05;
-      cursor: not-allowed;
-    }
-  }
-  button.more:not(.blank):focus {
-    padding: 0;
   }
   &-download {
     @extend %button-icon;

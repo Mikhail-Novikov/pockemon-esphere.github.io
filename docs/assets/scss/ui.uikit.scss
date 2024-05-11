@@ -1,0 +1,291 @@
+/* reset.css
+----------------------------------------------------------------------------- reset.css */
+
+mark {background-color: #edff8f;}
+
+a[href] {color: #0C6C8D}
+a:hover {color: #1697b7;}
+
+/* layouts.css
+----------------------------------------------------------------------------- layouts.css */
+
+body,
+.fixed .toolbar {background-color: white;}
+
+.menu-box,
+.sidebar {
+	color: white;
+	background-color: #0C6C8D;
+}
+
+.menu-box .level-1 > a[href],
+.sidebar a[href]       {color: #edff8f;}
+.menu-box .level-1 > a[href]:hover,
+.sidebar a[href]:hover {color: #FFFDE1;}
+
+.sidebar .k-textbox,
+.sidebar .k-textbox > input {border-color: #edff8f;}
+
+.header {padding: .5rem;}
+
+.header {
+	background-color: #fafafa;
+	border-bottom: 1px solid #e5e5e5;
+	margin-bottom: 4rem;
+}
+
+/* Content
+----------------------------------------------------------------------------- Content */
+
+.content-box {padding-bottom: 5rem;}
+
+.new > td:first-child {border-left-color: #199884;}
+
+/* nav.css
+----------------------------------------------------------------------------- nav.css */
+
+.accordion > .active > *  > h5 {color: #199884;}
+
+aside .menu-v [class*="level-"].active  > a,
+aside .menu-v [class*="level-"]:hover  > a {
+	border-color: #edff8f;
+	background: rgba(255,255,255,.25);
+	color: white;
+}
+
+.nav-box nav [class*="level-"].active {
+	background: rgba(255,255,255,.25);
+	border-radius: .3rem;
+}
+
+/* Main */
+
+.menu-box {
+	border-radius: .3rem;
+	padding: .5rem 1rem;
+	margin-bottom: 4rem;
+}
+
+/* Sub */
+
+.sub-box nav .menu-h {
+	background: #fafafa;
+	padding: 1rem;
+}
+
+.sub-box nav .level-1 {margin-right: 1rem;}
+
+.sub-box nav .level-1,
+.sub-box nav .level-1  > a {border-radius: .3rem;}
+
+.sub-box nav .level-1:hover  {background: rgba(0,0,0,.07)}
+.sub-box nav .level-1.active {background: rgba(0,0,0,.2);}
+
+/* Controls
+----------------------------------------------------------------------------- Controls */
+
+button,
+button.border,
+a.button,
+.button,
+.button.border {
+	background-color: #fafafa;
+	border-color:     #e5e5e5;
+	color: black;
+}
+
+button:hover,
+button.border:hover,
+.button:hover,
+.button.border:hover {background-color: #eee;}
+
+.tag {
+	background-color: transparent;
+	padding: 0;
+}
+
+.tag:before {
+	content: " ";
+	display: block;
+	float: left;
+	background: #e5e5e5;
+	border-radius: 50%;
+	overflow: hidden;
+	height: .7rem;
+	width:  .7rem;
+	margin: .7rem .5rem .6rem 0;
+}
+
+.count.primary, .button.primary,
+.count.success, .button.success,
+.count.warning, .button.warning,
+.count.danger,  .button.danger,
+.progressbar {
+	color: white !important;
+	border-color: transparent;
+}
+
+.statusbar,
+.progressbar     {background-color: #fafafa;}
+.chunkbar > .bar {background-color: #e5e5e5;}
+
+.primary.tag:before,
+.primary.count,
+.primary.button,
+.success.button    {background-color: #199884;}
+.success.tag:before,
+.success.count,
+.chunkbar    > .progress,
+.chunkbar    > .success,
+.progressbar > .bar {background-color: #4ea31e;}
+
+.warning.tag:before,
+.warning.count,
+.warning.button,
+.chunkbar    > .warning,
+.warning     > .bar,
+.primary     > .bar {background-color: #f49530;}
+
+.danger.tag:before,
+.danger.count,
+.danger.button,
+.chunkbar    > .danger,
+.statusbar   > .bar,
+.danger      > .bar {background-color: #e84040;}
+
+/* Notices
+----------------------------------------------------------------------------- */
+
+.box {border-radius: .8rem;}
+
+.message {
+	border-style: solid;
+	border-width: 0 0 0 .2rem;
+	padding-left:  1.8rem;
+}
+
+.message.first     {padding-left: 3.8rem;}
+
+.message           {border-color: #199884;}
+.message.secondary {border-color: #e5e5e5;}
+.message.success   {border-color: #4ea31e;}
+.message.warning   {border-color: #f49530;}
+.message.danger    {border-color: #e84040;}
+
+.message           {background-color: aliceblue;}
+.secondary.box,
+.secondary.inner,
+.secondary.message {background-color: #fafafa;}
+.success.inner,
+.success.message   {background-color: honeydew;}
+.warning.inner,
+.warning.message   {background-color: lightyellow;}
+.danger.inner,
+.danger.message    {background-color: lavenderblush;}
+
+/* Icons
+----------------------------------------------------------------------------- Icons */
+
+
+i.i-refresh {background-image: url(../images/sphere/preloader.gif);}
+i.icon-20,
+i.icon-20   {background-image: url(../images/sphere/icons-20.png) ;}
+i.icon-40   {background-image: url(../images/sphere/icons-40.png) ;}
+
+/* SVG Icons
+----------------------------------------------------------------------------- SVG Icons */
+
+.svg-primary-light {fill: #B9DBF0 !important;}
+.svg-primary-dark  {fill: #0083B7 !important;}
+.svg-primary       {fill: #74A1C7 !important;}
+
+/* login
+-----------------------------------------------------------------------------
+
+.login .content-box	{
+	background-image: url(../images/sphere/bg-login.png);
+	background-position: 50% 10px;
+	background-size: 800px 480px;
+	background-repeat: no-repeat;
+}
+
+*/
+
+/* i-80
+----------------------------------------------------------------------------- i-40 */
+.i-80 {background-image: url(../images/sphere/i-80.png);}
+
+/* i-270
+----------------------------------------------------------------------------- i-40 */
+.i-270 {background-image: url(../images/sphere/i-270.png);}
+
+/* responsive
+----------------------------------------------------------------------------- */
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {
+
+	i.i-refresh {background-image: url(../images-2x/sphere/preloader.gif);}
+	i.icon-20,
+	i.icon-20   {background-image: url(../images-2x/sphere/icons-20.png);}
+	i.icon-40   {background-image: url(../images-2x/sphere/icons-40.png);}
+
+/*	.login .content-box	{background-image: url(../images-2x/sphere/bg-login.png);}*/
+
+}
+
+/* Large desktop
+----------------------------------------------------------------------------- */
+.wrapper {
+	width: auto;
+	max-width: inherit;
+	min-width: inherit;
+	padding: 0 5%;
+}
+
+
+@media (min-width: 1200px) {}
+
+/* Portrait tablet to landscape and desktop
+----------------------------------------------------------------------------- */
+
+@media (min-width: 769px) and (max-width: 1200px) { }
+
+@media (max-width: 1024px) {  }
+
+@media (min-width: 769px) {}
+
+/* Landscape phone to portrait tablet
+----------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {}
+
+/* Landscape phones and down
+----------------------------------------------------------------------------- */
+
+@media (max-width: 480px) {}
+
+/* loader colors
+----------------------------------------------------------------------------- */
+
+.common-loader {
+  background: rgb(83,188,46);
+  background: linear-gradient(200deg, rgba(83,188,46,1) 0%, rgba(255,255,255,0) 100%);
+  &:before {
+    content: "";
+    background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(83,188,46,1) 100%);
+  }
+  &::after {
+    background: #fff;
+  }
+  .loader-logo {
+    background: url('https://cdn.esphere.ru/images/booking/logo-sber.svg');
+    background-position: center;
+    background-size: 100% 100%;
+  }
+}

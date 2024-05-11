@@ -1,0 +1,81 @@
+@import 'variables';
+
+$fss: (10, 12, 14, 16, 18, 21, 30) !default;
+
+@mixin font-styles {
+  @each $fs in $fss {
+    &-fs-#{$fs} {
+      font-size: $fs * .1rem !important;
+      line-height: 1.3 !important;
+    }
+  }
+}
+
+/* typografy product
+----------------------------------------------------------------------------- */
+
+.h1, .h-1 {
+  font-size: 3rem;
+  line-height: 3.4rem;
+  font-weight: 500;
+}
+
+.h2 {
+  font-size: 2.1rem;
+  line-height: 3.2rem;
+}
+
+.h3 {
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+}
+
+@include breakpoints-max(md) {
+
+  .scanner {
+
+    h1 {
+      font-size: 2.4rem;
+      line-height: 1.1;
+    }
+
+    h2, h3, h4, h5, h6 {
+      line-height: 1.4;
+    }
+  }
+}
+
+@include breakpoints-min(sm) {
+
+  .sm {
+    @include font-styles;
+  }
+}
+
+@include breakpoints-min(md) {
+
+  .md {
+    @include font-styles;
+  }
+}
+
+@include breakpoints-min(lg) {
+
+  .lg {
+    @include font-styles;
+  }
+}
+
+@include breakpoints-min(xl) {
+
+  .xl {
+    @include font-styles;
+  }
+}
+
+@include breakpoints-min(xxl) {
+
+  .xxl {
+    @include font-styles;
+  }
+}

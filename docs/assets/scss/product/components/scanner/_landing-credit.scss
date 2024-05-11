@@ -1,0 +1,78 @@
+@import './variables';
+
+.landing-lc {
+
+  .landing-lc-promo {
+    min-height: 25rem;
+    color: $text-reverse;
+    padding: 3.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $primary-02;
+    background-image: url("https://cdn.esphere.ru/images/scanner/landing-lc/bg-promo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: -27rem;
+
+    &-right {
+
+      .landing-lc-title {
+        padding-top: 1.2rem;
+      }
+    }
+  }
+
+  .landing-lc-wrapper-video {
+    aspect-ratio: 1.779 auto;
+    clip-path: inset(1px);
+  }
+}
+
+@include breakpoints-max(sm) {
+
+  .landing-lc .landing-lc-promo {
+    background-image: none
+  }
+}
+
+@include breakpoints-min(sm) {
+
+  .landing-lc {
+
+    .landing-lc-promo {
+      height: 42rem;
+      background-position-x: -45rem;
+    }
+  }
+}
+
+@include breakpoints-min(md) {
+
+  .landing-lc {
+
+    .landing-lc-promo {
+      background-position-x: -35rem;
+    }
+  }
+}
+
+@include breakpoints-min(lg) {
+
+  .landing-lc {
+
+    .landing-lc-promo {
+      background-position-x: -18rem;
+    }
+  }
+}
+
+@include breakpoints-min(xl) {
+
+  .landing-lc {
+
+    .landing-lc-promo {
+      background-position-x: -14rem;
+    }
+  }
+}

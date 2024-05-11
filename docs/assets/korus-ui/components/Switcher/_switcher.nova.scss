@@ -19,7 +19,7 @@
     vertical-align: middle;
     display: inline-block;
     cursor: pointer;
-    background: $black-06;
+    background: var(--switcher-bg);
     padding: 2px;
     border-radius: 10px;
     width: 38px;
@@ -44,10 +44,11 @@
 
     &.disabled {
       pointer-events: none;
-      background: $black-07 !important;
+      background: var(--control-bg-disabled) !important;
 
       .switcher-handle {
         box-shadow: 0 2px 7px $base-09;
+        background-color: var(--switcher-handle-bg-disabled) !important;
       }
     }
 

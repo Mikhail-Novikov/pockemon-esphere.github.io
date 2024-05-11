@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "temp-mobile.css",
+	"sources": [
+		"../../../../scss/product/components/mra/temp-mobile.scss"
+	],
+	"names": [],
+	"mappings": "AAEA,AAAA,SAAS,CACT,cAAc,AAAC,CACb,SAAS,CAAE,MAAM,CAClB,AAED,AAAA,iBAAiB,AAAC,CAChB,SAAS,CAAE,MAAM,CAClB,AAED,AAEE,KAFG,CAAA,AAAA,KAAC,EAAO,MAAM,AAAb,EAEJ,EAAE,AAAC,CACD,KAAK,CAAE,GAAG,CACX,AAJH,AAME,KANG,CAAA,AAAA,KAAC,EAAO,MAAM,AAAb,EAMJ,EAAE,AAAC,CACD,YAAY,CAAE,GAAG,CAClB"
+}

@@ -1,0 +1,134 @@
+$default: '%23c1c6cc';
+$defaultBg: '$23ffffff';
+$active: '%23117f8c';
+$activeBg: '%23f2f4f7';
+
+@mixin body($border, $bg) {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" width="12" height="32" viewBox="0 0 3.175 8.4666669" version="1.1" id="svg9956"><defs id="defs9953"/><g id="layer1" transform="scale(0.14814781,1)"><g style="fill:none" id="g6062" transform="matrix(0.26458394,0,0,0.26458333,-0.00310061,0)"><rect width="81" height="32" transform="translate(0.0117188)" fill="#{$bg}" id="rect6038" x="0" y="0"/><path d="M 0.0117188,0 H 81.0117 V 1 H 0.0117188 Z" fill="#{$border}" id="path6040"/><path d="m 11.6475,13.818 c -0.3906,-0.3905 -1.0237,-0.3905 -1.4143,0 L 6.95126,17.1 5.7906,15.9393 c -0.39052,-0.3905 -1.02369,-0.3905 -1.41421,0 -0.39052,0.3906 -0.39053,1.0237 0,1.4142 l 1.82843,1.8285 c 0.20527,0.2052 0.47757,0.3026 0.74644,0.2921 0.26887,0.0105 0.54118,-0.0869 0.74645,-0.2921 l 3.94979,-3.9498 c 0.3905,-0.3905 0.3905,-1.0237 0,-1.4142 z" fill="#{$bg}" id="path6044"/><path d="M 0.0117188,31 H 81.0117 v 1 H 0.0117188 Z" fill="#{$border}" id="path6048"/></g></g></svg>');
+}
+
+@mixin leftCover($border, $bg) {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" width="12.001" height="32" viewBox="0 0 3.1752646 8.4666669" version="1.1" id="svg1041"><defs id="defs1038"/><g id="layer1"><g style="fill:none" id="g6022" transform="scale(0.26459436,0.26458333)"><path fill-rule="evenodd" clip-rule="evenodd" d="M 0,6.5 C 0,2.91015 2.91016,-4.29153e-6 6.50001,0 H 12 c 0,0.318146 0,23.1668 0,32 H 6.49999 C 2.91015,32 0,29.0898 0,25.5 Z" fill="#{$bg}" id="path6010"/><path fill-rule="evenodd" clip-rule="evenodd" d="M 4.88281e-4,6.5 C 4.88281e-4,2.91015 2.91064,-4.29153e-6 6.5005,0 h 5.5 v 1 h -5.5 c -3.03757,-4e-6 -5.50001,2.46243 -5.50001,5.5 v 19 c 0,3.0376 2.46243,5.5 5.49999,5.5 h 5.50002 v 1 H 6.50048 C 2.91063,32 4.88281e-4,29.0898 4.88281e-4,25.5 Z" fill="#{$border}" id="path6012"/></g></g></svg>');
+}
+
+@mixin arrow($border, $bg) {
+  background-image: url("data: image/svg+xml,%3Csvg width='21' height='32' viewBox='0 0 21 32' fill='none' xmlns='http://www.w3.org/2000/svg' %3E%3Cpath d='M11.6127 29.2619C10.3939 30.9795 8.41849 32 6.31252 32L0.00538826 32C0.00538919 21.3333 0.00535197 10.6667 0.00539296 5.87769e-06L6.31254 7.0806e-07C8.4185 4.70721e-06 10.3939 1.02053 11.6127 2.73814L19.1752 13.3956C20.2821 14.9554 20.2821 17.0446 19.1752 18.6044L11.6127 29.2619Z' fill='#{$bg}' /%3E%3Cpath d='M11.6181 29.2619C10.3993 30.9795 8.42385 32 6.31789 32L0.0107441 32L0.0107442 31L6.31789 31C8.09986 31 9.77137 30.1365 10.8027 28.6831L18.3652 18.0256C19.2261 16.8124 19.2261 15.1876 18.3652 13.9744L10.8027 3.31689C9.77137 1.86352 8.09986 1 6.3179 1L0.0107449 1.00001L0.0107488 5.87769e-06L6.31791 7.08059e-07C8.42386 4.70721e-06 10.3993 1.02053 11.6181 2.73814L19.1806 13.3956C20.2875 14.9554 20.2875 17.0446 19.1806 18.6044L11.6181 29.2619Z' fill='#{$border}' /%3E%3C/svg%3E");
+}
+
+@mixin rightCover($border, $bg) {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" width="12.001" height="32" viewBox="0 0 3.1752646 8.4666669" version="1.1" id="svg1041"><defs id="defs1038"/><g id="layer1"><g style="fill:none" id="g6022" transform="matrix(-0.26459436,0,0,-0.26458333,3.1752646,8.4666666)"><path fill-rule="evenodd" clip-rule="evenodd" d="M 0,6.5 C 0,2.91015 2.91016,-4.29153e-6 6.50001,0 H 12 c 0,0.318146 0,23.1668 0,32 H 6.49999 C 2.91015,32 0,29.0898 0,25.5 Z" fill="#{$bg}" id="path6010"/><path fill-rule="evenodd" clip-rule="evenodd" d="M 4.88281e-4,6.5 C 4.88281e-4,2.91015 2.91064,-4.29153e-6 6.5005,0 h 5.5 v 1 h -5.5 c -3.03757,-4e-6 -5.50001,2.46243 -5.50001,5.5 v 19 c 0,3.0376 2.46243,5.5 5.49999,5.5 h 5.50002 v 1 H 6.50048 C 2.91063,32 4.88281e-4,29.0898 4.88281e-4,25.5 Z" fill="#{$border}" id="path6012"/></g></g></svg>');
+}
+
+.h-stepper {
+
+  @mixin no-icon-step {
+
+    .h-stepper-item-text {
+      padding-left: 0;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  &-progress-bar {
+
+    .progress-bar-item {
+      background-color: $primary-02;
+    }
+  }
+
+  &-list {
+    margin-left: 1.2rem;
+  }
+
+  &-item {
+    height: 3.2rem;
+    opacity: .5;
+    margin-right: 1.6rem;
+    padding: .8rem 0 .6rem !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background-size: contain;
+    background-repeat: repeat-x;
+    @include body($default, $defaultBg);
+
+    &::after {
+      right: -2rem !important;
+      width: 2rem !important;
+      content: '' !important;
+      top: 0 !important;
+      @include arrow($default, $defaultBg);
+    }
+
+    &:last-child::after {
+      @include rightCover($default, $defaultBg);
+      width: 1.2rem !important;
+      height: 3.2rem;
+      top: 0;
+      right: -1.2rem !important;
+      position: absolute;
+    }
+
+    &::before {
+      content: '';
+      @include leftCover($default, $defaultBg);
+      width: 1.2rem;
+      height: 3.2rem;
+      top: 0;
+      left: -1.2rem;
+      position: absolute;
+    }
+
+    &-text {
+      padding-left: 2rem;
+
+      &::before {
+        font-family: 'prodicon' !important;
+        font-size: 1.6rem;
+        position: absolute;
+        left: 0rem;
+        content: "\e9a0";
+        color: $black-02;
+      }
+    }
+
+    &.selected {
+      opacity: 1;
+      @include no-icon-step;
+      @include body($active, $activeBg);
+
+      ~ li {
+        opacity: .8;
+        @include no-icon-step;
+      }
+
+      &::after {
+        opacity: 1;
+        @include arrow($active, $activeBg);
+      }
+
+      &:last-child::after {
+        @include rightCover($active, $activeBg);
+      }
+
+      &::before {
+        @include leftCover($active, $activeBg);
+      }
+    }
+
+    &.done {
+
+      .h-stepper-item-text {
+        padding-left: 2rem;
+
+        &::before {
+          display: block;
+          content: "\e9b0";
+          color: $primary-02;
+        }
+      }
+    }
+  }
+}

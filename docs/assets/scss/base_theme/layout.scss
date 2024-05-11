@@ -1,0 +1,65 @@
+@import './variables.scss';
+
+// основной фон контента - страниц, лайтбоксов, модалок
+// (белый -> черный)
+.bg-body {
+  background-color: var(--body-bg, $white);
+}
+
+// фон для карточек, шапки проекта и бокового меню
+// (белый -> тёмно-серый)
+.bg-main {
+  background-color: var(--main-bg, $white);
+}
+ 
+// второстепенный фон - шапка и футер страниц/лайтбоксов/модалок, панели фильтров и т.д.
+// (серый -> тёмно-серый)
+.bg-secondary {
+  background-color: var(--secondary-bg, $black-07);
+}
+
+// разделитель
+hr {
+  border-color: var(--divider-border, $black-07);
+}
+
+// шапка проекта
+.personal-box {
+  background-color: var(--main-bg, $white);
+}
+
+// разделитель шапки проекта
+.user-box {
+  border-bottom-color: var(--box-border, $black-05);
+}
+
+// кнопки шапки проекта
+.personal-box {
+  button.more,
+  .button-wrapper {
+    &:hover {
+      background-color: var(--personal-box-button-hover, $black-07);
+    }
+
+    &.active,
+    &:active {
+      background-color: var(--personal-box-button-active, $black-06);
+    }
+  }
+}
+
+// панель фильтров
+.filter {
+  background: var(--filter-bg, $black-07);
+  box-shadow: 0 .8rem var(--filter-bg, $black-07);
+}
+
+.bside {
+  background-color: var(--bside-bg, $black-07);
+  box-shadow: var(--bside-shadow, $shadow-menu-top-bar);
+
+  &-item {
+    background-color: var(--bside-item-bg, $white);
+    box-shadow: var(--bside-shadow, $shadow-level-5);
+  }
+}

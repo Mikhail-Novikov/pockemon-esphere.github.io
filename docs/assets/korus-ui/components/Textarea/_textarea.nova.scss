@@ -12,12 +12,8 @@
     font-family: inherit;
     padding: 8px 12px;
 
-    &:not(.disabled):not(.danger):hover {
-      @extend %input-hovered;
-    }
-
     &:not(.focused):not(.disabled).danger {
-      border-color: $brand-danger;
+      border-color: var(--input-border-error);
     }
 
     &.focused {

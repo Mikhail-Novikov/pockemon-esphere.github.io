@@ -1,0 +1,31 @@
+@import 'variables';
+
+/* header
+----------------------------------------------------------------------------- */
+
+.dropdown-wrapper {
+
+  &.opened > .button-dropdown::after,
+  &.button-dropdown:focus::after {
+    right: 1.9rem !important;
+  }
+
+  &.opened .button-wrapper {
+    background-color: $black-05;
+    border-color: $black-05;
+  }
+}
+
+// активность строки, не доступность
+
+.suggestion-wrapper {
+
+  .no-active.suggestion-item, .no-active.suggestion-item.selected {
+    cursor: not-allowed;
+    background-color: transparent;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}

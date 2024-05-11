@@ -1,0 +1,9 @@
+@mixin switch($default, $disabled) {
+  .switcher-wrapper.active {
+    background: $default;
+
+    &.disabled {
+      background: $disabled !important;
+    }
+  }
+}

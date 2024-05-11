@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-import { Task } from '@shared/api';
+import { Task } from '@shared/api/todo-api';
 import { setStoreField } from '@shared/lib/store';
 
 import { config } from '../config';

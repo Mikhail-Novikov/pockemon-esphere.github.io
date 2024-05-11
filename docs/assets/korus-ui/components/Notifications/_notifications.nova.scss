@@ -10,7 +10,7 @@
 
     &.collapsed {
       border-radius: 8px;
-      box-shadow: $shadow-level-5;
+      box-shadow: var(--dropdown-shadow);
       overflow: hidden;
     }
 
@@ -44,7 +44,7 @@
   }
 
   &-content {
-    border-left: 1px solid $gray;
+    border-left: 1px solid var(--divider-border);
     padding: 20px 10px;
     width: 90%;
   }
@@ -55,10 +55,10 @@
     justify-content: space-between;
     margin-bottom: 20px;
     align-items: center;
-    box-shadow: 0 5px 20px #ccc;
+    box-shadow: var(--dropdown-shadow);
     padding: 0;
-    color: $black-01;
-    background-color: $white;
+    color: var(--text-color);
+    background-color: var(--notifications-bg);
     border-radius: 8px;
 
     &-b {
@@ -97,7 +97,7 @@
 
       .notifications-time {
         position: absolute;
-        color: $black-04;
+        color: $black-03;
         bottom: 8px;
         right: 8px;
         margin: 0;
@@ -154,7 +154,7 @@
       justify-content: start;
       padding: 16px 32px 16px 16px;
       align-items: unset;
-      box-shadow: $shadow-level-5;
+      box-shadow: var(--dropdown-shadow);
       margin-bottom: 8px;
     }
 
@@ -178,12 +178,18 @@
 
       &::before {
         font-family: 'prodicon', sans-serif;
-        color: $black-05;
+        color: $black-04;
         content: '\e995';
         font-size: 20px;
         background: none;
         width: auto;
         height: auto;
+      }
+
+      &:hover {
+        &::before {
+          color: $black-03;
+        }
       }
     }
   }

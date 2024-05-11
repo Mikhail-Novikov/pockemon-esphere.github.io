@@ -1,0 +1,28 @@
+@mixin radio($default, $hover) {
+
+  .radio-wrapper .radio-button {
+
+    .radio-button-input:not(:disabled) {
+      
+      & + .radio-button-label:hover::before {
+        border-color: $hover;
+      }
+          
+      &:checked {
+              
+        + .radio-button-label {
+          
+          &::before {
+            background-color: $default;
+            border-color: $default;
+          }
+          
+          &:hover::before {
+            background-color: $hover;
+            border-color: $hover;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,9 +1,9 @@
 // общие стили для инпутов
 %input {
   outline: none;
-  color: $black-01;
-  border: 1px solid $black-05;
-  background-color: $white;
+  color: var(--text-color);
+  border: 1px solid var(--input-border);
+  background-color: var(--input-bg);
   padding: 5px 4px 7px 12px;
   border-radius: $input-border-radius;
   display: flex;
@@ -16,16 +16,17 @@
 }
 
 %input-wrapper {
-  color: $black-01;
+  color: var(--text-color);
   align-items: center;
-  border: 1px solid $black-05;
-  background-color: $white;
+  border: 1px solid var(--input-border);
+  background-color: var(--input-bg);
   border-radius: $input-border-radius;
   display: flex;
   justify-content: space-between;
   height: 32px;
 
   & > input[class*="input"] {
+    color: inherit;
     background-color: transparent;
     border: none;
     outline: none;
@@ -51,14 +52,14 @@
 }
 
 %input-focused {
-  border: 1px solid $black-02;
+  border: 1px solid var(--input-border-focus);
   box-shadow: none;
 }
 
 %input-disabled {
-  border-color: $black-05;
+  border-color: var(--input-border-disabled);
   // Из-за important в styles-esphere
-  background-color: $black-07 !important;
+  background-color: var(--input-bg-disabled) !important;
   color: $black-03 !important;
 }
 

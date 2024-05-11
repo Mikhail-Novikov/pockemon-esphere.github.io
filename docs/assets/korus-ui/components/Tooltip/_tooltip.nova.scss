@@ -8,7 +8,7 @@
       left: 50%;
       transform: translateX(-50%);
       border-width: 8px 8px 0;
-      border-top-color: $black-01;
+      border-top-color: var(--tooltip-bg);
     }
   }
 
@@ -21,7 +21,7 @@
       left: 50%;
       transform: translateX(-50%);
       border-width: 0 8px 8px;
-      border-bottom-color: $black-01;
+      border-bottom-color: var(--tooltip-bg);
     }
   }
 
@@ -34,7 +34,7 @@
       left: 100%;
       transform: translateY(-50%);
       border-width: 8px 0 8px 8px;
-      border-left-color: $black-01;
+      border-left-color: var(--tooltip-bg);
     }
   }
 
@@ -47,7 +47,7 @@
       right: 100%;
       transform: translateY(-50%);
       border-width: 8px 8px 8px 0;
-      border-right-color: $black-01;
+      border-right-color: var(--tooltip-bg);
     }
   }
 
@@ -61,7 +61,7 @@
       right: 0;
       transform: translateX(-150%);
       border-width: 8px 8px 0;
-      border-top-color: $black-01;
+      border-top-color: var(--tooltip-bg);
     }
   }
 
@@ -75,7 +75,7 @@
       left: 0;
       transform: translateX(150%);
       border-width: 8px 8px 0;
-      border-top-color: $black-01;
+      border-top-color: var(--tooltip-bg);
     }
   }
 
@@ -89,7 +89,7 @@
       right: 0;
       transform: translateX(-150%);
       border-width: 0 8px 8px;
-      border-bottom-color: $black-01;
+      border-bottom-color: var(--tooltip-bg);
     }
   }
 
@@ -102,7 +102,7 @@
       left: 0;
       transform: translateX(150%);
       border-width: 0 8px 8px;
-      border-bottom-color: $black-01;
+      border-bottom-color: var(--tooltip-bg);
     }
   }
 }
@@ -111,6 +111,7 @@
   position: absolute;
   z-index: $zindex-tooltip;
   max-width: 384px;
+  min-width: 52px;
   font-size: 14px;
   font-style: normal;
   font-weight: normal;
@@ -120,16 +121,22 @@
   text-transform: none;
   white-space: normal;
   letter-spacing: normal;
-  color: $white;
-  background-color: $black-01;
+  color: var(--text-reverse-color);
+  background-color: var(--tooltip-bg);
   border-radius: 8px;
   transition: opacity .2s;
 
   div:last-child {
     padding: 16px;
-    //IE 11 --- bugfix: early line wrap(other calculated values border-box);
-    width: calc(100% + 7px);
     word-wrap: break-word;
+  }
+
+  //IE 11 --- bugfix: early line wrap(other calculated values border-box);
+  @media all and (-ms-high-contrast:none) {
+
+    *::-ms-backdrop, div:last-child {
+      width: calc(100% + 7px);
+    }
   }
 
   &-wrapper {
@@ -178,13 +185,16 @@
   }
 
   // класс для тултипа, закрывающегося по кнопке
+
   &.closable {
+
     div:last-child {
       padding-right: 32px;
     }
   }
 
   // кнопка закрытия тултипа
+
   .button-close {
     position: absolute;
     top: 4px;
@@ -196,7 +206,7 @@
     min-width: 0;
 
     &::after {
-      color: $black-05;
+      color: var(--tooltip-close-color);
       content: "\e995";
       font-family: "prodicon";
       font-size: 20px;
@@ -206,14 +216,8 @@
     &:hover {
 
       &::after {
-        color: $text-reverse;
+        color: var(--text-reverse-color);
       }
     }
-  }
-}
-
-@media (max-width: 600px) {
-  .tooltip {
-    max-width: 50%;
   }
 }

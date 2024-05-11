@@ -1,0 +1,45 @@
+@import "../variables/_base.scss";
+
+$active-color: #4a8ed2;
+$edit-color: #f49530;
+
+.fuel {
+
+  > div > div {
+    color: $gray-dark;
+    border: solid $gray;
+    border-width: 1px 0 1px 1px;
+    vertical-align: middle;
+    border-collapse: collapse;
+
+    &.last, &:last-child {
+      border-right-width: 1px;
+    }
+
+    &.active {
+      background: aliceblue;
+      color: $active-color;
+      border-color: $active-color;
+      font-weight: bold;
+
+      + div {
+        border-left-color: $active-color;
+      }
+    }
+  }
+
+  &.edit {
+
+    > div > div:hover {
+      border-color: $edit-color;
+      background: #fff;
+      color: $edit-color;
+      cursor: pointer;
+
+      + div {
+        border-left-color: $edit-color;
+      }
+    }
+  }
+}
+

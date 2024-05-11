@@ -1,6 +1,6 @@
 module.exports = {
   // title приложения
-  appName: 'Korus Template',
+  appName: 'Картотека покемонов',
   // Названия приложения для шапки
-  appHeaderName: 'Korus Template',
+  appHeaderName: 'Картотека покемонов',
 };

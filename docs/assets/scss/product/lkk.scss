@@ -1,0 +1,1220 @@
+@import "../variables/themes/_nova.scss";
+
+/* START правки из-за устаревшего Кендо */
+
+@font-face {
+  font-family: 'WebComponentsIcons';
+  src: url("../../fonts/kendo-glyphs/WebComponentsIcons.woff2"),
+       url("../../fonts/kendo-glyphs/WebComponentsIcons.woff"),
+       url("../../fonts/kendo-glyphs/WebComponentsIcons.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.i-button {
+
+  &:hover, &.active {
+
+    &::before {
+      color: $black-01;
+    }
+  }
+}
+
+.k-dropdown {
+  background-color: transparent;
+}
+
+.nova .k-upload-button {
+  margin-top: 0;
+  padding: .7rem 2.4rem;
+  border-radius: 1.6rem;
+  line-height: 1.6rem;
+  color: $gray-darker;
+  background-color: $gray-lighter;
+  border-color: $black-06;
+}
+
+.k-checkbox-label::before,
+.k-checkbox-label::after {
+  display: inline-flex;
+}
+
+.message {
+  border-width: .1rem;
+}
+
+.k-radio-label::before,
+.k-radio:checked + .k-radio-label::after {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Сокрытие старых блоков .k-upload для соответствия гайдам */
+
+.k-upload .k-upload-files,
+.k-upload .k-clear-selected,
+.k-upload .k-upload-selected {
+  display: none;
+}
+
+/* Радиус для полей, расположеных не на белом фоне */
+
+.k-datepicker {
+  border-radius: .8rem;
+}
+
+/* календарь */
+
+.k-animation-container .k-calendar-container {
+  width: 20.4rem;
+}
+
+.k-calendar {
+
+  & [class*="k-icon k-i-arrow-"],
+  & [class^="k-icon k-i-arrow-"] {
+    font-size: 2rem;
+  }
+
+  .k-nav-fast {
+    text-transform: none;
+  }
+
+  thead th {
+    padding: .8rem .2rem;
+  }
+
+  th {
+    line-height: inherit;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+
+  & .k-header,
+  & .k-header .k-link,
+  & .k-footer,
+  & .k-footer .k-link {
+    display: flex;
+    flex-direction: row;
+  }
+
+  & .k-header,
+  & .k-footer {
+    position: relative;
+    text-align: center;
+  }
+
+  & .k-header .k-link,
+  & .k-footer .k-link {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* END правки из-за устаревшего Кендо */
+
+.auth .header, .widget .header .user-box {
+  display: none;
+}
+
+// Layouts
+
+.courier {
+  background-image: url('../../images/lkk/bg-courier.png');
+  background-position: 110% 50%;
+  background-repeat: no-repeat;
+  background-size: auto 22.5rem;
+}
+
+.hand {
+  background-image: url('../../images/lkk/hand.png');
+  background-position: 95% 100%;
+  background-repeat: no-repeat;
+  background-size: auto 15rem;
+}
+
+.box-form {
+
+  .inner {
+
+    &:hover {
+      background-color: lightyellow;
+    }
+
+    &:not(:hover) .hide {
+      visibility: hidden;
+    }
+  }
+}
+
+// Notification
+
+.info-dcb {
+
+  .message {
+    background-color: $accent-05;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-color: $accent-03;
+    color: inherit;
+    padding: 1rem 2rem;
+
+    a {
+      color: inherit;
+    }
+
+    .button {
+      border-color: inherit;
+    }
+  }
+}
+
+.message .list-item {
+  padding-left: 1.6rem;
+}
+
+// Dropzone
+
+.upload {
+
+  .k-dropzone {
+    display: block;
+
+    em {
+      display: block;
+      margin: 1rem 0;
+    }
+  }
+
+  .k-button {
+    border-color: transparent;
+    color: $text-reverse;
+    padding: .5rem 1.9rem;
+    margin-top: 1rem;
+  }
+}
+
+.sphere .upload .k-button {
+  background: steelblue;
+}
+
+.new .upload .k-button {
+  background: #2dba59;
+}
+
+.nova .upload .k-button {
+  background: $primary-02;
+  color: $white;
+  border-radius: 2.4rem;
+}
+
+.dcb .upload .k-button {
+  background: #4ea31e;
+}
+
+// Перекрашиваем активный пункт меню в nova
+
+.nova .header .menu-h li.level-1.active {
+  background: transparent;
+  color: $accent-02;
+}
+
+.bg-gray-05 {
+  background-color: $black-07;
+}
+
+.dcb .bg-gray-05,
+.sphere .bg-gray-05 {
+  background-color: $gray-lighter;
+}
+
+a, .button {
+
+  & > [class^="prodicon-"] {
+    color: inherit;
+  }
+
+  .txt-light-gray {
+    color: $black-04;
+  }
+}
+
+.txt-light-gray {
+  color: $black-04;
+}
+
+.icon-28 {
+  font-size: 2.8rem;
+}
+
+.icon-10rem {
+  width: 10rem;
+  height: 10rem;
+}
+
+.icon-inline {
+  font-size: inherit;
+}
+
+.button.more {
+  line-height: 2.1rem;
+}
+
+.scroll-vertical-28 {
+  max-height: 28rem;
+  overflow-y: auto;
+}
+
+.scroll-vertical-17 {
+  max-height: 17rem;
+  overflow-y: auto;
+}
+
+.col-2 > li {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.hover:hover {
+  border-radius: .4rem;
+  cursor: pointer;
+  background-color: $black-07;
+}
+
+.height-70 {
+  min-height: 7rem;
+}
+
+.vertical-text-bottom {
+  vertical-align: text-bottom;
+}
+
+/* Кастомная дропзона */
+
+.upload-center {
+
+  .k-dropzone {
+    flex-direction: column;
+    padding: 1.6rem;
+    text-align: center;
+
+    em {
+      width: 100%;
+      margin-left: 0;
+      margin-bottom: .8rem;
+      font-size: 1.4rem;
+      line-height: 2rem;
+      color: $black-01;
+    }
+  }
+
+  .k-upload {
+    border-radius: .8rem;
+    border-color: $black-05;
+  }
+
+  .k-upload-button {
+    order: 1;
+    padding: .5rem 2.4rem;
+    border-radius: 1.6rem;
+    background-color: $white;
+  }
+}
+
+/* Логотип */
+
+.logo-container {
+  margin: -.5rem 0;
+
+  img {
+    vertical-align: top;
+  }
+}
+
+/* QR код */
+
+.qr-code-container {
+  width: 100%;
+  overflow: hidden;
+  border: .2rem solid $black-05;
+  border-radius: 1rem;
+
+  img {
+    vertical-align: top;
+    width: 100%;
+  }
+}
+
+/* START стили для виджета */
+
+.widget-fixed {
+  position: fixed;
+  bottom: 15%;
+  right: 1rem;
+  height: 5rem;
+  width:  5rem;
+  border-radius: 3rem;
+  background: $brand-warning;
+  color: $white;
+  padding: .5rem;
+  transition: ease .5s;
+  white-space: nowrap;
+  font-weight: 300;
+  opacity: .95;
+  cursor: pointer;
+
+  &:hover {
+    width: 25rem;
+    transition: ease .5s;
+  }
+
+  .txt {
+    overflow: hidden;
+  }
+
+  h2 {
+    line-height: 2.4rem;
+  }
+
+  & [class*="med-line-"],
+  & [class*="med-line-"]:after,
+  & [class*="med-line-"]:before {
+    font-size:   3rem;
+    line-height: 3rem;
+  }
+
+  & [class*="med-line-"] {
+    margin: 1rem 2rem 1rem 1rem;
+  }
+}
+
+.ringbase {
+  position:absolute;
+  top:  0;
+  left: 0;
+  width:  6rem;
+  height: 6rem;
+  border-radius: 3rem;
+  opacity: 0;
+  z-index: 10;
+}
+
+.ring1 {
+  box-shadow:0 0 .5rem 0 $white, inset 0 0 .5rem 0 $white;
+  animation: ring-in 2s ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.ring2 {
+  box-shadow:0 0 1rem 0 $brand-warning, inset 0 0 1rem 0 $brand-warning;
+  animation: ring-out 2s ease-in-out;
+  animation-iteration-count: infinite;
+  animation-delay: .25s;
+}
+
+@keyframes ring-in {
+
+  0% {
+    transform: scale(.1, .1); opacity: .0;
+  }
+
+  50% {
+    opacity: .6;
+  }
+
+  100% {
+    transform: scale(1.1, 1.1); opacity: .0;
+  }
+}
+
+@keyframes ring-out {
+
+  0% {
+    transform: scale(1.1, 1.1); opacity: .0;
+  }
+
+  50% {
+    opacity: .6;
+  }
+
+  100% {
+    transform: scale(2, 2); opacity: .0;
+  }
+}
+
+/* END стили для виджета */
+
+/* валидация */
+
+.k-textbox.k-warning {
+  border-color: $brand-warning;
+}
+
+/* общее */
+
+.transition-none {
+  transition: none;
+}
+
+.overflow-visible {
+  overflow: visible !important;
+}
+
+.button-example {
+  cursor: auto;
+
+  &:active {
+    background-color: $white;
+  }
+
+  &:hover, &:active, &:not(.blank):focus, &.more:not(.blank):focus {
+    border-color: $black-05;
+  }
+
+  &:not(.blank):focus, &.more:not(.blank):focus {
+    border-width: 1px;
+    padding: .5rem;
+  }
+}
+
+.sphere .button-example {
+
+  &:active, &:hover {
+    background-color: $gray-lighter;
+  }
+
+  &:hover, &:active, &:not(.blank):focus, &.more:not(.blank):focus {
+    border-color: $gray;
+  }
+}
+
+/* сообщение об ошибке под инпутом */
+
+.invalid-message {
+  position: relative;
+  padding-top: .8rem;
+  padding-left: 2rem;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+
+  i {
+    left: 0;
+    top: 1rem;
+    font-size: 1.6rem;
+    line-height: 1.2rem;
+  }
+}
+
+/* для яндекс-браузера, замена ярко-желтого поля с предвыбранным значением на бледно-голубой, как chrome  */
+
+input.k-textbox:-webkit-autofill,
+input.k-textbox:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px rgb(232, 240, 254) inset;
+}
+
+/* START Стили для баннеров  */
+
+.banner {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+
+  &.horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.banner-text-wrap {
+  width: 65%;
+  padding: 2.4rem;
+  position: relative;
+  z-index: 2;
+
+  .vertical & {
+    margin-bottom: 1.6rem;
+  }
+}
+
+.banner-img {
+  background-color: $black-07;
+
+  img {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+  }
+
+  .horizontal & {
+    width: 53rem;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .vertical & {
+    width: 25.2rem;
+    height: 13.2rem;
+    position: absolute;
+    right: -8.8rem;
+    bottom: 0;
+    overflow: hidden;
+  }
+
+  &::before {
+    content: ' ';
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .horizontal &::before {
+    width: 5rem;
+    background-image: url(https://cdn.esphere.ru/images/lkk/mask-for-banner-white.svg);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: 100% 100%;
+  }
+
+  .vertical &::before {
+    width: 100%;
+    background-image: radial-gradient(circle at 13.6rem 13.6rem, transparent 13.5rem, $white 13.6rem);
+  }
+
+  .secondary.vertical &::before {
+    background-image: radial-gradient(circle at 13.6rem 13.6rem, transparent 13.5rem, $black-07 13.6rem);
+  }
+
+  .secondary.horizontal &::before {
+    background-image: url(https://cdn.esphere.ru/images/lkk/mask-for-banner-gray.svg);
+  }
+}
+/* END Стили для баннеров  */
+
+/* Спиннер загрузки */
+
+.loading-small {
+  display: inline-block;
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+
+  &::before {
+    content: url(https://cdn.esphere.ru/images/loading-spinner-small.svg);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 2rem;
+    height: 2rem;
+    transform: translateY(-50%);
+    animation: rotate-clockwise 1s linear infinite;
+  }
+
+  .sphere &::before {
+    content: url(https://cdn.esphere.ru/images/loading-spinner-sky-small.svg);
+  }
+}
+/* END Спиннер загрузки  */
+
+.nova {
+
+  .checking-button {
+    width: 24.3rem;
+
+    &.min {
+      width: 16rem;
+    }
+  }
+
+  .wrapper {
+    max-width: 190rem;
+
+    .info-block {
+      width: 47.4rem;
+    }
+
+    .content-block {
+      width: calc(100% - 47.4rem);
+      max-width: 96.6rem;
+    }
+  }
+
+  .main-container {
+    max-width: calc( 190rem + 3.2rem );
+    margin: 0 auto;
+  }
+
+  .signature-list {
+    min-height: calc( 100vh - 39.5rem )
+  }
+
+  .user-box {
+    position: relative;
+    z-index: 101;
+    background-color: $white;
+  }
+
+  .navigation {
+    max-width: calc( 190rem - 1.2rem );
+    margin: 0 auto;
+    padding: .6rem 0;
+
+    .shop-button {
+      border-left: 1px solid $black-05 !important;
+
+      button {
+        padding: .6rem 1.6rem;
+      }
+    }
+
+    .person-block {
+      max-width: 24.8rem;
+      padding: .8rem 1.6rem;
+    }
+
+    .link-menu {
+
+      li {
+
+        > a {
+          padding: 0;
+          margin: 1rem;
+          transition: .2s;
+
+          &:hover, &:active, &:focus {
+            background-color: transparent !important;
+            font-weight: 500;
+          }
+        }
+
+        &.active {
+          background-color: transparent;
+
+          a {
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .head-service.title {
+    margin-bottom: 0;
+
+    .title-wrapper {
+      max-width: calc( 190rem - 2.4rem);
+      margin: 0 auto;
+    }
+  }
+
+  .personal-box {
+    padding: .6rem 1.6rem .6rem 2.9rem;
+
+    .co-browsing-eye {
+      width: 2rem;
+      height: 2rem;
+      background-size: 2rem;
+    }
+  }
+
+  .k-tabstrip {
+
+    .k-item.k-state-active {
+
+      .k-loading {
+        border-color: $primary-02;
+      }
+    }
+  }
+
+  .k-sms-box {
+    width: 19rem;
+
+    .prodicon-refresh {
+      position: absolute;
+      left: .6rem;
+      top: .6rem;
+      z-index: 1;
+    }
+
+    .prodicon-backward {
+      position: absolute;
+      right: .6rem;
+      top: .5rem;
+    }
+  }
+
+  ul.list-item,
+  ol.list-item {
+
+    ul.list-check {
+      list-style-type: none;
+    }
+  }
+
+  .k-widget, .k-textbox, input[disabled] {
+    border-radius: .8rem;
+  }
+
+  .k-widget.k-window {
+    border-radius: 1.6rem;
+  }
+
+  input[disabled], .k-state-disabled {
+    background-image: none !important;
+    pointer-events: none;
+    border: 1px solid $black-05 !important;
+    color: #a9a9a9 !important;
+    cursor: not-allowed !important;
+
+    .k-select {
+      opacity: .3;
+    }
+
+    &.k-numeric-wrap {
+
+      .k-formatted-value.k-value {
+        border: none !important;
+      }
+    }
+  }
+
+  .danger .k-datepicker .k-picker-wrap {
+    border-color: rgba(193,16,48,.5);
+    color: $error-02;
+  }
+
+  .k-state-disabled [disabled] {
+    opacity: 1;
+  }
+
+  .notifications-wrapper {
+    z-index: 99999;
+  }
+
+  button {
+
+    &.loading {
+      color: transparent !important;
+    }
+
+    &.loading.disabled {
+      background: $primary-04 !important;
+    }
+
+    &.loading.disabled:not(.primary) {
+      background: $white !important;
+    }
+  }
+}
+
+.info-panel.editable-panel,
+.panel.editable-panel,
+.collapse.editable-panel {
+  background-color: $black-07;
+  border-color: $black-07;
+}
+
+.dropdown.button.more {
+  line-height: 2rem;
+}
+
+.list.form {
+
+  dd {
+
+    &:not(:last-child) {
+      margin-bottom: 1.2rem;
+    }
+
+    label {
+      margin-top: .6rem;
+    }
+  }
+}
+
+.list {
+
+  dd {
+
+    &.min-height-none {
+      min-height: 0;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: .9rem;
+    }
+  }
+}
+
+.street-select-form {
+  min-height: 0;
+  margin-top: -.3rem;
+  margin-bottom: .8rem !important;
+
+  label {
+    margin-top: 0 !important;
+  }
+
+  li {
+    padding: 0
+  }
+}
+
+.chips {
+  color: $white;
+
+  &.warning {
+    background-color: $accent-02;
+  }
+
+  &.danger {
+    background-color: $error-02;
+  }
+
+  &.default {
+    background-color: $black-04;
+  }
+}
+
+.progress {
+
+  &-bar {
+    height: .2rem;
+    background-color: $black-07;
+
+    &-item {
+      height: 100%;
+      background-color: $primary-02;
+      border-top-right-radius: .2rem;
+      border-bottom-right-radius: .2rem;
+    }
+  }
+}
+
+.onboarding-modal {
+
+  .onboarding-video {
+    height: 20rem;
+    background-color: $black-07;
+  }
+
+  ol ul {
+    list-style-type: disc;
+  }
+}
+
+
+.table-tabs {
+  margin-left: 1rem;
+  padding-bottom: .1rem;
+}
+
+.info-panel, .collapse {
+  border: 1px solid $black-05;
+  border-radius: 1.6rem;
+  overflow: hidden;
+
+  &.host .content:nth-child(2) {
+    min-height: 16.8rem;
+  }
+
+  &.approval .content:nth-child(2) {
+    min-height: 26.2rem;
+  }
+
+  &.info {
+    background-color: $secondary-05;
+    border-color: $primary-02;
+  }
+
+  .title {
+    border: 0;
+    margin: 0;
+    padding: 2rem 3.2rem;
+
+    h5 {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+    }
+
+    .prodicon-caretdown {
+      color: $gray-base;
+      font-size: 1.6rem;
+      line-height: 2.2rem;
+      margin-left: 1.6rem;
+      transition: transform .3s;
+    }
+  }
+
+  .content {
+    border-top: 1px solid $black-05;
+  }
+}
+
+.filters-block {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.action-buttons {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $black-06;
+
+  div.main-container {
+    padding: 2.4rem 2.8rem;
+  }
+}
+
+/* Notifications */
+
+.notifications-wrapper {
+  position: fixed;
+
+  &.notifications-top {
+    width: 37.6rem;
+    right: 2.8rem;
+    top: 8.5rem;
+    bottom: auto;
+    left: auto;
+  }
+
+  .notifications-item {
+    display: flex;
+    position: relative;
+    margin-bottom: .8rem;
+    padding: 1.6rem 3.2rem 1.6rem 1.6rem;
+    border-radius: .8rem;
+    box-shadow: 0 .2rem .7rem 0 rgba(31, 31, 34, .25);
+    background-color: $white;
+  }
+
+  .notifications-content {
+    width: 30rem;
+    margin-left: .8rem;
+  }
+
+  .notifications-icon-close {
+    display: block;
+    position: absolute;
+    top: .6rem;
+    right: .6rem;
+    margin: 0;
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+
+    &::before {
+      display: block;
+      width: auto;
+      height: auto;
+      font-size: 2rem;
+      font-family: 'prodicon', sans-serif;
+      color: $black-05;
+      content: '\e995';
+    }
+  }
+}
+/* Notifications end */
+
+/* Stepper styles */
+
+.stepper-container {
+  box-shadow: 0 1rem 1.5rem rgba(228, 232, 235, .5);
+
+  ul {
+    display: flex;
+
+    li {
+      padding: .8rem 1.1rem;
+      border: 1px solid $black-05;
+      color: $black-03;
+      margin-right: 1.2rem;
+      position: relative;
+      height: 3.6rem;
+      box-sizing: border-box;
+      background-color: $white;
+      border-radius: .6rem;
+      cursor: default;
+
+      &::before {
+        font-family: 'prodicon' !important;
+        font-size: 2rem;
+        position: absolute;
+        left: 1.2rem;
+      }
+
+      &:not(:last-child) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right: 0;
+        margin-right: 3rem;
+
+        &::after {
+          content: '';
+          position: absolute;
+          z-index: -1;
+          height: 2.8rem;
+          width: 2.8rem;
+          top: .2rem;
+          right: -1.4rem;
+          border: 1px solid $black-05;
+          border-radius: .6rem;
+          transform: rotate(45deg) scale(.96);
+        }
+      }
+
+      &.active, &.active::after {
+        border-color: $primary-02;
+        background: $black-07;
+        color: $black-01;
+      }
+
+      &.passed {
+        color: $black-05;
+
+        &::before {
+          content: "\e9a0";
+          color: $black-05;
+        }
+      }
+
+      &.passed, &.done, &.fail {
+        padding-left: 3.6rem;
+      }
+
+      &.done::before {
+        content: "\e9b0";
+        color: $primary-02;
+      }
+
+      &.fail::before {
+        content: "\e9b6";
+        color: $error-02;
+      }
+    }
+  }
+}
+/* Stepper styles end */
+
+/* Small Info List Styles */
+
+.small-list {
+
+  dd {
+    min-height: 1.6rem;
+    margin-bottom: .8rem;
+  }
+
+  &.w-11 {
+
+    dt {
+      width: 10%;
+    }
+
+    dd {
+      padding-left: 11%;
+    }
+  }
+
+  &.w-15 {
+
+    dt {
+      width: 14%;
+    }
+
+    dd {
+      padding-left: 15%;
+    }
+  }
+}
+/* Small Info List Styles end */
+
+/* Profile Sidebar */
+
+.profile-sidebar {
+  position: fixed;
+  right: -42.4rem;
+  top: 7.3rem;
+  height: 100vh;
+  padding-top: 3.1rem;
+  width: 42.4rem;
+  background-color: $black-07;
+  box-shadow: 0 .6rem 1rem 0 rgba(31, 31, 34, .25);
+  z-index: 100;
+  transition: .3s;
+}
+
+.profile-sidebar.opened {
+  right: 0;
+}
+/* Profile Sidebar end */
+
+@media only screen and (max-width: 1280px) {
+
+  .nova .wrapper {
+
+    .content-block {
+      width: calc(100% - 40.4rem)
+    }
+
+    .info {
+
+      &-block {
+        width: 40.4rem;
+      }
+
+      &-panel {
+
+        > div {
+          padding: 1.6rem 2.4rem !important;
+
+          + div {
+            padding: 2rem 2.4rem !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Clickable dropdown */
+
+.dropdown[mode="click"] {
+  position: relative;
+
+  &.active {
+    background-color: $black-05;
+  }
+
+  &:hover ul {
+    display: none;
+  }
+
+  ul {
+    z-index: 1;
+
+    &.pos-bottom {
+      margin-top: 2px;
+    }
+
+    &.pos-left {
+      right: 0;
+      left: unset;
+    }
+  }
+}
+
+/* Clickable dropdown end */

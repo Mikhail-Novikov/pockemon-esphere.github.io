@@ -6,6 +6,7 @@ export type Pokemon = {
 };
 
 export type PokemonsApiResponse = {
+  abilities: string;
   name: string;
   url: string;
 };

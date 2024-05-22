@@ -1,6 +1,7 @@
 import { createHttpClient, errorHandler } from '@shared/lib/request';
 
 import { globalConfig } from '@shared/config';
+import { DEFAULT_POKEMONS } from '@shared/constants';
 import type { Pokemon, PokemonsApiResponse } from './types';
 
 const request = createHttpClient({
@@ -9,18 +10,30 @@ const request = createHttpClient({
   errorHandler,
 });
 
-const getPokemonInfo = async (name: string) => {
+const getPokemonInfo = async (name: string): Promise<string> => {
   const response = await fetch(`${globalConfig.baseUrl}${name}`);
   const data = await response.json();
 
   return data.forms.front_default;
 };
-
-const getPokemonsList = async (): Promise<PokemonsApiResponse[]> => {
-  const {
-    data: { results },
-  } = await request.get<{ results: PokemonsApiResponse[] }>({ url: '/' });
-  return results;
+/**
+ * ### Метод для получения списка покемонов
+ *
+ * @param {number} [size=DEFAULT_POKEMONS.pokemonsLimit] - Выгрузка кол-ва покемонов на странице.
+ * @param {number} [page=0] - Номер страницы.
+ * @returns {Promise<PokemonsApiFullResponse>} Список покемонов
+ */
+const getPokemonsList = async ({
+  size = DEFAULT_POKEMONS.pokemonsLimit,
+  page = 0,
+}: {
+  size?: number;
+  page?: number;
+}): Promise<PokemonsApiResponse[]> => {
+  const { data: response } = await request.get<PokemonsApiResponse[]>({
+    url: `?limit=${size}&offset=${page}`,
+  });
+  return response;
 };
 
 export const getPokemonById = async (PokemonId: number): Promise<Pokemon> => {

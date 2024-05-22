@@ -6,6 +6,6 @@ export const globalConfig = {
     pokemons: () => '/pokemons',
     compare: () => '/compare',
   },
-  baseUrl: 'https://pokeapi.co/api/v2/pokemon-form/',
+  baseUrl: 'https://pokeapi.co/api/v2/pokemon',
   environment: process.env.NODE_ENV,
 } as const;

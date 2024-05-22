@@ -17,32 +17,13 @@ import { actions } from './ducks';
 function* loadPokemonsSaga(): SagaIterator {
   const pokemons: SagaReturnType<typeof pokemonApi.getPokemonsList> = yield call(
     pokemonApi.getPokemonsList,
+    { page: 1, size: 10 },
   );
-
-  console.log('pokemonApi', pokemons);
-
   yield put(actions.setPokemons(pokemons));
-}
-
-/**
- * Загрузка информации
- * @param {string} name - имя
- * @returns {void}
- */
-function* loadPokemonsInfoSaga(name: string): SagaIterator {
-  const pokemonInfo: SagaReturnType<typeof pokemonApi.getPokemonInfo> = yield call(
-    pokemonApi.getPokemonInfo,
-    name,
-  );
-
-  console.log('pokemonApi', pokemonInfo);
 }
 
 export const sagas = {
   loadPokemons: composeSaga(loadPokemonsSaga, [
-    loader(config.loaders.loadPokemons),
-  ]),
-  loadPokemonsInfo: composeSaga(loadPokemonsInfoSaga, [
     loader(config.loaders.loadPokemons),
   ]),
 };

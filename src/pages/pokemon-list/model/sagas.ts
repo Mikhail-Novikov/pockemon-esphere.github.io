@@ -27,14 +27,6 @@ function* gateOpenedSaga(): SagaIterator {
     }),
   );
 }
-/**
- * Получение информации о покемоне
- * @param {string} name - имя покемона
- * @returns {void}
- */
-function* getPokemonInfoSaga(name: string): SagaIterator {
-  yield call(pokemonModel.sagas.loadPokemonsInfo, name);
-}
 
 /**
  * Закрытие гейта

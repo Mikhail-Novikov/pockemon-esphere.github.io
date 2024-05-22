@@ -1,25 +1,24 @@
-import { createSlice } from '@reduxjs/toolkit';
-
-import { PokemonsApiResponse } from '@shared/api/pokemon-api';
-
 import { setStoreField } from '@shared/lib/store';
+import { Pagination } from '@shared/types';
+
+import { createSlice } from '@reduxjs/toolkit';
 import { config } from '../config';
 
 const initialState = {
-  pokemons: [] as PokemonsApiResponse[],
+  paging: {} as Pagination,
 };
 
 export type ModelState = typeof initialState;
 
 /** Cлайс модели */
-const pokemonSlice = createSlice({
+const filterSlice = createSlice({
   name: config.modelName,
   initialState,
   reducers: {
-    setPokemons: setStoreField('pokemons'),
+    setPaging: setStoreField('paging'),
 
     reset: () => initialState,
   },
 });
 
-export const { reducer, actions } = pokemonSlice;
+export const { reducer, actions } = filterSlice;

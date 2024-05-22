@@ -3,7 +3,7 @@ const proxy = require('./proxy');
 
 module.exports = {
   devServer: {
-    port: 3000,
+    port: 3001,
     allowedHosts: 'all',
     open: true,
     static: [paths.appDist],

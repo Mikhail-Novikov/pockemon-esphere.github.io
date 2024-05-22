@@ -2,12 +2,12 @@ import { SagaIterator } from 'redux-saga';
 import { call, all, fork } from 'redux-saga/effects';
 
 import { gateModel } from '@shared/lib/store-gate';
-import { filterModel } from '@shared/lib/store-filter';
 
 import { taskListPageModel } from '@pages/tasks-list';
 
 import { initAppModel } from '@processes/init';
 import { pokemonListPageModel } from '@pages/pokemon-list';
+import { filterModel } from '@src/processes/filter';
 
 /**
  * Главная сага - точка входа
@@ -22,7 +22,6 @@ export function* rootSaga(): SagaIterator {
     [
       /** shared */
       gateModel.sagas.watcher,
-      filterModel.sagas.watcher,
 
       /** entities */
 
@@ -34,6 +33,7 @@ export function* rootSaga(): SagaIterator {
 
       /** proccesses */
       initAppModel.sagas.watcher,
+      filterModel.sagas.watcher,
     ].map(fork),
   );
 }

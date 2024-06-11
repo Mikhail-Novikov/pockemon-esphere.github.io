@@ -9,4 +9,5 @@ export type PokemonsApiResponse = {
   abilities: string;
   name: string;
   url: string;
+  results: Array<{ name: string; url: string }>;
 };

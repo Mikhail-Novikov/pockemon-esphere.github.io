@@ -7,6 +7,7 @@ import { config } from '../config';
 
 const initialState = {
   pokemons: [] as PokemonsApiResponse[],
+  list: [] as Array<{ name: string; url: string }>,
 };
 
 export type ModelState = typeof initialState;
@@ -17,7 +18,7 @@ const pokemonSlice = createSlice({
   initialState,
   reducers: {
     setPokemons: setStoreField('pokemons'),
-
+    setListPokemonsName: setStoreField('list'),
     reset: () => initialState,
   },
 });

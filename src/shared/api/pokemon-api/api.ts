@@ -29,8 +29,8 @@ const getPokemonsList = async ({
 }: {
   size?: number;
   page?: number;
-}): Promise<PokemonsApiResponse[]> => {
-  const { data: response } = await request.get<PokemonsApiResponse[]>({
+}): Promise<PokemonsApiResponse> => {
+  const { data: response } = await request.get<PokemonsApiResponse>({
     url: `?limit=${size}&offset=${page}`,
   });
   return response;

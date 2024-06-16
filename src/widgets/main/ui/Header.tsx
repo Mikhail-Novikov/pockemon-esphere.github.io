@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
 import * as L from 'korus-ui';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+
+// ...
 
 import { globalConfig } from '@shared/config';
 import { selectors } from '@entities/pokemon/model';
 
 export const Header: React.FC = () => {
+  const history = useHistory();
   const [isQueryLoading, setQueryLoading] = useState(false);
   const [searchData, setSearchData] = useState([]);
   const [searchForm, setSearchForm] = useState({
     ability: '',
     url: '',
+    query: '',
   });
 
   const pokemonsList = selectors.getListPokemons();
@@ -19,7 +23,7 @@ export const Header: React.FC = () => {
 
   const handleSearchItemClick = (item: string) => (): void => {
     setSearchForm({ ...searchForm, url: url[names.indexOf(item)] });
-    console.log('search', url[names.indexOf(item)], item);
+    history.push(`/pokemon/${item}`);
   };
 
   const SearchBoxItem: L.AutoCompleteTypes.AutoCompleteProps['itemRender'] = (
@@ -72,7 +76,6 @@ export const Header: React.FC = () => {
               itemRender={SearchBoxItem}
               data={searchData}
               textField="fullName"
-              value={searchForm.query}
               onChange={handleAutoCompleteChange}
               isLoading={isQueryLoading}
               inputRender={({ Element, elementProps }) => (

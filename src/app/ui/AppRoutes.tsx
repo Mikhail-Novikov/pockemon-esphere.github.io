@@ -5,7 +5,12 @@ import { globalConfig } from '@shared/config';
 
 import { MainWidget } from '@widgets/main';
 
-import { HomePage, PokemonsListPage, TasksListPage } from '@pages';
+import {
+  HomePage,
+  PokemonItemPage,
+  PokemonsListPage,
+  TasksListPage,
+} from '@pages';
 
 /**
  * Компонент с роутами приложения
@@ -25,6 +30,11 @@ export const AppRoutes: React.FC = () => (
         exact
         path={globalConfig.routes.pokemons()}
         component={PokemonsListPage}
+      />
+      <Route
+        exact
+        path={globalConfig.routes.pokemon()}
+        component={PokemonItemPage}
       />
     </Switch>
   </MainWidget>

@@ -38,3 +38,77 @@ td {
   min-height: 100vh;
 }
 
+.card-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 40rem;
+}
+
+.card-image img {
+  max-width: 30rem;
+  padding: 1.6rem;
+}
+
+.card-content {
+  min-width: 38rem;
+}
+.card-content .txt-first-letter::first-letter {
+  text-transform: uppercase;
+}
+
+.wrapper-checkbox {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: .6rem;
+}
+
+.rock, .stell, .water {
+  background-image: linear-gradient(to top, #c79081 0%, #dfa579 100%);
+}
+.ghost {
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
+.electric {
+  background-image: linear-gradient(to right, #f83600 0%, #f9d423 100%);
+}
+.bug {
+  background-image: linear-gradient(to top, #e6b980 0%, #eacda3 100%);
+}
+.poison {
+  background-image: linear-gradient(to top, #df89b5 0%, #bfd9fe 100%);
+}
+.normal {
+  background-image: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
+}
+.fairy {
+  background-image: linear-gradient(
+    to top,
+    #ff9a9e 0%,
+    #fecfef 99%,
+    #fecfef 100%
+  );
+}
+.fire {
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+}
+.grass {
+  background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+}
+.water {
+  background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+}
+.ground {
+  background-image: linear-gradient(315deg, #772f1a 0%, #f2a65a 74%);
+}
+.ice {
+  background-image: linear-gradient(120deg, #89f7fe 0%, #3DCEF3 100%);
+}
+.dragon {
+  background-image: linear-gradient(120deg, #624D4E 0%, #5060E1 100%);
+}
+.fighting {
+  background-image: linear-gradient(120deg, #624D4E 0%, #FF8000 100%);
+}
+

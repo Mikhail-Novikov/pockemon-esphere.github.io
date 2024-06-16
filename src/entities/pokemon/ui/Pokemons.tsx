@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import * as L from 'korus-ui';
+import { useHistory } from 'react-router-dom';
 
-import { PokemonsApiResponse } from '@shared/api/pokemon-api';
+import { Pokemon, PokemonsApiResponse } from '@shared/api/pokemon-api';
+import { ToggleSelect } from '@features/select-compare';
 
 type PokemonsProps = {
   pokemons: PokemonsApiResponse;
 };
 
 export const Pokemons: React.FC<PokemonsProps> = ({ pokemons }) => {
+  const history = useHistory();
+  const item = pokemons.name;
   const { name, url } = pokemons;
-  const [pokemon, setPokemon] = useState<any>();
-  const [pokemonAbilites, setPokemonAbilities] = useState<any>();
+  const [pokemon, setPokemon] = useState<Pokemon>();
+  const [pokemonAbilites, setPokemonAbilities] = useState<string>();
 
   const fetchAbilities = async (
     pokemonData: PokemonsApiResponse,
@@ -38,9 +42,22 @@ export const Pokemons: React.FC<PokemonsProps> = ({ pokemons }) => {
     fetchUrl();
   }, [url]);
 
+  const handleClickBox = (): void => {
+    if (pokemon) {
+      history.push(`/pokemon/${item}`);
+    }
+  };
+
   return (
     <L.Div _colXxl3 _colLg4 _colMd6 _marginBottom24>
-      <L.Div _box _documentBox _inner24 _marginBottomNone _height100>
+      <L.Div
+        _box
+        _documentBox
+        _inner24
+        _marginBottomNone
+        _height100
+        onClick={handleClickBox}
+      >
         <L.Div _flexRow _alignItemsCenter>
           <L.Div _flexRow>
             <L.Div _subtitle>{pokemon?.id}</L.Div>
@@ -56,6 +73,7 @@ export const Pokemons: React.FC<PokemonsProps> = ({ pokemons }) => {
               <L.Tooltip title={pokemonAbilites}>{name}</L.Tooltip>
             </L.H2>
             <L.Div _subtitle>{pokemon?.types[0].type.name}</L.Div>
+            <ToggleSelect taskId={pokemon?.id} />
           </L.Div>
         </L.Div>
       </L.Div>

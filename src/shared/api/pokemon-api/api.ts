@@ -29,20 +29,24 @@ const getPokemonsList = async ({
 }: {
   size?: number;
   page?: number;
-}): Promise<PokemonsApiResponse> => {
-  const { data: response } = await request.get<PokemonsApiResponse>({
+}): Promise<PokemonsApiResponse[]> => {
+  const { data: response } = await request.get<PokemonsApiResponse[]>({
     url: `?limit=${size}&offset=${page}`,
   });
   return response;
 };
 
-export const getPokemonById = async (PokemonId: number): Promise<Pokemon> => {
-  const { data } = await request.get<Pokemon>({ url: `/${PokemonId}` });
+export const getPokemonByName = async (
+  PokemonName: string,
+): Promise<Pokemon> => {
+  const { data } = await request.get<Pokemon>({
+    url: `${PokemonName}`,
+  });
   return data;
 };
 
 export const pokemonApi = {
   getPokemonInfo,
   getPokemonsList,
-  getPokemonById,
+  getPokemonByName,
 };

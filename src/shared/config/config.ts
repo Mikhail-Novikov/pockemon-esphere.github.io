@@ -4,6 +4,7 @@ export const globalConfig = {
   routes: {
     home: () => '/',
     pokemons: () => '/pokemons',
+    pokemon: () => '/pokemon/:name',
     compare: () => '/compare',
   },
   baseUrl: 'https://pokeapi.co/api/v2/pokemon',

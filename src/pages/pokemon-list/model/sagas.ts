@@ -18,7 +18,8 @@ export const pageGate = createGate({ id: genId() });
  * @returns {void}
  */
 function* gateOpenedSaga(): SagaIterator {
-  yield call(pokemonModel.sagas.loadPokemons);
+  yield call(pokemonModel.sagas.loadPokemons, { page: 1, size: 10 });
+  yield call(pokemonModel.sagas.loadPokemonsNames);
 
   yield put(
     toastModel.actions.showToast({

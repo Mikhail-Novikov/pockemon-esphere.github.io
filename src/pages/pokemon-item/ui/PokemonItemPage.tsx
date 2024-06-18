@@ -19,7 +19,7 @@ export const PokemonItemPage: React.FC = () => {
   );
 
   const params = useParams<{ name: string }>();
-  const [pokemon, setPokemon] = React.useState<Pokemon>({});
+  const [pokemon, setPokemon] = React.useState<Pokemon>({} as Pokemon);
   const [loading, setLoading] = React.useState(false);
 
   useEffect(() => {

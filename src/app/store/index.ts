@@ -7,7 +7,6 @@ import { routerModel } from '@shared/lib/store-router';
 import { gateMonitor } from '@shared/lib/store-gate';
 import { filterMonitor } from '@shared/lib/store-filter';
 
-// eslint-disable-next-line import/no-named-as-default
 import rootReducer from './root-reducer';
 import { rootSaga } from './root-saga';
 

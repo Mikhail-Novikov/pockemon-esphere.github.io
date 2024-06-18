@@ -5,7 +5,7 @@ import { Link, useHistory } from 'react-router-dom';
 // ...
 
 import { globalConfig } from '@shared/config';
-import { selectors } from '@entities/pokemon/model';
+import { pokemonModel } from '@entities/pokemon';
 
 export const Header: React.FC = () => {
   const history = useHistory();
@@ -17,9 +17,9 @@ export const Header: React.FC = () => {
     query: '',
   });
 
-  const pokemonsList = selectors.getListPokemons();
-  const names = pokemonsList.map((item: { name: string }) => item.name);
-  const url = pokemonsList.map((item: { url: string }) => item.url);
+  const pokemonsList = pokemonModel.selectors.getAllPokemons();
+  const names = pokemonsList?.map((item: { name: string }) => item.name);
+  const url = pokemonsList?.map((item: { url: string }) => item.url);
 
   const handleSearchItemClick = (item: string) => (): void => {
     setSearchForm({ ...searchForm, url: url[names.indexOf(item)] });

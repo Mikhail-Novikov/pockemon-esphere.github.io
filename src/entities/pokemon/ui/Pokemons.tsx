@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom';
 
 import { Pokemon, PokemonsApiResponse } from '@shared/api/pokemon-api';
 import { ToggleSelect } from '@features/select-compare';
+import { useActions } from '@shared/lib/use-it';
+import { pokemonModel } from '@entities/pokemon';
 
 type PokemonsProps = {
   pokemons: PokemonsApiResponse;
@@ -15,6 +17,11 @@ export const Pokemons: React.FC<PokemonsProps> = ({ pokemons }) => {
   const { name, url } = pokemons;
   const [pokemon, setPokemon] = useState<Pokemon>();
   const [pokemonAbilites, setPokemonAbilities] = useState<string>();
+
+  const { toggleSelect } = useActions(pokemonModel.actions);
+
+  const selectedPokemos = pokemonModel.selectors.getSelectedPokemons();
+  const isSelected = selectedPokemos.includes(pokemon?.name);
 
   const fetchAbilities = async (
     pokemonData: PokemonsApiResponse,
@@ -48,6 +55,10 @@ export const Pokemons: React.FC<PokemonsProps> = ({ pokemons }) => {
     }
   };
 
+  const handleClick = () => {
+    toggleSelect(pokemon?.name);
+  };
+
   return (
     <L.Div _colXxl3 _colLg4 _colMd6 _marginBottom24>
       <L.Div
@@ -73,7 +84,11 @@ export const Pokemons: React.FC<PokemonsProps> = ({ pokemons }) => {
               <L.Tooltip title={pokemonAbilites}>{name}</L.Tooltip>
             </L.H2>
             <L.Div _subtitle>{pokemon?.types[0].type.name}</L.Div>
-            <ToggleSelect taskId={pokemon?.id} />
+            <ToggleSelect
+              pokemonId={pokemon?.id}
+              handleClick={handleClick}
+              checked={isSelected}
+            />
           </L.Div>
         </L.Div>
       </L.Div>

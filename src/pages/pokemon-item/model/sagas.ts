@@ -7,7 +7,6 @@ import { cancelOn, composeSaga } from '@shared/lib/store';
 import { errorHandler } from '@shared/lib/store-error';
 
 import { taskModel } from '@entities/task';
-import { toastModel, ToastType } from '@entities/toast';
 import { pokemonModel } from '@entities/pokemon';
 
 /** Гейт страницы */
@@ -18,14 +17,7 @@ export const pageGate = createGate({ id: genId() });
  * @returns {void}
  */
 function* gateOpenedSaga(): SagaIterator {
-  yield call(pokemonModel.sagas.loadPokemons);
-
-  yield put(
-    toastModel.actions.showToast({
-      type: ToastType.Success,
-      text: 'Успешная загрузка.',
-    }),
-  );
+  yield call(pokemonModel.sagas.loadPokemonsNames);
 }
 
 /**

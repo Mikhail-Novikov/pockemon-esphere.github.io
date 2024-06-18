@@ -7,7 +7,9 @@ import { routerModel } from '@shared/lib/store-router';
 
 import { toastModel } from '@entities/toast';
 import { taskModel } from '@entities/task';
+// eslint-disable-next-line import/no-cycle
 import { pokemonModel } from '@entities/pokemon';
+// eslint-disable-next-line import/no-cycle
 import { filterModel } from '@src/processes/filter';
 
 const rootReducer = combineReducers({

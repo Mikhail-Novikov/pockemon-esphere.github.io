@@ -1,8 +1,11 @@
+export type ListsPokemons = {
+  name: string;
+  url: string;
+};
+
 export type Pokemon = {
   id: number;
   title: string;
-  userId: number;
-  completed: boolean;
   name: string;
   height: number;
   weight: number;
@@ -18,8 +21,19 @@ export type Pokemon = {
 
 export type PokemonsApiResponse = {
   id: number;
+  count: number;
+  next: string;
+  previous: string;
   abilities: string;
   name: string;
   url: string;
   results: Array<{ name: string; url: string }>;
+  isSelected: boolean;
+};
+
+export type PokemonsApi = {
+  count: number;
+  next: string;
+  previous: string;
+  results: ListsPokemons[];
 };

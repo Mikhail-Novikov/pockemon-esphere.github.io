@@ -1,6 +1,6 @@
 /** Конфигурация модели */
 export const config = {
-  modelName: 'pokemon',
+  modelName: 'pokemons',
   loaders: {
     loadPokemons: 'load-pokemons',
   },

@@ -2,7 +2,7 @@ import { createHttpClient, errorHandler } from '@shared/lib/request';
 
 import { globalConfig } from '@shared/config';
 import { DEFAULT_POKEMONS } from '@shared/constants';
-import type { Pokemon, PokemonsApiResponse } from './types';
+import type { Pokemon, PokemonsApi } from './types';
 
 const request = createHttpClient({
   serviceName: globalConfig.baseUrl,
@@ -10,12 +10,6 @@ const request = createHttpClient({
   errorHandler,
 });
 
-const getPokemonInfo = async (name: string): Promise<string> => {
-  const response = await fetch(`${globalConfig.baseUrl}${name}`);
-  const data = await response.json();
-
-  return data.forms.front_default;
-};
 /**
  * ### Метод для получения списка покемонов
  *
@@ -25,17 +19,23 @@ const getPokemonInfo = async (name: string): Promise<string> => {
  */
 const getPokemonsList = async ({
   size = DEFAULT_POKEMONS.pokemonsLimit,
-  page = 0,
+  page = 1,
 }: {
   size?: number;
   page?: number;
-}): Promise<PokemonsApiResponse[]> => {
-  const { data: response } = await request.get<PokemonsApiResponse[]>({
+}): Promise<PokemonsApi> => {
+  const { data: response } = await request.get<PokemonsApi>({
     url: `?limit=${size}&offset=${page}`,
   });
   return response;
 };
 
+/**
+ * ### Метод для получения подробной информации о покемоне по имени
+ *
+ * @param {string} PokemonName - имя покемона
+ * @returns {Promise<Pokemon>} Данные о покемоне подробно
+ */
 export const getPokemonByName = async (
   PokemonName: string,
 ): Promise<Pokemon> => {
@@ -46,7 +46,6 @@ export const getPokemonByName = async (
 };
 
 export const pokemonApi = {
-  getPokemonInfo,
   getPokemonsList,
   getPokemonByName,
 };

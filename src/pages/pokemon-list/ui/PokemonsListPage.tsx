@@ -10,9 +10,15 @@ import { useActions } from '@shared/lib/use-it';
 import { filterModel } from '@src/processes/filter';
 import { PokemonsApiResponse } from '@shared/api/pokemon-api';
 import { Pokemons } from '@entities/pokemon/ui/Pokemons';
+import { DEFAULT_POKEMONS } from '@shared/constants';
 import { pageGate } from '../model';
 
-export const PokemonsListPage: React.FC = () => {
+/**
+ * страница со списком покемонов
+ *
+ * @returns {JSX.Element} компонент страницы
+ */
+export const PokemonsListPage: React.FC = (): JSX.Element => {
   useGate(pageGate);
 
   const isLoading = loaderModel.selectors.useLoader(
@@ -25,18 +31,32 @@ export const PokemonsListPage: React.FC = () => {
   const paging = filterModel.selectors.getPaging();
 
   const pager = {
-    pageSize: paging.size || 10,
-    page: paging.page || 1,
+    pageSize: paging.size || DEFAULT_POKEMONS.pokemonsLimit,
+    offset: paging.offset || 0,
+    current: paging.current || 1,
     total: count,
   };
 
+  /**
+   * Обработчик нумерации страниц.
+   *
+   * @param {L.PaginationTypes.ChangeEvent} ev - значение номера страницы.
+   * @returns {void}
+   */
   const handlePaginationChange = (ev: L.PaginationTypes.ChangeEvent): void => {
     setPaging({
       ...paging,
-      page: ev.component.value,
+      offset: ev.component.value * pager.pageSize - pager.pageSize,
+      current: ev.component.value,
     });
   };
 
+  /**
+   * Обработчик размера страницы(10, 20, 50).
+   *
+   * @param {L.PaginationTypes.ChangeEvent} ev - значение размера страницы
+   * @returns {void}
+   */
   const handlePageSizeChange = (ev: L.PaginationTypes.ChangeEvent): void => {
     setPaging({
       ...paging,
@@ -58,7 +78,7 @@ export const PokemonsListPage: React.FC = () => {
 
       <L.Pagination
         totalItems={pager.total}
-        currentPage={pager.page}
+        currentPage={pager.current}
         pageSize={pager.pageSize}
         onChange={handlePaginationChange}
         pageSizeOptions={[5, 10, 20, 50]}

@@ -11,7 +11,12 @@ import { Pokemon } from '@shared/api/pokemon-api';
 import { getPokemonByName } from '@shared/api/pokemon-api/api';
 import { pageGate } from '../model';
 
-export const PokemonItemPage: React.FC = () => {
+/**
+ * Cтраница с данными о покемонах.
+ *
+ * @returns {JSX.Element} компонент страницы
+ */
+export const PokemonItemPage: React.FC = (): JSX.Element => {
   useGate(pageGate);
 
   const isLoading = loaderModel.selectors.useLoader(

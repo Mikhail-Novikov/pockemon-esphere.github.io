@@ -1,7 +1,10 @@
 import React from 'react';
 import * as L from 'korus-ui';
 
-export const HomePage: React.FC = () => (
+/**
+ * @returns {JSX.Element} Компонент домашней страницы.
+ */
+export const HomePage: React.FC = (): JSX.Element => (
   <L.Div>
     <L.H1 _marginBottom16 _paddingTop16>
       ТЗ Проекта - Картотека покемонов

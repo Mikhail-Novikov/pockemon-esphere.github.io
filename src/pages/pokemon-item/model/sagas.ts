@@ -6,7 +6,6 @@ import { genId } from '@shared/lib/id';
 import { cancelOn, composeSaga } from '@shared/lib/store';
 import { errorHandler } from '@shared/lib/store-error';
 
-import { taskModel } from '@entities/task';
 import { pokemonModel } from '@entities/pokemon';
 
 /** Гейт страницы */
@@ -26,7 +25,7 @@ function* gateOpenedSaga(): SagaIterator {
  * @returns {void}
  */
 function* gateClosedSaga(): SagaIterator {
-  yield put(taskModel.actions.reset());
+  yield put(pokemonModel.actions.reset());
 }
 
 /**

@@ -18,11 +18,21 @@ export const Pokemons: React.FC<PokemonsProps> = ({ pokemons }) => {
   const [pokemon, setPokemon] = useState<Pokemon>();
   const [pokemonAbilites, setPokemonAbilities] = useState<string>();
 
+  // экшн для селектора выбранных покемонов, формирование массива имён покемонов таблицы сравнения
   const { toggleSelect } = useActions(pokemonModel.actions);
 
+  // селектор выбранных покемонов
   const selectedPokemos = pokemonModel.selectors.getSelectedPokemons();
+
+  // признак выбранного покемона из селектора
   const isSelected = selectedPokemos.includes(pokemon?.name);
 
+  /**
+   * Данные о способностях покемона.
+   *
+   * @param {PokemonsApiResponse} pokemonData - Данные о покемоне
+   * @returns {Promise<void>} запись в стейт способностей покемона
+   */
   const fetchAbilities = async (
     pokemonData: PokemonsApiResponse,
   ): Promise<void> => {
@@ -33,7 +43,12 @@ export const Pokemons: React.FC<PokemonsProps> = ({ pokemons }) => {
     setPokemonAbilities(abilitiesData.effect_entries[0].effect);
   };
 
-  const fetchUrl = async () => {
+  /**
+   * Запрашивает данные с указанного URL-адреса.
+   *
+   * @returns {Promise<void>} запись в стейт покемона
+   */
+  const fetchUrl = async (): Promise<void> => {
     try {
       const data = await fetch(url).then((res) => res.json());
       fetchAbilities(data);
@@ -49,13 +64,21 @@ export const Pokemons: React.FC<PokemonsProps> = ({ pokemons }) => {
     fetchUrl();
   }, [url]);
 
+  /**
+   * Обработчик событие щелчка, перенаправляя пользователя на страницу с покемонами.
+   * @returns {void}
+   */
   const handleClickBox = (): void => {
     if (pokemon) {
       history.push(`/pokemon/${item}`);
     }
   };
 
-  const handleClick = () => {
+  /**
+   * Обработчик событие щелчка, для выбора покемона в таблицу сравнения.
+   * @returns {void}
+   */
+  const handleClick = (): void => {
     toggleSelect(pokemon?.name);
   };
 

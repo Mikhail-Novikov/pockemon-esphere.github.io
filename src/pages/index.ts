@@ -1,5 +1,4 @@
 export { HomePage } from './home';
-export { AboutPage } from './about';
-export { TasksListPage } from './tasks-list';
+export { ComparesPokemonPage } from './pokemon-compare';
 export { PokemonsListPage } from './pokemon-list';
 export { PokemonItemPage } from './pokemon-item';

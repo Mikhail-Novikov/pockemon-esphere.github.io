@@ -3,8 +3,6 @@ import { call, all, fork } from 'redux-saga/effects';
 
 import { gateModel } from '@shared/lib/store-gate';
 
-import { taskListPageModel } from '@pages/tasks-list';
-
 import { initAppModel } from '@processes/init';
 import { pokemonListPageModel } from '@pages/pokemon-list';
 import { filterModel } from '@src/processes/filter';
@@ -29,7 +27,6 @@ export function* rootSaga(): SagaIterator {
       /** features */
 
       /** pages */
-      taskListPageModel.sagas.watcher,
       pokemonListPageModel.sagas.watcher,
       pokemonItemPageModel.sagas.watcher,
 

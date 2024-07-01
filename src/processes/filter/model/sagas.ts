@@ -22,11 +22,11 @@ import { pagingSelector } from './selectors';
  * @returns {void}
  */
 function* pagingSaga(): SagaIterator {
-  const { page, size } = yield select(pagingSelector);
+  const { offset, size } = yield select(pagingSelector);
 
   const pagingData: SagaReturnType<typeof pokemonApi.getPokemonsList> = yield call(
     pokemonApi.getPokemonsList,
-    { size, page },
+    { size, offset },
   );
 
   yield put(pokemonModel.actions.setPokemons(pagingData));

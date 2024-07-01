@@ -6,9 +6,9 @@ import { genId } from '@shared/lib/id';
 import { cancelOn, composeSaga } from '@shared/lib/store';
 import { errorHandler } from '@shared/lib/store-error';
 
-import { taskModel } from '@entities/task';
 import { toastModel, ToastType } from '@entities/toast';
 import { pokemonModel } from '@entities/pokemon';
+import { DEFAULT_POKEMONS } from '@shared/constants';
 
 /** Гейт страницы */
 export const pageGate = createGate({ id: genId() });
@@ -18,7 +18,11 @@ export const pageGate = createGate({ id: genId() });
  * @returns {void}
  */
 function* gateOpenedSaga(): SagaIterator {
-  yield call(pokemonModel.sagas.loadPokemons, { page: 1, size: 10 });
+  yield call(pokemonModel.sagas.loadPokemons, {
+    offset: 0,
+    size: DEFAULT_POKEMONS.pokemonsLimit,
+  });
+  // подгрузка имен покемонов для автокомплита поиска
   yield call(pokemonModel.sagas.loadPokemonsNames);
 
   yield put(
@@ -27,15 +31,6 @@ function* gateOpenedSaga(): SagaIterator {
       text: 'Успешная загрузка.',
     }),
   );
-}
-
-/**
- * Закрытие гейта
- *
- * @returns {void}
- */
-function* gateClosedSaga(): SagaIterator {
-  yield put(taskModel.actions.reset());
 }
 
 /**
@@ -50,10 +45,6 @@ function* watcher(): SagaIterator<void> {
         errorHandler(),
         cancelOn(pageGate.actions.closed),
       ]),
-    ),
-    takeEvery(
-      pageGate.actions.closed,
-      composeSaga(gateClosedSaga, [errorHandler()]),
     ),
   ]);
 }

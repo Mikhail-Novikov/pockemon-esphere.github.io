@@ -12,20 +12,18 @@ const request = createHttpClient({
 
 /**
  * ### Метод для получения списка покемонов
- *
- * @param {number} [size=DEFAULT_POKEMONS.pokemonsLimit] - Выгрузка кол-ва покемонов на странице.
- * @param {number} [page=0] - Номер страницы.
+ * @param {number} [size] - Выгрузка кол-ва покемонов на странице.
  * @returns {Promise<PokemonsApiFullResponse>} Список покемонов
  */
 const getPokemonsList = async ({
   size = DEFAULT_POKEMONS.pokemonsLimit,
-  page = 1,
+  offset = 0,
 }: {
   size?: number;
-  page?: number;
+  offset?: number;
 }): Promise<PokemonsApi> => {
   const { data: response } = await request.get<PokemonsApi>({
-    url: `?limit=${size}&offset=${page}`,
+    url: `?limit=${size}&offset=${offset}`,
   });
   return response;
 };

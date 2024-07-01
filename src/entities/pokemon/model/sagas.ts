@@ -5,6 +5,7 @@ import { pokemonApi } from '@shared/api';
 import { composeSaga } from '@shared/lib/store';
 import { loader } from '@shared/lib/store-loader';
 
+import { DEFAULT_POKEMONS } from '@shared/constants';
 import { config } from '../config';
 
 import { actions } from './ducks';
@@ -12,19 +13,19 @@ import { selectors } from './selectors';
 
 /**
  * Загрузка списка покемонов
- * @param {{page: number, size: number}} - параметры запроса
+ * @param {{offset: number, size: number}} - параметры запроса
  * @returns {void}
  */
 function* loadPokemonsSaga({
-  page = 1,
-  size = 10,
+  offset = 0,
+  size = DEFAULT_POKEMONS.pokemonsLimit,
 }: {
-  page: number;
+  offset: number;
   size: number;
 }): SagaIterator {
   const pokemons: SagaReturnType<typeof pokemonApi.getPokemonsList> = yield call(
     pokemonApi.getPokemonsList,
-    { page, size },
+    { offset, size },
   );
   yield put(actions.setPokemons(pokemons));
 }

@@ -6,10 +6,10 @@ import { globalConfig } from '@shared/config';
 import { MainWidget } from '@widgets/main';
 
 import {
+  ComparesPokemonPage,
   HomePage,
   PokemonItemPage,
   PokemonsListPage,
-  TasksListPage,
 } from '@pages';
 
 /**
@@ -24,7 +24,7 @@ export const AppRoutes: React.FC = () => (
       <Route
         exact
         path={globalConfig.routes.compare()}
-        component={TasksListPage}
+        component={ComparesPokemonPage}
       />
       <Route
         exact
